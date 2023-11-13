@@ -4,7 +4,7 @@ Descripción jeje
 
 ## Integrantes
 + Cao Carlos
-+ Carios Cesar
++ Carios César
 + Ciavato Miguel
 + Homsany Jhonatan
 + Reis Erimar
