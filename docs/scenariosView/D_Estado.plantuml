@@ -25,10 +25,11 @@ skinparam state{
     FontSize 12
 }
 
-/' DECLARACIONES INICIALES '/
+state " " as Estado_Inicial
 
-state initialCondition <<choice>> 
-state finalCondition <<choice>>
+[*] --> Estado_Inicial
+Estado_Inicial --> CreandoExamen : Iniciando Creación de Examen
+
 
 /' DECLARACIONES CREANDO EXAMEN'/
 
@@ -45,15 +46,6 @@ state PresentandoExamen {
     state navegandoAdelante
     state navegandoAtras
 }
-
-/' ESTADO INICIAL '/
-
-[*] -d-> initialCondition: EstadoInicial
-initialCondition -d-> Registrando: registrar?
-initialCondition -d-> IniciandoSesion: iniciarSesion?
-Registrando -d-> finalCondition
-IniciandoSesion -d-> finalCondition
-finalCondition -d-> CreandoExamen: crearExamen()
 
 /' ESTADO CREANDO EXAMEN '/
 

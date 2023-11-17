@@ -1,0 +1,75 @@
+@startuml DIAGRAMA_DOMINIO
+
+!theme plain
+
+skinparam object{
+    BackgroundColor #EADDE7
+    FontSize 12
+}
+scale 600 width 
+
+
+object Usuario {
+    correo
+    contraseña
+}
+
+object Admin {
+
+}
+
+object Estudiante {
+
+} 
+
+object Profesor {
+
+}
+
+object Examen {
+    tipo
+    duracion
+    calificacion
+                   
+}
+
+object Pregunta {
+    enunciado
+    solucion
+    justificacion
+}
+
+object Dominio {
+
+}
+
+object Certificado {
+    curso
+    profesores
+    tipo_examen
+    resumen
+}
+
+Object Curso {
+
+}
+
+Object opciones 
+opciones "4...*" -l-* Pregunta
+
+Usuario <|-- Admin
+Usuario <|-- Estudiante
+Admin <|-d- Profesor
+Admin -r-> Estudiante: Registra
+Certificado --> Estudiante : Recibe
+Curso "1" o-l- "1..." Examen 
+Curso -u- Estudiante : Inscrito
+Examen *-- "1...*" Pregunta 
+Dominio "1...*" -r-  Pregunta : Tiene
+Profesor -d-> Curso : Imparte
+Admin --- Examen : Crea
+Certificado <-- Curso : Recibe datos
+Estudiante ----- Examen : Realiza
+
+
+@enduml
