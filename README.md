@@ -10,6 +10,9 @@ Descripción jeje
 + Reis Erimar
 
 ## Modelo del dominio
+<p align="left">
+<img src="">
+</p>
 
 + imagen clases
 + imagen e
