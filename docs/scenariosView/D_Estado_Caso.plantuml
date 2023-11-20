@@ -1,0 +1,70 @@
+/'1. Registrando
+Iniciando Sesión
+Creando examenes
+Escogiendo nmero de preguntas y duracin
+Escogiendo tipo de examen
+Mostrando instrucciones
+Presentando examen
+Viendo progreso
+Navegando hacia atrs
+Navegando hacia adelante
+Terminando examen
+11.1 Tiempo acabado
+11.2 Presentando mensaje de tiempo acabado
+Viendo resultado
+Recibiendo explicaciones
+Recibiendo certificado
+'/
+
+@startuml D_Estado_Usos
+
+!theme plain
+skinparam NoteBackgroundColor transparent
+skinparam NoteBorderColor transparent
+skinparam backgroundColor white
+hide members
+''allowmixing 
+skinparam actorStyle awesome
+
+/' ESTILOS '/
+
+skinparam state{
+    FontSize 12
+    BackgroundColor #E7F5F7
+
+}
+
+/' DIAGRAMA PARA EL ADMIN '/ 
+
+state Admin #006d77{
+    state " " as Estado_Inicial_Admin
+    state "Usuario Registrado" as Usuario_Registrado
+    state "Crear Examen" as Crear_Examen 
+    [*] --> Estado_Inicial_Admin
+    Estado_Inicial_Admin --> Usuario_Registrado : Registrando usuario
+    Usuario_Registrado --> Crear_Examen
+}
+
+/' DIAGRAMA PARA EL ESTUDIANTE '/
+
+state Estudiante #83c5be{
+    state "Responder Examen" as Responder_Examen
+    state "Tipo Seleccionado" as Tipo_Seleccionado
+    state "Terminando Examen" as Terminando_Examen
+    state "Consultar FAQ" as Consultar_FAQ
+    state "Navegar" as Navegar
+    state "Solicitar Certificado" as Solicitar_Certificado
+    state "Cerrar Sesion" as Cerrar_Sesion
+
+    [*]-->Tipo_Seleccionado
+    Tipo_Seleccionado --> Consultar_FAQ
+    Consultar_FAQ --> Navegar
+    Navegar --> Responder_Examen
+    Responder_Examen --> Navegar
+    Responder_Examen --> Terminando_Examen
+    Terminando_Examen --> Solicitar_Certificado
+    Solicitar_Certificado --> Cerrar_Sesion
+}
+
+
+@enduml
