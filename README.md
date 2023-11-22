@@ -1,4 +1,4 @@
-# ProyectoIS2023_Grupo_2
+# CodeTech
 
 
 
@@ -15,4 +15,8 @@
   <img style="width:80%; heigth:300px" src="docs/scenariosView/D_Estado/D_Estado.png">
 </p>
 
-
+## Modelo de Casos de Uso
+<p align="center">
+  <img style="width:40%; heigth:300px" src="">
+  <img style="width:80%; heigth:300px" src="">
+</p>
