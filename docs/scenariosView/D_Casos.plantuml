@@ -1,28 +1,12 @@
 @startuml Diagrama_Casos
 
-/'Actores:
-
-1. Estudiante 
-2. Administrador
-
-Casos de uso:
-
-1. Crear examen (Administrador)
-2. Registrar usuario (Administrador)
-3. Iniciar sesion (Estudiante)
-4. Cerrar sesion (Estudiante)
-5. Consultar FAQ (Estudiante)
-6. Escoger tipo de examen (Estudiante)
-7. Responder examen (Estudiante)
-8. Navegar (Estudiante)
-9. Terminar examen (Estudiante)
-10. Descargar certificado (Estudiante)
-
-Casos de uso priorizados:
-
-Crear examen
-Registrar usuario
-Responder examen'/
+/'Diagrama de casos de uso
++ Poner nombre
++ Responder examen contiene navegar y terminar
++ Descargar -> Obtener certificado
+    + User cambia sus datos (Nuevo caso de uso)
+    + Admin cambia contraseña de user (Nuevo caso de uso)
+'/
 
 'PARÁMETROS DE APARIENCIA
 
@@ -33,17 +17,17 @@ skinparam actorStyle awesome
 
 'DECLARACIONES
 
-Rectangle Aplicación {
+Rectangle CodeTest {
     "Crear Examen" as (crear_examen)
     "Registrar Usuario" as (registrar_usuario)
     "Iniciar Sesion" as (Iniciar_sesion)
     "Cerrar Sesion" as (Cerrar_sesion)
     "Consultar FAQ" as (consultar_FAQ)
-    "Escoger Examen" as (Escoger_examen)
+    "Buscar Examen" as (Escoger_examen)
     "Responder Examen" as (Responder_Examen)
-    "Navegar" as (Navegar)
-    "Terminar Examen" as (Terminar_Examen)
-    "Descargar Certificado" as (Descargar_Certificado)
+    "Obtener Certificado" as (Obtener_certificado)
+    "Resetear contraseña" as (Resetear_contraseña)
+    "Editar perfil" as (Editar_perfil)
 }
 
 left to right direction
@@ -54,14 +38,14 @@ actor "Estudiante" as Estudiante #78C6D2
 
 Administrador --- crear_examen
 Administrador --- registrar_usuario
+Administrador --- Resetear_contraseña
 
 Estudiante --- Responder_Examen
 Estudiante --- Iniciar_sesion
 Estudiante --- Cerrar_sesion
 Estudiante --- consultar_FAQ
-Estudiante --- Navegar
-Estudiante --- Terminar_Examen
 Estudiante --- Escoger_examen
-Estudiante --- Descargar_Certificado
+Estudiante --- Obtener_certificado
+Estudiante --- Editar_perfil
 
 @enduml

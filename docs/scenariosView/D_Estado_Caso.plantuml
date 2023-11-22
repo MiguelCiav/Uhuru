@@ -1,29 +1,17 @@
-/'1. Registrando
-Iniciando Sesión
-Creando examenes
-Escogiendo nmero de preguntas y duracin
-Escogiendo tipo de examen
-Mostrando instrucciones
-Presentando examen
-Viendo progreso
-Navegando hacia atrs
-Navegando hacia adelante
-Terminando examen
-11.1 Tiempo acabado
-11.2 Presentando mensaje de tiempo acabado
-Viendo resultado
-Recibiendo explicaciones
-Recibiendo certificado
+/'Diagrama de estado
+    + Faltaron las transiciones
++ Faltó el nodo de fin
++ Quitar el tema (Bolita)
+- Modelar el estado del sistema, no las actividades.
+
 '/
 
 @startuml D_Estado_Usos
 
-!theme plain
 skinparam NoteBackgroundColor transparent
 skinparam NoteBorderColor transparent
 skinparam backgroundColor white
 hide members
-''allowmixing 
 skinparam actorStyle awesome
 
 /' ESTILOS '/
@@ -36,34 +24,30 @@ skinparam state{
 
 /' DIAGRAMA PARA EL ADMIN '/ 
 
-state Admin #006d77{
+state Admin #009caa{
     state " " as Estado_Inicial_Admin
-    state "Usuario Registrado" as Usuario_Registrado
-    state "Crear Examen" as Crear_Examen 
+    state "Registrando Usuario" as Usuario_Registrado
+    state "Creando Examen" as Crear_Examen 
     [*] --> Estado_Inicial_Admin
-    Estado_Inicial_Admin --> Usuario_Registrado : Registrando usuario
-    Usuario_Registrado --> Crear_Examen
+    Estado_Inicial_Admin --> Usuario_Registrado : Registrar usuario
+    Usuario_Registrado --> Crear_Examen : Crear Examen
+    Crear_Examen --> [*]
 }
 
 /' DIAGRAMA PARA EL ESTUDIANTE '/
 
 state Estudiante #83c5be{
-    state "Responder Examen" as Responder_Examen
-    state "Tipo Seleccionado" as Tipo_Seleccionado
-    state "Terminando Examen" as Terminando_Examen
-    state "Consultar FAQ" as Consultar_FAQ
-    state "Navegar" as Navegar
-    state "Solicitar Certificado" as Solicitar_Certificado
-    state "Cerrar Sesion" as Cerrar_Sesion
+    state "Seleccionando Tipo de Examen" as Tipo_Seleccionado
+    state "Consultando FAQ" as Consultar_FAQ
+    state "Obteniendo Certificado" as Solicitar_Certificado
+    state "Cerrando Sesion" as Cerrar_Sesion
 
-    [*]-->Tipo_Seleccionado
-    Tipo_Seleccionado --> Consultar_FAQ
-    Consultar_FAQ --> Navegar
-    Navegar --> Responder_Examen
-    Responder_Examen --> Navegar
-    Responder_Examen --> Terminando_Examen
-    Terminando_Examen --> Solicitar_Certificado
-    Solicitar_Certificado --> Cerrar_Sesion
+    [*]-->Tipo_Seleccionado: Buscar Examen
+    Tipo_Seleccionado -r-> Consultar_FAQ: Consultar FAQ
+    Consultar_FAQ -d-> Responder_Examen: Responder Examen
+    Responder_Examen -l-> Solicitar_Certificado: Obtener Certificado
+    Solicitar_Certificado -d-> Cerrar_Sesion: Cerrar Sesion
+    Cerrar_Sesion -r-> [*]
 }
 
 

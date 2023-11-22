@@ -1,0 +1,56 @@
+/'
+Diagrama de contexto
++ Modificar el inicio (iniciando -> iniciar)
++ Las transiciones sin parentesis
+    + Modificar el nombre de creando examen
+    + Eliminar la navegación (abstraernos)
++ Examen terminado
++ Presentando resultado
++ Eliminar la transición a estado final
+
+
+'/
+
+
+@startuml estadop
+
+/' ESTILOS '/
+
+skinparam state{
+    BackgroundColor #EADDE7
+    FontSize 12
+}
+
+/' DECLARACIONES CREANDO EXAMEN'/
+
+state "Iniciando" as Estado_Inicial
+state "Creando Examen" as CreandoExamen
+
+[*] --> Estado_Inicial
+Estado_Inicial --> CreandoExamen : Crear Examen
+
+
+/' DECLARACIONES PRESENTANDO EXAMEN '/
+
+state "Presentando Examen" as PresentandoExamen
+
+/' ESTADO CREANDO EXAMEN '/
+
+state "Escogiendo Tipo de Examen" as EscogiendoTipoDeExamen
+state "Mostrando Instrucciones" as MostrandoInstrucciones
+state "Examen Terminado" as ExamenTerminado
+state "Presentando Resultados" as PresentandoResultado
+state "Recibiendo Certificado" as RecibiendoCertificado
+
+CreandoExamen -r-> EscogiendoTipoDeExamen: Escoger Tipo
+EscogiendoTipoDeExamen -r-> MostrandoInstrucciones: Mostrar Instrucciones
+MostrandoInstrucciones -d-> PresentandoExamen: Presentar
+
+/' ESTADO TERMINANDO EXAMEN '/
+
+PresentandoExamen --> ExamenTerminado : [TiempoAcabo || No restan preguntas]
+ExamenTerminado -l-> PresentandoResultado: Mostrar Resultado
+PresentandoResultado -l-> RecibiendoCertificado: Solicitar Certificado
+RecibiendoCertificado --> [*]
+
+@enduml
