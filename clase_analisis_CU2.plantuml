@@ -1,0 +1,14 @@
+@startuml clase_analisis 
+
+actor Estudiante
+boundary "IU responder examen" as responder_examen
+control "gestor de examen" as controlador 
+entity examen
+entity pregunta
+
+Estudiante -r- responder_examen
+responder_examen -r- controlador
+controlador -- examen
+controlador -- pregunta
+
+@enduml

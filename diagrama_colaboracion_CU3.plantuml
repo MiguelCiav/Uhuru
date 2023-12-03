@@ -1,0 +1,12 @@
+@startuml clase_analisis 
+
+actor Estudiante
+boundary "IU Solicitar Certificado" as solicitar_certificado
+control "Obtener Certificado" as controlador 
+entity Certificado 
+
+Estudiante -r- solicitar_certificado: 1: Obtener certificado >
+solicitar_certificado -r- controlador: 2: Validar certificado >
+controlador -- Certificado: 3: Entregar >
+
+@enduml

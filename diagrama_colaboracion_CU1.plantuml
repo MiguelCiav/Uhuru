@@ -1,0 +1,14 @@
+@startuml clase_analisis 
+
+actor ": Administrador" as Administrador
+boundary ": IU crear examen" as crear_examen
+control ": Generador de examen" as controlador 
+entity ": Examen" as publicar_examen 
+entity ": Pregunta" as añadir_pregunta
+
+Administrador -r-- crear_examen : 1:Crear examen >
+crear_examen -r-- controlador: 2: Diseñar examen >  
+controlador --- añadir_pregunta: 3: Añadir >  
+controlador --- publicar_examen: 4: Publicar > 
+
+@enduml
