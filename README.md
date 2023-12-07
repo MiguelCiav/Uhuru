@@ -41,10 +41,10 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 
 ## Prototipo de pantallas
 ### Flujo de Usuario
-![Prototipos de Pantallas : Flujo Usuario](docs\prototype\Flujo-Usuario.png)
+![Prototipos de Pantallas : Flujo Usuario](docs/prototype/Flujo-Usuario.png)
 ### Flujo de Administrador
-![Prototipos de Pantallas : Flujo Usuario](docs\prototype\Flujo-admin.png)      
+![Prototipos de Pantallas : Flujo Usuario](docs/prototype/Flujo-Admin.png)      
 ### Enlaces 
 - [Prototipo Interactivo en Figma](https://www.figma.com/file/dzXOa9yDAVZmEWpZJqrHQO/Prototipo-De-Interfaz?type=design&node-id=0%3A1&mode=design&t=nIYMdCu8Bfcdtu5P-1)
-- [Pantallas](docs\prototype\INTERFACE.md)
+- [Pantallas](docs/prototype/INTERFACE.md)
 
