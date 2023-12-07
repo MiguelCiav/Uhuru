@@ -1,58 +1,41 @@
 # Prototipos de pantallas 
-## Pantallas de Usuario
-### Login
-![Prototipos de Pantallas : Login ](/out/docs/prototypeModel/Login.png)
+![Carga](screen/loading.jpg)
 
-### Mis Examenes
-![Prototipos de Pantallas : Mis Examenes ](/out/docs/prototypeModel/MisExamenes.png)
+### Login
+![login](screen/login.jpg)
+### Error de inicio de sesión
+![login2](screen/login-error.jpg)
+
+## Pantallas de Usuario
+
+### Home
+![Home ](screen/student-home.jpg)
+
+### Editar perfil
+![Edit ](screen/editprofile.jpg)
+
+### FaQ
+![FaQ](screen/FaQ.jpg)
+
+### Obtener Certificado
+![Certificado](screen/obtainCertificate.jpg)
 
 ### Examen
-![Prototipos de Pantallas : Examen ](/out/docs/prototypeModel/Examen.png)
+![examen](screen/test.jpg)
 
-### Examen Finalizado
-![Prototipos de Pantallas : Examen Finalizado ](/out/docs/prototype/ExamenFinalizado.png)
-
-### Respuestas
-![Prototipos de Pantallas : Respuesta 1 ](/out/docs/prototype/Respuesta1.png)
-
-![Prototipos de Pantallas : Respuesta 2 ](/out/docs/prototype/Respuesta2.png)
-
-### Mis Certificados
-![Prototipos de Pantallas : Mis Certificados ](/out/docs/prototypeModel/SolicitarCertificado.png)
-
-### Certificado
-![Prototipos de Pantallas : Certificado ](/out/docs/prototypeModel/Certificado.png)
-
-### Ayuda
-![Prototipos de Pantallas : Ayuda ](/out/docs/prototypeModel/PreguntasFrecuentes.png)
+### Solución
+![solucion](screen/solution.jpg)
 
 ## Pantallas de Administrador
-### Mis Examenes (Version Admin)
-![Prototipos de Pantallas : Mis Examenes (Version Admin) ](/out/docs/prototypeModel/MisExamenesADMIN.png)
-
-### Mis Certificados (Version Admin)
-![Prototipos de Pantallas : Mis Certificados (Version Admin) ](/out/docs/prototypeModel/SolicitarCertificadoADMIN.png)
-
-### Certificado (Version Admin)
-![Prototipos de Pantallas : Certificado (Version Admin) ](/out/docs/prototypeModel/CertificadoAdmin.png)
-
-### Ayuda (Version Admin)
-![Prototipos de Pantallas : Ayuda (Version Admin) ](/out/docs/prototypeModel/PreguntasFrecuentesADMIN.png)
+### Home
+![Home ](screen/admin-home.jpg)
 
 ### Registrar Usuario
-![Prototipos de Pantallas : Registrar Usuario ](/out/docs/prototypeModel/RegistrarUsuario.png)
+![Edit ](screen/register.jpg)
 
-### Usuario Registrado
-![Prototipos de Pantallas : Usuario Registrado ](/out/docs/prototypeModel/UsuarioRegistrado.png)
-
-### Administrador de Examenes
-![Prototipos de Pantallas : Administrador de Examenes ](/out/docs/prototypeModel/AdministradorExamenes.png)
+### Editar perfil
+![Edit ](screen/admin-edit.jpg)
 
 ### Crear Examen
-![Prototipos de Pantallas : Crear Examen ](/out/docs/prototypeModel/CrearExamen.png)
-
-### Editar Examen
-![Prototipos de Pantallas : Editar Examen ](/out/docs/prototypeModel/EditarExamen.png)
-
-### Examen Creado
-![Prototipos de Pantallas : Examen Creado ](/out/docs/prototypeModel/ExamenCreado.png)
+![crear](screen/create-test-1.jpg)
+![crear](screen/create-test-2.jpg)
