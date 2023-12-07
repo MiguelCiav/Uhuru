@@ -1,14 +1,40 @@
 @startuml clase_analisis 
 
-actor Estudiante
-boundary "IU responder examen" as responder_examen
-control "gestor de examen" as controlador 
-entity examen
-entity pregunta
+skinparam NoteBackgroundColor transparent
+skinparam NoteBorderColor transparent
 
-Estudiante -r- responder_examen: 1: Responder examen >
-responder_examen -r- controlador: 2: Mostrar examen >
-controlador -- pregunta: 3: Responder >
-controlador -- examen: 4: Terminar >
+actor Estudiante
+boundary "StudentView" as vista_estudiante
+boundary "TestView" as responder_examen
+boundary "SolutionsView" as soluciones
+control "answerTest" as controlador 
+entity Test as examen
+entity Question as pregunta
+
+Estudiante -r- vista_estudiante
+note on link
+1: Login(username, password)
+end note
+vista_estudiante -r- responder_examen
+note on link
+2: showTests(tests)
+end note
+responder_examen -r- controlador
+note on link
+3: selectTest()
+end note
+controlador -u- soluciones
+note on link
+4: viewSolutions(questions, answers)
+end note
+controlador -- pregunta
+note on link
+5: answerQuestion(answer);
+end note
+controlador -- examen
+note on link
+6: endExam()
+end note
+
 
 @enduml

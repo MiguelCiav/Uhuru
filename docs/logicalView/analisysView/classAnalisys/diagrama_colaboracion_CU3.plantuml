@@ -1,12 +1,24 @@
 @startuml clase_analisis 
 
-actor Estudiante
-boundary "IU Solicitar Certificado" as solicitar_certificado
-control "Obtener Certificado" as controlador 
-entity Certificado 
+skinparam NoteBackgroundColor transparent
+skinparam NoteBorderColor transparent
 
-Estudiante -r- solicitar_certificado: 1: Obtener certificado >
-solicitar_certificado -r- controlador: 2: Validar certificado >
-controlador -- Certificado: 3: Entregar >
+actor Student as Estudiante
+boundary "getCertificateView" as solicitar_certificado
+control "getCertificate" as controlador 
+entity Certificate as Certificado
+
+Estudiante -r- solicitar_certificado
+note on link
+1: getCertificate()
+end note
+solicitar_certificado -r- controlador
+note on link
+2: generateCertificate()
+end note
+controlador -- Certificado
+note on link
+3: giveCertificate(Certificate)
+end note
 
 @enduml

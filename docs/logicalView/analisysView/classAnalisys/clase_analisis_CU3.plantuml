@@ -1,9 +1,9 @@
 @startuml clase_analisis 
 
-actor Estudiante
-boundary "IU Solicitar Certificado" as solicitar_certificado
-control "Obtener Certificado" as controlador 
-entity Certificado 
+actor Student as Estudiante
+boundary "getCertificateView" as solicitar_certificado
+control "getCertificate" as controlador 
+entity Certificate as Certificado
 
 Estudiante -r- solicitar_certificado
 solicitar_certificado -r- controlador

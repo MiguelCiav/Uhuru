@@ -1,0 +1,44 @@
+@startuml controllersClassDiagram
+skinparam ClassBackgroundColor white
+skinparam classAttributeIconSize 0
+hide circle
+
+class Coordinate
+enum Color
+enum Error
+class Game
+
+abstract class  Controller{
+    + getColor(Coordinate): Color
+}
+
+class  PlayController{
+    + areAllTokensOnBoard(): boolean
+    + putToken(Coordinate)
+    + getPutTokenError(Coordinate): Error
+    + moveToken(Coordinate, Coordinate)
+    + getOriginMoveTokenError(Coordinate): Error
+    + getTargetMoveTokenError(Coordinate, Coordinate): Error
+    + next()
+    + getActiveColor(): Color
+    + isTicTacToe(): boolean
+}
+
+class  ResumeController{
+    + reset()
+}
+
+class  StartController{
+
+}
+
+
+Controller <|-- StartController
+Controller <|-- PlayController
+Controller <|-- ResumeController
+
+Controller .l.> Coordinate
+Controller -r-> Game
+Controller .l.> Color
+PlayController .down.> Error
+@enduml

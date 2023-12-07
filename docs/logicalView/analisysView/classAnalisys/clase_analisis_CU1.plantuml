@@ -1,10 +1,10 @@
 @startuml clase_analisis 
 
-actor Administrador
-boundary "IU crear examen" as crear_examen
-control "Generador de examen" as controlador 
-entity Examen as publicar_examen 
-entity Pregunta as añadir_pregunta
+actor Admin as Administrador
+boundary "createTestView" as crear_examen
+control "createTest" as controlador
+entity Test as publicar_examen
+entity Question as añadir_pregunta
 
 Administrador -r- crear_examen
 crear_examen -r- controlador

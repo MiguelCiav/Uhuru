@@ -1,0 +1,83 @@
+@startuml DIAGRAMA_CLASES
+skinparam ClassBackgroundColor white
+skinparam classAttributeIconSize 0
+hide circle
+
+class Examen {
+    + Tipo
+    + Calificacion
+    + Duracion
+    + getTipo()
+    + getCalificacion()
+    + getDuracion()
+}
+
+class Pregunta {
+    + Enunciado
+    + Solucion
+    + Justificacion
+    + getEnunciado()
+    + getSolucion()
+    + getJustificacion()
+}
+
+class Certificado {
+    + Curso
+    + Profesores
+    + Tipo_Examen
+    + Resumen
+    + getCurso()
+    + getProfesores()
+    + getTipo_Examen()
+    + getResumen()
+}
+
+class IU_Crear_Examen {
+    + mostrarCrearExamen()
+}
+
+class Generador_Examen {
+    + crearExamen()
+    + setID()
+    + setPregunta()
+}
+
+class IU_Responder_Examen {
+    + mostrarExamen()
+    + mostrarRespuestas()
+}
+
+class IU_Solicitar_Certificado {
+    + mostrarSolicitud()
+}
+
+class Obtener_Certificado {
+    + generarCertificado()
+}
+
+class Gestor_Examen {
+    + empezarExamen()
+    + seleccionarRespuesta()
+    + terminarExamen()
+}
+
+'Interfaces de Usuario
+
+IU_Responder_Examen -d-> Gestor_Examen
+IU_Solicitar_Certificado -d-> Obtener_Certificado
+IU_Crear_Examen -d-> Generador_Examen 
+
+'Clases de control
+
+Generador_Examen -d-> Examen
+Generador_Examen -d-> Pregunta
+Gestor_Examen -d-> Examen
+Obtener_Certificado --> Certificado 
+Gestor_Examen -d-> Pregunta
+
+' Dependencias
+
+Examen .r..> Pregunta
+Certificado .r..> Examen
+
+@enduml

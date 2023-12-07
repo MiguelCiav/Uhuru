@@ -1,0 +1,89 @@
+@startuml modelsClassDiagram
+skinparam ClassBackgroundColor white
+skinparam classAttributeIconSize 0
+hide circle
+
+class Coordinate
+enum Error
+enum Color
+
+class  Board{
+    + reset()
+    + isTicTacToe(): boolean
+    + getColor(Coordinate): Color
+}
+
+class  Game{
+    + reset()
+    + areAllTokensOnBoard(): boolean
+    + putToken(Coordinate)
+    + getPutTokenError(Coordinate): Error
+    + moveToken(Coordinate, Coordinate)
+    + getOriginMoveTokenError(Coordinate): Error
+    + getTargetMoveTokenError(Coordinate, Coordinate): Error
+    + next()
+    + getActiveColor(): Color
+    + isTicTacToe(): boolean
+    + getColor(Coordinate): Color
+}
+
+class  Player{
+    + getColor(): Color
+    + areAllTokensOnBoard(): boolean
+    + putToken(Coordinate)
+    + getPutTokenError(Coordinate): Error
+    + moveToken(Coordinate, Coordinate)
+    + getOriginMoveTokenError(Coordinate): Error
+    + getTargetMoveTokenError(Coordinate, Coordinate): Error
+}
+
+class  Turn{
+    + reset()
+    + next()
+    + getActiveColor(): Color
+    + areAllTokensOnBoard(): boolean
+    + putToken(Coordinate)
+    + getPutTokenError(Coordinate): Error
+    + moveToken(Coordinate, Coordinate)
+    + getOriginMoveTokenError(Coordinate): Error
+    + getTargetMoveTokenError(Coordinate, Coordinate): Error
+}
+
+class  Coordinate{
+    + getDimension()
+    + equals(Object)
+}
+
+enum  Color{
+    + X
+    + O
+    + NULL
+    + get(Int)
+    + isNull()
+}
+
+enum  Error{
+    + NOT_EMPTY
+    + NOT_OWNER
+    + SAME_COORDINATES
+    + WRONG_COORDINATES
+    + NULL
+    + isNull()
+}
+
+Game *-r-> Turn
+Game *-down-> Board
+Turn *-r-> Player
+Turn ..> Coordinate
+Player ..> Coordinate
+Player --> Board
+Board *-down-> Color
+Turn ..> Color
+Game ..> Color
+Board ..> Coordinate
+Player --> Color
+Player ..> Error
+Turn ..> Error
+Game ..> Error
+Game ..> Coordinate
+@enduml

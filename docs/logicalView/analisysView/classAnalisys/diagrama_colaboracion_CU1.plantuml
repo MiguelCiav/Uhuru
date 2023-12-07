@@ -1,14 +1,28 @@
 @startuml clase_analisis 
+skinparam NoteBackgroundColor transparent
+skinparam NoteBorderColor transparent
 
-actor ": Administrador" as Administrador
-boundary ": IU crear examen" as crear_examen
-control ": Generador de examen" as controlador 
-entity ": Examen" as publicar_examen 
-entity ": Pregunta" as añadir_pregunta
+actor Admin as Administrador
+boundary "createTestView" as crear_examen
+control "createTest" as controlador
+entity Test as publicar_examen
+entity Question as añadir_pregunta
 
-Administrador -r-- crear_examen : 1:Crear examen >
-crear_examen -r-- controlador: 2: Diseñar examen >  
-controlador --- añadir_pregunta: 3: Añadir >  
-controlador --- publicar_examen: 4: Publicar > 
+Administrador -r--  crear_examen
+note on link
+1: createTest()
+end note
+crear_examen -r-- controlador 
+note on link
+2: newTest(testData) 
+end note
+controlador -- añadir_pregunta
+note on link
+3: question = addQuestion(description, answers)
+end note
+controlador -- publicar_examen
+note on link
+4: createTest(name, question, duration) 
+end note
 
 @enduml
