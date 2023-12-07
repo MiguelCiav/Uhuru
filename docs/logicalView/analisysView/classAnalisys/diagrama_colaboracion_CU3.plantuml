@@ -18,7 +18,7 @@ note on link
 end note
 controlador -- Certificado
 note on link
-3: giveCertificate(Certificate)
+3: downloadCertificate()
 end note
 
 @enduml

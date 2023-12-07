@@ -3,10 +3,10 @@ skinparam NoteBackgroundColor transparent
 skinparam NoteBorderColor transparent
 
 actor Admin as Administrador
-boundary "createTestView" as crear_examen
-control "createTest" as controlador
-entity Test as publicar_examen
-entity Question as añadir_pregunta
+boundary ": CreateTestView" as crear_examen
+control ": CreateTest" as controlador
+entity ": Test" as publicar_examen
+entity ": Question" as añadir_pregunta
 
 Administrador -r--  crear_examen
 note on link
@@ -18,11 +18,11 @@ note on link
 end note
 controlador -- añadir_pregunta
 note on link
-3: question = addQuestion(description, answers)
+3: Question = Question(description, answers)
 end note
 controlador -- publicar_examen
 note on link
-4: createTest(name, question, duration) 
+4: Test = Test(name, question, duration) 
 end note
 
 @enduml

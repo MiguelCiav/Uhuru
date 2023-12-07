@@ -3,38 +3,32 @@
 skinparam NoteBackgroundColor transparent
 skinparam NoteBorderColor transparent
 
-actor Estudiante
-boundary "StudentView" as vista_estudiante
-boundary "TestView" as responder_examen
-boundary "SolutionsView" as soluciones
-control "answerTest" as controlador 
-entity Test as examen
-entity Question as pregunta
+actor Student as Estudiante
+boundary ": TestView" as responder_examen
+boundary ": SolutionsView" as soluciones
+control ": AnswerTest" as controlador 
+entity ": Test" as examen
+entity ": Question" as pregunta
 
-Estudiante -r- vista_estudiante
+Estudiante -r- responder_examen
 note on link
-1: Login(username, password)
-end note
-vista_estudiante -r- responder_examen
-note on link
-2: showTests(tests)
+1: approveInstructions()
 end note
 responder_examen -r- controlador
 note on link
-3: selectTest()
-end note
-controlador -u- soluciones
-note on link
-4: viewSolutions(questions, answers)
+2: start()
 end note
 controlador -- pregunta
 note on link
-5: answerQuestion(answer);
+3: answerQuestion(userAnswer);
 end note
 controlador -- examen
 note on link
-6: endExam()
+4: endTest()
 end note
-
+controlador -u- soluciones
+note on link
+5: viewSolutions(Question)
+end note
 
 @enduml
