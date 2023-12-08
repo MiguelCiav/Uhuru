@@ -1,0 +1,80 @@
+@startuml DIAGRAMA_CLASES
+skinparam ClassBackgroundColor white
+skinparam classAttributeIconSize 0
+hide circle
+
+class Test {
+    - type: string
+    - duration: int
+    - calification: float
+    + Test(name, question, duration)
+    + endTest(): void
+}
+
+class Question{
+    - description: string
+    - solution: int
+    - justification: string
+    - isApproved: bool
+    - userAnswer: int
+    + Question(description, answers)
+    + answerQuestion(userAnswer): void
+}
+
+class Certificate {
+    - name: string
+    - signature: string
+    - teachers: string
+    - testType: string
+    - resume: string
+    + downloadCertificate():void
+}
+
+class createTestView{
+    + createTest(): void
+}
+
+class createTest{
+    + newTest(testData): Test
+}
+
+class StudentView {
+
+}
+
+class TestView {
+    + approveInstructions():void
+}
+
+class AnswerTest {
+
+}
+
+class SolutionsView {
+    + viewSolutions(Question):void
+}
+
+class GetCertificateView {
+    + getCertificate():Certificate
+}
+
+class GetCertificate {
+    + generateCertificate():Certificate
+}
+
+' 
+createTestView --> createTest
+createTest --> Test
+StudentView --> TestView
+TestView --> AnswerTest
+AnswerTest -r-> SolutionsView
+AnswerTest --> Test 
+GetCertificateView --> GetCertificate
+GetCertificate --> Certificate
+
+' Dependencias
+
+Certificate ..> Test
+Test *-- Question
+
+@enduml
