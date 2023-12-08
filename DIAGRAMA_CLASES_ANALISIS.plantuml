@@ -63,19 +63,18 @@ class GetCertificate {
 }
 
 ' 
-createTestView -- createTest
-createTest -- Test
-StudentView -- TestView
-TestView -- AnswerTest
-AnswerTest -r- SolutionsView
-AnswerTest -- Test 
-AnswerTest -- Question
-GetCertificateView -- GetCertificate
-GetCertificate -- Certificate
+createTestView --> createTest
+createTest --> Test
+StudentView --> TestView
+TestView --> AnswerTest
+AnswerTest -r-> SolutionsView
+AnswerTest --> Test 
+GetCertificateView --> GetCertificate
+GetCertificate --> Certificate
 
 ' Dependencias
 
 Certificate ..> Test
-Test ..> Question
+Test *-- Question
 
 @enduml
