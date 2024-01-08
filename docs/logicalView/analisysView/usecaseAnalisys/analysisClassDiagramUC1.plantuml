@@ -1,4 +1,4 @@
-@startuml clase_analisis 
+@startuml analysisClassDiagramUC1
 
 actor Admin as Administrador
 boundary "createTestView" as crear_examen

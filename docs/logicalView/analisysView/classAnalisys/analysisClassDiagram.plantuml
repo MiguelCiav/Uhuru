@@ -1,0 +1,84 @@
+@startuml analysisClassDiagram
+skinparam ClassBackgroundColor white
+skinparam classAttributeIconSize 0
+hide circle
+
+class Test {
+    type: text
+    duration: number
+    calification: number
+    endTest()
+    addQuestion(Question)
+}
+
+class Question{
+    description: text
+    justification: text
+    userAnswer: Answer
+    rightAnswer: Answer
+    addAnswer(Answer)
+    answerQuestion(Answer)
+}
+
+class Answer{
+    AnswerType
+}
+
+class Certificate {
+    name: text
+    signature: text
+    teachers: text
+    testType: text
+    resume: text
+    generateCertificate()
+}
+
+class createTestView{
+    addTest(name, type, duration)
+}
+
+class createTest{
+    createNewQuestion(Question)
+}
+
+class TestListView{
+    displayTestList()
+}
+
+class TestView {
+    displayTest()
+}
+
+class AnswerTest {
+    startTest()
+}
+
+class SolutionsView {
+    viewSolutions()
+}
+
+class CertificateView {
+    obtainCertificate(): Certificate
+}
+
+class GetCertificate {
+    generateCertificate(): Certificate
+}
+
+' 
+createTestView --> createTest
+createTest --> Test
+TestListView --> TestView
+TestView --> AnswerTest
+AnswerTest -r-> SolutionsView
+AnswerTest --> Test 
+Answer -r-* Question
+CertificateView --> GetCertificate
+GetCertificate --> Certificate
+createTest --> Question
+' Dependencias
+
+Certificate ..> Test
+Test *-l- Question
+
+@enduml

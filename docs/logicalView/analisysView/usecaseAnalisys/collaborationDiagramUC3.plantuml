@@ -1,24 +1,24 @@
-@startuml clase_analisis 
+@startuml collaborationDiagramUC3
 
 skinparam NoteBackgroundColor transparent
 skinparam NoteBorderColor transparent
 
 actor Student as Estudiante
-boundary "getCertificateView" as solicitar_certificado
+boundary "CertificateView" as solicitar_certificado
 control "getCertificate" as controlador 
 entity Certificate as Certificado
 
 Estudiante -r- solicitar_certificado
 note on link
-1: getCertificate()
+1: obtainCertificate()
 end note
 solicitar_certificado -r- controlador
 note on link
-2: generateCertificate()
+2: getCertificate()
 end note
 controlador -- Certificado
 note on link
-3: downloadCertificate()
+3: generateCertificate()
 end note
 
 @enduml

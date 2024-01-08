@@ -1,0 +1,45 @@
+@startuml packageDiagram
+
+skinparam PackageBackgroundColor white
+skinparam ClassBackgroundColor white
+skinparam classAttributeIconSize 0
+hide circle
+
+package "views"{
+
+    class "SolutionsView"{}
+    class "CreateTestView"{}
+    class "TestListView"{}
+    class "TestView"{}
+    class "CertificateView"{}
+       
+    TestListView --> TestView
+}
+
+package "models"{
+
+    
+    class "Test"{}
+    class "Question"{}
+    class "Certificate"{}
+
+    Test *-r- Question
+}
+
+package "controllers"{
+
+    class "AnswerTest"{} 
+    class "CreateTest"{}
+    class "getCertificate"{}
+}
+
+CreateTestView -d-> CreateTest
+CreateTest -d-> Test
+CreateTest -d-> Question
+AnswerTest -d-> Test
+AnswerTest -d-> Question
+AnswerTest -d-> SolutionsView
+CertificateView -d-> getCertificate
+getCertificate -d-> Certificate 
+
+@enduml

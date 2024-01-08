@@ -1,15 +1,15 @@
-@startuml clase_analisis 
+@startuml analysisClassDiagramUC2
 
 actor Student as Estudiante
-boundary "StudentView" as vista_estudiante
+boundary "TestListView" as test_list
 boundary "TestView" as responder_examen
 boundary "SolutionsView" as soluciones
 control "answerTest" as controlador 
 entity Test as examen
 entity Question as pregunta
 
-Estudiante -r- vista_estudiante
-vista_estudiante -r- responder_examen
+Estudiante -r- test_list
+test_list -r- responder_examen
 responder_examen -r- controlador
 controlador -u- soluciones
 controlador -- examen

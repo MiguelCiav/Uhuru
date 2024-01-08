@@ -1,34 +1,39 @@
-@startuml clase_analisis 
+@startuml collaborationDiagramUC2
 
 skinparam NoteBackgroundColor transparent
 skinparam NoteBorderColor transparent
 
 actor Student as Estudiante
+boundary ": TestListView" as test_list
 boundary ": TestView" as responder_examen
 boundary ": SolutionsView" as soluciones
 control ": AnswerTest" as controlador 
 entity ": Test" as examen
 entity ": Question" as pregunta
 
-Estudiante -r- responder_examen
+Estudiante -r- test_list
 note on link
-1: approveInstructions()
+1: displayTestList()
+end note
+test_list -r- responder_examen
+note on link
+2: displayTest()
 end note
 responder_examen -r- controlador
 note on link
-2: start()
+3: startTest()
 end note
 controlador -- pregunta
 note on link
-3: answerQuestion(userAnswer);
+4: answerQuestion(Answer);
 end note
 controlador -- examen
 note on link
-4: endTest()
+5: endTest()
 end note
 controlador -u- soluciones
 note on link
-5: viewSolutions(Question)
+6: viewSolutions(Answers)
 end note
 
 @enduml

@@ -1,7 +1,7 @@
-@startuml clase_analisis 
+@startuml analysisClassDiagramUC3
 
 actor Student as Estudiante
-boundary "getCertificateView" as solicitar_certificado
+boundary "CertificateView" as solicitar_certificado
 control "getCertificate" as controlador 
 entity Certificate as Certificado
 

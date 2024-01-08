@@ -1,4 +1,4 @@
-@startuml clase_analisis 
+@startuml collaborationDiagramUC1
 skinparam NoteBackgroundColor transparent
 skinparam NoteBorderColor transparent
 
@@ -10,19 +10,19 @@ entity ": Question" as añadir_pregunta
 
 Administrador -r--  crear_examen
 note on link
-1: createTest()
+1: addTest(name,type,duration)
 end note
 crear_examen -r-- controlador 
 note on link
-2: newTest(testData) 
+2: createNewQuestion(Question)
 end note
 controlador -- añadir_pregunta
 note on link
-3: Question = Question(description, answers)
+3: addAnswer(Answer)
 end note
 controlador -- publicar_examen
 note on link
-4: Test = Test(name, question, duration) 
+4: addQuestion(Question)
 end note
 
 @enduml
