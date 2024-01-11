@@ -1,0 +1,37 @@
+@startuml sequenceDiagram
+
+skinparam actorStyle awesome
+
+actor Student
+boundary TestListView
+boundary TestView
+control answerTest
+boundary SolutionsView
+entity Test
+entity Question
+
+activate Student #abc8f5
+Student --> TestListView: displayTestList()
+deactivate Student
+
+activate TestListView #abc8f5
+TestListView --> TestView: displayTest()
+deactivate TestListView
+
+activate TestView #abc8f5
+TestView --> answerTest: startTest()
+deactivate TestView
+
+activate answerTest #abc8f5
+answerTest --> Question: answerQuestion(Answer)
+activate Question #abc8f5
+
+activate Test #abc8f5
+answerTest --> Test: endTest()
+deactivate Question
+
+deactivate Test
+answerTest --> SolutionsView: viewSolutions(Answers)
+activate SolutionsView #abc8f5
+
+@enduml

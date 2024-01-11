@@ -1,0 +1,83 @@
+@startUML designClassesUseCase2
+
+<style>
+classDiagram {
+  class {
+      header {
+        FontStyle bold
+      }
+  }
+}
+</style>
+
+!theme plain
+hide circle
+
+skinparam actorStyle awesome
+allowmixing
+
+actor Student
+
+Class TestListView{
+
+    displayTestList()
+}
+
+Class TestView{
+
+    displayTest()
+}
+
+Class AnswerTest{
+
+    startTest()
+}
+
+Class SolutionsView{
+
+    viewSolutions()
+}
+
+Class Test{
+
+    type: text 
+    duration: number
+    calification: number
+
+    endTest()
+    addQuestion(Question)
+}
+
+Class Question{
+
+    description: text
+    justification: text
+    userAnswer: Answer
+    rightAnswer: Answer
+
+    addAnwer(Answer)
+    answerQuestion(Answer)
+}
+
+Class Answer{
+
+    answerType:
+}
+
+
+Student -r-> TestListView
+
+TestListView -r-> TestView
+
+TestView -r-> AnswerTest
+
+AnswerTest -r-> SolutionsView
+
+AnswerTest -d-> Test
+
+Question -r-* Test
+
+Answer -r-* Question
+
+
+@endUML
