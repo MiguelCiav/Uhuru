@@ -58,20 +58,20 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 
 ### UC1 - Crear Examen
 <p align="center">
-  <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC1.png">
-  <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC1.png">
+  <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC1.png">
+  <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC1.png">
 </p>
 
 ### UC2 - Responder Examen
 <p align="center">
-  <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC2.png">
-  <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC2.png">
+  <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC2.png">
+  <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC2.png">
 </p>
 
 ### UC3 - Obtener Certificado
 <p align="center">
-  <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC3.png">
-  <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC3.png">
+  <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC3.png">
+  <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC3.png">
 </p>
 
 ## Diagrama de paquetes de análisis
