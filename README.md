@@ -48,34 +48,48 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 - [Prototipo Interactivo en Figma](https://www.figma.com/file/dzXOa9yDAVZmEWpZJqrHQO/Prototipo-De-Interfaz?type=design&node-id=0%3A1&mode=design&t=nIYMdCu8Bfcdtu5P-1)
 - [Pantallas](docs/prototype/INTERFACE.md)
 
-## Análisis
-## Diagrama de clases de analisis
+## Modelo de Análisis
+### Diagrama de clases de analisis
 <p align="center">
   <img style="width:80%; heigth:300px" src="/docs/logicalView/analisysView/classAnalisys/analysisClassDiagram.png">
 </p>
 
-## Diagrama de clases de análisis y de colaboración de casos de uso prioritarios 
+### Diagrama de clases de análisis y de colaboración de casos de uso prioritarios 
 
-### UC1 - Crear Examen
+#### UC1 - Crear Examen
 <p align="center">
   <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC1.png">
   <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC1.png">
 </p>
 
-### UC2 - Responder Examen
+#### UC2 - Responder Examen
 <p align="center">
   <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC2.png">
   <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC2.png">
 </p>
 
-### UC3 - Obtener Certificado
+#### UC3 - Obtener Certificado
 <p align="center">
   <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC3.png">
   <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC3.png">
 </p>
 
-## Diagrama de paquetes de análisis
+### Diagrama de paquetes de análisis
 <p align="center">
   <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/packageAnalisys/packageDiagram.png">
 </p>
 
+## Modelo de Diseño
+### Diagrama de clases
+![Diagrama de diseño de clases](docs\logicalView\designView\usecaseDesign\designClasses.png)
+
+### Diagrama de secuencia
+![Diagrama de secuencia de clases](docs\logicalView\designView\classDesing\sequenceDiagram.png)
+
+### Diagrama de Traza
+![Diagrama de traza de clases](docs\logicalView\designView\packageDesign\traceDiagram.png)
+
+## Modelo de Despliegue
+<p align="center">
+  <img src="docs\physicalView\DeploymentDiagram.png">
+</p>
