@@ -18,7 +18,7 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 
 ### Diagrama de estado
 <p align="center">
-  <img style="width:80%; heigth:300px" src="docs\scenariosView\domainModel\StateDiagram.png">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\domainModel\StateDiagram.png">
 </p>
 
 ## Modelo de Casos de Uso
@@ -29,14 +29,14 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 
 ### Diagrama de Estados de los casos de uso
 <p align="center">
-  <img style="width:80%; heigth:300px" src="docs\scenariosView\useCaseModel\usecaseStateDiagram.png">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\useCaseModel\usecaseStateDiagram.png">
 </p>
 
 ### Especificaciones de los casos de uso
 <p align="center">
-  <img style="width:80%; heigth:300px" src="docs\scenariosView\useCaseModel\CU1CrearExamen.png">
-  <img style="width:80%; heigth:300px" src="docs\scenariosView\useCaseModel\CU2ResponderExamen.png">
-  <img style="width:80%; heigth:300px" src="docs\scenariosView\useCaseModel\CU3ObtenerCertificado.png">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\useCaseModel\CU1CrearExamen.png">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\useCaseModel\CU2ResponderExamen.png">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\useCaseModel\CU3ObtenerCertificado.png">
 </p>
 
 ## Prototipo de pantallas
@@ -51,7 +51,7 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 ## Modelo de Análisis
 ### Diagrama de clases de analisis
 <p align="center">
-  <img style="width:80%; heigth:300px" src="/docs/logicalView/analisysView/classAnalisys/analysisClassDiagram.png">
+  <img style="width:60%; heigth:300px" src="/docs/logicalView/analisysView/classAnalisys/analysisClassDiagram.png">
 </p>
 
 ### Diagrama de clases de análisis y de colaboración de casos de uso prioritarios 
@@ -81,13 +81,19 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 
 ## Modelo de Diseño
 ### Diagrama de clases
-![Diagrama de diseño de clases](docs\logicalView\designView\usecaseDesign\designClasses.png)
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\logicalView\designView\usecaseDesign\designClasses.png">
+</p>
 
 ### Diagrama de secuencia
-![Diagrama de secuencia de clases](docs\logicalView\designView\classDesing\sequenceDiagram.png)
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\logicalView\designView\classDesing\sequenceDiagram.png">
+</p>
 
 ### Diagrama de Traza
-![Diagrama de traza de clases](docs\logicalView\designView\packageDesign\traceDiagram.png)
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\logicalView\designView\packageDesign\traceDiagram.png">
+</p>
 
 ## Modelo de Despliegue
 <p align="center">
