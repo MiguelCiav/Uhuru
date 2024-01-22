@@ -18,17 +18,75 @@ allowmixing
 
 actor Student
 
-Class TestListView{
+'' NAVBAR
 
-    displayTestList()
+Class "<<JPanel>> \n Navbar " as Navbar {
 }
 
-Class TestView{
+Class "<<JLabel>> \n InteractiveIcon" as InteractiveIcon {
+    - labelIcon: ImageIcon
+    - labelAction: mouseListener
+    + interactiveIcon(image, mouseListener)
+}
+
+InteractiveIcon -l- Navbar: 3
+
+'' TESTVIEW
+
+Class "<<JPanel>> \n TestViewPanel " as TestViewPanel {
+
+}
+
+Class "<<JPanel>> \n QuestionsPanel  " as QuestionsPanel {
+
+}
+
+Class "<<JPanel>> \n TestInfoPanel " as TestInfoPanel {
+    - clock: JLabel 
+    - answeredQuestions: JLabel
+    - testName: JLabel
+}
+
+Class "<<JScrollPane>> \n ScrollableQuestionsPanel " as ScrollableQuestionsPanel {
+
+}
+
+Class "<<JButton>> \n BlueButton " as BlueButton {
+
+}
+
+Class "<<JPanel>> \n QuestionPanel  " as QuestionPanel {
+    - questionNumber: JLabel
+    - questionDomain: JLabel
+    - optionText[]: JTextField
+    - optionBox[]: JCheckBox
+}
+
+Class "<<JLabel>> \n QuestionDescription" as QuestionDescription {
+    - questionType: Boolean
+    - text: String
+}
+
+QuestionPanel -- ScrollableQuestionsPanel
+
+TestInfoPanel -- QuestionsPanel
+
+BlueButton -- TestInfoPanel
+
+ScrollableQuestionsPanel -- QuestionsPanel
+
+Navbar -l- TestViewPanel
+QuestionsPanel -- TestViewPanel
+TestViewPanel -- TestView
+QuestionDescription -d-* QuestionPanel
+
+Class "<<JFrame>> \n TestView  " as TestView{
 
     displayTest()
+
 }
 
-Class AnswerTest{
+Class AnswerTestController{
 
     startTest()
 }
@@ -65,15 +123,13 @@ Class Answer{
 }
 
 
-Student -r-> TestListView
+Student -r-> TestView
 
-TestListView -r-> TestView
+TestView -r-> AnswerTestController
 
-TestView -r-> AnswerTest
+AnswerTestController -r-> SolutionsView
 
-AnswerTest -r-> SolutionsView
-
-AnswerTest -d-> Test
+AnswerTestController -d-> Test
 
 Question -r-* Test
 

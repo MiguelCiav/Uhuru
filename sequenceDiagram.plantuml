@@ -5,33 +5,57 @@ skinparam actorStyle awesome
 actor Student
 boundary TestListView
 boundary TestView
-control answerTest
 boundary SolutionsView
+control answerTest
 entity Test
 entity Question
 
 activate Student #abc8f5
-Student --> TestListView: displayTestList()
-deactivate Student
 
 activate TestListView #abc8f5
-TestListView --> TestView: displayTest()
+Student --> TestListView: selectTest()
+
+TestListView --> TestView: showTest(IDTest)
 deactivate TestListView
 
 activate TestView #abc8f5
-TestView --> answerTest: startTest()
+TestView --> answerTest: getQuestions(IDTest)
+activate answerTest #abc8f5
+
+answerTest --> Test: getQuestionInfo()
+activate Test #abc8f5
+Test --> answerTest: question
+deactivate Test
+
+answerTest --> Question: getQuestionText()
+activate Question #abc8f5
+Question --> answerTest: text
+answerTest --> TestView: question
+deactivate answerTest
+
+deactivate Question
+TestView --> Student: test
+Student --> answerTest: startTest()
+
 deactivate TestView
 
 activate answerTest #abc8f5
-answerTest --> Question: answerQuestion(Answer)
+Student --> answerTest: answerQuestion(Answer, QuestionID)
+answerTest --> Question :saveUserAnswer(Answer, QuestionID)
 activate Question #abc8f5
 
 activate Test #abc8f5
-answerTest --> Test: endTest()
+Student --> answerTest: endTest()
 deactivate Question
 
-deactivate Test
-answerTest --> SolutionsView: viewSolutions(Answers)
+deactivate answerTest
+Student --> SolutionsView: viewSolutions(Answers)
 activate SolutionsView #abc8f5
+SolutionsView --> Test :getQuestionsAndAnswers()
+Test --> SolutionsView :questionsAnswers
+SolutionsView --> Student: showSolutions()
+deactivate Test
+deactivate Student
+deactivate SolutionsView
 
 @enduml

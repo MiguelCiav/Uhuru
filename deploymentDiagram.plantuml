@@ -1,8 +1,8 @@
 @startuml DeploymentDiagram
 
 node "Personal Computer" as PC 
-component Uhuru
+component Uhuru.jar
 
-PC *-- Uhuru
+PC *-- Uhuru.jar
 
 @enduml
