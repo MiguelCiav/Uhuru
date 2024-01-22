@@ -18,7 +18,7 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 
 ### Diagrama de estado
 <p align="center">
-  <img style="width:80%; heigth:300px" src="docs\scenariosView\domainModel\StateDiagram.png">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\domainModel\StateDiagram.png">
 </p>
 
 ## Modelo de Casos de Uso
@@ -29,14 +29,14 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 
 ### Diagrama de Estados de los casos de uso
 <p align="center">
-  <img style="width:80%; heigth:300px" src="docs\scenariosView\useCaseModel\usecaseStateDiagram.png">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\useCaseModel\usecaseStateDiagram.png">
 </p>
 
 ### Especificaciones de los casos de uso
 <p align="center">
-  <img style="width:80%; heigth:300px" src="docs\scenariosView\useCaseModel\CU1CrearExamen.png">
-  <img style="width:80%; heigth:300px" src="docs\scenariosView\useCaseModel\CU2ResponderExamen.png">
-  <img style="width:80%; heigth:300px" src="docs\scenariosView\useCaseModel\CU3ObtenerCertificado.png">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\useCaseModel\CU1CrearExamen.png">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\useCaseModel\CU2ResponderExamen.png">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\useCaseModel\CU3ObtenerCertificado.png">
 </p>
 
 ## Prototipo de pantallas
@@ -48,34 +48,54 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 - [Prototipo Interactivo en Figma](https://www.figma.com/file/dzXOa9yDAVZmEWpZJqrHQO/Prototipo-De-Interfaz?type=design&node-id=0%3A1&mode=design&t=nIYMdCu8Bfcdtu5P-1)
 - [Pantallas](docs/prototype/INTERFACE.md)
 
-## Análisis
-## Diagrama de clases de analisis
+## Modelo de Análisis
+### Diagrama de clases de analisis
 <p align="center">
-  <img style="width:80%; heigth:300px" src="/docs/logicalView/analisysView/classAnalisys/analysisClassDiagram.png">
+  <img style="width:60%; heigth:300px" src="/docs/logicalView/analisysView/classAnalisys/analysisClassDiagram.png">
 </p>
 
-## Diagrama de clases de análisis y de colaboración de casos de uso prioritarios 
+### Diagrama de clases de análisis y de colaboración de casos de uso prioritarios 
 
-### UC1 - Crear Examen
+#### UC1 - Crear Examen
 <p align="center">
   <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC1.png">
   <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC1.png">
 </p>
 
-### UC2 - Responder Examen
+#### UC2 - Responder Examen
 <p align="center">
   <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC2.png">
   <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC2.png">
 </p>
 
-### UC3 - Obtener Certificado
+#### UC3 - Obtener Certificado
 <p align="center">
   <img style="width:40%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/analysisClassDiagramUC3.png">
   <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/usecaseAnalisys/collaborationDiagramUC3.png">
 </p>
 
-## Diagrama de paquetes de análisis
+### Diagrama de paquetes de análisis
 <p align="center">
   <img style="width:80%; heigth:300px" src="docs/logicalView/analisysView/packageAnalisys/packageDiagram.png">
 </p>
 
+## Modelo de Diseño
+### Diagrama de clases
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\logicalView\designView\usecaseDesign\designClasses.png">
+</p>
+
+### Diagrama de secuencia
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\logicalView\designView\classDesing\sequenceDiagram.png">
+</p>
+
+### Diagrama de Traza
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\logicalView\designView\packageDesign\traceDiagram.png">
+</p>
+
+## Modelo de Despliegue
+<p align="center">
+  <img src="docs\physicalView\DeploymentDiagram.png">
+</p>
