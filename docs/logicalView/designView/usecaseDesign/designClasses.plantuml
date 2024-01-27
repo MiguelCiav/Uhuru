@@ -31,13 +31,13 @@ Class "<<JLabel>> \n InteractiveIcon" as InteractiveIcon {
 
 InteractiveIcon -l- Navbar: 3
 
-'' TESTVIEW
+'' TESTVIEWPANEL
 
 Class "<<JPanel>> \n TestViewPanel " as TestViewPanel {
 
 }
 
-Class "<<JPanel>> \n QuestionsPanel  " as QuestionsPanel {
+Class "<<JPanel>> \n QuestionsListPanel  " as QuestionsListPanel {
 
 }
 
@@ -58,6 +58,7 @@ Class "<<JButton>> \n BlueButton " as BlueButton {
 Class "<<JPanel>> \n QuestionPanel  " as QuestionPanel {
     - questionNumber: JLabel
     - questionDomain: JLabel
+    - questionDescription: JLabel
     - optionText[]: JTextField
     - optionBox[]: JCheckBox
 }
@@ -67,33 +68,66 @@ Class "<<JLabel>> \n QuestionDescription" as QuestionDescription {
     - text: String
 }
 
-QuestionPanel -- ScrollableQuestionsPanel
+Class "<<JFrame>> \n TestView  " as TestView{
 
-TestInfoPanel -- QuestionsPanel
+}
 
+QuestionPanel "1...*" -- ScrollableQuestionsPanel
+TestInfoPanel -- QuestionsListPanel
 BlueButton -- TestInfoPanel
-
-ScrollableQuestionsPanel -- QuestionsPanel
-
+ScrollableQuestionsPanel -- QuestionsListPanel
 Navbar -l- TestViewPanel
-QuestionsPanel -- TestViewPanel
+QuestionsListPanel -- TestViewPanel
 TestViewPanel -- TestView
 QuestionDescription -d-* QuestionPanel
 
-Class "<<JFrame>> \n TestView  " as TestView{
+'' SOLUTIONSVIEW
 
-    displayTest()
+Class "<<JFrame>> \n SolutionsView" as SolutionsView {
+
+    
+}
+
+Class "<<JPanel>> \n SolutionsViewPanel  " as SolutionsViewPanel {
 
 }
+
+CLass "<<JPanel>> \n QuestionsSummaryPanel " as QuestionsSummaryPanel {
+    - QuestionSummary[]: JLabel
+}
+
+Class "<<JScrollPane>> \n ScrollableQuestionsSummaryPanel " as ScrollableQuestionsSummaryPanel {
+    - QuestionsSummaryTitle: JLabel
+}
+
+Class "<<JPanel>> \n AnswersSummaryPanel" as AnswersSummaryPanel {
+    - answersTitle: JLabel
+}
+
+Class "<<JScrollPane>> \n ScrollableAnswersPanel" as ScrollableAnswersPanel {
+
+}
+
+Class "<<JPanel>> \n AnswerPanel" as AnswerPanel {
+    - option: JTextField
+    - optionJustification: JLabel
+    - resultIcon: JLabel
+}
+
+SolutionsView -r- SolutionsViewPanel
+SolutionsViewPanel -- AnswersSummaryPanel
+SolutionsViewPanel -- QuestionsSummaryPanel
+SolutionsViewPanel -u- Navbar
+QuestionsSummaryPanel -- ScrollableQuestionsSummaryPanel
+AnswersSummaryPanel -- ScrollableAnswersPanel
+ScrollableAnswersPanel -- "1...*" AnswerPanel
+
+'' ANSWERTESTCONTROLLER
 
 Class AnswerTestController{
-
-    startTest()
-}
-
-Class SolutionsView{
-
-    viewSolutions()
+    loadQuestions()
+    saveAnswers()
+    loadAnswers()
 }
 
 Class Test{
@@ -104,6 +138,7 @@ Class Test{
 
     endTest()
     addQuestion(Question)
+    getQuestion()
 }
 
 Class Question{
@@ -122,18 +157,23 @@ Class Answer{
     answerType:
 }
 
+'' CASO DE USO GETCERTIFICATE
 
-Student -r-> TestView
 
-TestView -r-> AnswerTestController
 
-AnswerTestController -r-> SolutionsView
+Student -r- TestView
 
-AnswerTestController -d-> Test
+TestView -r- AnswerTestController
 
-Question -r-* Test
+AnswerTestController -r- SolutionsView
+
+AnswerTestController -d- Test
+
+Question -u-* Test
 
 Answer -r-* Question
+
+
 
 
 @endUML
