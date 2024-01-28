@@ -159,7 +159,36 @@ Class Answer{
 
 '' CASO DE USO GETCERTIFICATE
 
+class "<<JFrame>> \n TestListView" as TestListView {
 
+}
+
+class "<<JLayeredPane>> \n TestListViewPanel" as TestListViewPanel {
+
+}
+
+class "<<JPanel>> \n courseListPanel" as courseListPanel {
+
+}
+
+class "<<JPanel>> \n AvailableTestsPanel" as AvailableTestsPanel {
+    - AvailableTestsTitle: JLabel
+}
+
+class "<<JPanel>> \n AvailableTestScrollablePanel" as AvailableTestScrollablePanel {
+    - selectTest[]: JLabel
+}
+
+class "<<JPanel>> \n getCertificatePopUp" as getCertificatePopUp {
+    
+}
+
+
+TestListView -- TestListViewPanel
+TestListViewPanel -- courseListPanel
+TestListViewPanel -- AvailableTestsPanel
+TestListViewPanel -- getCertificatePopUp
+AvailableTestsPanel -- AvailableTestScrollablePanel
 
 Student -r- TestView
 
@@ -172,8 +201,5 @@ AnswerTestController -d- Test
 Question -u-* Test
 
 Answer -r-* Question
-
-
-
 
 @endUML
