@@ -6,17 +6,17 @@ import java.awt.*;
 public class TestView extends JFrame{
 
     PrincipalPanel testViewPanel = new PrincipalPanel();
-    JPanel panelito = new JPanel();
+    QuestionsListPanel questionsListPanel = new QuestionsListPanel();
 
     TestView(){
         super("Uhuru");
-        setSize(new Dimension(1080,720));
+        
+        setMinimumSize(new Dimension(1375, 480));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(true);
 
-        panelito.add(new BlueButton("Hola",500));
-
-        testViewPanel.setContentPanel(panelito);
+        //questionsListPanel.add(new BlueButton("Hola",500));
+        testViewPanel.setContentPanel(questionsListPanel);
         add(testViewPanel);
 
         setVisible(true);
