@@ -6,21 +6,31 @@ public class ScrollableQuestionsPanel extends JPanel {
 
     ScrollableQuestionsPanel (){
         setBackground(new Color(255,255,255));
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(new GridBagLayout());
+        setBorder(null);
         initializePanel();
     }
 
     private void initializePanel(){
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        constraints.weightx = 1;
+        constraints.gridheight = 1;
+        constraints.gridwidth = 1;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.anchor = GridBagConstraints.WEST;
+        constraints.insets= new Insets(0,20,25,20);
+
         QuestionPanel panel = new QuestionPanel();
-        add(panel);
-        add(Box.createRigidArea(new Dimension(5, 32)));
-        QuestionPanel panel2 = new QuestionPanel();
-        add(panel2);
-        /*for (int i = 0; i < 10; i++) {
-            QuestionPanel panel = new QuestionPanel();
-            panel.setBackground(new Color(152 - i, 193, 217)); // Varying colors for visual distinction
-            panel.questionNumber.setText("hola" + i);
-            this.add(panel);
-        }*/
+        add(panel, constraints);
+
+        
+        for (int i = 1; i <= 5; i++) {
+            constraints.gridy = i;
+            QuestionPanel panel2 = new QuestionPanel();
+            panel2.questionNumber.setText(""+ i);
+            this.add(panel2, constraints);
+        }
     }
 }

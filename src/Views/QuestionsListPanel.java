@@ -18,7 +18,7 @@ public class QuestionsListPanel extends JPanel{
         constraints.gridwidth = 1;
         constraints.fill = GridBagConstraints.BOTH;
         constraints.anchor = GridBagConstraints.NORTH;
-        constraints.insets= new Insets(0,0,10,0);
+        constraints.insets= new Insets(10,0,10,10);
 
         add(new TestInfoPanel(), constraints);
 
@@ -31,16 +31,15 @@ public class QuestionsListPanel extends JPanel{
         JScrollPane scrollPanel = new JScrollPane(scroll, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPanel.setBorder(null);
         scrollPanel.getVerticalScrollBar().setBackground(new Color(255,255,255));
-        
-        scrollPanel.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
-        @Override
-        protected void configureScrollBarColors() {
-            this.thumbColor = new Color(61, 90, 128);
-        }
-});
+        scrollPanel.getVerticalScrollBar().setUnitIncrement(6);
 
-        
-        
+        scrollPanel.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
+            @Override
+            protected void configureScrollBarColors() {
+                this.thumbColor = new Color(61, 90, 128);
+            }
+        });
+
         add(scrollPanel, constraints);
         
     }

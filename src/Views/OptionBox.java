@@ -4,10 +4,11 @@ import java.awt.*;
 
 public class OptionBox extends JPanel{
     JTextArea optionText = new JTextArea ();
-    JCheckBox optionBox = new JCheckBox(" ");
+    JCheckBox optionBox = new JCheckBox();
+    JPanel optionTextPanel = new JPanel();
 
-    OptionBox   (){
-        setBackground(new Color(152, 193, 217));
+    OptionBox (){
+        setBackground(new Color(216,233,241));
         setLayout(new GridBagLayout());
         setBorder(null);
 
@@ -22,9 +23,18 @@ public class OptionBox extends JPanel{
         constraints.anchor = GridBagConstraints.WEST;
         constraints.insets= new Insets(10,10,10,10);
         
+        optionBox.setBackground(new Color(216,233,241));
+        optionBox.setSelected(true);
+        optionBox.setIcon(new ImageIcon(getClass().getResource("img/OptionBox/pulsado.png")));
+        optionBox.setSelectedIcon(new ImageIcon(getClass().getResource("img/OptionBox/sin pulsar.png")));
         add(optionBox, constraints);
 
         //text
+        optionTextPanel.setLayout(new GridBagLayout());
+        optionTextPanel.setBackground(Color.WHITE);
+        constraints.weightx = 1;
+        optionTextPanel.add(optionText, constraints);
+
         constraints.gridx = 1;
         constraints.weightx = 1;
         constraints.fill = GridBagConstraints.HORIZONTAL;
@@ -34,8 +44,8 @@ public class OptionBox extends JPanel{
         optionText.setEditable (false); 
         optionText.setLineWrap(true);
         optionText.setWrapStyleWord(true);
+        add(optionTextPanel, constraints);
 
-
-        add(optionText, constraints);
+        
     }
 }

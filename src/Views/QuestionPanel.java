@@ -10,7 +10,7 @@ public class QuestionPanel extends JPanel{
     
 
     QuestionPanel (){
-        setBackground(new Color(152, 193, 217));
+        setBackground(new Color(216,233,241));
         setLayout(new GridBagLayout());
         setBorder(null);
         
@@ -23,7 +23,7 @@ public class QuestionPanel extends JPanel{
         constraints.gridwidth = 1;
         constraints.fill = GridBagConstraints.BOTH;
         constraints.anchor = GridBagConstraints.WEST;
-        constraints.insets= new Insets(10,10,10,10);
+        constraints.insets= new Insets(10,20,10,10);
 
         questionNumber.setFont(new Font("Futura", Font.BOLD, 30));
         questionNumber.setForeground(new Color(61,90,128));
@@ -51,16 +51,23 @@ public class QuestionPanel extends JPanel{
         questionDescription.setLineWrap(true);
         questionDescription.setWrapStyleWord(true);
         questionDescription.setMinimumSize(new Dimension(200,400));
-        questionDescription.setBackground(new Color(152, 193, 217));
+        questionDescription.setBackground(new Color(216,233,241));
 
         add(questionDescription, constraints);
 
         //cajas
-        constraints.gridx = 1;
-        constraints.gridy = 2;
-        constraints.fill = GridBagConstraints.HORIZONTAL;
-        add(new OptionBox(),constraints);
+        addOptionBox(4);
 
     }
-
+    
+    private void addOptionBox(int numberOptions){
+        GridBagConstraints constraints = new GridBagConstraints();
+        for (int i=1 ; i<=numberOptions; i++){
+            constraints.gridx = 1;
+            constraints.gridy = 1+i;
+            constraints.fill = GridBagConstraints.HORIZONTAL;
+            constraints.insets= new Insets(10,10,5,20);
+            add(new OptionBox(),constraints);
+        }
+    }
 }

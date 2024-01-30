@@ -28,7 +28,7 @@ public class TestInfoPanel extends JPanel{
         constraints.insets= new Insets(10,32,10,30);
 
         testName.setText("Curso - Nombre del Examen");
-        testName.setFont(new Font("Futura", Font.BOLD, 25));
+        testName.setFont(new Font("Futura", Font.BOLD, 30));
         testName.setForeground(new Color(61,90,128));
         add (testName, constraints);
 
@@ -38,7 +38,7 @@ public class TestInfoPanel extends JPanel{
         constraints.anchor = GridBagConstraints.CENTER;
         clock.setIcon(new ImageIcon(getClass().getResource("img/testView/reloj.png")));
         clock.setText("11:11");
-        clock.setFont(new Font("Futura", Font.BOLD, 16));
+        clock.setFont(new Font("Futura", Font.BOLD, 30));
         clock.setForeground(new Color(61,90,128));
         add (clock, constraints);
 
@@ -46,7 +46,7 @@ public class TestInfoPanel extends JPanel{
         constraints.gridx=2;
         answeredQuestions.setIcon(new ImageIcon(getClass().getResource("img/testView/bandera.png")));
         answeredQuestions.setText("1/20");
-        answeredQuestions.setFont(new Font("Futura", Font.BOLD, 20));
+        answeredQuestions.setFont(new Font("Futura", Font.BOLD, 30));
         answeredQuestions.setForeground(new Color(61,90,128));
         add (answeredQuestions, constraints);
         
