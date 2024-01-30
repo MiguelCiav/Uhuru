@@ -6,7 +6,7 @@ actor Student
 boundary TestListView
 boundary TestView
 boundary SolutionsView
-control answerTest
+control answerTestController
 entity Test
 entity Question
 
@@ -19,41 +19,46 @@ TestListView --> TestView: showTest(IDTest)
 deactivate TestListView
 
 activate TestView #abc8f5
-TestView --> answerTest: getQuestions(IDTest)
-activate answerTest #abc8f5
+TestView --> answerTestController: loadQuestions()
+activate answerTestController #abc8f5
 
-answerTest --> Test: getQuestionInfo()
+answerTestController --> Test: getQuestion()
 activate Test #abc8f5
-Test --> answerTest: question
+Test --> answerTestController: question
 deactivate Test
 
-answerTest --> Question: getQuestionText()
+answerTestController --> Question: getDescription()
 activate Question #abc8f5
-Question --> answerTest: text
-answerTest --> TestView: question
-deactivate answerTest
-
+Question --> answerTestController: Description: String
+answerTestController --> Question: getJustification()
+Question --> answerTestController: Justification: String
+answerTestController --> TestView: question
 deactivate Question
+
+deactivate answerTestController
+
+
 TestView --> Student: test
-Student --> answerTest: startTest()
+Student --> TestView: startTest()
 
-deactivate TestView
-
-activate answerTest #abc8f5
-Student --> answerTest: answerQuestion(Answer, QuestionID)
-answerTest --> Question :saveUserAnswer(Answer, QuestionID)
+Student --> TestView: answerQuestion(Answer, QuestionID)
+TestView --> answerTestController: saveAnswer(Answer, QuestionID)
+activate answerTestController #abc8f5
+answerTestController --> Question :setUserAnswer(Answer. QuestionID)
+deactivate answerTestController
 activate Question #abc8f5
 
-activate Test #abc8f5
-Student --> answerTest: endTest()
+Student --> TestView: endTest()
+deactivate TestView
 deactivate Question
 
-deactivate answerTest
-Student --> SolutionsView: viewSolutions(Answers)
+
+Student --> SolutionsView: viewSolutions()
 activate SolutionsView #abc8f5
-SolutionsView --> Test :getQuestionsAndAnswers()
-Test --> SolutionsView :questionsAnswers
-SolutionsView --> Student: showSolutions()
+SolutionsView --> Test :getQuestions()
+activate Test #abc8f5
+Test --> SolutionsView :questions.answers
+SolutionsView --> Student: showAnswers
 deactivate Test
 deactivate Student
 deactivate SolutionsView

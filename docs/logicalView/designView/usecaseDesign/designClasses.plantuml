@@ -18,24 +18,35 @@ allowmixing
 
 actor Student
 
+'' PRINCIPAL PANEL
+
+Class PrincipalPanel {
+    + setContentPanel(): void
+    - initializePanel(): void
+}
+
+Navbar -d-* PrincipalPanel
+
 '' NAVBAR
 
 Class "<<JPanel>> \n Navbar " as Navbar {
+
 }
 
-Class "<<JLabel>> \n InteractiveIcon" as InteractiveIcon {
-    - labelIcon: ImageIcon
-    - labelAction: mouseListener
-    + interactiveIcon(image, mouseListener)
+'' INTERACTIVE LABEL
+
+Class "<<JLabel>> \n InteractiveLabel" as InteractiveLabel {
+    
 }
 
-InteractiveIcon -l- Navbar: 3
+Class "<<MouseListener>> \n LabelListener" as LabelListener {
+    - mouseClicked(MouseEvent e)
+}
+
+InteractiveLabel -d-* Navbar: 3
+LabelListener --* InteractiveLabel
 
 '' TESTVIEWPANEL
-
-Class "<<JPanel>> \n TestViewPanel " as TestViewPanel {
-
-}
 
 Class "<<JPanel>> \n QuestionsListPanel  " as QuestionsListPanel {
 
@@ -64,22 +75,21 @@ Class "<<JPanel>> \n QuestionPanel  " as QuestionPanel {
 }
 
 Class "<<JLabel>> \n QuestionDescription" as QuestionDescription {
-    - questionType: Boolean
-    - text: String
+    + QuestionDescription(QuestionType)
 }
 
 Class "<<JFrame>> \n TestView  " as TestView{
 
 }
 
-QuestionPanel "1...*" -- ScrollableQuestionsPanel
-TestInfoPanel -- QuestionsListPanel
-BlueButton -- TestInfoPanel
-ScrollableQuestionsPanel -- QuestionsListPanel
-Navbar -l- TestViewPanel
-QuestionsListPanel -- TestViewPanel
-TestViewPanel -- TestView
-QuestionDescription -d-* QuestionPanel
+PrincipalPanel -l-* TestView
+
+QuestionPanel "1...*" --* ScrollableQuestionsPanel
+TestInfoPanel --* QuestionsListPanel
+BlueButton --* TestInfoPanel
+ScrollableQuestionsPanel --* QuestionsListPanel
+QuestionsListPanel --* TestView
+QuestionDescription --* QuestionPanel
 
 '' SOLUTIONSVIEW
 
@@ -114,13 +124,13 @@ Class "<<JPanel>> \n AnswerPanel" as AnswerPanel {
     - resultIcon: JLabel
 }
 
-SolutionsView -r- SolutionsViewPanel
-SolutionsViewPanel -- AnswersSummaryPanel
-SolutionsViewPanel -- QuestionsSummaryPanel
-SolutionsViewPanel -u- Navbar
-QuestionsSummaryPanel -- ScrollableQuestionsSummaryPanel
-AnswersSummaryPanel -- ScrollableAnswersPanel
-ScrollableAnswersPanel -- "1...*" AnswerPanel
+PrincipalPanel --* SolutionsView
+SolutionsView *-- SolutionsViewPanel
+SolutionsViewPanel *-- AnswersSummaryPanel
+SolutionsViewPanel *-- QuestionsSummaryPanel
+QuestionsSummaryPanel *-- ScrollableQuestionsSummaryPanel
+AnswersSummaryPanel *-- ScrollableAnswersPanel
+ScrollableAnswersPanel *-- "1...*" AnswerPanel
 
 '' ANSWERTESTCONTROLLER
 
@@ -132,74 +142,45 @@ Class AnswerTestController{
 
 Class Test{
 
-    type: text 
-    duration: number
-    calification: number
+    - type: String
+    - duration: int 
+    - calification: float
 
-    endTest()
-    addQuestion(Question)
-    getQuestion()
+    + addQuestion(Question)
+    + getQuestion(questionNumber)
 }
 
 Class Question{
 
-    description: text
-    justification: text
-    userAnswer: Answer
-    rightAnswer: Answer
+    - description: string
+    - justification: text
+    - userAnswer: answer
+    - questionType: boolean
+    - questionNumber: int
 
-    addAnwer(Answer)
-    answerQuestion(Answer)
+    + addAnswer(Answer): void
+    + answerQuestion(Answer): void
+    + getDescription(): String
+    + getJustification(): String
+    + getUserAnswer(): Answer
+    + getQuestionType(): boolean
+    + getQuestionNumber(): int
+    + getAnswer(answerNumber): Answer
 }
 
 Class Answer{
 
-    answerType:
+    - answerText: String
+    - answerType: Boolean
+    - isCorrect: Boolean
+    - answerNumber: int
 }
-
-'' CASO DE USO GETCERTIFICATE
-
-class "<<JFrame>> \n TestListView" as TestListView {
-
-}
-
-class "<<JLayeredPane>> \n TestListViewPanel" as TestListViewPanel {
-
-}
-
-class "<<JPanel>> \n courseListPanel" as courseListPanel {
-
-}
-
-class "<<JPanel>> \n AvailableTestsPanel" as AvailableTestsPanel {
-    - AvailableTestsTitle: JLabel
-}
-
-class "<<JPanel>> \n AvailableTestScrollablePanel" as AvailableTestScrollablePanel {
-    - selectTest[]: JLabel
-}
-
-class "<<JPanel>> \n getCertificatePopUp" as getCertificatePopUp {
-    
-}
-
-
-TestListView -- TestListViewPanel
-TestListViewPanel -- courseListPanel
-TestListViewPanel -- AvailableTestsPanel
-TestListViewPanel -- getCertificatePopUp
-AvailableTestsPanel -- AvailableTestScrollablePanel
 
 Student -r- TestView
-
-TestView -r- AnswerTestController
-
-AnswerTestController -r- SolutionsView
-
-AnswerTestController -d- Test
-
-Question -u-* Test
-
+TestView --> AnswerTestController
+AnswerTestController <-r- SolutionsView
+AnswerTestController --> Test
+Question -r-* Test
 Answer -r-* Question
 
 @endUML

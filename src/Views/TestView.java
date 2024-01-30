@@ -10,8 +10,9 @@ public class TestView extends JFrame{
 
     TestView(){
         super("Uhuru");
+        setMinimumSize(new Dimension(800,600));
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         
-        setMinimumSize(new Dimension(1375, 480));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(true);
 
