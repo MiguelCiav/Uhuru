@@ -13,6 +13,7 @@ public class BlueButton extends JButton implements ActionListener{
         setForeground(Color.WHITE);
         setFocusPainted(false);
         setPreferredSize(new Dimension(width, 65));
+        setMinimumSize(new Dimension(width, 65));
     }
 
     @Override public void actionPerformed(ActionEvent e){

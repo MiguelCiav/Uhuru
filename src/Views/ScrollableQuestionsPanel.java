@@ -13,6 +13,9 @@ public class ScrollableQuestionsPanel extends JPanel {
     private void initializePanel(){
         QuestionPanel panel = new QuestionPanel();
         add(panel);
+        add(Box.createRigidArea(new Dimension(5, 32)));
+        QuestionPanel panel2 = new QuestionPanel();
+        add(panel2);
         /*for (int i = 0; i < 10; i++) {
             QuestionPanel panel = new QuestionPanel();
             panel.setBackground(new Color(152 - i, 193, 217)); // Varying colors for visual distinction

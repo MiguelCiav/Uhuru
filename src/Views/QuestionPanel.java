@@ -1,20 +1,19 @@
 package Views;
 import javax.swing.*;
-import javax.swing.border.Border;
 
 import java.awt.*;
 
 public class QuestionPanel extends JPanel{
     JLabel questionNumber = new JLabel();
     JLabel questionDomain = new JLabel();
-    JLabel questionDescription = new JLabel();
-    JTextField optionText = new JTextField ();
-    JCheckBox optionBox = new JCheckBox();
+    JTextArea questionDescription = new JTextArea();
+    
 
     QuestionPanel (){
         setBackground(new Color(152, 193, 217));
         setLayout(new GridBagLayout());
         setBorder(null);
+        
         //numero
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.gridx = 0;
@@ -35,11 +34,6 @@ public class QuestionPanel extends JPanel{
         constraints.gridx = 1;
         constraints.gridy = 0;
         constraints.weightx = 1.0;
-        constraints.weightx = 1.0;
-        constraints.gridheight = 1;
-        constraints.gridwidth = 1;
-        constraints.fill = GridBagConstraints.BOTH;
-        constraints.anchor = GridBagConstraints.WEST;
 
         questionDomain.setFont(new Font("Futura", Font.BOLD, 24));
         questionDomain.setForeground(new Color(0,0,0));
@@ -49,16 +43,23 @@ public class QuestionPanel extends JPanel{
         //pregunta
         constraints.gridx = 1;
         constraints.gridy = 1;
-        constraints.weightx = 1.0;
-        constraints.gridheight = 1;
-        constraints.gridwidth = 1;
-        constraints.fill = GridBagConstraints.HORIZONTAL;
-        constraints.anchor = GridBagConstraints.WEST;
 
         questionDescription.setFont(new Font("Futura", Font.ITALIC, 16));
         questionDescription.setForeground(new Color(0,0,0));
         questionDescription.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at elit eget dui gravida suscipit. Mauris et ipsum id felis venenatis consectetur. Etiam ac nibh sit amet quam aliquam sodales vel sed quam.");
+        questionDescription.setEditable (false); 
+        questionDescription.setLineWrap(true);
+        questionDescription.setWrapStyleWord(true);
+        questionDescription.setMinimumSize(new Dimension(200,400));
+        questionDescription.setBackground(new Color(152, 193, 217));
+
         add(questionDescription, constraints);
+
+        //cajas
+        constraints.gridx = 1;
+        constraints.gridy = 2;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        add(new OptionBox(),constraints);
 
     }
 

@@ -1,5 +1,7 @@
 package Views;
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicScrollBarUI;
+
 import java.awt.*;
 
 public class QuestionsListPanel extends JPanel{
@@ -28,6 +30,17 @@ public class QuestionsListPanel extends JPanel{
         ScrollableQuestionsPanel scroll = new ScrollableQuestionsPanel ();
         JScrollPane scrollPanel = new JScrollPane(scroll, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPanel.setBorder(null);
+        scrollPanel.getVerticalScrollBar().setBackground(new Color(255,255,255));
+        
+        scrollPanel.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
+        @Override
+        protected void configureScrollBarColors() {
+            this.thumbColor = new Color(61, 90, 128);
+        }
+});
+
+        
+        
         add(scrollPanel, constraints);
         
     }
