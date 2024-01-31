@@ -86,15 +86,17 @@ public class QuestionPanel extends JPanelRound{
     private void addOptionBox(int numberOptions){
 
         constraints = new GridBagConstraints();
+        ButtonGroup groupOne = new ButtonGroup();
         
+
         for (int i=1 ; i<=numberOptions; i++){
-            
+            OptionBox newOption = new OptionBox();
             constraints.gridx = 1;
             constraints.gridy = 1+i;
             constraints.fill = GridBagConstraints.HORIZONTAL;
             constraints.insets= new Insets(5,10,5,20);
-            add(new OptionBox(),constraints);
-
+            newOption.addToGroup(groupOne);
+            add(newOption,constraints);
         }
 
     }

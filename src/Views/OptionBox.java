@@ -4,16 +4,21 @@ import java.awt.*;
 
 public class OptionBox extends JPanelRound{
     JTextArea optionText = new JTextArea ();
-    JCheckBox optionBox = new JCheckBox();
+    JRadioButton optionButton = new JRadioButton();
     JPanelRound optionTextPanel = new JPanelRound();
+    GridBagConstraints constraints = new GridBagConstraints();
 
     OptionBox (){
         setBackground(new Color(216,233,241));
         setLayout(new GridBagLayout());
         setBorder(null);
 
-        //check
-        GridBagConstraints constraints = new GridBagConstraints();
+        addOptionButtom();
+        addOptionText();
+        
+    }
+
+    private void addOptionButtom (){
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.weightx = 0;
@@ -23,17 +28,20 @@ public class OptionBox extends JPanelRound{
         constraints.anchor = GridBagConstraints.WEST;
         constraints.insets= new Insets(10,10,10,10);
         
-        optionBox.setBackground(new Color(216,233,241));
-        optionBox.setSelected(true);
-        optionBox.setIcon(new ImageIcon(getClass().getResource("img/OptionBox/pulsado.png")));
-        optionBox.setSelectedIcon(new ImageIcon(getClass().getResource("img/OptionBox/sin pulsar.png")));
-        add(optionBox, constraints);
+        optionButton.setBackground(new Color(216,233,241));
+        optionButton.setSelected(true);
+        optionButton.setBorder(null);
+        optionButton.setIcon(new ImageIcon(getClass().getResource("img/OptionBox/sin pulsar.png")));
+        optionButton.setSelectedIcon(new ImageIcon(getClass().getResource("img/OptionBox/pulsado.png")));
+        optionButton.setSelected(false);
+        
+        add(optionButton, constraints);
+    }
 
-        //text
+    private void addOptionText(){
         optionTextPanel.setLayout(new GridBagLayout());
         optionTextPanel.setRoundBackgroundColor(Color.WHITE);
         constraints.insets= new Insets(20,10,20,10);
-
         constraints.weightx = 1;
         optionTextPanel.add(optionText, constraints);
 
@@ -47,8 +55,12 @@ public class OptionBox extends JPanelRound{
         optionText.setLineWrap(true);
         optionText.setWrapStyleWord(true);
         constraints.insets= new Insets(10,10,10,10);
-        add(optionTextPanel, constraints);
 
+        add(optionTextPanel, constraints);
+    }
+
+    public void addToGroup (ButtonGroup group){
+        group.add(optionButton);
         
     }
 }
