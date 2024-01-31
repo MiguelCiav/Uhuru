@@ -2,7 +2,6 @@ package Views;
 import javax.swing.*;
 
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class QuestionPanel extends JPanel{
 
@@ -97,7 +96,7 @@ public class QuestionPanel extends JPanel{
             add(new OptionBox(),constraints);
 
         }
-        
+
     }
 
 }
