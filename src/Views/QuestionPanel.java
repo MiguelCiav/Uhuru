@@ -13,7 +13,7 @@ public class QuestionPanel extends JPanelRound{
         this.questionNumber = String.valueOf(questionNumber);
         constraints = new GridBagConstraints();
 
-        setBackground(new Color(216,233,241));
+        setRoundBackgroundColor(new Color(216,233,241));
         setLayout(new GridBagLayout());
         setBorder(null);
         
