@@ -1,6 +1,8 @@
 package Views;
 import javax.swing.*;
 import java.awt.*;
+import java.util.TimerTask;
+import java.util.Timer;
 
 public class TestInfoPanel extends JPanel{
     
@@ -19,6 +21,7 @@ public class TestInfoPanel extends JPanel{
         addClock();
         addAmountOfAnsweredQuestions();
         addEndButton();
+        updateTimer(60);
 
     }
 
@@ -82,4 +85,59 @@ public class TestInfoPanel extends JPanel{
         add(endButton, constraints);
         
     }
+
+    private void updateTimer (int minutesInput){
+        final int TIME_UNIT = 60000;
+        final long DELAY = 0;
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TestTimer(minutesInput, timer), DELAY, TIME_UNIT);
+    }
+
+    private class TestTimer extends TimerTask {
+        private Timer timer;
+        private int minutesTOTAL;
+        private int minutes;
+        private int hours;
+
+        TestTimer(int minutesInput, Timer timer) {
+            minutesTOTAL= minutesInput;
+            this.timer = timer;
+
+        }
+
+        public void run() {
+            convertTime();
+            if (minutes <= 9) {
+                clock.setText(hours + ":0" + minutes);
+                minutesTOTAL--;        
+            }
+            else{
+                clock.setText(hours+ ":" + minutes);
+                minutesTOTAL--; 
+            }
+            
+            if (minutesTOTAL < 0) {
+                timer.cancel();
+                clock.setText("Time Over");
+            }
+        }
+
+        private void convertTime(){
+            if(minutesTOTAL >= 60){
+                hours = minutesTOTAL/60;
+                minutes = minutesTOTAL%60;
+            }
+            else{
+                minutes=minutesTOTAL;
+                hours = 0;
+            }
+
+        }
+
+    }
+
+    public void setAnsweredQuestions (String input){
+        answeredQuestions.setText(input);
+    }
+
 }
