@@ -2,19 +2,29 @@ package Views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class SlidingQuestionsPanel extends JPanel{
+public class SlidingQuestionsPanel extends JPanel implements MouseListener{
 
+    GridBagConstraints constraints = new GridBagConstraints();
     JLabel questionNumber = new JLabel("Pregunta 1");
-    JLabel questionSummary = new JLabel("Soy un resumen");
+    JLabel questionSummary = new JLabel();
 
-    SlidingQuestionsPanel(){
-        setBackground(new Color(152,193,217));
+    SlidingQuestionsPanel(String summary){
+        
+        setBackground(new Color(216,233,241));
+        questionSummary.setBackground(new Color(216,233,241));
         setLayout(new GridBagLayout());
-        GridBagConstraints constraints = new GridBagConstraints();
+
+        addMouseListener(this);
+
+        questionSummary.setText("<html>" + summary + "</html>");
 
         questionNumber.setFont(new Font("Futura", Font.BOLD, 15));
         questionSummary.setFont(new Font("Futura", Font.PLAIN, 12));
+    }
+
+    public void addQuestion(){
         
         constraints.insets = new Insets(5, 30, 5, 10);
         constraints.gridx = 0;
@@ -32,6 +42,16 @@ public class SlidingQuestionsPanel extends JPanel{
         constraints.insets = new Insets(0, 30, 30, 10);
 
         add(questionSummary, constraints);
-
     }
+
+    
+    @Override public void mouseClicked(MouseEvent e){
+        setBackground(new Color(143, 179, 227));
+        questionSummary.setBackground(new Color(143, 179, 227));
+    }
+
+    @Override public void mousePressed(MouseEvent e){}
+    @Override public void mouseReleased(MouseEvent e){}
+    @Override public void mouseEntered(MouseEvent e){}
+    @Override public void mouseExited(MouseEvent e){}
 }
