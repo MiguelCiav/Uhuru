@@ -12,8 +12,8 @@ import javax.swing.JPanel;
 public class JPanelRound extends JPanel{
 
     private Color roundBackgroundColor = new Color(217,233,241);
-    private int arcw=30;
-    private int arch=30;
+    private int horizontalAngle=30;
+    private int verticalAngle=30;
    
     public JPanelRound() {
         super();
@@ -22,23 +22,23 @@ public class JPanelRound extends JPanel{
    
    
      @Override
-    protected void paintComponent(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g;
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+    protected void paintComponent(Graphics graphic) {
+        Graphics2D mainGraphic = (Graphics2D) graphic;
+        mainGraphic.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
        
        
-        Paint oldPaint = g2.getPaint();
-        RoundRectangle2D.Float r2d = new RoundRectangle2D.Float(0,0,getWidth(),getHeight()-1,getArcw(),getArch());
-        g2.clip(r2d);
-        g2.setPaint(oldPaint);
-        g2.setPaint(roundBackgroundColor);
-        g2.fillRect(0,0,getWidth(),getHeight());
-        g2.setStroke(new BasicStroke(0));
-        g2.setPaint(new GradientPaint(0.0f, 0.0f,getRoundBackgroundColor(),0.0f, getHeight(), getRoundBackgroundColor()));
-        g2.drawRoundRect(0, 0, getWidth()-2 , getHeight() -2, 18, 18);
+        Paint oldPaint = mainGraphic.getPaint();
+        RoundRectangle2D.Float roundRectangle = new RoundRectangle2D.Float(0,0,getWidth(),getHeight()-1,gethorizontalAngle(),getverticalAngle());
+        mainGraphic.clip(roundRectangle);
+        mainGraphic.setPaint(oldPaint);
+        mainGraphic.setPaint(roundBackgroundColor);
+        mainGraphic.fillRect(0,0,getWidth(),getHeight());
+        mainGraphic.setStroke(new BasicStroke(0));
+        mainGraphic.setPaint(new GradientPaint(0.0f, 0.0f,getRoundBackgroundColor(),0.0f, getHeight(), getRoundBackgroundColor()));
+        mainGraphic.drawRoundRect(0, 0, getWidth()-2 , getHeight() -2, 18, 18);
        
-        g2.setPaint(oldPaint);
-        super.paintComponent(g);
+        mainGraphic.setPaint(oldPaint);
+        super.paintComponent(graphic);
     }
 
     public Color getRoundBackgroundColor() {
@@ -49,19 +49,19 @@ public class JPanelRound extends JPanel{
         this.roundBackgroundColor = color;
     }
 
-    public int getArcw() {
-        return arcw;
+    public int gethorizontalAngle() {
+        return horizontalAngle;
     }
 
-    public void setArcw(int arcw) {
-        this.arcw = arcw;
+    public void sethorizontalAngle(int horizontalAngle) {
+        this.horizontalAngle = horizontalAngle;
     }
 
-    public int getArch() {
-        return arch;
+    public int getverticalAngle() {
+        return verticalAngle;
     }
 
-    public void setArch(int arch) {
-        this.arch = arch;
+    public void setverticalAngle(int verticalAngle) {
+        this.verticalAngle = verticalAngle;
     }
 }
