@@ -8,7 +8,7 @@ public class TestInfoPanel extends JPanel{
     private JLabel clock = new JLabel();
     private JLabel answeredQuestions = new JLabel();
     private JLabel testName = new JLabel();
-    private BlueButton endButton = new BlueButton("Terminar Examen",233);
+    private BlueButton endButton = new BlueButton("Terminar Examen",233,true);
     
     TestInfoPanel(){
 
