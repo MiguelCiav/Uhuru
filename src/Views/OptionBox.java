@@ -2,10 +2,10 @@ package Views;
 import javax.swing.*;
 import java.awt.*;
 
-public class OptionBox extends JPanel{
+public class OptionBox extends JPanelRound{
     JTextArea optionText = new JTextArea ();
     JCheckBox optionBox = new JCheckBox();
-    JPanel optionTextPanel = new JPanel();
+    JPanelRound optionTextPanel = new JPanelRound();
 
     OptionBox (){
         setBackground(new Color(216,233,241));
@@ -31,7 +31,9 @@ public class OptionBox extends JPanel{
 
         //text
         optionTextPanel.setLayout(new GridBagLayout());
-        optionTextPanel.setBackground(Color.WHITE);
+        optionTextPanel.setRoundBackgroundColor(Color.WHITE);
+        constraints.insets= new Insets(20,10,20,10);
+
         constraints.weightx = 1;
         optionTextPanel.add(optionText, constraints);
 
@@ -44,6 +46,7 @@ public class OptionBox extends JPanel{
         optionText.setEditable (false); 
         optionText.setLineWrap(true);
         optionText.setWrapStyleWord(true);
+        constraints.insets= new Insets(10,10,10,10);
         add(optionTextPanel, constraints);
 
         

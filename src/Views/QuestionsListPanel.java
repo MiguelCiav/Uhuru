@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
-public class QuestionsListPanel extends JPanel{
+public class QuestionsListPanel extends JPanelRound{
 
     private GridBagConstraints constraints;
     private double height = 0;
@@ -16,7 +16,7 @@ public class QuestionsListPanel extends JPanel{
 
     QuestionsListPanel(){
 
-        setBackground(new Color(255,255,255));
+        setRoundBackgroundColor(new Color(255,255,255));
         setLayout(new GridBagLayout());
         
         constraints = new GridBagConstraints();

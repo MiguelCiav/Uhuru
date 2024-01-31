@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class QuestionPanel extends JPanel{
+public class QuestionPanel extends JPanelRound{
 
     GridBagConstraints constraints;
     private String questionNumber;
@@ -71,7 +71,7 @@ public class QuestionPanel extends JPanel{
         constraints.weightx = 0.0;
         constraints.fill = GridBagConstraints.HORIZONTAL;
 
-        constraints.insets= new Insets(0,0,0,20);
+        constraints.insets= new Insets(0,0,10,20);
 
         questionDescription.setLineWrap(true);
         questionDescription.setWrapStyleWord(true);
@@ -93,7 +93,7 @@ public class QuestionPanel extends JPanel{
             constraints.gridx = 1;
             constraints.gridy = 1+i;
             constraints.fill = GridBagConstraints.HORIZONTAL;
-            constraints.insets= new Insets(10,10,5,20);
+            constraints.insets= new Insets(5,10,5,20);
             add(new OptionBox(),constraints);
 
         }
