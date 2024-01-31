@@ -35,7 +35,7 @@ public class PrincipalPanel extends JPanel{
         constraints.fill = GridBagConstraints.BOTH;
         constraints.gridheight = 1;
         constraints.gridwidth = 1;
-        constraints.insets = new Insets(32, 32, 32, 32);
+        constraints.insets = new Insets(20, 20, 20, 20);
         constraints.anchor = GridBagConstraints.CENTER;
 
         this.add(contentPanel, constraints);
