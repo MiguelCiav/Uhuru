@@ -51,6 +51,7 @@ public class TestInfoPanel extends JPanel{
         clock.setText("11:11");
         clock.setFont(new Font("Futura", Font.BOLD, 30));
         clock.setForeground(new Color(61,90,128));
+        clock.setIconTextGap(16);
 
         add (clock, constraints);
 
@@ -64,6 +65,7 @@ public class TestInfoPanel extends JPanel{
         answeredQuestions.setText("1/20");
         answeredQuestions.setFont(new Font("Futura", Font.BOLD, 30));
         answeredQuestions.setForeground(new Color(61,90,128));
+        answeredQuestions.setIconTextGap(16);
 
         add (answeredQuestions, constraints);
 
