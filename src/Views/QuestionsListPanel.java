@@ -10,6 +10,9 @@ public class QuestionsListPanel extends JPanel{
 
     private GridBagConstraints constraints;
     private double height = 0;
+    private int amountOfResize = 0;
+    private ScrollableQuestionsPanel scroll;
+    private JScrollPane scrollPanel;
 
     QuestionsListPanel(){
 
@@ -19,6 +22,7 @@ public class QuestionsListPanel extends JPanel{
         constraints = new GridBagConstraints();
 
         addTestInfoPanel();
+        setScrollableQuestionsPanel();
         addScrollablePanel();
 
     }
@@ -37,15 +41,10 @@ public class QuestionsListPanel extends JPanel{
         add(new TestInfoPanel(), constraints);
     }
 
-    private void addScrollablePanel(){
+    private void setScrollableQuestionsPanel(){
 
-        ScrollableQuestionsPanel scroll = new ScrollableQuestionsPanel ();
-        JScrollPane scrollPanel = new JScrollPane(scroll);
-
-        constraints.gridy = 1;
-        constraints.weighty = 1.0;
-        constraints.anchor = GridBagConstraints.CENTER;
-        constraints.insets= new Insets(20,20,20,20);
+        scroll = new ScrollableQuestionsPanel();
+        scrollPanel = new JScrollPane(scroll);
 
         scrollPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -60,20 +59,31 @@ public class QuestionsListPanel extends JPanel{
             }
         });
 
+        setResizable();
+
+    }
+
+    private void setResizable(){
+
         scrollPanel.addComponentListener(new ComponentListener() {
 
             @Override
             public void componentResized(ComponentEvent e) {
 
-                if(height == 0){
-                    height = scroll.getHeight() * 1.75;
+                System.out.println("resiziao");
+
+                if(amountOfResize > 1){
+                    if(height == 0){
+                        height = scroll.getHeight() * 1.75;
+                    }
+    
+                    scroll.setPreferredSize(new Dimension(scrollPanel.getWidth() - 20, (int) height));
+                    scroll.validate();
+                    scroll.repaint();
                 }
 
-                scroll.setPreferredSize(new Dimension(scrollPanel.getWidth() - 20, (int) height));
-
-                scroll.validate();
-                scroll.repaint();
-
+                amountOfResize++;
+                
             }
 
             @Override
@@ -87,7 +97,17 @@ public class QuestionsListPanel extends JPanel{
             
         });
 
+    }
+
+    private void addScrollablePanel(){
+
+        constraints.gridy = 1;
+        constraints.weighty = 1.0;
+        constraints.anchor = GridBagConstraints.CENTER;
+        constraints.insets= new Insets(20,20,20,20);
+        
         add(scrollPanel, constraints);
+
     }
     
 }

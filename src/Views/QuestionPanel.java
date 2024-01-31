@@ -97,6 +97,7 @@ public class QuestionPanel extends JPanel{
             add(new OptionBox(),constraints);
 
         }
+        
     }
 
 }
