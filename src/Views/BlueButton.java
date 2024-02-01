@@ -12,7 +12,7 @@ public class BlueButton extends JButton implements ActionListener{
     private Color primaryColor;
     private Color secondaryColor;
 
-    BlueButton(String buttonName, int width, boolean typeOne){
+    BlueButton(String buttonName, int width, int type){
         
         super(buttonName);
 
@@ -24,15 +24,20 @@ public class BlueButton extends JButton implements ActionListener{
         setContentAreaFilled(false);
         setBorderPainted(false);
 
-        if (typeOne) {
+        if (type==1) {
             setForeground(Color.WHITE);
             primaryColor = new Color(61, 90, 128);
             secondaryColor = new Color(152, 193, 217);
         }
-        else{
+        else if (type==2){
             setForeground(new Color(61, 90, 128));
             primaryColor = new Color(152, 193, 217);
             secondaryColor = new Color(217,233,241);
+        }
+        else if(type==3){
+            setForeground(new Color(61, 90, 128));
+            primaryColor = Color.WHITE;
+            secondaryColor = new Color(152, 193, 217);
         }
 
     }

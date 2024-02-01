@@ -19,7 +19,7 @@ public class TestView extends JFrame{
         //questionsListPanel.add(new BlueButton("Hola",500));
         testViewPanel.setContentPanel(questionsListPanel);
         add(testViewPanel);
-
+        add(new JPanelTransparent());
         setVisible(true);
     }
 }
