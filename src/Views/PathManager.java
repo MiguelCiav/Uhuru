@@ -7,14 +7,15 @@ import static java.nio.file.StandardOpenOption.*;
 
 public class PathManager{
     private Path path = Paths.get("");
-    String currentDirectory = path.toAbsolutePath().toString();
-    String[] directoryArray;
-    String directoryName ="";
+    private String currentDirectory;
+    private String[] directoryArray;
+    private String directoryName ="";
 
     PathManager(){
         path = Paths.get("");
         currentDirectory = path.toAbsolutePath().toString();
     }
+
 
     public String setFileLink(String relativePath){
 

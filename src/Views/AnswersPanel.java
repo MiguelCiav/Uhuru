@@ -50,7 +50,6 @@ public class AnswersPanel extends JPanelRound{
         constraints.gridx = 1;
         constraints.weightx = 0.0;
         constraints.insets = new Insets(0, 16, 0, 16);
-
         add(checkBox, constraints);
 
     }

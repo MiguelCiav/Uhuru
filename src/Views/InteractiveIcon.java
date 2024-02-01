@@ -11,11 +11,13 @@ import javax.swing.*;
 public class InteractiveIcon extends JLabel{
 
     InteractiveIcon(String imageURL){
-        this.setIcon(new ImageIcon(getClass().getResource(imageURL)));
+        PathManager interactiveIconImageURL = new PathManager(); 
+        this.setIcon(new ImageIcon(interactiveIconImageURL.setFileLink(imageURL)));
     }
 
     InteractiveIcon(String label, String imageURL, IconListener action){
-        this.setIcon(new ImageIcon(getClass().getResource(imageURL)));
+        PathManager interactiveIconImageURL = new PathManager();
+        this.setIcon(new ImageIcon(interactiveIconImageURL.setFileLink(imageURL)));
         this.setText(label); 
         addMouseListener(action);
     }
