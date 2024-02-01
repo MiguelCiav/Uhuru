@@ -13,6 +13,7 @@ public class LabelSummary extends JPanel implements MouseListener{
     String questionSummary;
     JTextArea questionSummaryLabel = new JTextArea();
     JLabel testLabel = new JLabel();
+    JLabel arrowLabel;
     GridBagConstraints constraints = new GridBagConstraints();
 
     LabelSummary(int questionNumber, String questionSummary){
@@ -47,6 +48,9 @@ public class LabelSummary extends JPanel implements MouseListener{
         testLabel.setFocusable(false);
         testLabel.setText("TEST");
 
+        PathManager manager = new PathManager();
+        arrowLabel = new JLabel(new ImageIcon(manager.setFileLink("src\\Views\\img\\testListView\\siguiente.png")));
+
     }
 
     private void addTestLabel(){
@@ -60,10 +64,14 @@ public class LabelSummary extends JPanel implements MouseListener{
         constraints.anchor = GridBagConstraints.WEST;
         constraints.insets = new Insets(16, 16, 16, 16);
 
-        JScrollPane auxiliarPane = new JScrollPane(testLabel,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        auxiliarPane.setBorder(null);
+        add(testLabel, constraints);
 
-        add(auxiliarPane, constraints);
+        constraints.gridx = 1;
+        constraints.anchor = GridBagConstraints.EAST;
+
+        add(arrowLabel, constraints);
+
+        arrowLabel.addMouseListener(new testFrameAction());
 
     }
 
@@ -108,5 +116,35 @@ public class LabelSummary extends JPanel implements MouseListener{
     @Override public void mouseReleased(MouseEvent e){}
     @Override public void mouseEntered(MouseEvent e){}
     @Override public void mouseExited(MouseEvent e){}
+
+
+    private class testFrameAction implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            new TestView();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            System.out.println("");
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            System.out.println("");
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            System.out.println("");
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            System.out.println("");
+        }
+
+    }
 
 }

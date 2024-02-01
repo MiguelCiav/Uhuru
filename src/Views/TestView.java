@@ -16,10 +16,10 @@ public class TestView extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(true);
 
-        //questionsListPanel.add(new BlueButton("Hola",500));
+        questionsListPanel.add(new BlueButton("Hola",500,0));
         testViewPanel.setContentPanel(questionsListPanel);
-        add(testViewPanel);
-        add(new JPanelTransparent());
+        /*add(testViewPanel);
+        add(new JPanelTransparent());*/
         setVisible(true);
     }
 }
