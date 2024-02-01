@@ -13,12 +13,13 @@ public class OptionBox extends JPanelRound{
         setLayout(new GridBagLayout());
         setBorder(null);
 
-        addOptionButtom();
+        addOptionButton();
         addOptionText();
         
     }
 
-    private void addOptionButtom (){
+    private void addOptionButton(){
+        PathManager optionButtonImageURL = new PathManager();
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.weightx = 0;
@@ -31,8 +32,8 @@ public class OptionBox extends JPanelRound{
         optionButton.setBackground(new Color(216,233,241));
         optionButton.setSelected(true);
         optionButton.setBorder(null);
-        optionButton.setIcon(new ImageIcon(getClass().getResource("img/OptionBox/sin pulsar.png")));
-        optionButton.setSelectedIcon(new ImageIcon(getClass().getResource("img/OptionBox/pulsado.png")));
+        optionButton.setIcon(new ImageIcon(optionButtonImageURL.setFileLink("img\\OptionBox\\sin pulsar.png")));
+        optionButton.setSelectedIcon(new ImageIcon(optionButtonImageURL.setFileLink("img\\OptionBox\\pulsado.png")));
         optionButton.setSelected(false);
         
         add(optionButton, constraints);
