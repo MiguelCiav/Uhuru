@@ -24,7 +24,6 @@ public class QuestionPanel extends JPanelRound{
 
     }
 
-
     private void addQuestionNumber(){
 
         JLabel questionNumberLabel = new JLabel();

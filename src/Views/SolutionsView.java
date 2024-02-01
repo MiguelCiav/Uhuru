@@ -1,12 +1,13 @@
 package Views;
 
-public class SolutionsView extends PrincipalDoublePanel{
+public class SolutionsView extends abstractDoublePanel{
     
-    private QuestionsSummaryPanel questionsPanel = new QuestionsSummaryPanel();
-    private AnswersSummaryPanel answersPanel = new AnswersSummaryPanel();
+    private LabelContainer questionsSummaryPanel;
+    private AnswersSummaryPanel answersSummaryPanel = new AnswersSummaryPanel();
 
     SolutionsView (){
         super();
+        questionsSummaryPanel = new LabelContainer("Preguntas", LabelContainer.QUESTIONS_CONTAINER);
         addPanels();
     }
 
@@ -14,8 +15,8 @@ public class SolutionsView extends PrincipalDoublePanel{
     protected void addPanels() {
         
         setContainerPanel();
-        addFirstPanel(questionsPanel);
-        addSecondPanel(answersPanel);
+        addFirstPanel(questionsSummaryPanel);
+        addSecondPanel(answersSummaryPanel);
         addContainerPanel();
 
     }
