@@ -32,6 +32,7 @@ class NavBar extends JPanel{
         constraints.anchor = GridBagConstraints.WEST;
 
         InteractiveIcon Logo = new InteractiveIcon("img\\NavBar\\iconDarkMini.png");
+        Logo.addMouseListener(new TestListViewAction());
 
         add(Logo, constraints);
 

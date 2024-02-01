@@ -88,8 +88,6 @@ public class CertificatePopUp extends JPanelRound{
             @Override
             public void componentResized(ComponentEvent e) {
 
-                System.out.println("resiziao");
-
                 if(amountOfResize > 1){
                     if(height == 0){
                         height = scroll.getHeight() * 1.75;

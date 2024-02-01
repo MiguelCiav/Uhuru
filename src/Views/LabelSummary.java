@@ -50,7 +50,7 @@ public class LabelSummary extends JPanelRound implements MouseListener{
         testLabel.setText("TEST");
 
         PathManager manager = new PathManager();
-        arrowLabel = new JLabel(new ImageIcon(manager.setFileLink("src\\Views\\img\\testListView\\siguiente.png")));
+        arrowLabel = new JLabel(new ImageIcon(manager.setFileLink("img\\testListView\\siguiente.png")));
 
     }
 

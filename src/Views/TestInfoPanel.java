@@ -123,7 +123,7 @@ public class TestInfoPanel extends JPanel{
             
             if (minutesTOTAL < 0) {
                 timer.cancel();
-                clock.setText("Time Over");
+                clock.setText("Tiempo Agotado");
             }
         }
 
