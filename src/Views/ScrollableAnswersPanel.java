@@ -31,7 +31,7 @@ public class ScrollableAnswersPanel extends JPanel{
         constraints.gridwidth = 1;
         constraints.weightx = 1.0;
         constraints.fill = GridBagConstraints.BOTH;
-        constraints.insets = new Insets(0,16,16,16);
+        constraints.insets = new Insets(0,20,16,20);
 
         questionDescription.setBackground(new Color(216,233,241));
         questionDescription.setBorder(null);
@@ -45,6 +45,7 @@ public class ScrollableAnswersPanel extends JPanel{
 
         constraints.gridy = 1;    
         constraints.weighty = 1.0;
+        constraints.insets = new Insets(0,20,20,20);
         constraints.fill = GridBagConstraints.BOTH;
         
         add(answersPanel, constraints);
