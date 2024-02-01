@@ -2,8 +2,9 @@ package Views;
 
 import javax.swing.*;
 import java.awt.*;
+import javax.swing.plaf.basic.BasicScrollBarUI;
 
-public class LabelContainer extends JPanel{
+public class LabelContainer extends JPanelRound{
 
     static int QUESTIONS_CONTAINER = 0;
     static int COURSES_CONTAINER = 0;
@@ -16,7 +17,7 @@ public class LabelContainer extends JPanel{
         this.title = title;
         
         setLayout(new GridBagLayout());
-        setBackground(new Color(255,255,255));
+        setRoundBackgroundColor(new Color(255,255,255));
         constraints = new GridBagConstraints();
 
         addQuestionSummaryTitle();
@@ -58,6 +59,19 @@ public class LabelContainer extends JPanel{
         auxiliarPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         auxiliarPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         auxiliarPanel.setBorder(null);
+
+        auxiliarPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        auxiliarPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        auxiliarPanel.setBorder(null);
+        auxiliarPanel.getVerticalScrollBar().setBackground(new Color(255,255,255));
+        auxiliarPanel.getVerticalScrollBar().setUnitIncrement(6);
+
+        auxiliarPanel.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
+            @Override
+            protected void configureScrollBarColors() {
+                this.thumbColor = new Color(61, 90, 128);
+            }
+        });
 
         add(auxiliarPanel, constraints);
 

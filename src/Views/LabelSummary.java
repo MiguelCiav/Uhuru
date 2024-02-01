@@ -3,8 +3,9 @@ package Views;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.plaf.basic.BasicScrollBarUI;
 
-public class LabelSummary extends JPanel implements MouseListener{
+public class LabelSummary extends JPanelRound implements MouseListener{
 
     static final int QUESTION_SUMMARY = 0;
     static final int COURSE_SUMMARY = 1;
@@ -82,7 +83,7 @@ public class LabelSummary extends JPanel implements MouseListener{
         questionSummaryLabel.setEditable(false);
         questionSummaryLabel.setFocusable(false);
         questionSummaryLabel.setLineWrap(true);
-        questionSummaryLabel.setText("AGUACATE CON GUACHAFITA ASFOJAOIFSJAOIFSJASIFOJAIOFJAOISFJASIOFJAOISFJAOISFASIFOJ");
+        questionSummaryLabel.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis odio vitae velit pretium ultrices. Nam ut velit ac dui elementum pharetra. Morbi id egestas ex. Proin ac iaculis orci, at viverra ex. Vestibulum eget feugiat ligula, et ultrices purus. Aliquam dignissim ligula nibh, sed gravida mi mollis eget. Morbi.");
 
     }
     
@@ -99,8 +100,21 @@ public class LabelSummary extends JPanel implements MouseListener{
 
         JScrollPane auxiliarPane = new JScrollPane(questionSummaryLabel,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         auxiliarPane.setBorder(null);
-        auxiliarPane.setPreferredSize(new Dimension(176,60));
+        auxiliarPane.setPreferredSize(new Dimension(200,60));
+        
+        auxiliarPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        auxiliarPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        auxiliarPane.setBorder(null);
+        auxiliarPane.getVerticalScrollBar().setBackground(new Color(255,255,255));
+        auxiliarPane.getVerticalScrollBar().setUnitIncrement(6);
 
+        auxiliarPane.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
+            @Override
+            protected void configureScrollBarColors() {
+                this.thumbColor = new Color(61, 90, 128);
+            }
+        });
+        
         add(auxiliarPane, constraints);
 
     }
@@ -122,7 +136,10 @@ public class LabelSummary extends JPanel implements MouseListener{
 
         @Override
         public void mouseClicked(MouseEvent e) {
+            
+            JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor((Component) e.getSource());
             new TestView();
+            topFrame.dispose();
         }
 
         @Override

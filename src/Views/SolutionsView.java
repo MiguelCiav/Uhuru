@@ -9,6 +9,8 @@ public class SolutionsView extends abstractDoublePanel{
         super();
         questionsSummaryPanel = new LabelContainer("Preguntas", LabelContainer.QUESTIONS_CONTAINER);
         addPanels();
+
+        setVisible(true);
     }
 
     @Override

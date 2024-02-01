@@ -7,15 +7,14 @@ public abstract class abstractDoublePanel extends JFrame{
     
     protected GridBagConstraints constraints;
     protected PrincipalPanel principalPanel = new PrincipalPanel();
-    protected JPanel containerPanel = new JPanel();
+    protected JPanelRound containerPanel = new JPanelRound();
 
     abstractDoublePanel(){
 
         setTitle("Uhuru");
-        setSize(new Dimension(1080,720));
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(true);
-        setVisible(true);
 
     }
 
@@ -24,12 +23,12 @@ public abstract class abstractDoublePanel extends JFrame{
     protected void setContainerPanel(){
 
         constraints = new GridBagConstraints();
-        containerPanel.setBackground(new Color(61,90,128));
+        containerPanel.setRoundBackgroundColor(new Color(61,90,128));
         containerPanel.setLayout(new GridBagLayout());
 
     }
 
-    protected void addFirstPanel(JPanel firstPanel){
+    protected void addFirstPanel(JPanelRound firstPanel){
 
         constraints.insets = new Insets(0, 0, 0, 20);
         constraints.gridx = 0;
@@ -43,7 +42,7 @@ public abstract class abstractDoublePanel extends JFrame{
 
     }
 
-    protected void addSecondPanel(JPanel secondPanel){
+    protected void addSecondPanel(JPanelRound secondPanel){
 
         constraints.insets = new Insets(0, 0, 0, 0);
         constraints.weightx = 1;

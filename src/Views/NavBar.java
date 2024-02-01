@@ -1,6 +1,9 @@
 package Views;
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.*;
+
+import org.w3c.dom.events.MouseEvent;
 
 //NAVBAR
 
@@ -29,6 +32,7 @@ class NavBar extends JPanel{
         constraints.anchor = GridBagConstraints.WEST;
 
         InteractiveIcon Logo = new InteractiveIcon("img/NavBar/iconDarkMini.png");
+        Logo.addMouseListener(new TestListViewAction());
 
         add(Logo, constraints);
 
@@ -42,6 +46,7 @@ class NavBar extends JPanel{
         constraints.gridx = 2;
 
         add(new InteractiveIcon("img/NavBar/user.png"), constraints);
+
     }
 
 }

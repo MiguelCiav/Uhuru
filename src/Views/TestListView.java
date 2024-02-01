@@ -9,6 +9,7 @@ public class TestListView extends abstractDoublePanel{
         super();
         courseContainer = new LabelContainer("Cursos Activos", LabelContainer.COURSES_CONTAINER);
         addPanels();
+        setVisible(true);
     }
 
     @Override

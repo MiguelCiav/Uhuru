@@ -82,6 +82,8 @@ public class TestInfoPanel extends JPanel{
         constraints.anchor = GridBagConstraints.EAST;
         constraints.insets= new Insets(5,5,5,5);
 
+        endButton.addActionListener(new SolutionsViewAction());
+
         add(endButton, constraints);
         
     }

@@ -35,7 +35,7 @@ public class ScrollableAnswersPanel extends JPanel{
 
         questionDescription.setBackground(new Color(216,233,241));
         questionDescription.setBorder(null);
-        questionDescription.setText("<html> JASFLKASJFASKJFLA LKFAJFASKFLJQOWI HNASFNHA HFNOIAN SFNHQO IHOAISHNF O OAJFOIAJSFOIA JSOIFJAOIFJ AOISFJOJ ASFIOA SJFOIAJS FOIAJS FOIAJSF OIJASFOIJOSIF JSOIFJ AOSFJ OISJA FOAJSFIOAFSJOIAFSJOIASFJOAISJF OIASJF OIAJS OFIAJSF OIAJS FOASJIF AJOFIJMASIOFJAIO AOISFJAOISFJAOISFJOI ASJOIFAOIFSJ O</html>");
+        questionDescription.setText("<html> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis odio vitae velit pretium ultrices. Nam ut velit ac dui elementum pharetra. Morbi id egestas ex. Proin ac iaculis orci, at viverra ex. Vestibulum eget feugiat ligula, et ultrices purus. Aliquam dignissim ligula nibh, sed gravida mi mollis eget. Morbi.</html>");
 
         add(questionDescription, constraints);
 

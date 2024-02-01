@@ -3,7 +3,7 @@ package Views;
 import javax.swing.*;
 import java.awt.*;
 
-public class AnswersSummaryPanel extends JPanel{
+public class AnswersSummaryPanel extends JPanelRound{
 
     GridBagConstraints constraints = new GridBagConstraints();
     JLabel answersTitle;
@@ -12,7 +12,7 @@ public class AnswersSummaryPanel extends JPanel{
     AnswersSummaryPanel(){
 
         setLayout(new GridBagLayout());
-        setBackground(new Color(255,255,255));
+        setRoundBackgroundColor(new Color(255,255,255));
 
         addAnswerTitle();
         addAnswerPanel();

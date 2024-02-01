@@ -5,7 +5,7 @@ import java.awt.*;
 import java.nio.file.*;
 import static java.nio.file.StandardOpenOption.*;
 
-public class AnswersPanel extends JPanel{
+public class AnswersPanel extends JPanelRound{
 
     GridBagConstraints constraints = new GridBagConstraints();
     JTextField option;
@@ -15,7 +15,7 @@ public class AnswersPanel extends JPanel{
     AnswersPanel(){
 
         setLayout(new GridBagLayout());
-        setBackground(new Color(216,233,241));
+        setRoundBackgroundColor(new Color(216,233,241));
         addOption();
         addIcon();
         addJustification();   
@@ -58,7 +58,7 @@ public class AnswersPanel extends JPanel{
     private void addJustification(){
 
         justification = new JTextArea();
-        justification.setText("DJFOAHFLKASFHKJASHFKJLADFHKLADSFAKSJDFHAKJSDFHKAJSDFHKLJADFHKJASDHFKJLASDFHKLJASDFHFHKLADSFAKSJDFHAKJSDFHKAJSDFHKLJADFHKJASDHFKJLASDFHKLJASDFHFHKLADSFAKSJDFHAKJSDFHKAJSDFHKLJADFHKJASDHFKJLASDFHKLJASDFHFHKLADSFAKSJDFHAKJSDFHKAJSDFHKLJADFHKJASDHFKJLASDFHKLJASDFHFHKLADSFAKSJDFHAKJSDFHKAJSDFHKLJADFHKJASDHFKJLASDFHKLJASDFHFHKLADSFAKSJDFHAKJSDFHKAJSDFHKLJADFHKJASDHFKJLASDFHKLJASDFHFHKLADSFAKSJDFHAKJSDFHKAJSDFHKLJADFHKJASDHFKJLASDFHKLJASDFHFHKLADSFAKSJDFHAKJSDFHKAJSDFHKLJADFHKJASDHFKJLASDFHKLJASDFH");
+        justification.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis odio vitae velit pretium ultrices. Nam ut velit ac dui elementum pharetra. Morbi id egestas ex. Proin ac iaculis orci, at viverra ex. Vestibulum eget feugiat ligula, et ultrices purus. Aliquam dignissim ligula nibh, sed gravida mi mollis eget. Morbi.");
         justification.setEditable(false);
         justification.setBackground(new Color(216,233,241));
         justification.setLineWrap(true);

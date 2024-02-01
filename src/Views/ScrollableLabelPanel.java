@@ -32,7 +32,7 @@ public class ScrollableLabelPanel extends JPanel{
     
     private void addQuestionsScroll(){
         for(int i = 0; i < 5; i++){
-            add(new LabelSummary(i, "AFSFAWFQASFQWFDASFWASFQWFASFWQXFAWFQWSFDASFASFASFRASFAFQFAFWASFQWFASFWQFASFWQQASFWQASFWASFWAFS"));
+            add(new LabelSummary(i, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis odio vitae velit pretium ultrices. Nam ut velit ac dui elementum pharetra. Morbi id egestas ex. Proin ac iaculis orci, at viverra ex. Vestibulum eget feugiat ligula, et ultrices purus. Aliquam dignissim ligula nibh, sed gravida mi mollis eget. Morbi."));
             add(Box.createRigidArea(new Dimension(0,20)));
         }   
     }
