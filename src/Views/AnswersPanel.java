@@ -2,6 +2,8 @@ package Views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.nio.file.*;
+import static java.nio.file.StandardOpenOption.*;
 
 public class AnswersPanel extends JPanel{
 
@@ -14,13 +16,10 @@ public class AnswersPanel extends JPanel{
 
         setLayout(new GridBagLayout());
         setBackground(new Color(216,233,241));
-
         addOption();
         addIcon();
-        addJustification();
-
+        addJustification();   
     }
-
     private void addOption(){
 
         option = new JTextField("Opcion 1");
@@ -46,8 +45,8 @@ public class AnswersPanel extends JPanel{
 
     private void addIcon(){
 
-        checkBox = new JLabel(new ImageIcon("Views/img/solutionsView/answerCheckBox.png"));
-
+        PathManager checkboxImageURL = new PathManager();
+        checkBox = new JLabel(new ImageIcon(checkboxImageURL.setFileLink("docs\\prototype\\answerCheckBox.png")));
         constraints.gridx = 1;
         constraints.weightx = 0.0;
         constraints.insets = new Insets(0, 16, 0, 16);
