@@ -72,7 +72,7 @@ public class AnswersPanel extends JPanelRound{
         constraints.insets = new Insets(16, 16, 16, 16);
         constraints.fill = GridBagConstraints.BOTH;
         
-        JScrollPane justificationScrollPane = new JScrollPane(justification);
+        JScrollPane justificationScrollPane = new JBlueScrollPane(justification);
         justificationScrollPane.setBorder(null);
         add(justificationScrollPane, constraints);
         
