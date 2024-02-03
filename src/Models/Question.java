@@ -9,7 +9,12 @@ public class Question {
     private int questionNumber;
 
 
-    public Question(){
+    public Question(String description, String justification, int questionType, int questionNumber){
+        
+        this.description = description;
+        this.justification = justification;
+        this.questionType = questionType;
+        this.questionNumber = questionNumber;
     };
 
     public void addAnswer(Answer answer){};
