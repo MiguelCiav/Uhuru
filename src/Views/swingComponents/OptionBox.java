@@ -14,12 +14,13 @@ public class OptionBox extends JPanelRound{
         setLayout(new GridBagLayout());
         setBorder(null);
 
-        addOptionButtom();
+        addOptionButton();
         addOptionText();
         
     }
 
-    private void addOptionButtom (){
+    private void addOptionButton(){
+        PathManager optionButtonImageURL = new PathManager();
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.weightx = 0;

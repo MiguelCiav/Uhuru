@@ -70,7 +70,6 @@ public class QuestionsListPanel extends JPanelRound{
             @Override
             public void componentResized(ComponentEvent e) {
 
-                System.out.println("resiziao");
 
                 if(amountOfResize > 1){
                     if(height == 0){

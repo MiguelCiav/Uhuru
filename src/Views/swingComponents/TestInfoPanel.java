@@ -4,6 +4,7 @@ import javax.swing.*;
 import Views.listeners.SolutionsViewAction;
 
 import java.awt.*;
+import java.nio.file.Path;
 import java.util.TimerTask;
 import java.util.Timer;
 
@@ -64,7 +65,8 @@ public class TestInfoPanel extends JPanel{
     }
 
     private void addAmountOfAnsweredQuestions(){
-
+        
+        PathManager amountOfAnsweredQuestionsImageURL = new PathManager();
         constraints.gridx=2;
 
         answeredQuestions.setIcon(new ImageIcon(getClass().getResource("../img/testView/bandera.png")));
@@ -123,7 +125,7 @@ public class TestInfoPanel extends JPanel{
             
             if (minutesTOTAL < 0) {
                 timer.cancel();
-                clock.setText("Time Over");
+                clock.setText("Tiempo Agotado");
             }
         }
 

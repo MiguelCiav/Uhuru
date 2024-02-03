@@ -50,6 +50,8 @@ public class CertificatePopUp extends JPanelRound{
     }
 
     public void addExitButton(){
+
+        PathManager exitButtonImageURL = new PathManager();
         JLabel exitButton = new JLabel();
         
         constraints.gridx=1;
@@ -86,8 +88,6 @@ public class CertificatePopUp extends JPanelRound{
 
             @Override
             public void componentResized(ComponentEvent e) {
-
-                System.out.println("resiziao");
 
                 if(amountOfResize > 1){
                     if(height == 0){
