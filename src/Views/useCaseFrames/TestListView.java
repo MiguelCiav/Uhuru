@@ -22,8 +22,7 @@ public class TestListView extends JFrame{
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setMinimumSize(new Dimension(800,600));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.getContentPane().add(new NavBar());
-        this.getContentPane().add(doublePanel);
+        add(doublePanel);
 
         setVisible(true);
     }

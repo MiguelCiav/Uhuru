@@ -11,18 +11,31 @@ import Views.listeners.TestListViewAction;
 
 public class NavBar extends JPanel{
 
-    //CONSTRUCTOR
+    private GridBagConstraints constraints;
+    private static NavBar navBar;
 
-    public NavBar(){
+    private NavBar(){
 
-        //Define el color del navbar
         setBackground(Color.white);
-
-        //Define el layout
         setLayout(new GridBagLayout());
+        constraints = new GridBagConstraints();
+
+        addLogo();
+        addFAQ();
+        addUser();
+
+    }
+
+    public static NavBar getNavBar(){
         
-        //CONSTRAINST
-        GridBagConstraints constraints = new GridBagConstraints();
+        if(navBar == null){
+            navBar = new NavBar();
+        }
+
+        return navBar;
+    }
+
+    private void addLogo(){
 
         constraints.insets = new Insets(0,20,0,0);
         constraints.ipady = 20;
@@ -38,12 +51,20 @@ public class NavBar extends JPanel{
 
         add(Logo, constraints);
 
+    }
+
+    private void addFAQ(){
+
         constraints.insets = new Insets(0,0,0,20);
         constraints.gridx = 1;
         constraints.weightx = 0.0;
         constraints.anchor = GridBagConstraints.EAST;
 
         add(new JLabel(new ImageIcon(getClass().getResource("../img/NavBar/FaQ.png"))), constraints);
+
+    }
+
+    private void addUser(){
 
         constraints.gridx = 2;
 
