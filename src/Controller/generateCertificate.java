@@ -15,65 +15,65 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.io.*;
 
 public class generateCertificate {
-    String nombre;
-    String apellido;
-    String fecha;
-    String curso;
+    String name;
+    String lastname;
+    String date;
+    String course;
 
-    Document documento;
-    FileOutputStream archivo;
-    Paragraph titulo;
-    private static final BaseColor azulOscuro = new BaseColor(61, 90, 128); //Hexa: 3D5A80
-    private static final BaseColor azulClaro = new BaseColor(152, 193, 217); //Hexa: 98C1D9
+    Document document;
+    FileOutputStream file;
+    Paragraph title;
+    private static final BaseColor blue = new BaseColor(61, 90, 128); //Hexa: 3D5A80
+    private static final BaseColor cyan = new BaseColor(152, 193, 217); //Hexa: 98C1D9
     //Tipos de fuentes a usar
-    private static final Font titleFont = FontFactory.getFont(FontFactory.HELVETICA, 25, Font.BOLDITALIC, azulOscuro);
+    private static final Font titleFont = FontFactory.getFont(FontFactory.HELVETICA, 25, Font.BOLDITALIC, blue);
     private static final Font subTitlehFont = FontFactory.getFont(FontFactory.HELVETICA, 16, Font.BOLD);
     private static final Font paragrathFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL);
     private static final Font paragrathBoldFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-    private static final String rutaImagen = "src\\Controller\\img\\iconDark.png";
-    public generateCertificate(String name, String lastname, String date, String course){
-        nombre = name;
-        apellido = lastname;
-        fecha = date;
-        curso = course;
+    private static final String pathImage = "src\\Controller\\img\\iconDark.png";
+    public generateCertificate(String inputname, String inputlastname, String inputdate, String inputcourse){
+        name = inputname;
+        lastname = inputlastname;
+        date = inputdate;
+        course = inputcourse;
 
-        documento = new Document(PageSize.LETTER.rotate());
-        titulo = new Paragraph("Certificado de Participación", titleFont);
+        document = new Document(PageSize.LETTER.rotate());
+        title = new Paragraph("Certificado de Participación", titleFont);
     }
 
     public void newPDF(){
         try {
-            archivo = new FileOutputStream ("Certificado " + curso + " "+ nombre + " " + apellido + ".pdf");
-            PdfWriter.getInstance(documento, archivo);
-            documento.open();
-            titulo.setAlignment(1); //centrado
+            file = new FileOutputStream ("Certificado " + course + " "+ name + " " + lastname + ".pdf");
+            PdfWriter.getInstance(document, file);
+            document.open();
+            title.setAlignment(1); //centrado
 
-            documento.add(titulo);
+            document.add(title);
             
             Image image;
             try {
-                image = Image.getInstance(rutaImagen);
+                image = Image.getInstance(pathImage);
                 image.setAbsolutePosition(50, 520);
-                documento.add(image);
+                document.add(image);
             } catch (BadElementException ex) {
                 System.out.println("Image BadElementException" +  ex);
             } catch (IOException ex) {
                 System.out.println("Image IOException " +  ex);
             }
-            Paragraph tituloCurso = new Paragraph("Curso: " + curso, subTitlehFont);
-            tituloCurso.setAlignment(Element.ALIGN_CENTER);
-            documento.add(tituloCurso);
+            Paragraph titlecourse = new Paragraph("course: " + course, subTitlehFont);
+            titlecourse.setAlignment(Element.ALIGN_CENTER);
+            document.add(titlecourse);
             
             //Añado 2 espacios
-            documento.add(Chunk.NEWLINE);
-            documento.add(Chunk.NEWLINE);
+            document.add(Chunk.NEWLINE);
+            document.add(Chunk.NEWLINE);
 
-            documento.add(new Paragraph("Nombre: " + nombre, paragrathBoldFont));
-            documento.add(new Paragraph("Apellido: " + apellido, paragrathBoldFont));
+            document.add(new Paragraph("name: " + name, paragrathBoldFont));
+            document.add(new Paragraph("lastname: " + lastname, paragrathBoldFont));
 
-            documento.add(Chunk.NEWLINE); //Crea una nueva linea en blanco
+            document.add(Chunk.NEWLINE); //Crea una nueva linea en blanco
 
-            Paragraph texto1 = new Paragraph("Lorem ipsum dolor sit amet, consectetur adipiscing elit." 
+            Paragraph principalParagraph = new Paragraph("Lorem ipsum dolor sit amet, consectetur adipiscing elit." 
                 + "Vivamus euismod massa non metus lacinia egestas eget nec purus. In molestie," 
                 + "nisi id pretium malesuada, nisi metus vestibulum diam, et auctor purus velit" 
                 + "vel ante. Pellentesque tempor ante nec orci feugiat, et tempus nisi pharetra." 
@@ -81,14 +81,14 @@ public class generateCertificate {
                 + "eget blandit in, vulputate ut sem. Proin a nisl eget arcu elementum laoreet."
                 + "Morbi id consequat sem. Vivamus eget libero justo.", paragrathFont);
             
-            texto1.setAlignment(Element.ALIGN_JUSTIFIED); //Alinear el texto de forma justificada
-            documento.add(texto1);
+            principalParagraph.setAlignment(Element.ALIGN_JUSTIFIED); //Alinear el texto de forma justificada
+            document.add(principalParagraph);
 
-            documento.add(Chunk.NEWLINE);
+            document.add(Chunk.NEWLINE);
 
-            documento.add(new Paragraph ("Fecha: " + fecha));
+            document.add(new Paragraph ("date: " + date));
 
-            documento.close();
+            document.close();
         } catch (FileNotFoundException e){
             System.err.println(e.getMessage());
         } catch (DocumentException e){
