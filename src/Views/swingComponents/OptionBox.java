@@ -1,6 +1,8 @@
 package Views.swingComponents;
 import javax.swing.*;
 
+import Views.listeners.AnswersAmountAction;
+
 import java.awt.*;
 
 public class OptionBox extends JPanelRound{
@@ -36,7 +38,8 @@ public class OptionBox extends JPanelRound{
         optionButton.setIcon(new ImageIcon(getClass().getResource("../img/OptionBox/sin pulsar.png")));
         optionButton.setSelectedIcon(new ImageIcon(getClass().getResource("../img/OptionBox/pulsado.png")));
         optionButton.setSelected(false);
-        
+        optionButton.addMouseListener(new AnswersAmountAction());
+
         add(optionButton, constraints);
     }
 
@@ -63,6 +66,5 @@ public class OptionBox extends JPanelRound{
 
     public void addToGroup (ButtonGroup group){
         group.add(optionButton);
-        
     }
 }

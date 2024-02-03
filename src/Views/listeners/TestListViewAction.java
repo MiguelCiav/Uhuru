@@ -1,5 +1,6 @@
 package Views.listeners;
 
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.Component;
@@ -7,7 +8,7 @@ import javax.swing.*;
 
 import Views.useCaseFrames.TestListView;
 
-public class TestListViewAction implements MouseListener{
+public class TestListViewAction extends MouseAdapter{
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -15,17 +16,5 @@ public class TestListViewAction implements MouseListener{
         new TestListView();
         topFrame.dispose();
     }
-
-    @Override
-    public void mousePressed(MouseEvent e) {}
-
-    @Override
-    public void mouseReleased(MouseEvent e) {}
-
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
 
 }

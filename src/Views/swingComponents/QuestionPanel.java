@@ -100,19 +100,4 @@ public class QuestionPanel extends JPanelRound{
 
     }
 
-
-    /*@Override
-    public void stateChanged(ChangeEvent e) {
-        QuestionPanel questionPanelParent = (QuestionPanel)this.getParent();
-        ScrollableQuestionsPanel scrollableQuestionsPanelParent = (ScrollableQuestionsPanel)questionPanelParent.getParent();
-        QuestionsListPanel QuestionsListPanelParent = (QuestionsListPanel)scrollableQuestionsPanelParent.getParent();
-        TestInfoPanel TestInfoPanelChild = (TestInfoPanel)QuestionsListPanelParent.getComponent(0);
-
-        if(!isSelectOption){
-            TestInfoPanelChild.setAnsweredQuestions("si sirve");
-        }
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'stateChanged'");
-    }*/
-
 }

@@ -15,8 +15,10 @@ public class TestInfoPanel extends JPanel{
     private JLabel answeredQuestions = new JLabel();
     private JLabel testName = new JLabel();
     private BlueButton endButton = new BlueButton("Terminar Examen",233,1);
-    
-    public TestInfoPanel(){
+    private static TestInfoPanel testInfoPanel;
+    private int amountOfAnswers = 0;
+
+    private TestInfoPanel(){
 
         setBackground(new Color(255,255,255));
         setLayout(new GridBagLayout());
@@ -27,6 +29,23 @@ public class TestInfoPanel extends JPanel{
         addEndButton();
         updateTimer(60);
 
+    }
+
+    public static TestInfoPanel getTestInfoPanel(){
+
+        if(testInfoPanel == null){
+            testInfoPanel = new TestInfoPanel();
+        }
+
+        return testInfoPanel;
+    }
+
+    public void increaseAnswers(){
+
+        amountOfAnswers++;
+        answeredQuestions.setText(String.valueOf(amountOfAnswers) + "/" + 20);
+        repaint();
+        
     }
 
     private void addTitle(){

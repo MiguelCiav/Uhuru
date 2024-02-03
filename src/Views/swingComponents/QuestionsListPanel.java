@@ -38,7 +38,7 @@ public class QuestionsListPanel extends JPanelRound{
         constraints.anchor = GridBagConstraints.NORTH;
         constraints.insets= new Insets(10,0,10,10);
 
-        add(new TestInfoPanel(), constraints);
+        add(TestInfoPanel.getTestInfoPanel(), constraints);
     }
 
     private void setScrollableQuestionsPanel(){
