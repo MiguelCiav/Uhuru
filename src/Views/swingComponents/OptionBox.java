@@ -1,7 +1,7 @@
-package Views.swingComponents;
+package views.swingComponents;
 import javax.swing.*;
 
-import Views.listeners.AnswersAmountAction;
+import views.listeners.AnswersAmountAction;
 
 import java.awt.*;
 

@@ -1,12 +1,12 @@
-package Views.useCaseFrames;
+package views.useCaseFrames;
 
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
-import Views.swingComponents.DoublePanel;
-import Views.swingComponents.LabelContainer;
-import Views.swingComponents.TestListPanel;
-import Views.swingComponents.NavBar;
+import views.swingComponents.DoublePanel;
+import views.swingComponents.LabelContainer;
+import views.swingComponents.NavBar;
+import views.swingComponents.TestListPanel;
 
 public class TestListView extends JFrame{
 

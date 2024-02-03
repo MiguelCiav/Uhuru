@@ -1,4 +1,4 @@
-package Views.listeners;
+package views.listeners;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,7 +7,7 @@ import java.awt.event.MouseListener;
 import java.awt.Component;
 import javax.swing.*;
 
-import Views.useCaseFrames.SolutionsView;
+import views.useCaseFrames.SolutionsView;
 
 public class SolutionsViewAction implements ActionListener{
 

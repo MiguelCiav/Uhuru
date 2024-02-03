@@ -1,7 +1,9 @@
-package Views.swingComponents;
+package views.swingComponents;
 
 import javax.swing.*;
-import Views.swingComponents.PathManager;
+
+import views.swingComponents.PathManager;
+
 import java.awt.*;
 import java.nio.file.*;
 import static java.nio.file.StandardOpenOption.*;

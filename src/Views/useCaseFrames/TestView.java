@@ -1,9 +1,9 @@
-package Views.useCaseFrames;
+package views.useCaseFrames;
 
 import javax.swing.*;
 
-import Views.swingComponents.PrincipalPanel;
-import Views.swingComponents.QuestionsListPanel;
+import views.swingComponents.PrincipalPanel;
+import views.swingComponents.QuestionsListPanel;
 
 import java.awt.*;
 

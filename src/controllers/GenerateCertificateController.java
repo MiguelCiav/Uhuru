@@ -1,4 +1,4 @@
-package Controller;
+package controllers;
 
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.BaseColor;
@@ -14,7 +14,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.*;
 
-public class generateCertificate {
+public class GenerateCertificateController {
     String nombre;
     String apellido;
     String fecha;
@@ -31,7 +31,8 @@ public class generateCertificate {
     private static final Font paragrathFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL);
     private static final Font paragrathBoldFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
     private static final String rutaImagen = "src\\Controller\\img\\iconDark.png";
-    public generateCertificate(String name, String lastname, String date, String course){
+
+    public GenerateCertificateController(String name, String lastname, String date, String course){
         nombre = name;
         apellido = lastname;
         fecha = date;

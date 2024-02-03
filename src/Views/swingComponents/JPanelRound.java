@@ -1,4 +1,4 @@
-package Views.swingComponents;
+package views.swingComponents;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.GradientPaint;

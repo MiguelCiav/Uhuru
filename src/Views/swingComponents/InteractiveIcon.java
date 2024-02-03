@@ -1,4 +1,4 @@
-package Views.swingComponents;
+package views.swingComponents;
 
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;

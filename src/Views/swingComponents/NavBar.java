@@ -1,11 +1,11 @@
-package Views.swingComponents;
+package views.swingComponents;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
 import org.w3c.dom.events.MouseEvent;
 
-import Views.listeners.TestListViewAction;
+import views.listeners.TestListViewAction;
 
 //NAVBAR
 

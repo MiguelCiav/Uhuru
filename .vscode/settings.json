@@ -1,5 +1,9 @@
 {
     "java.project.sourcePaths": [
         "src"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "src/lib/itextpdf-5.5.9.jar"
     ]
 }

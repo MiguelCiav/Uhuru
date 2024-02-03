@@ -1,9 +1,9 @@
-package Views.listeners;
+package views.listeners;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import Views.swingComponents.TestInfoPanel;
+import views.swingComponents.TestInfoPanel;
 
 public class AnswersAmountAction extends MouseAdapter{
 
