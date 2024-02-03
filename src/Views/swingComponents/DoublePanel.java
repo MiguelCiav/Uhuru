@@ -13,7 +13,6 @@ public class DoublePanel extends PrincipalPanel{
 
         super();
 
-        System.out.println("Eo");
         setContainerPanel();
         addFirstPanel(firstPanel);
         addSecondPanel(secondPanel);
