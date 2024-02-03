@@ -46,7 +46,7 @@ public class LabelContainer extends JPanelRound{
 
     private void addScrollableQuestionsSummaryPanel(){
 
-        JScrollPane auxiliarPanel = new JBlueScrollPane(new ScrollableLabelPanel(ScrollableLabelPanel.QUESTIONS_SCROLL));
+        JScrollPane auxiliarPanel = new JBlueScrollPane(new ScrollableQuestionsSummaryPanel());
 
         constraints.anchor = GridBagConstraints.CENTER;
 
