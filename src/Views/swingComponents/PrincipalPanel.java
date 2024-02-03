@@ -5,8 +5,6 @@ import java.awt.*;
 
 public class PrincipalPanel extends JPanel{
 
-    protected GridBagConstraints constraints;
-
     public PrincipalPanel(){
         setBackground(new Color(61,90,128));
         setLayout(new GridBagLayout());
@@ -15,6 +13,7 @@ public class PrincipalPanel extends JPanel{
 
     protected void initializePanel(){
 
+        GridBagConstraints constraints = new GridBagConstraints();
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 0;

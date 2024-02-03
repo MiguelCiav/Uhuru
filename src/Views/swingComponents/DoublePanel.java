@@ -7,6 +7,7 @@ import java.awt.*;
 public class DoublePanel extends PrincipalPanel{
     
     private JPanelRound containerPanel = new JPanelRound();
+    GridBagConstraints constraints = new GridBagConstraints();
 
     public DoublePanel(JPanel firstPanel, JPanel secondPanel){
 
