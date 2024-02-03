@@ -5,15 +5,17 @@ import java.awt.*;
 
 public class PrincipalPanel extends JPanel{
 
+    protected GridBagConstraints constraints;
+
     public PrincipalPanel(){
         setBackground(new Color(61,90,128));
         setLayout(new GridBagLayout());
         initializePanel();
     }
 
-    private void initializePanel(){
+    protected void initializePanel(){
 
-        GridBagConstraints constraints = new GridBagConstraints();
+        constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.weightx = 1.0;
@@ -22,7 +24,7 @@ public class PrincipalPanel extends JPanel{
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.anchor = GridBagConstraints.NORTH;
 
-        this.add(new NavBar(), constraints);    
+        add(new NavBar(), constraints);
     }
 
     public void setContentPanel(JPanel contentPanel){
