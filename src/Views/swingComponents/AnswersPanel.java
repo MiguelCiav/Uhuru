@@ -3,6 +3,7 @@ package Views.swingComponents;
 import javax.swing.*;
 import Views.swingComponents.PathManager;
 import java.awt.*;
+import java.io.File;
 import java.nio.file.*;
 import static java.nio.file.StandardOpenOption.*;
 
@@ -46,7 +47,8 @@ public class AnswersPanel extends JPanelRound{
 
     private void addIcon(){
 
-        checkBox = new JLabel(new ImageIcon("../img/OptionBox/pulsado.png"));
+        PathManager addIconImageURL = new PathManager();
+        checkBox = new JLabel(new ImageIcon(addIconImageURL.setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "OptionBox" + File.separator + "pulsado.png")));
         constraints.gridx = 1;
         constraints.weightx = 0.0;
         constraints.insets = new Insets(0, 16, 0, 16);

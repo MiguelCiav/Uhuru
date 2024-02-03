@@ -3,6 +3,8 @@ package Views.swingComponents;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
 import Views.swingComponents.PathManager;
@@ -46,14 +48,14 @@ public class LabelSummary extends JPanelRound implements MouseListener{
 
     private void setTestLabel(){
 
+        PathManager setTestLabelImageURL = new PathManager();
         testLabel.setBackground(new Color(216,233,241));
         testLabel.setOpaque(true);
         testLabel.setFont(new Font("Futura", Font.PLAIN, 12));
         testLabel.setFocusable(false);
         testLabel.setText("TEST");
 
-        arrowLabel = new JLabel(new ImageIcon(getClass().getResource("../img/testListView/siguiente.png")));
-
+        arrowLabel = new JLabel(new ImageIcon(setTestLabelImageURL.setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "testListView" + File.separator + "siguiente.png")));
     }
 
     private void addTestLabel(){

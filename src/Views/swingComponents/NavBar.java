@@ -2,6 +2,8 @@ package Views.swingComponents;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.File;
+import java.nio.file.Path;
 
 import org.w3c.dom.events.MouseEvent;
 
@@ -10,11 +12,10 @@ import Views.listeners.TestListViewAction;
 //NAVBAR
 
 class NavBar extends JPanel{
-
+    PathManager interactiveIconsImageURL = new PathManager();
     //CONSTRUCTOR
 
     public NavBar(){
-
         //Define el color del navbar
         setBackground(Color.white);
 
@@ -33,7 +34,7 @@ class NavBar extends JPanel{
         constraints.weightx = 1.0;
         constraints.anchor = GridBagConstraints.WEST;
 
-        InteractiveIcon Logo = new InteractiveIcon("../img/NavBar/iconDarkMini.png");
+        InteractiveIcon Logo = new InteractiveIcon("src" + File.separator + "Views" + File.separator + "img" + File.separator + "iconDark.png");
         Logo.addMouseListener(new TestListViewAction());
 
         add(Logo, constraints);
@@ -43,11 +44,11 @@ class NavBar extends JPanel{
         constraints.weightx = 0.0;
         constraints.anchor = GridBagConstraints.EAST;
 
-        add(new InteractiveIcon("../img/NavBar/FaQ.png"), constraints);
+        add(new InteractiveIcon("src" + File.separator + "Views" + File.separator + "img" + File.separator + "NavBar" + File.separator + "FaQ.png"), constraints);
 
         constraints.gridx = 2;
 
-        add(new InteractiveIcon("../img/NavBar/user.png"), constraints);
+        add(new InteractiveIcon("src" + File.separator + "Views" + File.separator + "img" + File.separator + "NavBar" + File.separator + "user.png"), constraints);
 
     }
 
