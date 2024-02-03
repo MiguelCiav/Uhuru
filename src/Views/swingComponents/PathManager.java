@@ -15,7 +15,6 @@ public class PathManager{
 
     PathManager(){
         currentDirectory = filePath.getParentFile().toString();
-        System.out.println(currentDirectory);
     }
 
     public String setFileLink(String relativePath){
