@@ -9,7 +9,7 @@ import Views.listeners.TestListViewAction;
 
 //NAVBAR
 
-class NavBar extends JPanel{
+public class NavBar extends JPanel{
 
     //CONSTRUCTOR
 
@@ -33,7 +33,7 @@ class NavBar extends JPanel{
         constraints.weightx = 1.0;
         constraints.anchor = GridBagConstraints.WEST;
 
-        InteractiveIcon Logo = new InteractiveIcon("../img/NavBar/iconDarkMini.png");
+        JLabel Logo = new JLabel(new ImageIcon(getClass().getResource("../img/NavBar/iconDarkMini.png")));
         Logo.addMouseListener(new TestListViewAction());
 
         add(Logo, constraints);
@@ -43,12 +43,11 @@ class NavBar extends JPanel{
         constraints.weightx = 0.0;
         constraints.anchor = GridBagConstraints.EAST;
 
-        add(new InteractiveIcon("../img/NavBar/FaQ.png"), constraints);
+        add(new JLabel(new ImageIcon(getClass().getResource("../img/NavBar/FaQ.png"))), constraints);
 
         constraints.gridx = 2;
 
-        add(new InteractiveIcon("../img/NavBar/user.png"), constraints);
-
+        add(new JLabel(new ImageIcon(getClass().getResource("../img/NavBar/user.png"))), constraints);
     }
 
 }

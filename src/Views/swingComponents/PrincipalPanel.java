@@ -11,9 +11,10 @@ public class PrincipalPanel extends JPanel{
         initializePanel();
     }
 
-    private void initializePanel(){
+    protected void initializePanel(){
 
         GridBagConstraints constraints = new GridBagConstraints();
+        constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.weightx = 1.0;
@@ -22,7 +23,7 @@ public class PrincipalPanel extends JPanel{
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.anchor = GridBagConstraints.NORTH;
 
-        this.add(new NavBar(), constraints);    
+        add(new NavBar(), constraints);
     }
 
     public void setContentPanel(JPanel contentPanel){

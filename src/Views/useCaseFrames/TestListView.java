@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import Views.swingComponents.DoublePanel;
 import Views.swingComponents.LabelContainer;
 import Views.swingComponents.TestListPanel;
+import Views.swingComponents.NavBar;
 
 public class TestListView extends JFrame{
 
@@ -21,6 +22,7 @@ public class TestListView extends JFrame{
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setMinimumSize(new Dimension(800,600));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.getContentPane().add(new NavBar());
         this.getContentPane().add(doublePanel);
 
         setVisible(true);
