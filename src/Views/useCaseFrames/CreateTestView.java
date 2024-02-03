@@ -18,7 +18,6 @@ public class CreateTest extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         createTestPanel = new DoublePanel(testDataPanel, questionsAndAnswersPanel);
-
         add(createTestPanel);
 
         setVisible(true);

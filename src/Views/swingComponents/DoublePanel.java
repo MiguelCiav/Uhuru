@@ -4,19 +4,19 @@ import javax.swing.*;
 
 import java.awt.*;
 
-public class DoublePanel extends JPanel{
-    
-    private GridBagConstraints constraints;
-    private PrincipalPanel principalPanel = new PrincipalPanel();
+public class DoublePanel extends PrincipalPanel{
+
     private JPanelRound containerPanel = new JPanelRound();
+    GridBagConstraints constraints = new GridBagConstraints();
 
     public DoublePanel(JPanel firstPanel, JPanel secondPanel){
 
-        constraints = new GridBagConstraints();
+        super();
+
         setContainerPanel();
         addFirstPanel(firstPanel);
         addSecondPanel(secondPanel);
-        addContainerPanel();
+        setContentPanel(containerPanel);
 
     }
 
@@ -51,10 +51,4 @@ public class DoublePanel extends JPanel{
 
     }
 
-    protected void addContainerPanel(){
-
-        principalPanel.setContentPanel(containerPanel);
-        add(principalPanel);
-
-    }
 }
