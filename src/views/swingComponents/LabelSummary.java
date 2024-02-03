@@ -3,10 +3,8 @@ package views.swingComponents;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.plaf.basic.BasicScrollBarUI;
+import views.listeners.GoToTestView;
 
-import views.swingComponents.PathManager;
-import views.useCaseFrames.TestView;
 
 public class LabelSummary extends JPanelRound implements MouseListener{
 
@@ -74,7 +72,7 @@ public class LabelSummary extends JPanelRound implements MouseListener{
 
         add(arrowLabel, constraints);
 
-        arrowLabel.addMouseListener(new testFrameAction());
+        arrowLabel.addMouseListener(new GoToTestView());
 
     }
 
@@ -122,38 +120,5 @@ public class LabelSummary extends JPanelRound implements MouseListener{
     @Override public void mouseReleased(MouseEvent e){}
     @Override public void mouseEntered(MouseEvent e){}
     @Override public void mouseExited(MouseEvent e){}
-
-
-    private class testFrameAction implements MouseListener{
-
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            
-            JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor((Component) e.getSource());
-            new TestView();
-            topFrame.dispose();
-        }
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-            System.out.println("");
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-            System.out.println("");
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-            System.out.println("");
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-            System.out.println("");
-        }
-
-    }
 
 }

@@ -5,7 +5,7 @@ import java.awt.event.*;
 
 import org.w3c.dom.events.MouseEvent;
 
-import views.listeners.TestListViewAction;
+import views.listeners.GoToTestListView;
 
 //NAVBAR
 
@@ -47,7 +47,7 @@ public class NavBar extends JPanel{
         constraints.anchor = GridBagConstraints.WEST;
 
         JLabel Logo = new JLabel(new ImageIcon(getClass().getResource("../img/NavBar/iconDarkMini.png")));
-        Logo.addMouseListener(new TestListViewAction());
+        Logo.addMouseListener(new GoToTestListView());
 
         add(Logo, constraints);
 

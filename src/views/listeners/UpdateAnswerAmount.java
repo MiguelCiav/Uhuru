@@ -5,9 +5,7 @@ import java.awt.event.MouseEvent;
 
 import views.swingComponents.TestInfoPanel;
 
-public class AnswersAmountAction extends MouseAdapter{
-
-    private int amount = 0;
+public class UpdateAnswerAmount extends MouseAdapter{
 
     @Override
     public void mouseClicked(MouseEvent e){

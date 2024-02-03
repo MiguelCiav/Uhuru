@@ -10,6 +10,7 @@ public class CertificateCourseBox extends JPanel{
     GridBagConstraints constraints = new GridBagConstraints();
 
     public CertificateCourseBox(){
+
         setBackground(Color.WHITE);
         setLayout(new GridBagLayout());
         setBorder(null);
@@ -17,9 +18,11 @@ public class CertificateCourseBox extends JPanel{
         
         addCourseTitle();
         addGenerateCertificateButton();
+
     }
 
     private void addCourseTitle(){
+
         courseTitle.setFont(new Font("Futura", Font.BOLD, 16));
         courseTitle.setForeground(new Color(0,0,0));
         courseTitle.setText("Curso # - Titulo");
@@ -46,9 +49,11 @@ public class CertificateCourseBox extends JPanel{
         constraints.insets= new Insets(5,10,5,10);
 
         add(courseTitlePanel, constraints);
+
     }
     
     private void addGenerateCertificateButton (){
+
         constraints.gridx = 2;
         constraints.gridy = 0;
         constraints.weightx = 0;
@@ -59,5 +64,6 @@ public class CertificateCourseBox extends JPanel{
         constraints.insets= new Insets(10,10,10,10);
 
         add(generateCertificateButton, constraints);
+        
     }
 }

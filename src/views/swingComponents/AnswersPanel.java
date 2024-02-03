@@ -1,9 +1,7 @@
 package views.swingComponents;
 
 import javax.swing.*;
-
 import views.swingComponents.PathManager;
-
 import java.awt.*;
 import java.nio.file.*;
 import static java.nio.file.StandardOpenOption.*;
@@ -23,6 +21,7 @@ public class AnswersPanel extends JPanelRound{
         addIcon();
         addJustification();   
     }
+    
     private void addOption(){
 
         option = new JTextField("Opcion 1");

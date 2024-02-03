@@ -49,4 +49,5 @@ public class AnswersSummaryPanel extends JPanelRound{
         add(answersPanel, constraints);
 
     }
+    
 }

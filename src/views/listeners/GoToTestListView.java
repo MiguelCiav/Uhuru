@@ -2,13 +2,12 @@ package views.listeners;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.Component;
 import javax.swing.*;
 
 import views.useCaseFrames.TestListView;
 
-public class TestListViewAction extends MouseAdapter{
+public class GoToTestListView extends MouseAdapter{
 
     @Override
     public void mouseClicked(MouseEvent e) {

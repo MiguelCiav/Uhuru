@@ -1,7 +1,7 @@
 package views.swingComponents;
 import javax.swing.*;
 
-import views.listeners.SolutionsViewAction;
+import views.listeners.GoToSolutionsView;
 
 import java.awt.*;
 import java.nio.file.Path;
@@ -106,7 +106,7 @@ public class TestInfoPanel extends JPanel{
         constraints.anchor = GridBagConstraints.EAST;
         constraints.insets= new Insets(5,5,5,5);
 
-        endButton.addActionListener(new SolutionsViewAction());
+        endButton.addActionListener(new GoToSolutionsView());
 
         add(endButton, constraints);
         

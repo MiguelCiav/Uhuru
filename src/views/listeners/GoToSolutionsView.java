@@ -9,7 +9,7 @@ import javax.swing.*;
 
 import views.useCaseFrames.SolutionsView;
 
-public class SolutionsViewAction implements ActionListener{
+public class GoToSolutionsView implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
