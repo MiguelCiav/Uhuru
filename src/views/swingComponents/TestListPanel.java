@@ -2,7 +2,11 @@ package views.swingComponents;
 
 import javax.swing.*;
 
+import views.listeners.OpenCertificatePopUp;
+
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class TestListPanel extends JPanelRound{
 
@@ -62,6 +66,8 @@ public class TestListPanel extends JPanelRound{
         constraints.anchor = GridBagConstraints.EAST;
         constraints.fill = GridBagConstraints.NONE;
         constraints.insets = new Insets(0, 20, 20, 20);
+
+        certificateButton.addActionListener(new OpenCertificatePopUp());
 
         add(certificateButton,constraints);
     }
