@@ -1,8 +1,8 @@
-import views.useCaseFrames.TestListView;
+import views.useCaseFrames.*;
 
 public class Main {
     public static void main (String args[]){
-        new TestListView();
+        new CreateTestView();
+        new MainFrame();
     }
-
 }

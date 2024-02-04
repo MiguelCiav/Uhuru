@@ -5,6 +5,7 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.io.File;
 
 
 public class CertificatePopUp extends JPanelRound{
@@ -54,13 +55,13 @@ public class CertificatePopUp extends JPanelRound{
         PathManager exitButtonImageURL = new PathManager();
         JLabel exitButton = new JLabel();
         
-        constraints.gridx=1;
-        constraints.weightx=0.0;
+        constraints.gridx = 1;
+        constraints.weightx = 0.0;
         constraints.anchor = GridBagConstraints.EAST;
         constraints.insets= new Insets(10,0,10,30);
-        exitButton.setIcon(new ImageIcon(getClass().getResource("../img/testView/reloj.png")));
+        exitButton.setIcon(new ImageIcon(new PathManager().setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "testListView" + File.separator + "close.png")));
         
-        add (exitButton, constraints);
+        add(exitButton, constraints);
     }
 
     private void setScrollableCertificateList (){

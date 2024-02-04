@@ -7,7 +7,7 @@ public class ScrollableQuestionsPanel extends JPanel {
 
     private GridBagConstraints constraints;
 
-    public ScrollableQuestionsPanel (){
+    public ScrollableQuestionsPanel(){
 
         setBackground(new Color(255,255,255));
         setLayout(new GridBagLayout());
