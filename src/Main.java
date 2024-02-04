@@ -1,3 +1,4 @@
+import views.useCaseFrames.CreateTestView;
 import views.useCaseFrames.TestListView;
 import controllers.FileReadingManager;
 import models.User;
@@ -10,7 +11,8 @@ public class Main {
 
         file.setPath("src/DataBase/Course.txt");
         file.readCourses();
-        new TestListView();
+        //new TestListView();
+        new CreateTestView();
         
     }
 }

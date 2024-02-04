@@ -2,8 +2,7 @@ package views.swingComponents;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class AddQuestionsPanel extends JPanelRound implements ActionListener{
 
@@ -13,7 +12,7 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
     private JPanelRound addOptionPanel = new JPanelRound();
     private JButton addOptionButton = new JButton(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/Add_Ico.png"))));
     private JLabel addOptionLabel = new JLabel("Añadir opcion");
-    private JCheckBox correctOption = new JCheckBox(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/checkbox-empty.png"))));
+    private JCheckBox correctOption = new JCheckBox(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/incorrectAnswer.png"))));
 
     AddQuestionsPanel(){
         setRoundBackgroundColor(new Color(237, 246, 249));
@@ -98,11 +97,11 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
         JCheckBox box = (JCheckBox) e.getSource();
 
         if(box.isSelected()){
-            correctOption.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/solutionsView/sanswerCheckBox.png"))));
+            correctOption.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/solutionsView/answerCheckBox.png"))));
             questionJustification.textArea.setEditable(true);
         }
         else{
-            correctOption.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/checkbox-empty.png"))));
+            correctOption.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/incorrectAnswer.png"))));
             questionJustification.textArea.setEditable(false);
         }
     }

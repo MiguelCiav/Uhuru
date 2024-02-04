@@ -4,8 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
-public class QuestionsAndAnswersPanel extends JPanelRound implements ActionListener{
+public class QuestionsAndAnswersPanel extends JPanelRound{
     
     private JLabel questionsAndAnswersText;
     private JComboBox<String> domainSelection = new JComboBox<String>();
@@ -58,7 +59,6 @@ public class QuestionsAndAnswersPanel extends JPanelRound implements ActionListe
         constraints.weightx = 0.0;
         addQuestionButton.setBackground(new Color(152,193,217));
         addQuestionButton.setBorder(null);
-        addQuestionButton.addActionListener(this);
         
         addQuestionPanel.add(addQuestionButton, constraints);
 
@@ -108,17 +108,5 @@ public class QuestionsAndAnswersPanel extends JPanelRound implements ActionListe
         domainSelection.addItem("Java");
         domainSelection.addItem("Java");
         domainSelection.addItem("Java");
-    }
-
-    @Override public void actionPerformed(ActionEvent e){
-
-        JCheckBox box = (JCheckBox) e.getSource();
-
-        if(box.isSelected()){
-        }
-        else{
-
-        }
-
     }
 }
