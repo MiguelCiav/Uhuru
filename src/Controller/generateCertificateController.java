@@ -30,14 +30,9 @@ public class GenerateCertificateController {
         return courseList;
     }
 
-
-
-    //Puro pinche singleton
-
-    //TODOS ESTATICOS
-    //Obtenga la lista id de user
-    //Obtenga los cursos desde la lista de id (Método de busqueda)
-    //Retornar uno a uno los cursos y el numero de cursos aprobados.
-
-    //Método para generar el certificado una vez activan el boton
+    public static void generatePDF(String inputcourse){
+        User activeUser = User.getUserInstance();
+        GenerateCertificate PDF = new GenerateCertificate(activeUser.getName(), activeUser.getLastName(), "Febrero 2024", inputcourse);
+        PDF.newPDF();
+    }
 }

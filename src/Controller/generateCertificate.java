@@ -61,7 +61,7 @@ public class GenerateCertificate {
             } catch (IOException ex) {
                 System.out.println("Image IOException " +  ex);
             }
-            Paragraph titlecourse = new Paragraph("course: " + course, subTitlehFont);
+            Paragraph titlecourse = new Paragraph("Curso: " + course, subTitlehFont);
             titlecourse.setAlignment(Element.ALIGN_CENTER);
             document.add(titlecourse);
             
@@ -69,25 +69,27 @@ public class GenerateCertificate {
             document.add(Chunk.NEWLINE);
             document.add(Chunk.NEWLINE);
 
-            document.add(new Paragraph("name: " + name, paragrathBoldFont));
-            document.add(new Paragraph("lastname: " + lastname, paragrathBoldFont));
+            document.add(new Paragraph("Nombre: " + name, paragrathBoldFont));
+            document.add(new Paragraph("Apellido: " + lastname, paragrathBoldFont));
 
             document.add(Chunk.NEWLINE); //Crea una nueva linea en blanco
 
-            Paragraph principalParagraph = new Paragraph("Lorem ipsum dolor sit amet, consectetur adipiscing elit." 
-                + "Vivamus euismod massa non metus lacinia egestas eget nec purus. In molestie," 
-                + "nisi id pretium malesuada, nisi metus vestibulum diam, et auctor purus velit" 
-                + "vel ante. Pellentesque tempor ante nec orci feugiat, et tempus nisi pharetra." 
-                + "Duis congue purus sit amet eros venenatis suscipit. Fusce nibh enim, tincidunt" 
-                + "eget blandit in, vulputate ut sem. Proin a nisl eget arcu elementum laoreet."
-                + "Morbi id consequat sem. Vivamus eget libero justo.", paragrathFont);
+            Paragraph principalParagraph = new Paragraph(
+            "El alumno ha demostrado una excelente participación al presentar el examen de la asignatura. " + 
+            "Ha respondido correctamente a todas las preguntas, mostrando un dominio profundo y actualizado " + 
+            "de los contenidos teóricos y prácticos. Su capacidad de análisis, síntesis y argumentación ha sido sobresaliente, así como su expresión oral y escrita. " +
+            "El examen ha evidenciado las habilidades adquiridas por el alumno a lo largo del curso, tales como la investigación, " + 
+            "el pensamiento crítico, la creatividad y la resolución de problemas. El alumno ha sabido aplicar los conocimientos a " + 
+            "situaciones reales y complejas, proponiendo soluciones innovadoras y eficaces. Ha demostrado también una actitud positiva," + 
+            "colaborativa y responsable ante el aprendizaje. Por todo ello, se le otorga este certificado de participación, que acredita " +
+            "su excelente desempeño académico y su amplia competencia en la materia. Se le felicita por su esfuerzo y dedicación, y se le anima a seguir formándose y creciendo profesionalmente..", paragrathFont);
             
             principalParagraph.setAlignment(Element.ALIGN_JUSTIFIED); //Alinear el texto de forma justificada
             document.add(principalParagraph);
 
             document.add(Chunk.NEWLINE);
 
-            document.add(new Paragraph ("date: " + date));
+            document.add(new Paragraph ("Expedido el día: " + date));
 
             document.close();
         } catch (FileNotFoundException e){

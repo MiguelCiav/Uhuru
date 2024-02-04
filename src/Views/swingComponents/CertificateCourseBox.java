@@ -1,9 +1,13 @@
 package Views.swingComponents;
 import javax.swing.*;
 
-import java.awt.*;
+import Controller.GenerateCertificateController;
 
-public class CertificateCourseBox extends JPanel{
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class CertificateCourseBox extends JPanel implements ActionListener{
     JTextArea courseTitle = new JTextArea ();
     BlueButton generateCertificateButton;
     JPanelRound courseTitlePanel = new JPanelRound();
@@ -60,8 +64,16 @@ public class CertificateCourseBox extends JPanel{
         constraints.anchor = GridBagConstraints.EAST;
         constraints.insets= new Insets(10,10,10,10);
 
+        generateCertificateButton.addActionListener(this);
+
         add(generateCertificateButton, constraints);
 
         //llamar al controlador para obtener el certificado
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("Si escucha manín");
+        GenerateCertificateController.generatePDF(courseTitle.getText());
     }
 }
