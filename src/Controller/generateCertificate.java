@@ -14,7 +14,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.*;
 
-public class generateCertificate {
+public class GenerateCertificate {
     String name;
     String lastname;
     String date;
@@ -31,7 +31,7 @@ public class generateCertificate {
     private static final Font paragrathFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL);
     private static final Font paragrathBoldFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
     private static final String pathImage = "src\\Controller\\img\\iconDark.png";
-    public generateCertificate(String inputname, String inputlastname, String inputdate, String inputcourse){
+    public GenerateCertificate(String inputname, String inputlastname, String inputdate, String inputcourse){
         name = inputname;
         lastname = inputlastname;
         date = inputdate;

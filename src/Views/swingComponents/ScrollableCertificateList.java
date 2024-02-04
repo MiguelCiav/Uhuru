@@ -22,9 +22,10 @@ public class ScrollableCertificateList extends JPanel {
         constraints.anchor = GridBagConstraints.NORTH;
         constraints.insets= new Insets(0,20,10,30);
 
-         for (int i = 1; i <= 10; i++) {
+        //Añadir el controlador de certificado(Pedir ID aprobado de user y recorrer en el if)
+        for (int i = 1; i <= 10; i++) {
             constraints.gridy = i;
-            CertificateCourseBox auxiliarQuestionPanel = new CertificateCourseBox();
+            CertificateCourseBox auxiliarQuestionPanel = new CertificateCourseBox("Cursito");
 
             if(i == 5){
                 constraints.weighty = 1.0;

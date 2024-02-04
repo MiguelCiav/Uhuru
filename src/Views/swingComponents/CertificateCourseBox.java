@@ -9,20 +9,20 @@ public class CertificateCourseBox extends JPanel{
     JPanelRound courseTitlePanel = new JPanelRound();
     GridBagConstraints constraints = new GridBagConstraints();
 
-    public CertificateCourseBox(){
+    public CertificateCourseBox(String Title){
         setBackground(Color.WHITE);
         setLayout(new GridBagLayout());
         setBorder(null);
         generateCertificateButton = new BlueButton("Generar Certificado", 250, 3);
         
-        addCourseTitle();
+        addCourseTitle(Title);
         addGenerateCertificateButton();
     }
 
-    private void addCourseTitle(){
+    private void addCourseTitle(String Title){
         courseTitle.setFont(new Font("Futura", Font.BOLD, 16));
         courseTitle.setForeground(new Color(0,0,0));
-        courseTitle.setText("Curso # - Titulo");
+        courseTitle.setText(Title);
         courseTitle.setEditable (false); 
         courseTitle.setLineWrap(true);
         courseTitle.setWrapStyleWord(true);
@@ -59,5 +59,7 @@ public class CertificateCourseBox extends JPanel{
         constraints.insets= new Insets(10,10,10,10);
 
         add(generateCertificateButton, constraints);
+
+        //llamar al controlador para obtener el certificado
     }
 }
