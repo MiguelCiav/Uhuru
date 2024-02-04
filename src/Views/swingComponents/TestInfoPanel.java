@@ -57,7 +57,7 @@ public class TestInfoPanel extends JPanel{
         constraints.weightx=0.0;
         constraints.anchor = GridBagConstraints.CENTER;
 
-        clock.setIcon(new ImageIcon(addClockImageURL.setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "testView" + File.separator + "relo.png")));
+        clock.setIcon(new ImageIcon(new PathManager().setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "testView" + File.separator + "relo.png")));
         clock.setText("11:11");
         clock.setFont(new Font("Futura", Font.BOLD, 30));
         clock.setForeground(new Color(61,90,128));
@@ -72,7 +72,7 @@ public class TestInfoPanel extends JPanel{
         PathManager amountOfAnsweredQuestionsImageURL = new PathManager();
         constraints.gridx=2;
 
-        answeredQuestions.setIcon(new ImageIcon(amountOfAnsweredQuestionsImageURL.setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "testView" + File.separator + "bandera.png")));
+        answeredQuestions.setIcon(new ImageIcon(new PathManager().setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "testView" + File.separator + "bandera.png")));
         answeredQuestions.setText("1/20");
         answeredQuestions.setFont(new Font("Futura", Font.BOLD, 30));
         answeredQuestions.setForeground(new Color(61,90,128));

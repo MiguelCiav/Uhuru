@@ -48,7 +48,7 @@ public class AnswersPanel extends JPanelRound{
     private void addIcon(){
 
         PathManager addIconImageURL = new PathManager();
-        checkBox = new JLabel(new ImageIcon(addIconImageURL.setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "OptionBox" + File.separator + "pulsado.png")));
+        checkBox = new JLabel(new ImageIcon(new PathManager().setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "OptionBox" + File.separator + "pulsado.png")));
         constraints.gridx = 1;
         constraints.weightx = 0.0;
         constraints.insets = new Insets(0, 16, 0, 16);

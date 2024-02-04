@@ -14,12 +14,12 @@ public class InteractiveIcon extends JLabel{
 
     InteractiveIcon(String imageURL){
         PathManager interactiveIconImageURL = new PathManager(); 
-        this.setIcon(new ImageIcon(interactiveIconImageURL.setFileLink(imageURL)));
+        this.setIcon(new ImageIcon(new PathManager().setFileLink(imageURL)));
     }
 
     InteractiveIcon(String label, String imageURL, IconListener action){
         PathManager interactiveIconImageURL = new PathManager();
-        this.setIcon(new ImageIcon(interactiveIconImageURL.setFileLink(imageURL)));
+        this.setIcon(new ImageIcon(new PathManager().setFileLink(imageURL)));
         this.setText(label); 
         addMouseListener(action);
     }

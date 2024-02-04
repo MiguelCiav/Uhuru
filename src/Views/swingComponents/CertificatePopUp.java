@@ -59,7 +59,7 @@ public class CertificatePopUp extends JPanelRound{
         constraints.weightx = 0.0;
         constraints.anchor = GridBagConstraints.EAST;
         constraints.insets= new Insets(10,0,10,30);
-        exitButton.setIcon(new ImageIcon(exitButtonImageURL.setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "testListView" + File.separator + "close.png")));
+        exitButton.setIcon(new ImageIcon(new PathManager().setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "testListView" + File.separator + "close.png")));
         
         add(exitButton, constraints);
     }

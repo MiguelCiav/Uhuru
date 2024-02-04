@@ -55,7 +55,7 @@ public class LabelSummary extends JPanelRound implements MouseListener{
         testLabel.setFocusable(false);
         testLabel.setText("TEST");
 
-        arrowLabel = new JLabel(new ImageIcon(setTestLabelImageURL.setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "testListView" + File.separator + "siguiente.png")));
+        arrowLabel = new JLabel(new ImageIcon(new PathManager().setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "testListView" + File.separator + "siguiente.png")));
     }
 
     private void addTestLabel(){

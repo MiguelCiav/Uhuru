@@ -6,12 +6,10 @@ import java.awt.*;
 public class TestDataPanel extends JPanelRound{
     
     private JLabel testDataText;
-    private JPanelRound testNamePanel = new JPanelRound();
-    private JTextArea testName = new JTextArea("Ingrese el nombre del examen");
-    private JPanelRound testDescriptionPanel = new JPanelRound();
-    private JTextArea testDescription = new JTextArea("Ingrese la descripcion del examen");
+    private LargeTextPanels testName = new LargeTextPanels("Ingrese el nombre del examen.", new Color(237, 246, 249));
+    private LargeTextPanels testDescription = new LargeTextPanels("Ingrese la descripcion del examen", new Color(237, 246, 249));
+    private JTextField minutes = new JTextField("Min", 7);
     private JPanelRound minutesPanel = new JPanelRound();
-    private JTextArea minutes = new JTextArea("Min");
     private JPanelRound minutesTextPanel = new JPanelRound();
     private JTextArea minutesText = new JTextArea("Minutes");
 
@@ -40,35 +38,33 @@ public class TestDataPanel extends JPanelRound{
         constraints.gridy = 1;
         constraints.weighty = 0.1;
         constraints.fill = GridBagConstraints.BOTH;
-        testName.setBackground(new Color(217,233,241));
-        testNamePanel.setLayout(new GridBagLayout());
-        testNamePanel.add(testName);
 
-        add(testNamePanel, constraints);
-        
+        add(testName, constraints);
+
         constraints.gridy = 2;
-        constraints.weighty = 0.8;
-        testDescription.setBackground(new Color(217,233,241));
-        testDescription.setLayout(new GridBagLayout());
-        testDescriptionPanel.add(testDescription);
+        constraints.weighty = 1.0;
 
-        add(testDescriptionPanel, constraints);
+        add(testDescription, constraints);
 
         constraints.gridwidth = 1;
         constraints.gridy = 3;
         constraints.weighty = 0.1;
-        constraints.weightx = 0.15;
-        minutes.setBackground(new Color(217,233,241));
+        constraints.weightx = 0.1;
+        minutes.setBorder(null);
+        minutes.setBackground(new Color(217,233,241));         
         minutesPanel.setLayout(new GridBagLayout());
         minutesPanel.add(minutes);
 
         add(minutesPanel, constraints);
 
         constraints.insets = new Insets(0, 0, 30, 20);
+
         minutesTextPanel.setRoundBackgroundColor(new Color(106,106,106));
-        minutesText.setBackground(new Color(106,106,106));
+        minutesText.setBackground(new Color(106, 106, 106));
+
         constraints.gridx = 1;
-        constraints.weightx = 0.85;
+        constraints.weightx = 1.0;
+        
         minutesTextPanel.setLayout(new GridBagLayout());
         minutesText.setEditable(false);
         minutesTextPanel.add(minutesText);
