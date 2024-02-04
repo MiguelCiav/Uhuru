@@ -49,7 +49,5 @@ class NavBar extends JPanel{
         constraints.gridx = 2;
 
         add(new InteractiveIcon("src" + File.separator + "Views" + File.separator + "img" + File.separator + "NavBar" + File.separator + "user.png"), constraints);
-
     }
-
 }

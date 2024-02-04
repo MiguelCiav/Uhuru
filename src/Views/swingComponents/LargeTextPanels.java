@@ -6,13 +6,15 @@ import java.awt.*;
 public class LargeTextPanels extends JPanelRound{
     
     JScrollPane textScrollPane;
+    JTextArea textArea;
     GridBagConstraints constraints = new GridBagConstraints();
 
     LargeTextPanels(String text, Color c){
         setRoundBackgroundColor(c);
         setLayout(new GridBagLayout());
+        textArea = new JTextArea();
 
-        JTextArea textArea = new JTextArea(text);
+        textArea.setText(text);
         textArea.setBorder(null);
         textArea.setBackground(c);
         textArea.setLineWrap(true);

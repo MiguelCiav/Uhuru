@@ -11,7 +11,7 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
 
     private LargeTextPanels questionStatement = new LargeTextPanels("Ingrese el enunciado de la pregunta", new Color(255,255,255));
     private LargeTextPanels questionOption = new LargeTextPanels("Introduzca la opción", new Color(255,255,255));
-    private LargeTextPanels questionJustification = new LargeTextPanels("Ingrese la justificacion de la pregunta", new Color(255,255,255));
+    private LargeTextPanels questionJustification = new LargeTextPanels("Ingrese la justificacion de la respuesta", new Color(255,255,255));
     private JPanelRound addOptionPanel = new JPanelRound();
     private JButton addOptionButton = new JButton(new ImageIcon(new PathManager().setFileLink("src" + File.separator + "Views" + File.separator + "img" + File.separator + "createTestView" + File.separator + "Add_Ico.png")));
     private JLabel addOptionLabel = new JLabel("Añadir opcion");
@@ -90,6 +90,7 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
         constraints.gridy = 3;
         constraints.weighty = 1.0;
         constraints.fill = GridBagConstraints.BOTH;
+        questionJustification.textArea.setEditable(false);
 
         add(questionJustification, constraints);
     }
@@ -98,11 +99,13 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
 
         JCheckBox box = (JCheckBox) e.getSource();
 
-        if(box.isEnabled()){
+        if(box.isSelected()){
             correctOption.setIcon(new ImageIcon(new PathManager().setFileLink("src" + File.separator + "Views" + File.separator + "img" + File.separator + "solutionsView" + File.separator + "answerCheckBox.png")));
+            questionJustification.textArea.setEditable(true);
         }
         else{
             correctOption.setIcon(new ImageIcon(new PathManager().setFileLink("src" + File.separator + "Views" + File.separator + "img" + File.separator + "createTestView" + File.separator + "checkbox-empty.png")));
+            questionJustification.textArea.setEditable(false);
         }
     }
 }
