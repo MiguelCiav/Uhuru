@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 import views.swingComponents.DoublePanel;
-import views.swingComponents.NavBar;
 import views.swingComponents.ScrollContainer;
 import views.swingComponents.ScrollableCoursesPanel;
 import views.swingComponents.TestListPanel;

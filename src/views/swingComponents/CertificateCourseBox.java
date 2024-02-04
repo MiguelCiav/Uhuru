@@ -1,31 +1,31 @@
 package views.swingComponents;
 import javax.swing.*;
 
-import java.awt.*;
+import controllers.GenerateCertificateController;
 
-public class CertificateCourseBox extends JPanel{
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class CertificateCourseBox extends JPanel implements ActionListener{
     JTextArea courseTitle = new JTextArea ();
     BlueButton generateCertificateButton;
     JPanelRound courseTitlePanel = new JPanelRound();
     GridBagConstraints constraints = new GridBagConstraints();
 
-    public CertificateCourseBox(){
-
+    public CertificateCourseBox(String Title){
         setBackground(Color.WHITE);
         setLayout(new GridBagLayout());
         setBorder(null);
         generateCertificateButton = new BlueButton("Generar Certificado", 250, 3);
-        
-        addCourseTitle();
+        addCourseTitle(Title);
         addGenerateCertificateButton();
-
     }
 
-    private void addCourseTitle(){
-
+    private void addCourseTitle(String Title){
         courseTitle.setFont(new Font("Futura", Font.BOLD, 16));
         courseTitle.setForeground(new Color(0,0,0));
-        courseTitle.setText("Curso # - Titulo");
+        courseTitle.setText(Title);
         courseTitle.setEditable (false); 
         courseTitle.setLineWrap(true);
         courseTitle.setWrapStyleWord(true);
@@ -33,6 +33,8 @@ public class CertificateCourseBox extends JPanel{
         
         courseTitlePanel.setLayout(new GridBagLayout());
         courseTitlePanel.setRoundBackgroundColor(new Color(217,233,241));
+        courseTitlePanel.setPreferredSize(new Dimension(400,60));
+
         constraints.anchor = GridBagConstraints.WEST;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.insets= new Insets(20,20,20,10);
@@ -63,7 +65,16 @@ public class CertificateCourseBox extends JPanel{
         constraints.anchor = GridBagConstraints.EAST;
         constraints.insets= new Insets(10,10,10,10);
 
+        generateCertificateButton.addActionListener(this);
+
         add(generateCertificateButton, constraints);
-        
+
+        //llamar al controlador para obtener el certificado
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("Si escucha manín");
+        GenerateCertificateController.generatePDF(courseTitle.getText());
     }
 }
