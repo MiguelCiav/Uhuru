@@ -1,16 +1,12 @@
 package views.swingComponents;
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicScrollBarUI;
 
 import java.awt.*;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
+
 
 public class QuestionsListPanel extends JPanelRound{
 
     private GridBagConstraints constraints;
-    private double height = 0;
-    private int amountOfResize = 0;
     private ScrollableQuestionsPanel scroll;
     private JScrollPane scrollPanel;
 

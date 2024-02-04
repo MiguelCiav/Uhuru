@@ -1,17 +1,10 @@
 package views.swingComponents;
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
-import javax.swing.plaf.basic.BasicScrollBarUI;
 
 import views.listeners.CloseWindow;
 
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
-import java.io.File;
 
 
 public class CertificatePopUp extends JPanelRound{
@@ -19,8 +12,6 @@ public class CertificatePopUp extends JPanelRound{
     GridBagConstraints constraints;
     private ScrollableCertificateList scroll;
     private JScrollPane scrollPanel;
-    private double height = 0;
-    private int amountOfResize = 0;
 
     public CertificatePopUp(){
         constraints = new GridBagConstraints();

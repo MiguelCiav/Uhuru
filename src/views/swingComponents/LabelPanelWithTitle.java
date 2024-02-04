@@ -10,8 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import views.listeners.ChangeBackground;
-
 public class LabelPanelWithTitle extends LabelPanel{
 
     private String text;

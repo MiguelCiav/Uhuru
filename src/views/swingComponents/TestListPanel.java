@@ -1,12 +1,8 @@
 package views.swingComponents;
 
 import javax.swing.*;
-
 import views.listeners.OpenCertificatePopUp;
-
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class TestListPanel extends JPanelRound{
 

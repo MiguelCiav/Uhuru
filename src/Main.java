@@ -1,8 +1,4 @@
-import views.useCaseFrames.CreateTestView;
-import views.useCaseFrames.SolutionsView;
-import views.swingComponents.JFramePopUp;
 import views.useCaseFrames.TestListView;
-import views.useCaseFrames.TestView;
 import controllers.FileReadingManager;
 import models.User;
 

@@ -4,7 +4,6 @@ import javax.swing.*;
 import views.listeners.GoToSolutionsView;
 
 import java.awt.*;
-import java.nio.file.Path;
 import java.util.TimerTask;
 import java.util.Timer;
 

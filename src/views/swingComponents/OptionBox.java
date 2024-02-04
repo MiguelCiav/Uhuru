@@ -2,9 +2,7 @@ package views.swingComponents;
 import javax.swing.*;
 
 import views.listeners.UpdateAnswerAmount;
-
 import java.awt.*;
-import java.io.File;
 
 public class OptionBox extends JPanelRound{
     JTextArea optionText = new JTextArea ();
