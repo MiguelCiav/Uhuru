@@ -3,7 +3,6 @@ package views.useCaseFrames;
 import javax.swing.*;
 import views.swingComponents.PathManager;
 import java.awt.*;
-import java.io.File;
 
 public class LoginFrame extends JFrame{
 

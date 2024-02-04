@@ -2,8 +2,6 @@ package views.useCaseFrames;
 
 import views.swingComponents.*;
 
-import java.io.File;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
