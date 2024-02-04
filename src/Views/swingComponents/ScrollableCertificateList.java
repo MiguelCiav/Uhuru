@@ -1,6 +1,10 @@
 package Views.swingComponents;
 import javax.swing.*;
 
+import Controller.GenerateCertificateController;
+import Models.Course;
+import Models.User;
+
 import java.awt.*;
 
 public class ScrollableCertificateList extends JPanel {
@@ -23,9 +27,15 @@ public class ScrollableCertificateList extends JPanel {
         constraints.insets= new Insets(0,20,10,30);
 
         //Añadir el controlador de certificado(Pedir ID aprobado de user y recorrer en el if)
-        for (int i = 1; i <= 10; i++) {
+        GenerateCertificateController controller = GenerateCertificateController.getInstace();
+        Course []course = GenerateCertificateController.getUserCourseList();
+        
+        for (int i = 1; i <= User.getUserInstance().getCoursesCount(); i++) {
             constraints.gridy = i;
-            CertificateCourseBox auxiliarQuestionPanel = new CertificateCourseBox("Cursito");
+            
+            String courseName = course[i-1].getCourseName();
+
+            CertificateCourseBox auxiliarQuestionPanel = new CertificateCourseBox(courseName);
 
             if(i == 5){
                 constraints.weighty = 1.0;

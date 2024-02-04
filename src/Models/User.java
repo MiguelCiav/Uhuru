@@ -2,6 +2,8 @@ package Models;
 
 import java.util.*;
 
+import Controller.GenerateCertificateController;
+
 public class User {
 
     private String name;
@@ -10,17 +12,17 @@ public class User {
     private String password;
     private int []coursesID = new int[Course.MAX_COURSE];
     private int coursesCount = 0;
+    private static User instance;
 
-    public User(){
+    private User(){}
 
+    public static User getUserInstance (){
+         if (instance == null){
+            instance = new User();
+        }
+        return instance;
     }
-    public User(String name, String lastName, String eMail, String password){
-        
-        this.name = name;
-        this.lastName = lastName;
-        this.eMail = eMail;
-        this.password = password;
-    }
+
 
     public void addCourse(int Id){
         if(coursesCount!=Course.MAX_COURSE){
@@ -28,6 +30,8 @@ public class User {
             coursesCount++;
         }
     }
+
+
 
     public int[] getCourses() {
         return coursesID;
@@ -59,6 +63,10 @@ public class User {
 
     public String geteMail() {
         return eMail;
+    }
+
+    public int getCoursesCount() {
+        return coursesCount;
     }
 
 }

@@ -30,6 +30,8 @@ public class CertificateCourseBox extends JPanel{
         
         courseTitlePanel.setLayout(new GridBagLayout());
         courseTitlePanel.setRoundBackgroundColor(new Color(217,233,241));
+        courseTitlePanel.setPreferredSize(new Dimension(400,60));
+
         constraints.anchor = GridBagConstraints.WEST;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.insets= new Insets(20,20,20,10);
