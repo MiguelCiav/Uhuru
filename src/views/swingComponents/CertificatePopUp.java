@@ -1,8 +1,14 @@
 package views.swingComponents;
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
+import views.listeners.CloseWindow;
+
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.io.File;
@@ -21,7 +27,7 @@ public class CertificatePopUp extends JPanelRound{
 
         setRoundBackgroundColor(new Color(255,255,255));
         setLayout(new GridBagLayout());
-        setBorder(null);
+        setBorder(new LineBorder(new Color(225, 233, 245), 20,true));
         setMinimumSize(new Dimension(863,550));
         addExitButton();
         addTitle();
@@ -52,7 +58,7 @@ public class CertificatePopUp extends JPanelRound{
 
     public void addExitButton(){
 
-        PathManager exitButtonImageURL = new PathManager();
+        //PathManager exitButtonImageURL = new PathManager();
         JLabel exitButton = new JLabel();
         
         constraints.gridx = 1;
@@ -61,6 +67,7 @@ public class CertificatePopUp extends JPanelRound{
         constraints.insets= new Insets(10,0,10,30);
         exitButton.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testListView/close.png"))));
         
+        exitButton.addMouseListener(new CloseWindow());
         add(exitButton, constraints);
     }
 

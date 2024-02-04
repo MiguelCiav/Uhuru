@@ -1,5 +1,6 @@
 import views.useCaseFrames.CreateTestView;
 import views.useCaseFrames.SolutionsView;
+import views.swingComponents.JFramePopUp;
 import views.useCaseFrames.TestListView;
 import views.useCaseFrames.TestView;
 import controllers.FileReadingManager;
@@ -13,6 +14,7 @@ public class Main {
 
         file.setPath("src/DataBase/Course.txt");
         file.readCourses();
-        new CreateTestView();        
+        new TestListView();
+        
     }
 }
