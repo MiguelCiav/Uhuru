@@ -1,6 +1,6 @@
-package Views.useCaseFrames;
+package views.useCaseFrames;
 
-import Views.swingComponents.*;
+import views.swingComponents.*;
 
 import java.io.File;
 

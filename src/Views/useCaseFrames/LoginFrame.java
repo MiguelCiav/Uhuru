@@ -1,7 +1,7 @@
-package Views.useCaseFrames;
+package views.useCaseFrames;
 
 import javax.swing.*;
-import Views.swingComponents.PathManager;
+import views.swingComponents.PathManager;
 import java.awt.*;
 import java.io.File;
 

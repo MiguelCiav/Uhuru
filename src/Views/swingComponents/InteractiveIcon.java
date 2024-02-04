@@ -1,4 +1,4 @@
-package Views.swingComponents;
+package views.swingComponents;
 
 import java.awt.Dimension;
 import java.awt.event.MouseListener;
@@ -6,7 +6,7 @@ import java.io.File;
 
 import javax.swing.*;
 
-import Views.listeners.IconListener;
+import views.listeners.IconListener;
 
 // Esta clase se hizo con el fin de crear etiquetas (JLabel) con interacciones
 

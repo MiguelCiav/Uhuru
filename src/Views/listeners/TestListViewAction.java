@@ -1,11 +1,11 @@
-package Views.listeners;
+package views.listeners;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.Component;
 import javax.swing.*;
 
-import Views.useCaseFrames.TestListView;
+import views.useCaseFrames.TestListView;
 
 public class TestListViewAction implements MouseListener{
 

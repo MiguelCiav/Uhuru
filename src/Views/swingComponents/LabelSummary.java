@@ -1,4 +1,4 @@
-package Views.swingComponents;
+package views.swingComponents;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,8 +7,8 @@ import java.io.File;
 
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
-import Views.swingComponents.PathManager;
-import Views.useCaseFrames.TestView;
+import views.swingComponents.PathManager;
+import views.useCaseFrames.TestView;
 
 public class LabelSummary extends JPanelRound implements MouseListener{
 

@@ -1,11 +1,11 @@
-package Views.useCaseFrames;
+package views.useCaseFrames;
 
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
-import Views.swingComponents.AnswersSummaryPanel;
-import Views.swingComponents.DoublePanel;
-import Views.swingComponents.LabelContainer;
+import views.swingComponents.AnswersSummaryPanel;
+import views.swingComponents.DoublePanel;
+import views.swingComponents.LabelContainer;
 
 public class SolutionsView extends JFrame{
     

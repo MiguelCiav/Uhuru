@@ -1,7 +1,7 @@
-package Views.swingComponents;
+package views.swingComponents;
 import javax.swing.*;
 
-import Views.listeners.SolutionsViewAction;
+import views.listeners.SolutionsViewAction;
 
 import java.awt.*;
 import java.nio.file.Path;
