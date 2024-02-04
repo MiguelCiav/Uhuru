@@ -9,13 +9,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import views.listeners.GoToTestView;
 
-public class LabelPanelRightIcon extends LabelPanel{
+public class LabelPanelTest extends LabelPanel{
 
     private JLabel textLabel;
     private JLabel arrowLabel;
     private String testName;
 
-    public LabelPanelRightIcon(String testName){
+    public LabelPanelTest(String testName){
 
         constraints = new GridBagConstraints();
         this.testName = testName;

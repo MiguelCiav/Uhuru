@@ -1,7 +1,6 @@
 package controllers;
 import models.User;
 import models.Course;
-import views.swingComponents.CertificatePopUp;
 
 public class GenerateCertificateController {
     private static GenerateCertificateController instance;
