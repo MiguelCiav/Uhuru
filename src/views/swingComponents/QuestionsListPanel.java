@@ -44,57 +44,7 @@ public class QuestionsListPanel extends JPanelRound{
     private void setScrollableQuestionsPanel(){
 
         scroll = new ScrollableQuestionsPanel();
-        scrollPanel = new JScrollPane(scroll);
-
-        scrollPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        scrollPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPanel.setBorder(null);
-        scrollPanel.getVerticalScrollBar().setBackground(new Color(255,255,255));
-        scrollPanel.getVerticalScrollBar().setUnitIncrement(6);
-
-        scrollPanel.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
-            @Override
-            protected void configureScrollBarColors() {
-                this.thumbColor = new Color(61, 90, 128);
-            }
-        });
-
-        setResizable();
-
-    }
-
-    private void setResizable(){
-
-        scrollPanel.addComponentListener(new ComponentListener() {
-
-            @Override
-            public void componentResized(ComponentEvent e) {
-
-
-                if(amountOfResize > 1){
-                    if(height == 0){
-                        height = scroll.getHeight() * 1.75;
-                    }
-    
-                    scroll.setPreferredSize(new Dimension(scrollPanel.getWidth() - 20, (int) height));
-                    scroll.validate();
-                    scroll.repaint();
-                }
-
-                amountOfResize++;
-                
-            }
-
-            @Override
-            public void componentMoved(ComponentEvent e) {}
-
-            @Override
-            public void componentShown(ComponentEvent e) {}
-
-            @Override
-            public void componentHidden(ComponentEvent e) {}
-            
-        });
+        scrollPanel = new JBlueScrollPane(scroll);
 
     }
 
@@ -110,4 +60,3 @@ public class QuestionsListPanel extends JPanelRound{
     }
     
 }
-
