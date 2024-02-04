@@ -1,4 +1,4 @@
-package Views.extraFrames;
+package Views.useCaseFrames;
 
 import javax.swing.*;
 import Views.swingComponents.PathManager;

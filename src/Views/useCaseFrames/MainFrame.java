@@ -1,4 +1,4 @@
-package Views.extraFrames;
+package Views.useCaseFrames;
 
 import Views.swingComponents.*;
 
