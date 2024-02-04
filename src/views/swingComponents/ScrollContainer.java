@@ -2,35 +2,34 @@ package views.swingComponents;
 
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.plaf.basic.BasicScrollBarUI;
 
-public class LabelContainer extends JPanelRound{
+public class ScrollContainer extends JPanelRound{
 
-    public static final int QUESTIONS_CONTAINER = 0;
-    public static final int COURSES_CONTAINER = 0;
     private String title;
-    private JLabel questionsText;
+    private JLabel titleLabel;
     private GridBagConstraints constraints;
+    private ScrollablePanel scrollablePanel;
 
-    public LabelContainer(String title, int labelType){
+    public ScrollContainer(String title, ScrollablePanel scrollablePanel){
 
         this.title = title;
+        this.scrollablePanel = scrollablePanel;
         
         setLayout(new GridBagLayout());
         setRoundBackgroundColor(new Color(255,255,255));
         constraints = new GridBagConstraints();
 
-        addQuestionSummaryTitle();
-        addScrollableQuestionsSummaryPanel();
+        addTitle();
+        addScrollablePanel();
 
     }
 
-    private void addQuestionSummaryTitle () {
+    private void addTitle() {
 
-        questionsText = new JLabel(title);
+        titleLabel = new JLabel(title);
 
-        questionsText.setFont(new Font("Futura", Font.BOLD, 32));
-        questionsText.setForeground(new Color(61,90,128));
+        titleLabel.setFont(new Font("Futura", Font.BOLD, 32));
+        titleLabel.setForeground(new Color(61,90,128));
 
         constraints.insets = new Insets(16, 20, 16, 80);
         constraints.gridx = 0;
@@ -40,25 +39,20 @@ public class LabelContainer extends JPanelRound{
         constraints.weightx = 1.0;
         constraints.anchor = GridBagConstraints.WEST;
 
-        add(questionsText, constraints);
+        add(titleLabel, constraints);
 
     }
 
-    private void addScrollableQuestionsSummaryPanel(){
+    private void addScrollablePanel(){
 
-        JScrollPane auxiliarPanel = new JBlueScrollPane(new ScrollableQuestionsSummaryPanel());
+        JScrollPane auxiliarPanel = new JBlueScrollPane(scrollablePanel);
 
+        constraints.insets = new Insets(0, 20, 0, 20);
         constraints.anchor = GridBagConstraints.CENTER;
-
         constraints.gridy = 1;
         constraints.weighty = 1.0;
         constraints.fill = GridBagConstraints.BOTH;
-        constraints.insets = new Insets(0, 20, 0, 20);
         constraints.anchor = GridBagConstraints.NORTH;
-
-        auxiliarPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        auxiliarPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        auxiliarPanel.setBorder(null);
 
         auxiliarPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         auxiliarPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);

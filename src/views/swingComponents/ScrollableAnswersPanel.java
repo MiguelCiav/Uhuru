@@ -7,13 +7,13 @@ import java.awt.*;
 public class ScrollableAnswersPanel extends JPanel{
 
     GridBagConstraints constraints;
-    AnswersPanel answersPanel;
+    CorrectAnswerPanel answersPanel;
     JLabel questionDescription;
 
     public ScrollableAnswersPanel(){
 
         constraints = new GridBagConstraints();
-        answersPanel = new AnswersPanel();
+        answersPanel = new CorrectAnswerPanel();
         questionDescription = new JLabel();
 
         setLayout(new GridBagLayout());

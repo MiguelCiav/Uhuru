@@ -18,12 +18,14 @@ public class LabelPanelWithTitle extends LabelPanel{
     private JLabel questionTitle;
     private JTextArea questionSummary;
     private int number;
+    private String title;
 
-    public LabelPanelWithTitle(int number, String text){
+    public LabelPanelWithTitle(int number, String text, String title){
 
         constraints = new GridBagConstraints();
         this.text = text;
         this.number = number;
+        this.title = title;
 
         setLayout(new GridBagLayout());
         setBackground(new Color(216,233,241));
@@ -46,7 +48,7 @@ public class LabelPanelWithTitle extends LabelPanel{
         questionSummary.setLineWrap(true);
         questionSummary.setText(text);
 
-        questionTitle.setText("Pregunta " + String.valueOf(number));
+        questionTitle.setText(title + " " + String.valueOf(number));
         questionTitle.setFont(new Font("Futura", Font.BOLD, 20));
     }
 

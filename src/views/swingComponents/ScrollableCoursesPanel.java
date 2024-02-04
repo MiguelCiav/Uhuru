@@ -13,7 +13,7 @@ public class ScrollableCoursesPanel extends ScrollablePanel{
     @Override
     protected void addScrollableElements(){
         for(int i = 0; i < 5; i++) {
-            add(new LabelPanelWithTitle(i, "Curso de Ejemplo"));
+            add(new LabelPanelWithTitle(i, "Curso de Ejemplo", "Curso"));
             add(Box.createRigidArea(new Dimension(0,20)));
         }
     }

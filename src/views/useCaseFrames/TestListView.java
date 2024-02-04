@@ -4,19 +4,20 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 import views.swingComponents.DoublePanel;
-import views.swingComponents.LabelContainer;
 import views.swingComponents.NavBar;
+import views.swingComponents.ScrollContainer;
+import views.swingComponents.ScrollableCoursesPanel;
 import views.swingComponents.TestListPanel;
 
 public class TestListView extends JFrame{
 
-    private LabelContainer courseContainer;
+    private ScrollContainer scrollContainer;
     private TestListPanel testListPanel = new TestListPanel();
     private DoublePanel doublePanel;
 
     public TestListView (){
-        courseContainer = new LabelContainer("Cursos Activos", LabelContainer.COURSES_CONTAINER);
-        doublePanel = new DoublePanel(courseContainer, testListPanel);
+        scrollContainer = new ScrollContainer("Cursos Activos", new ScrollableCoursesPanel());
+        doublePanel = new DoublePanel(scrollContainer, testListPanel);
 
         setTitle("Uhuru: Available Tests");
         setExtendedState(JFrame.MAXIMIZED_BOTH);

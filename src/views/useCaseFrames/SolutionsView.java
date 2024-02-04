@@ -2,20 +2,20 @@ package views.useCaseFrames;
 
 import java.awt.Dimension;
 import javax.swing.JFrame;
-
 import views.swingComponents.AnswersSummaryPanel;
 import views.swingComponents.DoublePanel;
-import views.swingComponents.LabelContainer;
+import views.swingComponents.ScrollContainer;
+import views.swingComponents.ScrollableQuestionsSummaryPanel;
 
 public class SolutionsView extends JFrame{
     
-    private LabelContainer questionsSummaryPanel;
+    private ScrollContainer scrollContainer;
     private AnswersSummaryPanel answersSummaryPanel = new AnswersSummaryPanel();
     private DoublePanel doublePanel;
 
     public SolutionsView (){
-        questionsSummaryPanel = new LabelContainer("Preguntas", LabelContainer.QUESTIONS_CONTAINER);
-        doublePanel = new DoublePanel(questionsSummaryPanel, answersSummaryPanel);
+        scrollContainer = new ScrollContainer("Preguntas", new ScrollableQuestionsSummaryPanel());
+        doublePanel = new DoublePanel(scrollContainer, answersSummaryPanel);
 
         setTitle("Uhuru: Solutions");
         setExtendedState(JFrame.MAXIMIZED_BOTH);

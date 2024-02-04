@@ -19,7 +19,6 @@ public class TestListPanel extends JPanelRound{
         addTestPanel();
         addButton();
 
-
     }
 
     private void addTestTitle(){
