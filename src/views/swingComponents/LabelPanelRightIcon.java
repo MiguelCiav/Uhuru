@@ -9,13 +9,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import views.listeners.GoToTestView;
 
-public class LabelPanelWithIcon extends LabelPanel{
+public class LabelPanelRightIcon extends LabelPanel{
 
-    private JLabel testLabel;
+    private JLabel textLabel;
     private JLabel arrowLabel;
     private String testName;
 
-    public LabelPanelWithIcon(String testName){
+    public LabelPanelRightIcon(String testName){
 
         constraints = new GridBagConstraints();
         this.testName = testName;
@@ -30,13 +30,13 @@ public class LabelPanelWithIcon extends LabelPanel{
     @Override
     protected void setLabel() {
 
-        testLabel = new JLabel();
+        textLabel = new JLabel();
 
-        testLabel.setBackground(new Color(216,233,241));
-        testLabel.setOpaque(true);
-        testLabel.setFont(new Font("Futura", Font.PLAIN, 12));
-        testLabel.setFocusable(false);
-        testLabel.setText(testName);
+        textLabel.setBackground(new Color(216,233,241));
+        textLabel.setOpaque(true);
+        textLabel.setFont(new Font("Futura", Font.PLAIN, 12));
+        textLabel.setFocusable(false);
+        textLabel.setText(testName);
 
         arrowLabel = new JLabel(new ImageIcon(getClass().getResource("../img/testListView/siguiente.png")));
 
@@ -54,7 +54,7 @@ public class LabelPanelWithIcon extends LabelPanel{
         constraints.anchor = GridBagConstraints.WEST;
         constraints.insets = new Insets(16, 16, 16, 16);
 
-        add(testLabel, constraints);
+        add(textLabel, constraints);
 
         constraints.gridx = 1;
         constraints.anchor = GridBagConstraints.EAST;
