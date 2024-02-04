@@ -100,22 +100,12 @@ public class LabelSummary extends JPanelRound implements MouseListener{
         constraints.anchor = GridBagConstraints.NORTHWEST;
         constraints.insets = new Insets(16, 16, 16, 16);
 
-        JScrollPane auxiliarPane = new JScrollPane(questionSummaryLabel,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane auxiliarPane = new JBlueScrollPane(questionSummaryLabel);
         auxiliarPane.setBorder(null);
         auxiliarPane.setPreferredSize(new Dimension(200,60));
         
         auxiliarPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         auxiliarPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        auxiliarPane.setBorder(null);
-        auxiliarPane.getVerticalScrollBar().setBackground(new Color(255,255,255));
-        auxiliarPane.getVerticalScrollBar().setUnitIncrement(6);
-
-        auxiliarPane.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
-            @Override
-            protected void configureScrollBarColors() {
-                this.thumbColor = new Color(61, 90, 128);
-            }
-        });
         
         add(auxiliarPane, constraints);
 

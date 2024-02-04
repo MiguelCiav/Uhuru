@@ -46,7 +46,7 @@ public class LabelContainer extends JPanelRound{
 
     private void addScrollableQuestionsSummaryPanel(){
 
-        JScrollPane auxiliarPanel = new JScrollPane(new ScrollableLabelPanel(ScrollableLabelPanel.QUESTIONS_SCROLL));
+        JScrollPane auxiliarPanel = new JBlueScrollPane(new ScrollableLabelPanel(ScrollableLabelPanel.QUESTIONS_SCROLL));
 
         constraints.anchor = GridBagConstraints.CENTER;
 
@@ -63,15 +63,6 @@ public class LabelContainer extends JPanelRound{
         auxiliarPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         auxiliarPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         auxiliarPanel.setBorder(null);
-        auxiliarPanel.getVerticalScrollBar().setBackground(new Color(255,255,255));
-        auxiliarPanel.getVerticalScrollBar().setUnitIncrement(6);
-
-        auxiliarPanel.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
-            @Override
-            protected void configureScrollBarColors() {
-                this.thumbColor = new Color(61, 90, 128);
-            }
-        });
 
         add(auxiliarPanel, constraints);
 
