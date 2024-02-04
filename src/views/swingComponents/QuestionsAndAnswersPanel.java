@@ -12,7 +12,7 @@ public class QuestionsAndAnswersPanel extends JPanelRound implements ActionListe
     private JComboBox<String> domainSelection = new JComboBox<String>();
     private JPanelRound addQuestionPanel = new JPanelRound();
     private JLabel addQuestionLabel = new JLabel("Añadir pregunta");
-    private JButton addQuestionButton = new JButton(new ImageIcon(new PathManager().setFileLink("src" + File.separator + "Views" + File.separator + "img" + File.separator + "createTestView" + File.separator + "Add_Ico.png")));
+    private JButton addQuestionButton = new JButton(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/Add_Ico.png"))));
     private BlueButton cancelTestButton = new BlueButton("Cancelar examen", 200, 2);
     private BlueButton createTestButton = new BlueButton("Crear examen", 50, 1);
     private GridBagConstraints constraints = new GridBagConstraints();
@@ -112,5 +112,14 @@ public class QuestionsAndAnswersPanel extends JPanelRound implements ActionListe
     }
 
     @Override public void actionPerformed(ActionEvent e){
+
+        JCheckBox box = (JCheckBox) e.getSource();
+
+        if(box.isSelected()){
+        }
+        else{
+
+        }
+
     }
 }

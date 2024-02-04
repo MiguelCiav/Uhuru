@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame implements ActionListener{
     
-    private ImageIcon uhuruLogo = new ImageIcon(new PathManager().setFileLink("src" + File.separator + "Views" + File.separator + "img" + File.separator + "mainView" + File.separator + "mainFrameImage.jpg"));
+    private ImageIcon uhuruLogo = new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/mainView/mainFrameImage.jpg")));
     private JButton uhuruLogoButton = new JButton();
 
     public MainFrame(){

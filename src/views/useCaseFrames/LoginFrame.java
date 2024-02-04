@@ -7,7 +7,7 @@ import java.io.File;
 
 public class LoginFrame extends JFrame{
 
-    private ImageIcon uhuruLogo = new ImageIcon(new PathManager().setFileLink("src" + File.separator + "Views" + File.separator + "img" + File.separator + "loginView" + File.separator + "loginBackground.jpg"));
+    private ImageIcon uhuruLogo = new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/loginView/loginBackground.jpg")));
     private JLabel background = new JLabel();
     
     LoginFrame(){

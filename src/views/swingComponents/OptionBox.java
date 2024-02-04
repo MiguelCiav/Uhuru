@@ -23,7 +23,6 @@ public class OptionBox extends JPanelRound{
     }
 
     private void addOptionButton(){
-        PathManager optionButtonImageURL = new PathManager();
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.weightx = 0;
@@ -36,8 +35,8 @@ public class OptionBox extends JPanelRound{
         optionButton.setBackground(new Color(216,233,241));
         optionButton.setSelected(true);
         optionButton.setBorder(null);
-        optionButton.setIcon(new ImageIcon(new PathManager().setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "OptionBox" + File.separator + "sin pulsar.png")));
-        optionButton.setSelectedIcon(new ImageIcon(new PathManager().setFileLink("ProyectoIS2023_Grupo_2" + File.separator + "src" + File.separator + "Views" + File.separator + "img" + File.separator + "OptionBox" + File.separator + "pulsado.png")));
+        optionButton.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/OptionBox/sin pulsar.png"))));
+        optionButton.setSelectedIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/OptionBox/pulsado.png"))));
         optionButton.setSelected(false);
         optionButton.addMouseListener(new UpdateAnswerAmount());
 

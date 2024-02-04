@@ -38,12 +38,11 @@ public class LabelPanelWithIcon extends LabelPanel{
         testLabel.setFocusable(false);
         testLabel.setText(testName);
 
-        arrowLabel = new JLabel(new ImageIcon(getClass().getResource("../img/testListView/siguiente.png")));
+        arrowLabel = new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testListView/siguiente.png"))));
 
     }
 
-    @Override
-    protected void addLabel() {
+    @Override protected void addLabel() {
 
         constraints.gridx = 0;
         constraints.gridy = 0;

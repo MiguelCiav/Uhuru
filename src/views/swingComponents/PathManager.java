@@ -7,19 +7,22 @@ import java.nio.file.*;
 import static java.nio.file.StandardOpenOption.*;
 
 public class PathManager{
-    private Path path = Paths.get("");
-    private String currentDirectory;
-    private String directoryName ="";
-    //private File filePath = new File(path.toAbsolutePath().toString());
-    private File filePath = new File(System.getProperty("user.dir"));
 
-    public PathManager(){
-        currentDirectory = filePath.getParentFile().toString();
-    }
+    public PathManager(){}
 
     public String setFileLink(String relativePath){
 
-        directoryName += relativePath;
+        String directoryName = "";
+        String[] relativePathArray = relativePath.split("/");
+
+        for(int i = 0; i < relativePathArray.length; i++){
+            if(i == relativePathArray.length - 1){
+                directoryName += relativePathArray[i];
+            }
+            else{
+                directoryName += relativePathArray[i] + File.separator;
+            }
+        }
 
         return directoryName;
     }

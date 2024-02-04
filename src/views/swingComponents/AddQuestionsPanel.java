@@ -13,9 +13,9 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
     private LargeTextPanels questionOption = new LargeTextPanels("Introduzca la opción", new Color(255,255,255));
     private LargeTextPanels questionJustification = new LargeTextPanels("Ingrese la justificacion de la respuesta", new Color(255,255,255));
     private JPanelRound addOptionPanel = new JPanelRound();
-    private JButton addOptionButton = new JButton(new ImageIcon(new PathManager().setFileLink("src" + File.separator + "Views" + File.separator + "img" + File.separator + "createTestView" + File.separator + "Add_Ico.png")));
+    private JButton addOptionButton = new JButton(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/Add_Ico.png"))));
     private JLabel addOptionLabel = new JLabel("Añadir opcion");
-    private JCheckBox correctOption = new JCheckBox(new ImageIcon(new PathManager().setFileLink("src" + File.separator + "Views" + File.separator + "img" + File.separator + "createTestView" + File.separator + "checkbox-empty.png")));
+    private JCheckBox correctOption = new JCheckBox(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/checkbox-empty.png"))));
 
     AddQuestionsPanel(){
         setRoundBackgroundColor(new Color(237, 246, 249));
@@ -100,11 +100,11 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
         JCheckBox box = (JCheckBox) e.getSource();
 
         if(box.isSelected()){
-            correctOption.setIcon(new ImageIcon(new PathManager().setFileLink("src" + File.separator + "Views" + File.separator + "img" + File.separator + "solutionsView" + File.separator + "answerCheckBox.png")));
+            correctOption.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/solutionsView/sanswerCheckBox.png"))));
             questionJustification.textArea.setEditable(true);
         }
         else{
-            correctOption.setIcon(new ImageIcon(new PathManager().setFileLink("src" + File.separator + "Views" + File.separator + "img" + File.separator + "createTestView" + File.separator + "checkbox-empty.png")));
+            correctOption.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/checkbox-empty.png"))));
             questionJustification.textArea.setEditable(false);
         }
     }
