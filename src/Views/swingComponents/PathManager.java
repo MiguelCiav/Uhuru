@@ -13,7 +13,7 @@ public class PathManager{
     //private File filePath = new File(path.toAbsolutePath().toString());
     private File filePath = new File(System.getProperty("user.dir"));
 
-    PathManager(){
+    public PathManager(){
         currentDirectory = filePath.getParentFile().toString();
     }
 
