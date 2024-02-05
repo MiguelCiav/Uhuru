@@ -16,13 +16,15 @@ public class GenerateCertificateController {
         return instance;
     }
 
-    private static void getUserCourses(){
-        User activeUser = User.getUserInstance();
+    private static void getUserCourses(){;
 
-        int []coursesID = activeUser.getCourses();
-        for (int i=0; i<activeUser.getCoursesCount(); i++){
-            courseList[i]=Course.getInstanceCourse(coursesID[i]);
+        String [] coursesID = User.getUserInstance().getCourses();
+        
+
+        for (int i = 0; i < User.getUserInstance().getCoursesCount(); i++){
+            courseList[i] = Course.getInstanceCourse(coursesID[i]);
         }
+
     }
 
     public static Course[] getUserCourseList (){

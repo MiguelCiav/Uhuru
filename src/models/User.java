@@ -10,7 +10,7 @@ public class User {
     private String lastName;
     private String eMail;
     private String password;
-    private int []coursesID = new int[Course.MAX_COURSE];
+    private String []coursesID = new String[Course.MAX_COURSE];
     private int coursesCount = 0;
     private static User instance;
 
@@ -24,16 +24,16 @@ public class User {
     }
 
 
-    public void addCourse(int Id){
-        if(coursesCount!=Course.MAX_COURSE){
-            coursesID[coursesCount]=Id;
+    public void addCourse(String Id){
+        if(coursesCount != Course.MAX_COURSE){
+            coursesID[coursesCount] = Id;
             coursesCount++;
         }
     }
 
 
 
-    public int[] getCourses() {
+    public String[] getCourses() {
         return coursesID;
     }
 

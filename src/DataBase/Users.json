@@ -3,12 +3,18 @@
     "password":"pablo123", 
     "name":"Pablo", 
     "lastname":"Perez",
-    "approvedCourses":[101,104]},
+    "approvedCourses":["0","1"]},
 
     {"email":"juanlopez@gmail.com", 
     "password":"pan456", 
     "name":"Juan", 
     "lastname":"López",
-    "approvedCourses":[102,103]}
+    "approvedCourses":["2","1"]},
+
+    {"email":"user", 
+    "password":"user", 
+    "name":"Usuario", 
+    "lastname":"Ejemplo",
+    "approvedCourses":["0","1"]}
 
 ]

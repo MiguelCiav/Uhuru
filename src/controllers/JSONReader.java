@@ -1,5 +1,6 @@
 package controllers;
 
+import java.awt.SystemTray;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,9 +17,7 @@ public class JSONReader {
     private static JSONReader instance;
     private JSONArray[] list = new JSONArray[4];
     
-    private JSONReader(){
-
-    }
+    private JSONReader(){}
 
     public static JSONReader getInstance(){
 
@@ -40,8 +39,7 @@ public class JSONReader {
             String courseName = (String) course.get("courseName");
             String courseID = (String) course.get("courseID");
 
-            System.out.println("Cargando curso " + courseID);
-            Course.setInstanceCourse(courseName, Integer.valueOf(courseID));
+            Course.setInstanceCourse(courseName, courseID);
 
             readTest(courseID);
 
@@ -61,7 +59,6 @@ public class JSONReader {
 
             if(courseTestID.equals(courseID)){
 
-                System.out.println("Cargando test " + testID);
                 readQuestions(testID);
 
             }
@@ -81,7 +78,6 @@ public class JSONReader {
 
             if(questionTestID.equals(testID)){
 
-                System.out.println("Cargando pregunta " + questionID);
                 readAnswers(questionID);
 
             }
@@ -101,8 +97,6 @@ public class JSONReader {
 
             if(answerQuestionID.equals(questionID)){
 
-                System.out.println("Cargando respuesta " + answerID);
-
             }
         }
 
@@ -112,7 +106,7 @@ public class JSONReader {
 
         readFile("src/DataBase/Users.json",0);
         
-        for(Object object : list){
+        for(Object object : list[0]){
 
             JSONObject user = (JSONObject) object;
             String userEmail = (String) user.get("email");
@@ -145,7 +139,7 @@ public class JSONReader {
 
         for(Object object : approvedCourses){
 
-            int courseID = Integer.valueOf(object.toString());
+            String courseID = object.toString();
             User.getUserInstance().addCourse(courseID);
 
         }

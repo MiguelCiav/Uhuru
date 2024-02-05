@@ -30,7 +30,7 @@ public class GenerateCertificate {
     private static final Font subTitlehFont = FontFactory.getFont(FontFactory.HELVETICA, 16, Font.BOLD);
     private static final Font paragrathFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.NORMAL);
     private static final Font paragrathBoldFont = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-    private static final String pathImage = "src\\Controller\\img\\iconDark.png";
+    private static final String pathImage = "src\\controllers\\img\\iconDark.png";
     
     public GenerateCertificate(String inputname, String inputlastname, String inputdate, String inputcourse){
         name = inputname;

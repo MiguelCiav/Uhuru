@@ -6,6 +6,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import controllers.JSONReader;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,8 +38,10 @@ public class MainFrame extends JFrame implements ActionListener{
         setVisible(true);
     }
 
-    @Override public void actionPerformed(ActionEvent e){
+    @Override 
+    public void actionPerformed(ActionEvent e){
         setVisible(false);
+        JSONReader.getInstance().readCourses();
         new LoginFrame();
     }
 }

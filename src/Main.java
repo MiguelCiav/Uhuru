@@ -1,6 +1,5 @@
 import views.useCaseFrames.*;
 import views.swingComponents.*;
-import controllers.FileReadingManager;
 import controllers.JSONReader;
 import models.User;
 
@@ -14,6 +13,6 @@ public class Main {
         //file.readCourses();
 
         //new TestListView();
-        JSONReader.getInstance().readCourses();
+        new MainFrame();
     }
 }

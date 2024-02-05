@@ -3,7 +3,6 @@ package views.swingComponents;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
-import controllers.FileReadingManager;
 import controllers.LogInController;
 import utils.ViewsStyles;
 import java.awt.*;
