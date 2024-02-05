@@ -1,12 +1,9 @@
-package views.useCaseFrames;
+package views.swingComponents;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
-
 import utils.ViewsStyles;
-
 import java.awt.*;
-import views.swingComponents.*;
 
 public class UserPopUps extends JPanelRound{
 

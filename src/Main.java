@@ -1,7 +1,5 @@
-import views.swingComponents.JFramePopUp;
-import views.useCaseFrames.CreateTestView;
-import views.useCaseFrames.TestListView;
-import views.useCaseFrames.UserPopUps;
+import views.useCaseFrames.*;
+import views.swingComponents.*;
 import controllers.FileReadingManager;
 import models.User;
 
@@ -13,10 +11,8 @@ public class Main {
 
         file.setPath("src/DataBase/Course.txt");
         file.readCourses();
+        new MainFrame();
         //new TestListView();
-        new JFramePopUp(new UserPopUps(1));
-        new JFramePopUp(new UserPopUps(2));
-        new JFramePopUp(new UserPopUps(3));
-        
+        //new JFramePopUp(new LoginPopUp());
     }
 }
