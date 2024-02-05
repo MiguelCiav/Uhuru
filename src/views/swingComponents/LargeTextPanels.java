@@ -1,6 +1,9 @@
 package views.swingComponents;
 
 import javax.swing.*;
+
+import utils.ViewsStyles;
+
 import java.awt.*;
 
 public class LargeTextPanels extends JPanelRound{
@@ -9,7 +12,7 @@ public class LargeTextPanels extends JPanelRound{
     JTextArea textArea;
     GridBagConstraints constraints = new GridBagConstraints();
 
-    LargeTextPanels(String text, Color c){
+    public LargeTextPanels(String text, Color c){
         setRoundBackgroundColor(c);
         setLayout(new GridBagLayout());
         textArea = new JTextArea();
@@ -18,6 +21,7 @@ public class LargeTextPanels extends JPanelRound{
         textArea.setBorder(null);
         textArea.setBackground(c);
         textArea.setLineWrap(true);
+        textArea.setFont(ViewsStyles.TEXT_FONT);
 
         textScrollPane = new JScrollPane(textArea);
         

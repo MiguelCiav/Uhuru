@@ -6,6 +6,8 @@ import utils.ViewsStyles;
 
 import java.awt.*;
 
+import utils.ViewsStyles;
+
 public class AnswersSummaryPanel extends JPanelRound{
 
     GridBagConstraints constraints = new GridBagConstraints();

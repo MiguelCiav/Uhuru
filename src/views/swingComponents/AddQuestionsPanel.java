@@ -6,6 +6,7 @@ import utils.ViewsStyles;
 
 import java.awt.*;
 import java.awt.event.*;
+import utils.ViewsStyles;
 
 public class AddQuestionsPanel extends JPanelRound implements ActionListener{
 
