@@ -18,7 +18,7 @@ public class LoginFrame extends JFrame{
         setMinimumSize(new Dimension(800,600));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        setLayout(new GridBagLayout());
+        setLayout(new BorderLayout());
 
         Image image1 = uhuruLogo.getImage();
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
@@ -34,9 +34,9 @@ public class LoginFrame extends JFrame{
         constraints.gridheight = 1;
         constraints.gridwidth = 1;
 
-        background.add(new LoginPopUp(), constraints);
+        background.add(new LoginPopUp(),constraints);
 
-        add(background);
+        add(background, BorderLayout.CENTER);
 
         setVisible(true);
     }
