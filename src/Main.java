@@ -14,6 +14,6 @@ public class Main {
         //file.readCourses();
 
         //new TestListView();
-        //new JFramePopUp(new LoginPopUp());
+        JSONReader.getInstance().readCourses();
     }
 }

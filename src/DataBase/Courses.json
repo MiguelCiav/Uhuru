@@ -1,18 +1,14 @@
 [
     {
         "courseName":"Java Junior",
-        "courseID":"101"
-    },
-    {
-        "courseName":"Java Junior Swing",
-        "courseID":"102"
+        "courseID":"0"
     },
     {
         "courseName":"Java Medio",
-        "courseID":"103"
+        "courseID":"1"
     },
     {
         "courseName":"Java Avanzado",
-        "courseID":"104"
+        "courseID":"2"
     }
 ]

@@ -13,17 +13,17 @@ import views.useCaseFrames.TestListView;
 public class LogInController{
     private static LogInController instance;
 
-    public LogInController(){
+    private LogInController(){
     }
 
-    public static void validateUser(JTextArea email, JTextArea password){
-        FileReadingManager file = FileReadingManager.getFileReadingManagerCourse("src/DataBase/User.txt");
+    public static void validateUser(String email, String password){
 
-        if(!file.readUser(email.getText().toString())){
-            new JFramePopUp(new WrongPassword(), new Dimension(650,300));
-        }else{
+        if(JSONReader.getInstance().readUser(email, password)){
             new TestListView();
+        } else {
+            new JFramePopUp(new WrongPassword(), new Dimension(650,300));
         }
+
     }
 
     public static LogInController getInstance(){

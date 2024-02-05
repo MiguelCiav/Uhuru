@@ -1,10 +1,8 @@
 package controllers;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -16,7 +14,7 @@ import models.User;
 public class JSONReader {
 
     private static JSONReader instance;
-    private JSONArray list;
+    private JSONArray[] list = new JSONArray[4];
     
     private JSONReader(){
 
@@ -34,23 +32,85 @@ public class JSONReader {
 
     public void readCourses(){
 
-        readFile("src/DataBase/Courses.json");
+        readFile("src/DataBase/Courses.json", 0);
         
-        for(Object object : list){
+        for(Object object : list[0]){
 
             JSONObject course = (JSONObject) object;
             String courseName = (String) course.get("courseName");
-            int courseID = (int) course.get("courseID");
+            String courseID = (String) course.get("courseID");
 
-            Course.setInstanceCourse(courseName, courseID);
+            System.out.println("Cargando curso " + courseID);
+            Course.setInstanceCourse(courseName, Integer.valueOf(courseID));
+
+            readTest(courseID);
 
         }
 
     }
 
-    public void readUser(String email, String password){
+    public void readTest(String courseID){
 
-        readFile("src/DataBase/Users.json");
+        readFile("src/DataBase/Tests.json", 1);
+
+        for(Object object : list[1]){
+
+            JSONObject test = (JSONObject) object;
+            String testID = (String) test.get("testID");
+            String courseTestID = (String) test.get("courseID");
+
+            if(courseTestID.equals(courseID)){
+
+                System.out.println("Cargando test " + testID);
+                readQuestions(testID);
+
+            }
+        }
+
+    }
+
+    private void readQuestions(String testID){
+
+        readFile("src/DataBase/Questions.json", 2);
+
+        for(Object object : list[2]){
+
+            JSONObject question = (JSONObject) object;
+            String questionID = (String) question.get("questionID");
+            String questionTestID = (String) question.get("testID");
+
+            if(questionTestID.equals(testID)){
+
+                System.out.println("Cargando pregunta " + questionID);
+                readAnswers(questionID);
+
+            }
+        }
+
+    }
+
+    private void readAnswers(String questionID){
+
+        readFile("src/DataBase/Answers.json", 3);
+
+        for(Object object : list[3]){
+
+            JSONObject answer = (JSONObject) object;
+            String answerID = (String) answer.get("answerID");
+            String answerQuestionID = (String) answer.get("questionID");
+
+            if(answerQuestionID.equals(questionID)){
+
+                System.out.println("Cargando respuesta " + answerID);
+
+            }
+        }
+
+    }
+
+    public boolean readUser(String email, String password){
+
+        readFile("src/DataBase/Users.json",0);
         
         for(Object object : list){
 
@@ -72,10 +132,13 @@ public class JSONReader {
                 JSONArray approvedCourses = (JSONArray) user.get("approvedCourses");
                 readApprovedCourses(approvedCourses);
 
+                return true;
+
             }
 
         }
 
+        return false;
     }
 
     private void readApprovedCourses(JSONArray approvedCourses){
@@ -89,14 +152,15 @@ public class JSONReader {
 
     }
 
-    public void readFile(String path){
+    private void readFile(String path, int listIndex){
 
         JSONParser jsonParser = new JSONParser();
         
         try(FileReader reader = new FileReader(path)){
 
             Object object = jsonParser.parse(reader);
-            list = (JSONArray) object;
+
+            list[listIndex] = (JSONArray) object;
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -1,0 +1,38 @@
+[
+    {   
+        "testID": "00",
+        "questionID": "000",
+        "justification": "Justificación de la pregunta 000",
+        "questionType": "Código"
+    },
+    {   
+        "testID": "00",
+        "questionID": "001",
+        "justification": "Justificación de la pregunta 001",
+        "questionType": "Texto"
+    },
+    {
+        "testID": "00",
+        "questionID": "002",
+        "justification": "Justificación de la pregunta 002",
+        "questionType": "Código"
+    },
+    {
+        "testID": "01",
+        "questionID": "010",
+        "justification": "Justificación de la pregunta 010",
+        "questionType": "Código"
+    },
+    {
+        "testID": "01",
+        "questionID": "011",
+        "justification": "Justificación de la pregunta 011",
+        "questionType": "Texto"
+    },
+    {
+        "testID": "01",
+        "questionID": "012",
+        "justification": "Justificación de la pregunta 012",
+        "questionType": "Código"
+    }
+]

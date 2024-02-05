@@ -114,6 +114,6 @@ public class LoginPopUp extends JPanelRound implements ActionListener{
     }
 
     @Override public void actionPerformed(ActionEvent e){
-        LogInController.validateUser(email.textArea, password.textArea);
+        LogInController.validateUser(email.textArea.getText(), password.textArea.getText());
     }
 }
