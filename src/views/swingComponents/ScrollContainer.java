@@ -1,11 +1,15 @@
 package views.swingComponents;
 
 import javax.swing.*;
+
+import utils.ViewsStyles;
+
 import java.awt.*;
 
 public class ScrollContainer extends JPanelRound{
 
     private String title;
+    private String buttonTitle;
     private JLabel titleLabel;
     private GridBagConstraints constraints;
     private ScrollablePanel scrollablePanel;
@@ -21,6 +25,22 @@ public class ScrollContainer extends JPanelRound{
 
         addTitle();
         addScrollablePanel();
+
+    }
+
+    public ScrollContainer(String title, ScrollablePanel scrollablePanel, String buttonTitle){
+
+        this.title = title;
+        this.scrollablePanel = scrollablePanel;
+        this.buttonTitle = buttonTitle;
+
+        setLayout(new GridBagLayout());
+        setRoundBackgroundColor(new Color(255,255,255));
+        constraints = new GridBagConstraints();
+
+        addTitle();
+        addScrollablePanel();
+        addButton();
 
     }
 
@@ -60,5 +80,26 @@ public class ScrollContainer extends JPanelRound{
 
         add(auxiliarPanel, constraints);
 
+    }
+
+    private void addButton() {
+
+        JLabel button = new JLabel();
+        PathManager path = new PathManager();
+        String url = "../img/UsersListView/addIcon.png";
+
+        button.setFont(ViewsStyles.SMALL_TITLE_FONT);
+        button.setForeground(Color.BLACK);
+        button.setText(buttonTitle);
+        button.setIcon(new ImageIcon(getClass().getResource(path.setFileLink(url))));
+        button.setIconTextGap(16);
+
+        constraints.gridy = 2;
+        constraints.weighty = 0.0;
+        constraints.fill = GridBagConstraints.VERTICAL;
+        constraints.anchor = GridBagConstraints.EAST;
+        constraints.insets = new Insets(0, 20, 20, 20);
+
+        add(button,constraints);
     }
 }

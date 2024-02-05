@@ -3,9 +3,9 @@ package views.swingComponents;
 import java.awt.Dimension;
 import javax.swing.Box;
 
-public class ScrollableTestPanel extends ScrollablePanel{
+public class ScrollableAdminTestPanel extends ScrollablePanel{
 
-    public ScrollableTestPanel(){
+    public ScrollableAdminTestPanel(){
         super();
         addScrollableElements();
     }
@@ -13,7 +13,7 @@ public class ScrollableTestPanel extends ScrollablePanel{
     @Override
     protected void addScrollableElements(){
         for(int i = 0; i < 5; i++){
-            add(new LabelPanelTest("Test " + String.valueOf(i)));
+            add(new LabelPanelAdminTest("Test " + String.valueOf(i)));
             add(Box.createRigidArea(new Dimension(0,20)));
         } 
     }
