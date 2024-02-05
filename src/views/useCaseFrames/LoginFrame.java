@@ -1,6 +1,8 @@
 package views.useCaseFrames;
 
 import javax.swing.*;
+
+import utils.ViewsStyles;
 import views.swingComponents.LoginPopUp;
 import views.swingComponents.PathManager;
 import java.awt.*;
@@ -8,7 +10,10 @@ import java.awt.*;
 public class LoginFrame extends JFrame{
 
     private ImageIcon uhuruLogo = new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/loginView/loginBackground.jpg")));
+    private ImageIcon iconLogo = new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/iconWhiteMini.png")));
     private JLabel background = new JLabel();
+    private JPanel iconPanel = new JPanel();
+    private JLabel icon = new JLabel();
     private GridBagConstraints constraints = new GridBagConstraints();
     
     LoginFrame(){
@@ -37,6 +42,18 @@ public class LoginFrame extends JFrame{
         background.add(new LoginPopUp(),constraints);
 
         add(background, BorderLayout.CENTER);
+        Image image3 = iconLogo.getImage();
+        icon.setIcon(new ImageIcon(image3));
+        iconPanel.setLayout(new GridBagLayout());
+        iconPanel.setBackground(ViewsStyles.DARK_BLUE);
+
+        constraints.insets=new Insets(10,10,10,10);
+        constraints.weightx=1;
+        constraints.anchor=GridBagConstraints.WEST;
+
+        iconPanel.add(icon,constraints);
+
+        add(iconPanel, BorderLayout.NORTH);
 
         setVisible(true);
     }

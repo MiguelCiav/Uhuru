@@ -104,6 +104,7 @@ public class LoginPopUp extends JPanelRound implements ActionListener{
         forgottenPassword.setForeground(ViewsStyles.DARK_BLUE);
         forgottenPassword.setFont(ViewsStyles.TEXT_FONT);
 
+        constraints.insets = new Insets(10, 0, 40, 0);
         constraints.gridy = 5;
         constraints.weighty = 0.16;
         constraints.fill = GridBagConstraints.NONE;
