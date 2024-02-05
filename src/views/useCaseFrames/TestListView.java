@@ -10,13 +10,14 @@ import views.swingComponents.TestListPanel;
 
 public class TestListView extends JFrame{
 
-    private ScrollContainer scrollContainer;
+    private ScrollContainer scrollableCoursesPanel;
     private TestListPanel testListPanel = new TestListPanel();
     private DoublePanel doublePanel;
 
     public TestListView (){
-        scrollContainer = new ScrollContainer("Cursos Activos", new ScrollableCoursesPanel());
-        doublePanel = new DoublePanel(scrollContainer, testListPanel);
+
+        scrollableCoursesPanel = new ScrollContainer("Cursos Activos", new ScrollableCoursesPanel());
+        doublePanel = new DoublePanel(scrollableCoursesPanel, testListPanel);
 
         setTitle("Uhuru: Available Tests");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -25,6 +26,7 @@ public class TestListView extends JFrame{
         add(doublePanel);
 
         setVisible(true);
+
     }
 
 }

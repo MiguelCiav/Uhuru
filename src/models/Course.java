@@ -3,23 +3,24 @@ package models;
 import java.util.*;
 
 public class Course {
-    public static final int MAX_COURSE=4;
+    public static final int MAX_COURSE = 4;
+    private static Course[] courseList = new Course[MAX_COURSE];
+    private static int courseCount = 0;
+
     private int ID;
     private String courseName;
-    private boolean isApprovedCourse;
+    //private boolean isApprovedCourse;
     private ArrayList<Test> registerTest = new ArrayList<Test>();
-    private static Course[] courseList = new Course[MAX_COURSE];
-    private static int courseCount=0;
-
+    
     private Course(String courseName, int ID){       
         this.courseName = courseName;
         this.ID=ID;
-        isApprovedCourse = false;
+        //isApprovedCourse = false;
     }
 
     public static Course getInstanceCourse(int ID){
-        for(int i=0; i<MAX_COURSE; i++){
-            if(courseList[i]!=null && courseList[i].ID==ID){
+        for(int i = 0; i < MAX_COURSE; i++){
+            if(courseList[i]!=null && courseList[i].ID == ID){
                 return courseList[i];
             }
         }
@@ -27,7 +28,7 @@ public class Course {
     }
 
     public static void setInstanceCourse(String courseName, int ID){
-        if(courseList[courseCount]==null && courseCount<MAX_COURSE){
+        if(courseList[courseCount] == null && courseCount < MAX_COURSE){
             courseList[courseCount]= new Course (courseName, ID);
             courseCount++;
         }
@@ -39,6 +40,16 @@ public class Course {
 
     public void addTest(Test test){
         registerTest.add(test);
+    }
+
+    public Test getTest(int ID){
+        for(int i = 0; i < registerTest.size(); i++){
+            if(registerTest.get(i).getTestID() == ID){
+                return registerTest.get(i);
+            }
+        }
+
+        return null;
     }
 
     public String getCourseName() {

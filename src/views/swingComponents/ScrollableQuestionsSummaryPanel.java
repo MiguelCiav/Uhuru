@@ -14,7 +14,7 @@ public class ScrollableQuestionsSummaryPanel extends ScrollablePanel{
     @Override
     protected void addScrollableElements() {
         for(int i = 0; i < 5; i++){
-            add(new LabelPanelWithTitle(i, "Texto de la pregunta", "Pregunta"));
+            add(new LabelPanelQuestionSummary("Descripción de ejemplo",i));
             add(Box.createRigidArea(new Dimension(0,20)));
         }
     }
