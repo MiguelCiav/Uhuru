@@ -4,6 +4,9 @@
     ],
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "src/lib/itextpdf-5.5.9.jar"
+        "src/lib/itextpdf-5.5.9.jar",
+        "src/lib/json-20220320.jar",
+        "src/lib/json-simple-1.1-bundle.jar",
+        "src/lib/json-simple-1.1.1.jar"
     ]
 }

@@ -1,0 +1,14 @@
+[
+    {"email":"pablop@gmail.com", 
+    "password":"pablo123", 
+    "name":"Pablo", 
+    "lastname":"Perez",
+    "approvedCourses":[101,104]},
+
+    {"email":"juanlopez@gmail.com", 
+    "password":"pan456", 
+    "name":"Juan", 
+    "lastname":"López",
+    "approvedCourses":[102,103]}
+
+]

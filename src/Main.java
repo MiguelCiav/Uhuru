@@ -1,6 +1,7 @@
 import views.useCaseFrames.*;
 import views.swingComponents.*;
 import controllers.FileReadingManager;
+import controllers.JSONReader;
 import models.User;
 
 public class Main {
@@ -11,7 +12,7 @@ public class Main {
 
         //file.setPath("src/DataBase/Course.txt");
         //file.readCourses();
-        new MainFrame();
+
         //new TestListView();
         //new JFramePopUp(new LoginPopUp());
     }
