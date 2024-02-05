@@ -1,12 +1,14 @@
 package views.swingComponents;
 import javax.swing.*;
 
+import utils.ViewsStyles;
+
 import java.awt.*;
 
 public class PrincipalPanel extends JPanel{
 
     public PrincipalPanel(){
-        setBackground(new Color(61,90,128));
+        setBackground(ViewsStyles.DARK_BLUE);
         setLayout(new GridBagLayout());
         initializePanel();
     }

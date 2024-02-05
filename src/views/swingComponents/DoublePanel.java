@@ -2,6 +2,8 @@ package views.swingComponents;
 
 import javax.swing.*;
 
+import utils.ViewsStyles;
+
 import java.awt.*;
 
 public class DoublePanel extends PrincipalPanel{
@@ -22,7 +24,7 @@ public class DoublePanel extends PrincipalPanel{
 
     protected void setContainerPanel(){
 
-        containerPanel.setRoundBackgroundColor(new Color(61,90,128));
+        containerPanel.setRoundBackgroundColor(ViewsStyles.DARK_BLUE);
         containerPanel.setLayout(new GridBagLayout());
 
     }

@@ -2,6 +2,8 @@ package views.swingComponents;
 
 import javax.swing.*;
 
+import utils.ViewsStyles;
+
 import java.awt.*;
 
 public class ScrollableAnswersPanel extends JPanel{
@@ -17,7 +19,7 @@ public class ScrollableAnswersPanel extends JPanel{
         questionDescription = new JLabel();
 
         setLayout(new GridBagLayout());
-        setBackground(new Color(255,255,255));
+        setBackground(Color.WHITE);
 
         addQuestionDescription();
         addAnswerPanel();
@@ -34,7 +36,7 @@ public class ScrollableAnswersPanel extends JPanel{
         constraints.fill = GridBagConstraints.BOTH;
         constraints.insets = new Insets(0,20,16,20);
 
-        questionDescription.setBackground(new Color(216,233,241));
+        questionDescription.setBackground(ViewsStyles.LIGHT_GRAY);
         questionDescription.setBorder(null);
         questionDescription.setText("<html> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis odio vitae velit pretium ultrices. Nam ut velit ac dui elementum pharetra. Morbi id egestas ex. Proin ac iaculis orci, at viverra ex. Vestibulum eget feugiat ligula, et ultrices purus. Aliquam dignissim ligula nibh, sed gravida mi mollis eget. Morbi.</html>");
 

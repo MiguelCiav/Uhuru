@@ -1,21 +1,24 @@
 package views.swingComponents;
 
 import javax.swing.*;
+
+import utils.ViewsStyles;
+
 import java.awt.*;
 import java.awt.event.*;
 
 public class AddQuestionsPanel extends JPanelRound implements ActionListener{
 
-    private LargeTextPanels questionStatement = new LargeTextPanels("Ingrese el enunciado de la pregunta", new Color(255,255,255));
-    private LargeTextPanels questionOption = new LargeTextPanels("Introduzca la opción", new Color(255,255,255));
-    private LargeTextPanels questionJustification = new LargeTextPanels("Ingrese la justificacion de la respuesta", new Color(255,255,255));
+    private LargeTextPanels questionStatement = new LargeTextPanels("Ingrese el enunciado de la pregunta", Color.WHITE);
+    private LargeTextPanels questionOption = new LargeTextPanels("Introduzca la opción", Color.WHITE);
+    private LargeTextPanels questionJustification = new LargeTextPanels("Ingrese la justificacion de la respuesta", Color.WHITE);
     private JPanelRound addOptionPanel = new JPanelRound();
     private JButton addOptionButton = new JButton(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/Add_Ico.png"))));
     private JLabel addOptionLabel = new JLabel("Añadir opcion");
     private JCheckBox correctOption = new JCheckBox(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/incorrectAnswer.png"))));
 
     AddQuestionsPanel(){
-        setRoundBackgroundColor(new Color(237, 246, 249));
+        setRoundBackgroundColor(ViewsStyles.PALID_BLUE);
 
         setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
@@ -37,7 +40,7 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
         constraints.gridheight = 1;
         constraints.gridwidth = 1;
         constraints.weightx = 0.0;
-        correctOption.setBackground(new Color(255,255,255));
+        correctOption.setBackground(Color.WHITE);
         correctOption.addActionListener(this);
 
         questionOption.add(correctOption, constraints);
@@ -52,7 +55,7 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
         add(questionOption, constraints);
 
         addOptionPanel.setLayout(new GridBagLayout());
-        addOptionPanel.setRoundBackgroundColor(new Color(152,193,217));
+        addOptionPanel.setRoundBackgroundColor(ViewsStyles.LIGHT_BLUE);
         constraints.insets = new Insets(0, 20, 0, 20);
         constraints.gridx = 0;
         constraints.gridy = 0;
@@ -66,7 +69,7 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
         constraints.gridx = 2;
         constraints.gridwidth = 1;
         constraints.weightx = 0.0;
-        addOptionButton.setBackground(new Color(152,193,217));
+        addOptionButton.setBackground(ViewsStyles.LIGHT_BLUE);
         addOptionButton.setBorder(null);
         
         addOptionPanel.add(addOptionButton, constraints);

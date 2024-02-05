@@ -2,6 +2,8 @@ package views.swingComponents;
 
 import javax.swing.*;
 
+import utils.ViewsStyles;
+
 import java.awt.*;
 
 public class AnswersSummaryPanel extends JPanelRound{
@@ -13,8 +15,7 @@ public class AnswersSummaryPanel extends JPanelRound{
     public AnswersSummaryPanel(){
 
         setLayout(new GridBagLayout());
-        setRoundBackgroundColor(new Color(255,255,255));
-
+        setRoundBackgroundColor(Color.WHITE);
         addAnswerTitle();
         addAnswerPanel();
 
@@ -25,7 +26,7 @@ public class AnswersSummaryPanel extends JPanelRound{
         answersTitle = new JLabel("Respuestas");
 
         answersTitle.setFont(new Font("Futura", Font.BOLD, 32));
-        answersTitle.setForeground(new Color(61,90,128));
+        answersTitle.setForeground(ViewsStyles.DARK_BLUE);
 
         constraints.insets = new Insets(16, 20, 16, 0);
         constraints.gridx = 0;

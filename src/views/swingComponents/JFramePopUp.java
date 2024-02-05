@@ -12,7 +12,7 @@ public class JFramePopUp extends JFrame {
         setUndecorated(true); 
         pack();
         setLocationRelativeTo(null);
-        setBackground(new Color(255,255,255,0));
+        setBackground(Color.WHITE);
 
         setVisible(true);
 

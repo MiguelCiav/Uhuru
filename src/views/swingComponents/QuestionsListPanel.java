@@ -12,7 +12,7 @@ public class QuestionsListPanel extends JPanelRound{
 
     public QuestionsListPanel(){
 
-        setRoundBackgroundColor(new Color(255,255,255));
+        setRoundBackgroundColor(Color.WHITE);
         setLayout(new GridBagLayout());
         
         constraints = new GridBagConstraints();

@@ -1,6 +1,8 @@
 package views.swingComponents;
 import javax.swing.*;
 
+import utils.ViewsStyles;
+
 import java.awt.*;
 
 public class QuestionPanel extends JPanelRound{
@@ -13,7 +15,7 @@ public class QuestionPanel extends JPanelRound{
         this.questionNumber = String.valueOf(questionNumber);
         constraints = new GridBagConstraints();
 
-        setRoundBackgroundColor(new Color(216,233,241));
+        setRoundBackgroundColor(ViewsStyles.LIGHT_GRAY);
         setLayout(new GridBagLayout());
         setBorder(null);
         
@@ -37,7 +39,7 @@ public class QuestionPanel extends JPanelRound{
         constraints.insets= new Insets(10,20,10,10);
 
         questionNumberLabel.setFont(new Font("Futura", Font.BOLD, 30));
-        questionNumberLabel.setForeground(new Color(61,90,128));
+        questionNumberLabel.setForeground(ViewsStyles.DARK_BLUE);
         questionNumberLabel.setText(questionNumber);
         add(questionNumberLabel, constraints);
 
@@ -52,7 +54,7 @@ public class QuestionPanel extends JPanelRound{
         constraints.weightx = 1.0;
 
         questionDomain.setFont(new Font("Futura", Font.BOLD, 24));
-        questionDomain.setForeground(new Color(0,0,0));
+        questionDomain.setForeground(Color.BLACK);
         questionDomain.setText("Dominio: xxxxxxxxx");
 
         add(questionDomain, constraints);
@@ -74,9 +76,9 @@ public class QuestionPanel extends JPanelRound{
         questionDescription.setLineWrap(true);
         questionDescription.setWrapStyleWord(true);
         questionDescription.setFont(new Font("Futura", Font.ITALIC, 16));
-        questionDescription.setForeground(new Color(0,0,0));
+        questionDescription.setForeground(Color.BLACK);
         questionDescription.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at elit eget dui gravida suscipit. Mauris et ipsum id felis venenatis consectetur. Etiam ac nibh sit amet quam aliquam sodales vel sed quam.");
-        questionDescription.setBackground(new Color(216,233,241));
+        questionDescription.setBackground(ViewsStyles.LIGHT_GRAY);
 
         add(questionDescription, constraints);
 

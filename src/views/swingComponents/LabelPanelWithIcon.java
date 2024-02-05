@@ -7,6 +7,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+
+import utils.ViewsStyles;
 import views.listeners.GoToTestView;
 
 public class LabelPanelWithIcon extends LabelPanel{
@@ -21,7 +23,7 @@ public class LabelPanelWithIcon extends LabelPanel{
         this.testName = testName;
 
         setLayout(new GridBagLayout());
-        setBackground(new Color(216,233,241));
+        setBackground(ViewsStyles.LIGHT_GRAY);
         setLabel();
         addLabel();
 
@@ -32,7 +34,7 @@ public class LabelPanelWithIcon extends LabelPanel{
 
         testLabel = new JLabel();
 
-        testLabel.setBackground(new Color(216,233,241));
+        testLabel.setBackground(ViewsStyles.LIGHT_GRAY);
         testLabel.setOpaque(true);
         testLabel.setFont(new Font("Futura", Font.PLAIN, 12));
         testLabel.setFocusable(false);
