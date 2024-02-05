@@ -1,6 +1,7 @@
 package views.swingComponents;
 import javax.swing.*;
 
+import utils.ViewsStyles;
 import views.listeners.GoToSolutionsView;
 
 import java.awt.*;
@@ -19,7 +20,7 @@ public class TestInfoPanel extends JPanel{
 
     private TestInfoPanel(){
 
-        setBackground(new Color(255,255,255));
+        setBackground(Color.WHITE);
         setLayout(new GridBagLayout());
         constraints = new GridBagConstraints();
         addTitle();
@@ -60,7 +61,7 @@ public class TestInfoPanel extends JPanel{
 
         testName.setText("Curso - Nombre del Examen");
         testName.setFont(new Font("Futura", Font.BOLD, 30));
-        testName.setForeground(new Color(61,90,128));
+        testName.setForeground(ViewsStyles.DARK_BLUE);
 
         add (testName, constraints);
 
@@ -75,7 +76,7 @@ public class TestInfoPanel extends JPanel{
         clock.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testView/reloj.png"))));
         clock.setText("11:11");
         clock.setFont(new Font("Futura", Font.BOLD, 30));
-        clock.setForeground(new Color(61,90,128));
+        clock.setForeground(ViewsStyles.DARK_BLUE);
         clock.setIconTextGap(16);
 
         add (clock, constraints);
@@ -89,7 +90,7 @@ public class TestInfoPanel extends JPanel{
         answeredQuestions.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testView/bandera.png"))));
         answeredQuestions.setText("1/20");
         answeredQuestions.setFont(new Font("Futura", Font.BOLD, 30));
-        answeredQuestions.setForeground(new Color(61,90,128));
+        answeredQuestions.setForeground(ViewsStyles.DARK_BLUE);
         answeredQuestions.setIconTextGap(16);
 
         add (answeredQuestions, constraints);

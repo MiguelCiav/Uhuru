@@ -7,6 +7,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+
+import utils.ViewsStyles;
 import views.listeners.GoToTestView;
 
 public class LabelPanelTest extends LabelPanel{
@@ -21,7 +23,7 @@ public class LabelPanelTest extends LabelPanel{
         this.testName = testName;
 
         setLayout(new GridBagLayout());
-        setBackground(new Color(216,233,241));
+        setBackground(ViewsStyles.LIGHT_GRAY);
         setLabel();
         addLabel();
 
@@ -32,11 +34,19 @@ public class LabelPanelTest extends LabelPanel{
 
         textLabel = new JLabel();
 
+<<<<<<< HEAD:src/views/swingComponents/LabelPanelTest.java
         textLabel.setBackground(new Color(216,233,241));
         textLabel.setOpaque(true);
         textLabel.setFont(new Font("Futura", Font.PLAIN, 12));
         textLabel.setFocusable(false);
         textLabel.setText(testName);
+=======
+        testLabel.setBackground(ViewsStyles.LIGHT_GRAY);
+        testLabel.setOpaque(true);
+        testLabel.setFont(new Font("Futura", Font.PLAIN, 12));
+        testLabel.setFocusable(false);
+        testLabel.setText(testName);
+>>>>>>> b747c1632adf908c7c8978b2e3017ea78b79bda8:src/views/swingComponents/LabelPanelWithIcon.java
 
         arrowLabel = new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testListView/siguiente.png"))));
 

@@ -1,6 +1,9 @@
 package views.swingComponents;
 
 import javax.swing.*;
+
+import utils.ViewsStyles;
+
 import java.awt.*;
 
 public class CorrectAnswerPanel extends JPanelRound{
@@ -13,7 +16,7 @@ public class CorrectAnswerPanel extends JPanelRound{
     public CorrectAnswerPanel(){
 
         setLayout(new GridBagLayout());
-        setRoundBackgroundColor(new Color(216,233,241));
+        setRoundBackgroundColor(ViewsStyles.LIGHT_GRAY);
         addIcon();
         addOptionDescription();
         addJustification();   
@@ -36,7 +39,7 @@ public class CorrectAnswerPanel extends JPanelRound{
     private void addOptionDescription(){
 
         option = new JTextArea("");
-        option.setBackground(new Color(255,255,255));
+        option.setBackground(Color.WHITE);
         option.setLineWrap(true);
         option.setEditable(false);
         option.setBorder(null);
@@ -62,7 +65,7 @@ public class CorrectAnswerPanel extends JPanelRound{
         justification = new JTextArea();
         justification.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis odio vitae velit pretium ultrices. Nam ut velit ac dui elementum pharetra. Morbi id egestas ex. Proin ac iaculis orci, at viverra ex. Vestibulum eget feugiat ligula, et ultrices purus. Aliquam dignissim ligula nibh, sed gravida mi mollis eget. Morbi.");
         justification.setEditable(false);
-        justification.setBackground(new Color(216,233,241));
+        justification.setBackground(ViewsStyles.LIGHT_GRAY);
         justification.setLineWrap(true);
 
         constraints.gridy = 1;

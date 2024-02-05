@@ -8,10 +8,11 @@ import java.awt.Paint;
 import java.awt.RenderingHints; 
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.JPanel;
+import utils.ViewsStyles;
 
 public class JPanelRound extends JPanel{
 
-    private Color roundBackgroundColor = new Color(217,233,241);
+    private Color roundBackgroundColor = ViewsStyles.ULTRA_LIGHT_BLUE;
     private int horizontalAngle=30;
     private int verticalAngle=30;
    

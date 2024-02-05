@@ -1,6 +1,7 @@
 package views.swingComponents;
 import javax.swing.*;
 
+import utils.ViewsStyles;
 import views.listeners.UpdateAnswerAmount;
 import java.awt.*;
 
@@ -11,7 +12,7 @@ public class OptionBox extends JPanelRound{
     GridBagConstraints constraints = new GridBagConstraints();
 
     public OptionBox (){
-        setBackground(new Color(216,233,241));
+        setBackground(ViewsStyles.LIGHT_GRAY);
         setLayout(new GridBagLayout());
         setBorder(null);
 
@@ -30,7 +31,7 @@ public class OptionBox extends JPanelRound{
         constraints.anchor = GridBagConstraints.WEST;
         constraints.insets= new Insets(10,10,10,10);
         
-        optionButton.setBackground(new Color(216,233,241));
+        optionButton.setBackground(ViewsStyles.LIGHT_GRAY);
         optionButton.setSelected(true);
         optionButton.setBorder(null);
         optionButton.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/OptionBox/sin pulsar.png"))));
@@ -52,7 +53,7 @@ public class OptionBox extends JPanelRound{
         constraints.weightx = 1;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         optionText.setFont(new Font("Futura", Font.ITALIC, 16));
-        optionText.setForeground(new Color(0,0,0));
+        optionText.setForeground(Color.BLACK);
         optionText.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at elit eget dui gravida suscipit. Mauris et ipsum id felis venenatis consectetur. Etiam ac nibh sit amet quam aliquam sodales vel sed quam.");
         optionText.setEditable (false); 
         optionText.setLineWrap(true);

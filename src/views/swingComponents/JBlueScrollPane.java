@@ -5,6 +5,7 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import utils.ViewsStyles;
 
 
 public class JBlueScrollPane extends JScrollPane{
@@ -21,13 +22,13 @@ public class JBlueScrollPane extends JScrollPane{
         setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         setBorder(null);
-        getVerticalScrollBar().setBackground(new Color(255,255,255));
+        getVerticalScrollBar().setBackground(Color.WHITE);
         getVerticalScrollBar().setUnitIncrement(6);
 
         getVerticalScrollBar().setUI(new BasicScrollBarUI() {
             @Override
             protected void configureScrollBarColors() {
-                this.thumbColor = new Color(61, 90, 128);
+                this.thumbColor = ViewsStyles.DARK_BLUE;
             }
         });
 

@@ -4,8 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import utils.ViewsStyles;
 
-public class QuestionsAndAnswersPanel extends JPanelRound implements ActionListener{
+public class QuestionsAndAnswersPanel extends JPanelRound{
     
     private JLabel questionsAndAnswersText;
     private JComboBox<String> domainSelection = new JComboBox<String>();
@@ -19,12 +21,12 @@ public class QuestionsAndAnswersPanel extends JPanelRound implements ActionListe
 
     public QuestionsAndAnswersPanel(){
         setLayout(new GridBagLayout());
-        setRoundBackgroundColor(new Color(255,255,255));
+        setRoundBackgroundColor(Color.WHITE);
         
         questionsAndAnswersText = new JLabel();
         questionsAndAnswersText.setText("Preguntas y Respuestas");
         questionsAndAnswersText.setFont(new Font("Futura", Font.BOLD, 32));
-        questionsAndAnswersText.setForeground(new Color(61,90,128));
+        questionsAndAnswersText.setForeground(ViewsStyles.DARK_BLUE);
 
         constraints.insets = new Insets(30, 20, 0, 20);
         constraints.gridx = 0;
@@ -56,9 +58,8 @@ public class QuestionsAndAnswersPanel extends JPanelRound implements ActionListe
         constraints.gridx = 2;
         constraints.gridwidth = 1;
         constraints.weightx = 0.0;
-        addQuestionButton.setBackground(new Color(152,193,217));
+        addQuestionButton.setBackground(ViewsStyles.LIGHT_BLUE);
         addQuestionButton.setBorder(null);
-        addQuestionButton.addActionListener(this);
         
         addQuestionPanel.add(addQuestionButton, constraints);
 
@@ -80,7 +81,7 @@ public class QuestionsAndAnswersPanel extends JPanelRound implements ActionListe
         constraints.anchor = GridBagConstraints.NORTH;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         addQuestionPanel.setPreferredSize(new Dimension(600,50));
-        addQuestionPanel.setRoundBackgroundColor(new Color(152,193,217));
+        addQuestionPanel.setRoundBackgroundColor(ViewsStyles.LIGHT_BLUE);
 
         add(addQuestionPanel, constraints);
 
@@ -108,17 +109,5 @@ public class QuestionsAndAnswersPanel extends JPanelRound implements ActionListe
         domainSelection.addItem("Java");
         domainSelection.addItem("Java");
         domainSelection.addItem("Java");
-    }
-
-    @Override public void actionPerformed(ActionEvent e){
-
-        JCheckBox box = (JCheckBox) e.getSource();
-
-        if(box.isSelected()){
-        }
-        else{
-
-        }
-
     }
 }

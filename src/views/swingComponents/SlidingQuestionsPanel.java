@@ -3,6 +3,7 @@ package views.swingComponents;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import utils.ViewsStyles;
 
 public class SlidingQuestionsPanel extends JPanel implements MouseListener{
 
@@ -12,8 +13,8 @@ public class SlidingQuestionsPanel extends JPanel implements MouseListener{
 
     public SlidingQuestionsPanel(String summary){
         
-        setBackground(new Color(216,233,241));
-        questionSummary.setBackground(new Color(216,233,241));
+        setBackground(ViewsStyles.LIGHT_GRAY);
+        questionSummary.setBackground(ViewsStyles.LIGHT_GRAY);
         setLayout(new GridBagLayout());
 
         addMouseListener(this);
@@ -46,8 +47,8 @@ public class SlidingQuestionsPanel extends JPanel implements MouseListener{
 
     
     @Override public void mouseClicked(MouseEvent e){
-        setBackground(new Color(143, 179, 227));
-        questionSummary.setBackground(new Color(143, 179, 227));
+        setBackground(ViewsStyles.LIGHT_SKY_BLUE);
+        questionSummary.setBackground(ViewsStyles.LIGHT_SKY_BLUE);
     }
 
     @Override public void mousePressed(MouseEvent e){}
