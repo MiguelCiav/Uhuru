@@ -34,19 +34,11 @@ public class LabelPanelTest extends LabelPanel{
 
         textLabel = new JLabel();
 
-<<<<<<< HEAD:src/views/swingComponents/LabelPanelTest.java
-        textLabel.setBackground(new Color(216,233,241));
+        textLabel.setBackground(ViewsStyles.LIGHT_GRAY);
         textLabel.setOpaque(true);
         textLabel.setFont(new Font("Futura", Font.PLAIN, 12));
         textLabel.setFocusable(false);
         textLabel.setText(testName);
-=======
-        testLabel.setBackground(ViewsStyles.LIGHT_GRAY);
-        testLabel.setOpaque(true);
-        testLabel.setFont(new Font("Futura", Font.PLAIN, 12));
-        testLabel.setFocusable(false);
-        testLabel.setText(testName);
->>>>>>> b747c1632adf908c7c8978b2e3017ea78b79bda8:src/views/swingComponents/LabelPanelWithIcon.java
 
         arrowLabel = new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testListView/siguiente.png"))));
 
