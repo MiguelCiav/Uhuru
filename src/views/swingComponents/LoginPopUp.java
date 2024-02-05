@@ -2,10 +2,15 @@ package views.swingComponents;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
+
+import controllers.FileReadingManager;
+import controllers.LogInController;
 import utils.ViewsStyles;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class LoginPopUp extends JPanelRound{
+public class LoginPopUp extends JPanelRound implements ActionListener{
 
     JLabel welcome;
     JLabel login;
@@ -91,6 +96,7 @@ public class LoginPopUp extends JPanelRound{
         constraints.gridy = 4;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.weighty = 0.16;
+        loginButton.addActionListener(this);
         add(loginButton, constraints);
     }
 
@@ -105,5 +111,9 @@ public class LoginPopUp extends JPanelRound{
         constraints.anchor = GridBagConstraints.NORTH;
 
         add(forgottenPassword, constraints);
+    }
+
+    @Override public void actionPerformed(ActionEvent e){
+        LogInController.validateUser(email.textArea, password.textArea);
     }
 }

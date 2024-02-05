@@ -69,4 +69,8 @@ public class User {
         return coursesCount;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
 }

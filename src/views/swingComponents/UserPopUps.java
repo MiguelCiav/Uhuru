@@ -3,6 +3,8 @@ package views.swingComponents;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import utils.ViewsStyles;
+import views.listeners.CloseWindow;
+
 import java.awt.*;
 
 public class UserPopUps extends JPanelRound{
@@ -73,6 +75,7 @@ public class UserPopUps extends JPanelRound{
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
         constraints.anchor = GridBagConstraints.NORTHEAST;
+        closeButton.addMouseListener(new CloseWindow());
         add(closeButton, constraints);
     }
 

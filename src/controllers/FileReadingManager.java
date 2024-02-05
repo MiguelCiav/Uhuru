@@ -28,7 +28,7 @@ public class FileReadingManager {
         }
     }
 
-    public User readUser(String email){
+    public boolean readUser(String email){
         try (FileReader file = new FileReader(Path)){
             buffer=new BufferedReader(file);
             String textLine;
@@ -53,7 +53,7 @@ public class FileReadingManager {
                         System.out.println(aux[i]);
                     }
                     file.close();
-                    return userData;
+                    return true;
                 }
                 
             }
@@ -61,7 +61,8 @@ public class FileReadingManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return userData;
+
+        return false;
     }
 
     private void readUserPassword(String textLine){

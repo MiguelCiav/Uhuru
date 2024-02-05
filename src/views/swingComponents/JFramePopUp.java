@@ -17,5 +17,19 @@ public class JFramePopUp extends JFrame {
         setVisible(true);
 
     }
+
+    public JFramePopUp(JPanel input, Dimension dimension){
+        add(input);
+        
+        setPreferredSize(dimension);
+        setResizable(false);
+        setUndecorated(true); 
+        pack();
+        setLocationRelativeTo(null);
+        setBackground(new Color(255,255,255,0));
+
+        setVisible(true);
+
+    }
     
 }
