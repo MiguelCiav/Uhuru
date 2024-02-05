@@ -4,8 +4,8 @@ import java.awt.*;
 
 public class JFramePopUp extends JFrame {
 
-    public JFramePopUp(){
-        add(new CertificatePopUp());
+    public JFramePopUp(JPanel input){
+        add(input);
         
         setPreferredSize(new Dimension(863,550));
         setResizable(false);
