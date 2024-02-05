@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import utils.ViewsStyles;
+
 public class LabelPanelWithTitle extends LabelPanel{
 
     private String text;
@@ -26,7 +28,7 @@ public class LabelPanelWithTitle extends LabelPanel{
         this.title = title;
 
         setLayout(new GridBagLayout());
-        setBackground(new Color(216,233,241));
+        setBackground(ViewsStyles.LIGHT_GRAY);
 
         setLabel();
         addLabel();
@@ -39,7 +41,7 @@ public class LabelPanelWithTitle extends LabelPanel{
         questionSummary = new JTextArea();
         questionTitle = new JLabel();
 
-        questionSummary.setBackground(new Color(216,233,241));
+        questionSummary.setBackground(ViewsStyles.LIGHT_GRAY);
         questionSummary.setFont(new Font("Futura", Font.PLAIN, 12));
         questionSummary.setEditable(false);
         questionSummary.setFocusable(false);

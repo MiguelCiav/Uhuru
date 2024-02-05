@@ -1,6 +1,9 @@
 package views.swingComponents;
 
 import javax.swing.*;
+
+import utils.ViewsStyles;
+
 import java.awt.*;
 
 public class ScrollContainer extends JPanelRound{
@@ -16,7 +19,7 @@ public class ScrollContainer extends JPanelRound{
         this.scrollablePanel = scrollablePanel;
         
         setLayout(new GridBagLayout());
-        setRoundBackgroundColor(new Color(255,255,255));
+        setRoundBackgroundColor(Color.WHITE);
         constraints = new GridBagConstraints();
 
         addTitle();
@@ -29,7 +32,7 @@ public class ScrollContainer extends JPanelRound{
         titleLabel = new JLabel(title);
 
         titleLabel.setFont(new Font("Futura", Font.BOLD, 32));
-        titleLabel.setForeground(new Color(61,90,128));
+        titleLabel.setForeground(ViewsStyles.DARK_BLUE);
 
         constraints.insets = new Insets(16, 20, 16, 80);
         constraints.gridx = 0;

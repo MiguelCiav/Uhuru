@@ -11,7 +11,7 @@ public class Main {
 
         file.setPath("src/DataBase/Course.txt");
         file.readCourses();
-        //new TestListView();
+        new TestListView();
         new CreateTestView();
         
     }

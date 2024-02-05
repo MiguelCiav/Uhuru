@@ -5,6 +5,7 @@ import java.awt.event.*;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ButtonModel;
 import javax.swing.JButton;
+import utils.ViewsStyles;
 
 public class BlueButton extends JButton implements ActionListener{
 
@@ -25,18 +26,18 @@ public class BlueButton extends JButton implements ActionListener{
 
         if (type==1) {
             setForeground(Color.WHITE);
-            primaryColor = new Color(61, 90, 128);
-            secondaryColor = new Color(152, 193, 217);
+            primaryColor = ViewsStyles.DARK_BLUE;
+            secondaryColor = ViewsStyles.LIGHT_BLUE;
         }
         else if (type==2){
-            setForeground(new Color(61, 90, 128));
-            primaryColor = new Color(152, 193, 217);
-            secondaryColor = new Color(217,233,241);
+            setForeground(ViewsStyles.DARK_BLUE);
+            primaryColor = ViewsStyles.LIGHT_BLUE;
+            secondaryColor = ViewsStyles.ULTRA_LIGHT_BLUE;
         }
         else if(type==3){
-            setForeground(new Color(61, 90, 128));
+            setForeground(ViewsStyles.DARK_BLUE);
             primaryColor = Color.WHITE;
-            secondaryColor = new Color(152, 193, 217);
+            secondaryColor = ViewsStyles.LIGHT_BLUE;
         }
 
     }

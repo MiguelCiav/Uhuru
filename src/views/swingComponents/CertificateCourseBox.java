@@ -7,6 +7,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import utils.ViewsStyles;
+
 public class CertificateCourseBox extends JPanel implements ActionListener{
     JTextArea courseTitle = new JTextArea ();
     BlueButton generateCertificateButton;
@@ -24,15 +26,15 @@ public class CertificateCourseBox extends JPanel implements ActionListener{
 
     private void addCourseTitle(String Title){
         courseTitle.setFont(new Font("Futura", Font.BOLD, 16));
-        courseTitle.setForeground(new Color(0,0,0));
+        courseTitle.setForeground(Color.BLACK);
         courseTitle.setText(Title);
         courseTitle.setEditable (false); 
         courseTitle.setLineWrap(true);
         courseTitle.setWrapStyleWord(true);
-        courseTitle.setBackground(new Color(217,233,241));
+        courseTitle.setBackground(ViewsStyles.ULTRA_LIGHT_BLUE);
         
         courseTitlePanel.setLayout(new GridBagLayout());
-        courseTitlePanel.setRoundBackgroundColor(new Color(217,233,241));
+        courseTitlePanel.setRoundBackgroundColor(ViewsStyles.ULTRA_LIGHT_BLUE);
         courseTitlePanel.setPreferredSize(new Dimension(400,60));
 
         constraints.anchor = GridBagConstraints.WEST;

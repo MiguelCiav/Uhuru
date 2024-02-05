@@ -12,7 +12,7 @@ public class NavBar extends JPanel{
 
     private NavBar(){
 
-        setBackground(Color.white);
+        setBackground(Color.WHITE);
         setLayout(new GridBagLayout());
         constraints = new GridBagConstraints();
 

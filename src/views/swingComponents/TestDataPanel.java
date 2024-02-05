@@ -3,11 +3,13 @@ package views.swingComponents;
 import javax.swing.*;
 import java.awt.*;
 
+import utils.ViewsStyles;
+
 public class TestDataPanel extends JPanelRound{
     
     private JLabel testDataText;
-    private LargeTextPanels testName = new LargeTextPanels("Ingrese el nombre del examen.", new Color(237, 246, 249));
-    private LargeTextPanels testDescription = new LargeTextPanels("Ingrese la descripcion del examen", new Color(237, 246, 249));
+    private LargeTextPanels testName = new LargeTextPanels("Ingrese el nombre del examen.", ViewsStyles.PALID_BLUE);
+    private LargeTextPanels testDescription = new LargeTextPanels("Ingrese la descripcion del examen", ViewsStyles.PALID_BLUE);
     private JTextField minutes = new JTextField("Min", 7);
     private JPanelRound minutesPanel = new JPanelRound();
     private JPanelRound minutesTextPanel = new JPanelRound();
@@ -16,11 +18,11 @@ public class TestDataPanel extends JPanelRound{
     public TestDataPanel(){
         setLayout(new GridBagLayout());
 
-        setRoundBackgroundColor(new Color(255,255,255));
+        setRoundBackgroundColor(Color.WHITE);
         testDataText = new JLabel();
         testDataText.setText("Datos del examen");
         testDataText.setFont(new Font("Futura", Font.BOLD, 32));
-        testDataText.setForeground(new Color(61,90,128));
+        testDataText.setForeground(ViewsStyles.DARK_BLUE);
 
         GridBagConstraints constraints = new GridBagConstraints();
 
@@ -51,7 +53,7 @@ public class TestDataPanel extends JPanelRound{
         constraints.weighty = 0.1;
         constraints.weightx = 0.1;
         minutes.setBorder(null);
-        minutes.setBackground(new Color(217,233,241));         
+        minutes.setBackground(ViewsStyles.ULTRA_LIGHT_BLUE);         
         minutesPanel.setLayout(new GridBagLayout());
         minutesPanel.add(minutes);
 
@@ -59,8 +61,8 @@ public class TestDataPanel extends JPanelRound{
 
         constraints.insets = new Insets(0, 0, 30, 20);
 
-        minutesTextPanel.setRoundBackgroundColor(new Color(106,106,106));
-        minutesText.setBackground(new Color(106, 106, 106));
+        minutesTextPanel.setRoundBackgroundColor(ViewsStyles.GRAPHITE);
+        minutesText.setBackground(ViewsStyles.GRAPHITE);
 
         constraints.gridx = 1;
         constraints.weightx = 1.0;

@@ -1,6 +1,8 @@
 package views.swingComponents;
 
 import javax.swing.*;
+
+import utils.ViewsStyles;
 import views.listeners.OpenCertificatePopUp;
 import java.awt.*;
 
@@ -13,7 +15,7 @@ public class TestListPanel extends JPanelRound{
     public TestListPanel(){
 
         setLayout(new GridBagLayout());
-        setRoundBackgroundColor(new Color(255,255,255));
+        setRoundBackgroundColor(Color.WHITE);
 
         addTestTitle();
         addTestPanel();
@@ -26,7 +28,7 @@ public class TestListPanel extends JPanelRound{
         answersTitle = new JLabel("Examenes Disponibles");
 
         answersTitle.setFont(new Font("Futura", Font.BOLD, 32));
-        answersTitle.setForeground(new Color(61,90,128));
+        answersTitle.setForeground(ViewsStyles.DARK_BLUE);
 
         constraints.insets = new Insets(16, 20, 16, 0);
         constraints.gridx = 0;

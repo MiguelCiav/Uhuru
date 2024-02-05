@@ -12,7 +12,7 @@ public class ScrollableCertificateList extends JPanel {
     private GridBagConstraints constraints;
 
     public ScrollableCertificateList(){
-        setBackground(new Color(255,255,255));
+        setBackground(Color.WHITE);
         setLayout(new GridBagLayout());
         setBorder(null);
         constraints = new GridBagConstraints();

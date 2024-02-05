@@ -6,6 +6,8 @@ import views.listeners.CloseWindow;
 
 import java.awt.*;
 
+import utils.ViewsStyles;
+
 
 public class CertificatePopUp extends JPanelRound{
 
@@ -16,9 +18,9 @@ public class CertificatePopUp extends JPanelRound{
     public CertificatePopUp(){
         constraints = new GridBagConstraints();
 
-        setRoundBackgroundColor(new Color(255,255,255));
+        setRoundBackgroundColor(Color.WHITE);
         setLayout(new GridBagLayout());
-        setBorder(new LineBorder(new Color(225, 233, 245), 20,true));
+        setBorder(new LineBorder(ViewsStyles.CYAN, 20,true));
         setMinimumSize(new Dimension(863,550));
         addExitButton();
         addTitle();
@@ -41,7 +43,7 @@ public class CertificatePopUp extends JPanelRound{
         constraints.insets= new Insets(50,35,30,10);
 
         title.setFont(new Font("Futura", Font.BOLD, 30));
-        title.setForeground(new Color(61,90,128));
+        title.setForeground(ViewsStyles.DARK_BLUE);
         title.setText("Obtener Certificado");
 
         add(title, constraints);
