@@ -3,6 +3,7 @@ package models;
 import java.util.*;
 
 public class Course {
+
     public static final int MAX_COURSE=4;
     private String ID;
     private String courseName;
@@ -45,7 +46,8 @@ public class Course {
         registerTest.add(test);
     }
 
-    public Test getTest(int ID){
+    public Test getTest(String ID){
+        
         for(int i = 0; i < registerTest.size(); i++){
             if(registerTest.get(i).getTestID().equals(ID)){
                 return registerTest.get(i);

@@ -8,14 +8,14 @@ public class Test {
     private String name;
     private int duration;
     private float calification;
-    private String dominio;
 
     private ArrayList<Question> questionList = new ArrayList<Question>();
     private String testID;
     private String courseID;
 
-    public Test(String name, String type, int duration){
+    public Test(String name, String type, int duration, String testID){
 
+        this.name = name;
         this.type = type;
         this.duration = duration;
         this.testID = testID;
@@ -28,15 +28,17 @@ public class Test {
 
     };
 
-    public Question getQuestion(Question question){
+    public Question getQuestion(String questionID){
         Question foundQuestion = null;
+
         for(int i = 0; i < questionList.size(); i++){
-            if (question.getQuestionNumber() == questionList.get(i).getQuestionNumber()) {
+            if (questionID == questionList.get(i).getQuestionID()) {
                 foundQuestion = questionList.get(i);
-                break;
+                return foundQuestion;
             }
         }  
-        return foundQuestion;
+
+        return null;
     };
 
     public String getName() {
@@ -68,16 +70,13 @@ public class Test {
     public void setCalification(float calification) {
         this.calification = calification;
     }
-    public String getDominio() {
-        return dominio;
-    }
-
-    public void setDominio(String dominio) {
-        this.dominio = dominio;
-    }
 
     public String getTestID(){
         return testID;
+    }
+
+    public String getType(){
+        return type;
     }
    
 }

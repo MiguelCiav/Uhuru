@@ -1,7 +1,7 @@
 [
     {
         "type":"facil",
-        "duration":"60",
+        "duration":60,
         "courseID":"0",
         "testID":"00",
         "testName":"Java Junior - Variables y Tipos de Datos"
@@ -9,7 +9,7 @@
     },
     {
         "type":"facil",
-        "duration":"60",
+        "duration":60,
         "courseID":"0",
         "testID":"01",
         "testName":"Java Junior - Condicionales"
@@ -17,28 +17,28 @@
     },
     {
         "type":"medio",
-        "duration":"70",
+        "duration":70,
         "courseID":"1",
         "testID":"10",
         "testName":"Java Medio - Sentencia Switch"
     },
     {
         "type":"medio",
-        "duration":"80",
+        "duration":80,
         "courseID":"1",
         "testID":"11",
         "testName":"Java Medio - Bucles"
     },
     {
         "type":"dificil",
-        "duration":"90",
+        "duration":90,
         "courseID":"2",
         "testID":"20",
         "testName":"Java Avanzado - POO"
     },
     {
         "type":"dificil",
-        "duration":"100",
+        "duration":100,
         "courseID":"2",
         "testID":"21",
         "testName":"Java Avanzado - Java Swing"

@@ -5,9 +5,25 @@ import javax.swing.Box;
 
 public class ScrollableTestPanel extends ScrollablePanel{
 
-    public ScrollableTestPanel(){
+    private static ScrollableTestPanel instance;
+
+    private ScrollableTestPanel(){
         super();
         addScrollableElements();
+    }
+
+    public static ScrollableTestPanel getInstance(){
+
+        if(instance == null){
+            instance = new ScrollableTestPanel();
+        }
+
+        return instance;
+    }
+
+    public static void loadExams(String CourseID){
+
+        
     }
 
     @Override

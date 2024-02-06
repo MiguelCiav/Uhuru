@@ -44,7 +44,7 @@ public class TestListPanel extends JPanelRound{
 
     private void addScrollableTestPanel(){
 
-        scrollableTestPanel = new ScrollableTestPanel();
+        scrollableTestPanel = ScrollableTestPanel.getInstance();
 
         constraints.gridy = 1;
         constraints.weighty = 1.0;

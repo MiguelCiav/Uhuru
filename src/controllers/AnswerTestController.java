@@ -56,4 +56,13 @@ public class AnswerTestController {
 
         return courseIDs;
     }
+
+    public String[] getTestNames(String courseID){
+
+        String[] testNames = new String[Course.MAX_COURSE];
+
+        
+
+        return testNames;
+    }
 }

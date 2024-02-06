@@ -2,7 +2,7 @@ package models;
 
 public class Question {
 
-    private int questionID;
+    private String questionID;
     private String description;
     private String justification;
     private Answer userAnswer;
@@ -45,11 +45,12 @@ public class Question {
         Answer aux = new Answer("Hola", 1, false, answerNumber);
         return aux;
     }
-    public void setQuestionID(int questionID) {
+    
+    public void setQuestionID(String questionID) {
         this.questionID = questionID;
     }
 
-    public int getQuestionID() {
+    public String getQuestionID() {
         return questionID;
     }
 

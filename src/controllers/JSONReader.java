@@ -9,6 +9,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import models.Course;
+import models.Test;
 import models.User;
 
 public class JSONReader {
@@ -46,6 +47,7 @@ public class JSONReader {
 
     }
 
+    @SuppressWarnings("unused")
     public void readTest(String courseID){
 
         readFile("src/DataBase/Tests.json", 1);
@@ -57,6 +59,13 @@ public class JSONReader {
             String courseTestID = (String) test.get("courseID");
 
             if(courseTestID.equals(courseID)){
+
+                String testName = (String) test.get("testName");
+                String type = (String) test.get("type");
+                int duration = Integer.valueOf(test.get("duration").toString());
+
+                Test loadedTest = new Test(testName,type,duration,testID);
+                Course.getInstanceCourse(courseID).addTest(loadedTest);
 
                 readQuestions(testID);
 
@@ -95,7 +104,7 @@ public class JSONReader {
             String answerQuestionID = (String) answer.get("questionID");
 
             if(answerQuestionID.equals(questionID)){
-
+                
             }
         }
 
