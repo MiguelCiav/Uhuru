@@ -33,7 +33,7 @@ public class LoginFrame extends JFrame{
         background.setIcon(new ImageIcon(image2));
         
         background.setLayout(new GridBagLayout());
-
+        
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.gridheight = 1;
@@ -47,7 +47,7 @@ public class LoginFrame extends JFrame{
         iconPanel.setLayout(new GridBagLayout());
         iconPanel.setBackground(ViewsStyles.DARK_BLUE);
 
-        constraints.insets=new Insets(10,10,10,10);
+        constraints.insets=new Insets(20,20,0,0);
         constraints.weightx=1;
         constraints.anchor=GridBagConstraints.WEST;
 
@@ -56,5 +56,6 @@ public class LoginFrame extends JFrame{
         add(iconPanel, BorderLayout.NORTH);
 
         setVisible(true);
+
     }
 }

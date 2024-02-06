@@ -3,19 +3,16 @@ package views.useCaseFrames;
 import views.swingComponents.*;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-
-import controllers.JSONReader;
+import javax.swing.JLabel;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.concurrent.TimeUnit;
 
-public class MainFrame extends JFrame implements ActionListener{
+public class MainFrame extends JFrame{
     
     private ImageIcon uhuruLogo = new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/mainView/mainFrameImage.jpg")));
-    private JButton uhuruLogoButton = new JButton();
+    private JLabel uhuruLogoButton = new JLabel();
 
     public MainFrame(){
 
@@ -32,16 +29,15 @@ public class MainFrame extends JFrame implements ActionListener{
 
 
         uhuruLogoButton.setIcon(new ImageIcon(image2));
-        uhuruLogoButton.addActionListener(this);
         add(uhuruLogoButton);
 
         setVisible(true);
-    }
 
-    @Override 
-    public void actionPerformed(ActionEvent e){
-        setVisible(false);
-        JSONReader.getInstance().readCourses();
-        new LoginFrame();
+        try {
+            TimeUnit.SECONDS.sleep(1);
+            new LoginFrame();
+            this.dispose();
+        } catch (InterruptedException e){ }
+        
     }
 }

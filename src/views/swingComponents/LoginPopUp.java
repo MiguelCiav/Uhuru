@@ -55,7 +55,7 @@ public class LoginPopUp extends JPanelRound implements ActionListener{
 
     public void addLogin(){
         login = new JLabel("Inicia Sesión");
-        login.setFont(ViewsStyles.TEXT_FONT);
+        login.setFont(ViewsStyles.SMALL_TITLE_FONT);
         constraints.insets = new Insets(10, 30, 20, 20);
 
         constraints.gridx = 0;
