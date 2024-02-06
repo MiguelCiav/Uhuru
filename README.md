@@ -115,7 +115,7 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 </p>
 
 <a name="lib"></a>
-##Librerías
+## Librerías
 Las librerías de terceros usadas en el proyecto son:
 Librería  | Versión | Uso
 ------------- | ------------- | -------------
@@ -123,7 +123,7 @@ ItextPdf  | 5.5.9  | Proporciona las clases necesarias para estructurar y genera
 JsonSimple  | 1.1.1  | Proporciona las herramietnas necesarias para cargar, manipular y preservar la información de los modelos a traves de archivos JSON.
 
 <a name="guia"></a>
-##Como usar Uhuru
+## Como usar Uhuru
 1. Inicia sesion con tu correo y contraseña registrados por el administrador
 <p align="center">
   <img style="width:60%; heigth:300px" src="docs\screenshots\login.png">
