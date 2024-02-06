@@ -109,14 +109,44 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
   <img style="width:100%" src="docs\logicalView\designView\packageDesign\traceDiagram.png">
 </p>
 
-## Modelo de Despliegue
+### Modelo de Despliegue
 <p align="center">
   <img src="docs\physicalView\DeploymentDiagram.png">
 </p>
 
 <a name="lib"></a>
 ##Librerías
+Las librerías de terceros usadas en el proyecto son:
+Librería  | Versión | Uso
+------------- | ------------- | -------------
+ItextPdf  | 5.5.9  | Proporciona las clases necesarias para estructurar y generar el archivo PDF correspondiente al certificado del Curso Aprobado.
+JsonSimple  | 1.1.1  | Proporciona las herramietnas necesarias para cargar, manipular y preservar la información de los modelos a traves de archivos JSON.
 
-
-<a name="Uhuru"></a>
+<a name="guia"></a>
 ##Como usar Uhuru
+1. Inicia sesion con tu correo y contraseña registrados por el administrador
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\screenshots\login.png">
+</p>
+
+2. Selecciona uno de los cursos disponibles en la plataforma para poder acceder a los examenes asociados.
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\screenshots\TestListView.png">
+</p>
+
+3. Una vez accedes al examen tendrás un tiempo limitado para responder todas las preguntas.
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\screenshots\TestView.png">
+</p>
+
+4. Al terminar el examen podrás visualizar las respuestas correctas junto con su justificación para que obtengas una correcta retroalimentación.
+
+5. Una vez aprobado todos los examenes de un curso podrás acceder a su certificado guardandolo en formato PDF.
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\screenshots\GetCertificate.png">
+</p>
+
+6. Desde tu perfil podrás modificar datos básicos de tu usuario.
+
+7. Podrás acceder a las preguntas frecuentes desde tu pantalla de inicio.
+
