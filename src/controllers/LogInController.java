@@ -4,8 +4,6 @@ import javax.swing.JTextArea;
 
 import java.awt.Dimension;
 
-import javax.swing.*;
-import models.User;
 import views.swingComponents.JFramePopUp;
 import views.swingComponents.WrongPassword;
 import views.useCaseFrames.TestListView;
@@ -19,6 +17,7 @@ public class LogInController{
     public static void validateUser(String email, String password){
 
         if(JSONReader.getInstance().readUser(email, password)){
+            JSONReader.getInstance().readCourses();
             new TestListView();
         } else {
             new JFramePopUp(new WrongPassword(), new Dimension(650,300));

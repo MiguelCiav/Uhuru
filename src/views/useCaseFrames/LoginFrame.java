@@ -17,7 +17,7 @@ public class LoginFrame extends JFrame{
     private GridBagConstraints constraints = new GridBagConstraints();
     
     LoginFrame(){
-
+    
         super("Uhuru");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setMinimumSize(new Dimension(800,600));

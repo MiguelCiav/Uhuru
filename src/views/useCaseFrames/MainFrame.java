@@ -27,7 +27,6 @@ public class MainFrame extends JFrame{
         int height = gd.getDisplayMode().getHeight();
         Image image2 = image1.getScaledInstance(width, height, DO_NOTHING_ON_CLOSE);
 
-
         uhuruLogoButton.setIcon(new ImageIcon(image2));
         add(uhuruLogoButton);
 
