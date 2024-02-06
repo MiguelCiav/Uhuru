@@ -1,9 +1,5 @@
 package models;
 
-import java.util.*;
-
-import controllers.GenerateCertificateController;
-
 public class User {
 
     private String name;
@@ -30,8 +26,6 @@ public class User {
             coursesCount++;
         }
     }
-
-
 
     public String[] getCourses() {
         return coursesID;
@@ -69,12 +63,8 @@ public class User {
         return coursesCount;
     }
 
-<<<<<<< HEAD
     public String getPassword() {
         return password;
     }
 
 }
-=======
-}
->>>>>>> answerTestController

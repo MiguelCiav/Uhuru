@@ -16,9 +16,9 @@ public class LabelPanelCourse extends LabelPanel{
 
     private String courseName;
     private JTextArea courseNameText;
-    private int courseID;
+    private String courseID;
 
-    public LabelPanelCourse(String courseName, int courseID){
+    public LabelPanelCourse(String courseName, String courseID){
 
         constraints = new GridBagConstraints();
         this.courseName = courseName;

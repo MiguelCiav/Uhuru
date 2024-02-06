@@ -37,21 +37,12 @@ public class LabelPanelQuestionSummary extends LabelPanel{
 
         questionDescriptionText = new JTextArea();
 
-<<<<<<< HEAD:src/views/swingComponents/LabelPanelWithTitle.java
-        questionSummary.setBackground(ViewsStyles.LIGHT_GRAY);
-        questionSummary.setFont(new Font("Futura", Font.PLAIN, 12));
-        questionSummary.setEditable(false);
-        questionSummary.setFocusable(false);
-        questionSummary.setLineWrap(true);
-        questionSummary.setText(text);
-=======
         questionDescriptionText.setBackground(new Color(216,233,241));
         questionDescriptionText.setFont(new Font("Futura", Font.PLAIN, 12));
         questionDescriptionText.setEditable(false);
         questionDescriptionText.setFocusable(false);
         questionDescriptionText.setLineWrap(true);
         questionDescriptionText.setText(questionDescription);
->>>>>>> answerTestController:src/views/swingComponents/LabelPanelQuestionSummary.java
 
     }
 

@@ -40,16 +40,16 @@ public class AnswerTestController {
         return courseNames;
     }
 
-    public int[] getCourseIDs(){
+    public String[] getCourseIDs(){
 
-        int[] courseIDs = new int[Course.MAX_COURSE];
+        String[] courseIDs = new String[Course.MAX_COURSE];
 
         for(int i = 0; i < Course.MAX_COURSE; i++){
 
             if(coursesList[i] != null){
                 courseIDs[i] = coursesList[i].getID();
             } else {
-                courseIDs[i] = -1;
+                courseIDs[i] = "NULL";
             }
         
         }
