@@ -69,8 +69,12 @@ public class User {
         return coursesCount;
     }
 
+<<<<<<< HEAD
     public String getPassword() {
         return password;
     }
 
 }
+=======
+}
+>>>>>>> answerTestController

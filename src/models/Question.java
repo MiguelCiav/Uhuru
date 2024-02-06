@@ -2,12 +2,12 @@ package models;
 
 public class Question {
 
+    private int questionID;
     private String description;
     private String justification;
     private Answer userAnswer;
     private int questionType;
     private int questionNumber;
-
 
     public Question(String description, String justification, int questionType, int questionNumber){
         
@@ -44,6 +44,13 @@ public class Question {
         //Borrador
         Answer aux = new Answer("Hola", 1, false, answerNumber);
         return aux;
+    }
+    public void setQuestionID(int questionID) {
+        this.questionID = questionID;
+    }
+
+    public int getQuestionID() {
+        return questionID;
     }
 
 }

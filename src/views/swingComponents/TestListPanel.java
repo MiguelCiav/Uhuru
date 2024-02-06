@@ -10,7 +10,7 @@ public class TestListPanel extends JPanelRound{
 
     GridBagConstraints constraints = new GridBagConstraints();
     JLabel answersTitle;
-    ScrollablePanel testPanel;
+    ScrollablePanel scrollableTestPanel;
     
     public TestListPanel(){
 
@@ -18,7 +18,7 @@ public class TestListPanel extends JPanelRound{
         setRoundBackgroundColor(Color.WHITE);
 
         addTestTitle();
-        addTestPanel();
+        addScrollableTestPanel();
         addButton();
 
     }
@@ -42,16 +42,16 @@ public class TestListPanel extends JPanelRound{
 
     }
 
-    private void addTestPanel(){
+    private void addScrollableTestPanel(){
 
-        testPanel = new ScrollableTestPanel();
+        scrollableTestPanel = new ScrollableTestPanel();
 
         constraints.gridy = 1;
         constraints.weighty = 1.0;
         constraints.fill = GridBagConstraints.BOTH;
         constraints.insets = new Insets(0, 20, 20, 20);
 
-        add(testPanel, constraints);
+        add(scrollableTestPanel, constraints);
 
     }
 

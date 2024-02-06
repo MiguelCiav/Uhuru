@@ -13,14 +13,16 @@ import views.listeners.GoToTestView;
 
 public class LabelPanelTest extends LabelPanel{
 
+    private int testID;
     private JLabel textLabel;
     private JLabel arrowLabel;
     private String testName;
 
-    public LabelPanelTest(String testName){
+    public LabelPanelTest(String testName, int testID){
 
         constraints = new GridBagConstraints();
         this.testName = testName;
+        this.testID = testID;
 
         setLayout(new GridBagLayout());
         setBackground(ViewsStyles.LIGHT_GRAY);

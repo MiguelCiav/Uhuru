@@ -12,20 +12,17 @@ import javax.swing.JTextArea;
 
 import utils.ViewsStyles;
 
-public class LabelPanelWithTitle extends LabelPanel{
+public class LabelPanelQuestionSummary extends LabelPanel{
 
-    private String text;
-    private JLabel questionTitle;
-    private JTextArea questionSummary;
-    private int number;
-    private String title;
+    private int questionID;
+    private String questionDescription;
+    private JTextArea questionDescriptionText;
 
-    public LabelPanelWithTitle(int number, String text, String title){
+    public LabelPanelQuestionSummary(String questionDescription, int questionID){
 
         constraints = new GridBagConstraints();
-        this.text = text;
-        this.number = number;
-        this.title = title;
+        this.questionDescription = questionDescription;
+        this.questionID = questionID;
 
         setLayout(new GridBagLayout());
         setBackground(ViewsStyles.LIGHT_GRAY);
@@ -38,22 +35,31 @@ public class LabelPanelWithTitle extends LabelPanel{
     @Override
     protected void setLabel() {
 
-        questionSummary = new JTextArea();
-        questionTitle = new JLabel();
+        questionDescriptionText = new JTextArea();
 
+<<<<<<< HEAD:src/views/swingComponents/LabelPanelWithTitle.java
         questionSummary.setBackground(ViewsStyles.LIGHT_GRAY);
         questionSummary.setFont(new Font("Futura", Font.PLAIN, 12));
         questionSummary.setEditable(false);
         questionSummary.setFocusable(false);
         questionSummary.setLineWrap(true);
         questionSummary.setText(text);
+=======
+        questionDescriptionText.setBackground(new Color(216,233,241));
+        questionDescriptionText.setFont(new Font("Futura", Font.PLAIN, 12));
+        questionDescriptionText.setEditable(false);
+        questionDescriptionText.setFocusable(false);
+        questionDescriptionText.setLineWrap(true);
+        questionDescriptionText.setText(questionDescription);
+>>>>>>> answerTestController:src/views/swingComponents/LabelPanelQuestionSummary.java
 
-        questionTitle.setText(title + " " + String.valueOf(number));
-        questionTitle.setFont(new Font("Futura", Font.BOLD, 20));
     }
 
     @Override
     protected void addLabel() {
+
+        JLabel questionTitle = new JLabel("Pregunta " + questionID);
+        questionTitle.setFont(ViewsStyles.SMALL_TITLE_FONT);
 
         constraints.gridx = 0;
         constraints.gridy = 0;
@@ -66,13 +72,12 @@ public class LabelPanelWithTitle extends LabelPanel{
         add(questionTitle, constraints);
 
         constraints.gridy = 1;
-        constraints.weighty = 1.0;
         constraints.insets = new Insets(0, 16, 16, 16);
 
-        JScrollPane auxiliarPane = new JBlueScrollPane(questionSummary);
+        JScrollPane auxiliarPane = new JBlueScrollPane(questionDescriptionText);
         auxiliarPane.setBorder(null);
-        auxiliarPane.setMinimumSize(new Dimension(250,60));
-        auxiliarPane.setPreferredSize(new Dimension(250, 60));
+        auxiliarPane.setMinimumSize(new Dimension(250,40));
+        auxiliarPane.setPreferredSize(new Dimension(250, 40));
         
         auxiliarPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         auxiliarPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);

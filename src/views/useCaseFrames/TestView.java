@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class TestView extends JFrame{
 
-    PrincipalPanel testViewPanel = new PrincipalPanel();
+    PrincipalPanel principalPanel = new PrincipalPanel();
     QuestionsListPanel questionsListPanel = new QuestionsListPanel();
 
     public TestView(){
@@ -20,9 +20,8 @@ public class TestView extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(true);
 
-        //questionsListPanel.add(new BlueButton("Hola",500));
-        testViewPanel.setContentPanel(questionsListPanel);
-        add(testViewPanel);
+        principalPanel.setContentPanel(questionsListPanel);
+        add(principalPanel);
 
         setVisible(true);
     }

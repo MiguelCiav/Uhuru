@@ -13,7 +13,7 @@ public class ScrollableTestPanel extends ScrollablePanel{
     @Override
     protected void addScrollableElements(){
         for(int i = 0; i < 5; i++){
-            add(new LabelPanelTest("Test " + String.valueOf(i)));
+            add(new LabelPanelTest("Test " + String.valueOf(i), i));
             add(Box.createRigidArea(new Dimension(0,20)));
         } 
     }
