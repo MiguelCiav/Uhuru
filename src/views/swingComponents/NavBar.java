@@ -42,7 +42,7 @@ public class NavBar extends JPanel{
         constraints.weightx = 1.0;
         constraints.anchor = GridBagConstraints.WEST;
 
-        JLabel Logo = new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/NavBar/iconDarkMini.png"))));
+        JLabel Logo = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/NavBar/iconDarkMini.png")));
         Logo.addMouseListener(new GoToTestListView());
 
         add(Logo, constraints);
@@ -56,7 +56,7 @@ public class NavBar extends JPanel{
         constraints.weightx = 0.0;
         constraints.anchor = GridBagConstraints.EAST;
 
-        add(new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/NavBar/FaQ.png")))), constraints);
+        add(new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/NavBar/FaQ.png"))), constraints);
 
     }
 
@@ -64,7 +64,7 @@ public class NavBar extends JPanel{
 
         constraints.gridx = 2;
 
-        add(new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/NavBar/user.png")))), constraints);
+        add(new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/NavBar/user.png"))), constraints);
     }
 
 }

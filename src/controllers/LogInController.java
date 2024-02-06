@@ -1,11 +1,13 @@
 package controllers;
 
+import javax.security.auth.login.LoginContext;
 import javax.swing.JTextArea;
 
 import java.awt.Dimension;
 
 import views.swingComponents.JFramePopUp;
 import views.swingComponents.WrongPassword;
+import views.useCaseFrames.LoginFrame;
 import views.useCaseFrames.TestListView;
 
 public class LogInController{
@@ -19,6 +21,7 @@ public class LogInController{
         if(JSONReader.getInstance().readUser(email, password)){
             JSONReader.getInstance().readCourses();
             new TestListView();
+            LoginFrame.getInstance().disposeFrame();
         } else {
             new JFramePopUp(new WrongPassword(), new Dimension(650,300));
         }

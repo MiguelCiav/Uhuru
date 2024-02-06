@@ -51,14 +51,13 @@ public class CertificatePopUp extends JPanelRound{
 
     public void addExitButton(){
 
-        //PathManager exitButtonImageURL = new PathManager();
         JLabel exitButton = new JLabel();
         
         constraints.gridx = 1;
         constraints.weightx = 0.0;
         constraints.anchor = GridBagConstraints.EAST;
         constraints.insets= new Insets(10,0,10,30);
-        exitButton.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testListView/close.png"))));
+        exitButton.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/testListView/close.png")));
         
         exitButton.addMouseListener(new CloseWindow());
         add(exitButton, constraints);

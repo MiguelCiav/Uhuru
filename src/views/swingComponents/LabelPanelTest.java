@@ -8,6 +8,8 @@ import java.awt.Insets;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import com.itextpdf.text.pdf.parser.Path;
+
 import utils.ViewsStyles;
 import views.listeners.GoToTestView;
 
@@ -42,7 +44,7 @@ public class LabelPanelTest extends LabelPanel{
         textLabel.setFocusable(false);
         textLabel.setText(testName);
 
-        arrowLabel = new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testListView/siguiente.png"))));
+        arrowLabel = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/testListView/siguiente.png")));
 
     }
 

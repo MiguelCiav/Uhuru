@@ -20,7 +20,7 @@ public class WrongPassword extends JPanelRound{
     }
 
     public void addCloseButton(){
-        JLabel closeButton = new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testListView/close.png"))));
+        JLabel closeButton = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/testListView/close.png")));
         closeButton.setPreferredSize(new Dimension(50, 50));
         constraints.insets = new Insets(20, 20, 20, 20);
         constraints.gridx = 0;

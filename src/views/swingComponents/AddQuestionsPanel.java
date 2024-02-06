@@ -14,9 +14,9 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
     private LargeTextPanels questionOption = new LargeTextPanels("Introduzca la opción", Color.WHITE);
     private LargeTextPanels questionJustification = new LargeTextPanels("Ingrese la justificacion de la respuesta", Color.WHITE);
     private JPanelRound addOptionPanel = new JPanelRound();
-    private JButton addOptionButton = new JButton(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/Add_Ico.png"))));
+    private JButton addOptionButton = new JButton(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/Add_Ico.png")));
     private JLabel addOptionLabel = new JLabel("Añadir opcion");
-    private JCheckBox correctOption = new JCheckBox(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/incorrectAnswer.png"))));
+    private JCheckBox correctOption = new JCheckBox(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
 
     AddQuestionsPanel(){
         setRoundBackgroundColor(ViewsStyles.PALID_BLUE);
@@ -101,11 +101,11 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
         JCheckBox box = (JCheckBox) e.getSource();
 
         if(box.isSelected()){
-            correctOption.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/solutionsView/answerCheckBox.png"))));
+            correctOption.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
             questionJustification.textArea.setEditable(true);
         }
         else{
-            correctOption.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/incorrectAnswer.png"))));
+            correctOption.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
             questionJustification.textArea.setEditable(false);
         }
     }

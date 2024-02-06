@@ -85,13 +85,11 @@ public class ScrollContainer extends JPanelRound{
     private void addButton() {
 
         JLabel button = new JLabel();
-        PathManager path = new PathManager();
-        String url = "../img/UsersListView/addIcon.png";
 
         button.setFont(ViewsStyles.SMALL_TITLE_FONT);
         button.setForeground(Color.BLACK);
         button.setText(buttonTitle);
-        button.setIcon(new ImageIcon(getClass().getResource(path.setFileLink(url))));
+        button.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/UsersListView/addIcon.png")));
         button.setIconTextGap(16);
 
         constraints.gridy = 2;

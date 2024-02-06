@@ -73,7 +73,7 @@ public class TestInfoPanel extends JPanel{
         constraints.weightx=0.0;
         constraints.anchor = GridBagConstraints.CENTER;
 
-        clock.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testView/reloj.png"))));
+        clock.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/testView/reloj.png")));
         clock.setText("11:11");
         clock.setFont(new Font("Futura", Font.BOLD, 30));
         clock.setForeground(ViewsStyles.DARK_BLUE);
@@ -87,7 +87,7 @@ public class TestInfoPanel extends JPanel{
         
         constraints.gridx=2;
 
-        answeredQuestions.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testView/bandera.png"))));
+        answeredQuestions.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/testView/bandera.png")));
         answeredQuestions.setText("1/20");
         answeredQuestions.setFont(new Font("Futura", Font.BOLD, 30));
         answeredQuestions.setForeground(ViewsStyles.DARK_BLUE);

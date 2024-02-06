@@ -11,6 +11,7 @@ import org.json.simple.parser.JSONParser;
 import models.Course;
 import models.Test;
 import models.User;
+import views.swingComponents.PathManager;
 
 public class JSONReader {
 
@@ -31,7 +32,7 @@ public class JSONReader {
 
     public void readCourses(){
 
-        readFile("src/DataBase/Courses.json", 0);
+        readFile(PathManager.getInstance().getStringURL("/src/DataBase/Courses.json"), 0);
         
         for(Object object : list[0]){
 
@@ -50,7 +51,7 @@ public class JSONReader {
     @SuppressWarnings("unused")
     public void readTest(String courseID){
 
-        readFile("src/DataBase/Tests.json", 1);
+        readFile(PathManager.getInstance().getStringURL("/src/DataBase/Tests.json"), 1);
 
         for(Object object : list[1]){
 
@@ -76,7 +77,7 @@ public class JSONReader {
 
     private void readQuestions(String testID){
 
-        readFile("src/DataBase/Questions.json", 2);
+        readFile(PathManager.getInstance().getStringURL("/src/DataBase/Questions.json"), 2);
 
         for(Object object : list[2]){
 
@@ -95,7 +96,7 @@ public class JSONReader {
 
     private void readAnswers(String questionID){
 
-        readFile("src/DataBase/Answers.json", 3);
+        readFile(PathManager.getInstance().getStringURL("/src/DataBase/Answers.json"), 3);
 
         for(Object object : list[3]){
 
@@ -112,7 +113,7 @@ public class JSONReader {
 
     public boolean readUser(String email, String password){
 
-        readFile("src/DataBase/Users.json",0);
+        readFile(PathManager.getInstance().getStringURL("/src/DataBase/Users.json"),0);
         
         for(Object object : list[0]){
 

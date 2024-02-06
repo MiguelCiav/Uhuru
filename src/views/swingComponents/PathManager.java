@@ -4,10 +4,22 @@ import java.io.File;
 
 public class PathManager{
 
-    public PathManager(){}
+    private static PathManager instance;
+    private String userDirectory = System.getProperty("user.dir");
 
-    public String setFileLink(String relativePath){
+    private PathManager(){}
 
+    public static PathManager getInstance(){
+
+        if(instance == null){
+            instance = new PathManager();
+        }
+
+        return instance;
+    }
+
+    public String getStringURL(String relativePath){
+        
         String directoryName = "";
         String[] relativePathArray = relativePath.split("/");
 
@@ -20,6 +32,7 @@ public class PathManager{
             }
         }
 
-        return directoryName;
+        return userDirectory + directoryName;
+
     }
 }

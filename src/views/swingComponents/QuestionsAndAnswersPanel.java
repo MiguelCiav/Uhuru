@@ -13,7 +13,7 @@ public class QuestionsAndAnswersPanel extends JPanelRound{
     private JComboBox<String> domainSelection = new JComboBox<String>();
     private JPanelRound addQuestionPanel = new JPanelRound();
     private JLabel addQuestionLabel = new JLabel("Añadir pregunta");
-    private JButton addQuestionButton = new JButton(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/createTestView/Add_Ico.png"))));
+    private JButton addQuestionButton = new JButton(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/Add_Ico.png")));
     private BlueButton cancelTestButton = new BlueButton("Cancelar examen", 200, 2);
     private BlueButton createTestButton = new BlueButton("Crear examen", 50, 1);
     private GridBagConstraints constraints = new GridBagConstraints();

@@ -25,7 +25,7 @@ public class CorrectAnswerPanel extends JPanelRound{
 
     private void addIcon(){
 
-        checkBox = new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/solutionsView/answerCheckBox.png"))));
+        checkBox = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/solutionsView/answerCheckBox.png")));
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.gridheight = 1;

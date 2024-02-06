@@ -10,8 +10,8 @@ import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 public class MainFrame extends JFrame{
-    
-    private ImageIcon uhuruLogo = new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/mainView/mainFrameImage.jpg")));
+
+    private ImageIcon uhuruLogo = new ImageIcon(PathManager.getInstance().getStringURL("/src/img/mainView/mainFrameImage.jpg"));
     private JLabel uhuruLogoButton = new JLabel();
 
     public MainFrame(){
@@ -34,8 +34,8 @@ public class MainFrame extends JFrame{
 
         try {
             TimeUnit.SECONDS.sleep(1);
-            new LoginFrame();
-            this.dispose();
+            LoginFrame.getInstance();
+            dispose();
         } catch (InterruptedException e){ }
         
     }

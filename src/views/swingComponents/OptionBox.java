@@ -34,8 +34,8 @@ public class OptionBox extends JPanelRound{
         optionButton.setBackground(ViewsStyles.LIGHT_GRAY);
         optionButton.setSelected(true);
         optionButton.setBorder(null);
-        optionButton.setIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/OptionBox/sin pulsar.png"))));
-        optionButton.setSelectedIcon(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/OptionBox/pulsado.png"))));
+        optionButton.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/OptionBox/sin pulsar.png")));
+        optionButton.setSelectedIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/OptionBox/pulsado.png")));
         optionButton.setSelected(false);
         optionButton.addMouseListener(new UpdateAnswerAmount());
 

@@ -67,7 +67,7 @@ public class UserPopUps extends JPanelRound{
     }
 
     public void addCloseButton(){
-        closeButton = new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/testListView/close.png"))));
+        closeButton = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/testListView/close.png")));
         closeButton.setPreferredSize(new Dimension(50, 50));
         constraints.insets = new Insets(20, 0, 0, 20);
         constraints.gridx = 4;
@@ -189,7 +189,7 @@ public class UserPopUps extends JPanelRound{
         constraints.weighty = 0.8;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.anchor = GridBagConstraints.NORTH;
-        userIcon = new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/userPopUps/userIcon.png"))));
+        userIcon = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/userPopUps/userIcon.png")));
 
         add(userIcon, constraints);
     }

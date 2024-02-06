@@ -39,7 +39,7 @@ public class LabelPanelUser extends LabelPanel{
         textLabel.setFocusable(false);
         textLabel.setText(username);
 
-        imageLabel = new JLabel(new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/UsersListView/smallUserIcon.png"))));
+        imageLabel = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/UsersListView/smallUserIcon.png")));
 
     }
 

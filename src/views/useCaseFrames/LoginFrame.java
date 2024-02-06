@@ -9,14 +9,16 @@ import java.awt.*;
 
 public class LoginFrame extends JFrame{
 
-    private ImageIcon uhuruLogo = new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/loginView/loginBackground.jpg")));
-    private ImageIcon iconLogo = new ImageIcon(getClass().getResource(new PathManager().setFileLink("../img/iconWhiteMini.png")));
+    private static LoginFrame instance;
+    
+    private ImageIcon uhuruLogo = new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/loginView/loginBackground.jpg"));
+    private ImageIcon iconLogo = new ImageIcon(PathManager.getInstance().getStringURL("/src/views/img/iconWhiteMini.png"));
     private JLabel background = new JLabel();
     private JPanel iconPanel = new JPanel();
     private JLabel icon = new JLabel();
     private GridBagConstraints constraints = new GridBagConstraints();
     
-    LoginFrame(){
+    private LoginFrame(){
     
         super("Uhuru");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -57,5 +59,20 @@ public class LoginFrame extends JFrame{
 
         setVisible(true);
 
+    }
+
+    public static LoginFrame getInstance(){
+
+        if(instance == null){
+            instance = new LoginFrame();
+        }
+
+        return instance;
+    }
+
+    public void disposeFrame(){
+
+        instance.dispose();
+        
     }
 }
