@@ -17,6 +17,7 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 6. [ Modelos de Diseño](#modelo_diseño)
 7. [ Librerías](#lib)
 8. [ Como usar](#guia)
+9. [ Test](#modelo_test)
 
 <a name="modelo_dominio"></a>
 ## Modelo del dominio
@@ -150,3 +151,13 @@ JsonSimple  | 1.1.1  | Proporciona las herramietnas necesarias para cargar, mani
 
 7. Podrás acceder a las preguntas frecuentes desde tu pantalla de inicio.
 
+<a name="modelo_test"></a>
+## Modelo de Pruebas
+### - Prueba de Constructor de Test
+El sujeto de la prueba es el constructor del modelo Test
+### - Constructor de Question
+El sujeto de la prueba es el constructor del modelo Question
+### - Prueba de Constructor de Answer
+El sujeto de la prueba es el constructor del modelo Answer
+### - Prueba de Validación de Usuario
+El sujeto de la prueba es ValidateUser de la clase LoginController
