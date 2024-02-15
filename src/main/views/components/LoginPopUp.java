@@ -5,7 +5,7 @@ import javax.swing.border.LineBorder;
 
 import main.controllers.LogInController;
 import utils.ViewsStyles;
-import views.frames.TestListView;
+import main.views.frames.TestListView;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

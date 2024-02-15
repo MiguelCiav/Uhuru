@@ -3,7 +3,7 @@ package test.controllers;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
-import controllers.LogInController;
+import main.controllers.LogInController;
 
 public class testLoginController {
     
