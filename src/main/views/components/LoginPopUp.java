@@ -5,6 +5,8 @@ import javax.swing.border.LineBorder;
 
 import main.controllers.LogInController;
 import utils.ViewsStyles;
+import views.frames.TestListView;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -114,6 +116,12 @@ public class LoginPopUp extends JPanelRound implements ActionListener{
     }
 
     @Override public void actionPerformed(ActionEvent e){
-        LogInController.validateUser(email.textArea.getText(), password.textArea.getText());
+        
+        if(LogInController.validateUser(email.textArea.getText(), password.textArea.getText())){
+            new TestListView();
+        }
+        else{
+            new WrongPassword();
+        }
     }
 }
