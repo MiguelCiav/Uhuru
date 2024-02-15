@@ -14,22 +14,20 @@ public class LogInController{
     private LogInController(){
     }
 
-    public static void validateUser(String email, String password){
+    public static boolean validateUser(String email, String password){
 
         if(JSONReader.getInstance().readUser(email, password)){
             JSONReader.getInstance().readCourses();
-            new TestListView();
+            return true;
         } else {
-            new JFramePopUp(new WrongPassword(), new Dimension(650,300));
+            return false;
         }
-
     }
 
     public static LogInController getInstance(){
         if(instance == null){
             instance = new LogInController();
         }
-
         return instance;
     }
 }
