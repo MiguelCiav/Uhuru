@@ -12,9 +12,9 @@ public class Answer {
     private boolean isCorrect;
     private int answerNumber;
 
-    public Answer(String answeText, int answerType, boolean isCorrect, int answerNumber){
+    public Answer(String answerText, int answerType, boolean isCorrect, int answerNumber){
         
-        this.answerText = answeText;
+        this.answerText = answerText;
         this.answerType = answerType;
         this.isCorrect = isCorrect;
         this.answerNumber = answerNumber;
