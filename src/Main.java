@@ -1,8 +1,4 @@
-
-import controllers.JSONReader;
-import models.Course;
-import views.swingComponents.PathManager;
-import views.useCaseFrames.*;
+import main.views.frames.*;
 
 public class Main {
 
