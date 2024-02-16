@@ -3,7 +3,7 @@ package main.views.components.testListViewComponents;
 import java.awt.Dimension;
 import javax.swing.Box;
 
-import main.views.components.ScrollablePanel;
+import main.views.components.genericComponents.ScrollablePanel;
 
 public class ScrollableTestPanel extends ScrollablePanel{
 

@@ -1,4 +1,4 @@
-package main.views.components;
+package main.views.components.genericComponents;
 
 import java.awt.*;
 import java.awt.event.*;

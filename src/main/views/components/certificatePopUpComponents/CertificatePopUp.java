@@ -2,9 +2,9 @@ package main.views.components.certificatePopUpComponents;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
-import main.views.components.CloseWindow;
-import main.views.components.JBlueScrollPane;
-import main.views.components.JPanelRound;
+import main.views.components.genericComponents.CloseWindow;
+import main.views.components.genericComponents.JBlueScrollPane;
+import main.views.components.genericComponents.JPanelRound;
 
 import java.awt.*;
 

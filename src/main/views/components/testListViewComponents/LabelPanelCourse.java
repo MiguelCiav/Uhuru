@@ -10,8 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import main.views.components.JBlueScrollPane;
-import main.views.components.LabelPanel;
+import main.views.components.genericComponents.JBlueScrollPane;
+import main.views.components.genericComponents.LabelPanel;
 import utils.ViewsStyles;
 
 public class LabelPanelCourse extends LabelPanel{

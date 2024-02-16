@@ -2,9 +2,9 @@ package main.views.components.loginViewComponents;
 
 import javax.swing.*;
 
-import main.views.components.CloseWindow;
-import main.views.components.JPanelRound;
-import main.views.components.LargeTextPanels;
+import main.views.components.genericComponents.CloseWindow;
+import main.views.components.genericComponents.JPanelRound;
+import main.views.components.genericComponents.LargeTextPanels;
 import utils.PathManager;
 import utils.ViewsStyles;
 

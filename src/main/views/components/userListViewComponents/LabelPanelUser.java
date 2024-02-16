@@ -9,7 +9,7 @@ import java.awt.Insets;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import main.views.components.LabelPanel;
+import main.views.components.genericComponents.LabelPanel;
 import utils.PathManager;
 
 public class LabelPanelUser extends LabelPanel{

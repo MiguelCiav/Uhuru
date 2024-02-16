@@ -4,9 +4,9 @@ import javax.swing.*;
 
 import main.controllers.LogInController;
 import utils.ViewsStyles;
-import main.views.components.BlueButton;
-import main.views.components.JPanelRound;
-import main.views.components.LargeTextPanels;
+import main.views.components.genericComponents.BlueButton;
+import main.views.components.genericComponents.JPanelRound;
+import main.views.components.genericComponents.LargeTextPanels;
 import main.views.frames.TestListView;
 
 import java.awt.*;

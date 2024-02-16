@@ -1,4 +1,4 @@
-package main.views.components;
+package main.views.components.genericComponents;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.GradientPaint;

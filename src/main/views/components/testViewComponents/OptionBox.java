@@ -1,7 +1,7 @@
 package main.views.components.testViewComponents;
 import javax.swing.*;
 
-import main.views.components.JPanelRound;
+import main.views.components.genericComponents.JPanelRound;
 import utils.PathManager;
 import utils.ViewsStyles;
 

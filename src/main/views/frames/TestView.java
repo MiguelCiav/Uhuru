@@ -2,7 +2,7 @@ package main.views.frames;
 
 import javax.swing.*;
 
-import main.views.components.PrincipalPanel;
+import main.views.components.genericComponents.PrincipalPanel;
 import main.views.components.testViewComponents.QuestionsListPanel;
 
 import java.awt.*;

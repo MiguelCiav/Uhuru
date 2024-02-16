@@ -2,8 +2,8 @@ package main.views.components.createTestViewComponents;
 
 import javax.swing.*;
 
-import main.views.components.JPanelRound;
-import main.views.components.LargeTextPanels;
+import main.views.components.genericComponents.JPanelRound;
+import main.views.components.genericComponents.LargeTextPanels;
 
 import java.awt.*;
 

@@ -7,7 +7,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import javax.swing.JLabel;
 
-import main.views.components.LabelPanel;
+import main.views.components.genericComponents.LabelPanel;
 
 public class LabelPanelAdminTest extends LabelPanel{
 

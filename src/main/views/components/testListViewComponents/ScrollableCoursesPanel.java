@@ -6,7 +6,7 @@ import javax.swing.Box;
 
 import main.controllers.AnswerTestController;
 import main.models.Course;
-import main.views.components.ScrollablePanel;
+import main.views.components.genericComponents.ScrollablePanel;
 
 import java.awt.Dimension;
 

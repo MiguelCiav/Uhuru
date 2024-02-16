@@ -1,8 +1,7 @@
 package main.views.components.testViewComponents;
 import javax.swing.*;
 
-import main.views.components.BlueButton;
-import main.views.listeners.GoToSolutionsView;
+import main.views.components.genericComponents.BlueButton;
 import utils.PathManager;
 import utils.ViewsStyles;
 

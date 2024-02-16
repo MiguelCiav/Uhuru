@@ -2,8 +2,8 @@ package main.views.components.createTestViewComponents;
 
 import javax.swing.*;
 
-import main.views.components.BlueButton;
-import main.views.components.JPanelRound;
+import main.views.components.genericComponents.BlueButton;
+import main.views.components.genericComponents.JPanelRound;
 
 import java.awt.*;
 

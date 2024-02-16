@@ -5,6 +5,7 @@ import javax.swing.*;
 import main.views.components.*;
 import main.views.components.createTestViewComponents.QuestionsAndAnswersPanel;
 import main.views.components.createTestViewComponents.TestDataPanel;
+import main.views.components.genericComponents.DoublePanel;
 
 import java.awt.*;
 

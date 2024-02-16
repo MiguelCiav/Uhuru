@@ -3,6 +3,10 @@ package main.views.components;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
+import main.views.components.genericComponents.BlueButton;
+import main.views.components.genericComponents.CloseWindow;
+import main.views.components.genericComponents.JPanelRound;
+import main.views.components.genericComponents.LargeTextPanels;
 import utils.PathManager;
 import utils.ViewsStyles;
 

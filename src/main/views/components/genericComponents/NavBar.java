@@ -1,8 +1,7 @@
-package main.views.components;
+package main.views.components.genericComponents;
 import java.awt.*;
 import javax.swing.*;
 
-import main.views.listeners.GoToTestListView;
 import utils.PathManager;
 
 //NAVBAR

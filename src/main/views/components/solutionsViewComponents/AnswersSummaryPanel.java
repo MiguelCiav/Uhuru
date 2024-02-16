@@ -2,7 +2,7 @@ package main.views.components.solutionsViewComponents;
 
 import javax.swing.*;
 
-import main.views.components.JPanelRound;
+import main.views.components.genericComponents.JPanelRound;
 import utils.ViewsStyles;
 
 import java.awt.*;
