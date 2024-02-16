@@ -3,10 +3,10 @@ package main.views.frames;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
-import main.views.components.AnswersSummaryPanel;
 import main.views.components.DoublePanel;
 import main.views.components.ScrollContainer;
-import main.views.components.ScrollableQuestionsSummaryPanel;
+import main.views.components.solutionsViewComponents.AnswersSummaryPanel;
+import main.views.components.solutionsViewComponents.ScrollableQuestionsSummaryPanel;
 
 public class SolutionsView extends JFrame{
     

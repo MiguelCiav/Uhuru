@@ -8,9 +8,11 @@ import java.awt.*;
 public class PrincipalPanel extends JPanel{
 
     public PrincipalPanel(){
+
         setBackground(ViewsStyles.DARK_BLUE);
         setLayout(new GridBagLayout());
         initializePanel();
+
     }
 
     protected void initializePanel(){
@@ -26,6 +28,7 @@ public class PrincipalPanel extends JPanel{
         constraints.anchor = GridBagConstraints.NORTH;
 
         add(NavBar.getNavBar(), constraints);
+
     }
 
     public void setContentPanel(JPanel contentPanel){
@@ -43,6 +46,7 @@ public class PrincipalPanel extends JPanel{
         constraints.anchor = GridBagConstraints.CENTER;
 
         this.add(contentPanel, constraints);
+        
     }
 
 }

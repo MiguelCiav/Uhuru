@@ -6,7 +6,7 @@ public class User {
     private String lastName;
     private String eMail;
     private String password;
-    private String []coursesID = new String[Course.MAX_COURSE];
+    private String[] coursesID = new String[Course.MAX_COURSE];
     private int coursesCount = 0;
     private static User instance;
 

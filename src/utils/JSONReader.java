@@ -11,7 +11,6 @@ import org.json.simple.parser.JSONParser;
 import main.models.Course;
 import main.models.Test;
 import main.models.User;
-import main.views.components.PathManager;
 
 public class JSONReader {
 

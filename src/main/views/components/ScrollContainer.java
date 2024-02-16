@@ -2,6 +2,7 @@ package main.views.components;
 
 import javax.swing.*;
 
+import utils.PathManager;
 import utils.ViewsStyles;
 
 import java.awt.*;

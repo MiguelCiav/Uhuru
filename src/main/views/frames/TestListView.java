@@ -5,8 +5,8 @@ import javax.swing.JFrame;
 
 import main.views.components.DoublePanel;
 import main.views.components.ScrollContainer;
-import main.views.components.ScrollableCoursesPanel;
-import main.views.components.TestListPanel;
+import main.views.components.testListViewComponents.ScrollableCoursesPanel;
+import main.views.components.testListViewComponents.TestListPanel;
 
 public class TestListView extends JFrame{
 

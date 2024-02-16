@@ -3,18 +3,20 @@ package main.views.frames;
 import javax.swing.*;
 
 import main.views.components.*;
+import main.views.components.createTestViewComponents.QuestionsAndAnswersPanel;
+import main.views.components.createTestViewComponents.TestDataPanel;
 
 import java.awt.*;
 
 public class CreateTestView extends JFrame{
 
-    private PrincipalPanel mainPanel = new PrincipalPanel();
     private DoublePanel createTestPanel;
     private TestDataPanel testDataPanel = new TestDataPanel();
     private QuestionsAndAnswersPanel questionsAndAnswersPanel = new QuestionsAndAnswersPanel();
 
 
     public CreateTestView(){
+
         super("Uhuru: Create test");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setMinimumSize(new Dimension(800,600));
@@ -25,5 +27,6 @@ public class CreateTestView extends JFrame{
         add(createTestPanel);
 
         setVisible(true);
+
     }
 }

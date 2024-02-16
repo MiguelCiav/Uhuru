@@ -3,7 +3,7 @@ package main.views.frames;
 import javax.swing.*;
 
 import main.views.components.PrincipalPanel;
-import main.views.components.QuestionsListPanel;
+import main.views.components.testViewComponents.QuestionsListPanel;
 
 import java.awt.*;
 
@@ -13,6 +13,7 @@ public class TestView extends JFrame{
     QuestionsListPanel questionsListPanel = new QuestionsListPanel();
 
     public TestView(){
+
         super("Uhuru");
         setMinimumSize(new Dimension(800,600));
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -24,6 +25,7 @@ public class TestView extends JFrame{
         add(principalPanel);
 
         setVisible(true);
+
     }
 }
 

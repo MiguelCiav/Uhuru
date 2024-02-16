@@ -61,8 +61,6 @@ public class AnswerTestController {
 
         String[] testNames = new String[Course.MAX_COURSE];
 
-        
-
         return testNames;
     }
 }

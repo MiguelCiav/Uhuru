@@ -3,7 +3,7 @@ package main.views.components;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
-import main.views.listeners.CloseWindow;
+import utils.PathManager;
 import utils.ViewsStyles;
 
 import java.awt.*;
@@ -37,6 +37,7 @@ public class UserPopUps extends JPanelRound{
         addUserIcon();
 
         setVisible(true);
+
     }
 
     public void addTitle(int popUpID){
@@ -54,6 +55,7 @@ public class UserPopUps extends JPanelRound{
                 title.setText("Modificación del usuario");
                 break;
         }
+
         constraints.insets = new Insets(0, 0, 0, 20);
         constraints.gridx = 1;
         constraints.gridy = 0;
@@ -68,6 +70,7 @@ public class UserPopUps extends JPanelRound{
     }
 
     public void addCloseButton(){
+
         closeButton = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/testListView/close.png")));
         closeButton.setPreferredSize(new Dimension(50, 50));
         constraints.insets = new Insets(20, 0, 0, 20);
@@ -78,9 +81,11 @@ public class UserPopUps extends JPanelRound{
         constraints.anchor = GridBagConstraints.NORTHEAST;
         closeButton.addMouseListener(new CloseWindow());
         add(closeButton, constraints);
+
     }
 
     public void editPanel(boolean visible){
+
         fieldsPanel = new JPanelRound();
         fieldsPanel.setRoundBackgroundColor(Color.WHITE);
         LargeTextPanels email = new LargeTextPanels("Correo",ViewsStyles.ULTRA_LIGHT_BLUE);
@@ -115,6 +120,7 @@ public class UserPopUps extends JPanelRound{
         fieldsPanel.add(name, constraints);
 
         constraints.anchor = GridBagConstraints.CENTER;
+        
     }
 
     public void addFieldsPanel(int popUpID){
@@ -125,6 +131,7 @@ public class UserPopUps extends JPanelRound{
         else{
             editPanel(false);  
         }
+
         constraints.insets = new Insets(0, 0, 0, 20);
         constraints.gridx = 1;
         constraints.gridy = 1;
@@ -134,9 +141,11 @@ public class UserPopUps extends JPanelRound{
         constraints.fill = GridBagConstraints.BOTH;
 
         add(fieldsPanel, constraints);
+        
     }
 
     public void addLightBlueButton(int popUpID){
+
         constraints.gridx = 1;
         constraints.gridy = 2;
         constraints.gridwidth = 1;
@@ -152,9 +161,11 @@ public class UserPopUps extends JPanelRound{
         }
 
         add(lightBlueButton, constraints);
+
     }
 
     public void addEraseButton(int popUpID){
+
         constraints.gridx = 2;
         constraints.gridy = 2;
         constraints.gridwidth = 1;
@@ -169,9 +180,11 @@ public class UserPopUps extends JPanelRound{
             eraseButton.setVisible(false);
         }
         add(eraseButton, constraints);
+
     }
 
     public void addSaveButton(){
+
         constraints.gridx = 3;
         constraints.gridy = 2;
         constraints.gridwidth = 1;
@@ -179,9 +192,11 @@ public class UserPopUps extends JPanelRound{
         constraints.weightx = 0.3;
         saveButton = new BlueButton("Guardar", 170, 1);
         add(saveButton, constraints);
+
     }
 
     public void addUserIcon(){
+
         constraints.gridx = 0;
         constraints.gridy = 1;
         constraints.gridwidth = 1;
@@ -193,5 +208,6 @@ public class UserPopUps extends JPanelRound{
         userIcon = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/userPopUps/userIcon.png")));
 
         add(userIcon, constraints);
+
     }
 }

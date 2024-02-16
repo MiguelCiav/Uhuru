@@ -13,8 +13,6 @@ import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import main.views.components.PathManager;
-
 import java.io.*;
 
 public class GenerateCertificate {

@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Course {
 
-    public static final int MAX_COURSE=4;
+    public static final int MAX_COURSE = 4;
     private String ID;
     private String courseName;
     private ArrayList<Test> registerTest = new ArrayList<Test>();

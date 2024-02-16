@@ -6,8 +6,8 @@ import javax.swing.JFrame;
 
 import main.views.components.DoublePanel;
 import main.views.components.ScrollContainer;
-import main.views.components.ScrollableAdminTestPanel;
-import main.views.components.ScrollableUsersPanel;
+import main.views.components.userListViewComponents.ScrollableAdminTestPanel;
+import main.views.components.userListViewComponents.ScrollableUsersPanel;
 
 public class UserListView extends JFrame{
 
