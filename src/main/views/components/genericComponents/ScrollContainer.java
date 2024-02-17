@@ -14,6 +14,7 @@ public class ScrollContainer extends JPanelRound{
     private JLabel titleLabel;
     private GridBagConstraints constraints;
     private ScrollablePanel scrollablePanel;
+    private JLabel button;
 
     public ScrollContainer(String title, ScrollablePanel scrollablePanel){
 
@@ -85,7 +86,7 @@ public class ScrollContainer extends JPanelRound{
 
     private void addButton() {
 
-        JLabel button = new JLabel();
+        button = new JLabel();
 
         button.setFont(ViewsStyles.SMALL_TITLE_FONT);
         button.setForeground(Color.BLACK);
@@ -100,5 +101,9 @@ public class ScrollContainer extends JPanelRound{
         constraints.insets = new Insets(0, 20, 20, 20);
 
         add(button,constraints);
+    }
+
+    public JLabel getButton(){
+        return button;
     }
 }

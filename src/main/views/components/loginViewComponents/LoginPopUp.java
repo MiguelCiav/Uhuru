@@ -3,11 +3,13 @@ package main.views.components.loginViewComponents;
 import javax.swing.*;
 
 import main.controllers.LogInController;
+import main.models.User;
 import utils.ViewsStyles;
 import main.views.components.genericComponents.BlueButton;
 import main.views.components.genericComponents.JPanelRound;
 import main.views.components.genericComponents.LargeTextPanels;
 import main.views.frames.TestListView;
+import main.views.frames.UserListView;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -120,7 +122,12 @@ public class LoginPopUp extends JPanelRound implements ActionListener{
     @Override public void actionPerformed(ActionEvent e){
         
         if(LogInController.validateUser(email.textArea.getText(), password.textArea.getText())){
-            new TestListView();
+            if(User.getUserInstance().getName().equals("Admin")){
+                new UserListView();
+            }
+            else{
+                new TestListView();    
+            }
         }
         else{
             new WrongPassword();

@@ -39,4 +39,8 @@ public class LargeTextPanels extends JPanelRound{
         add(textScrollPane, constraints);
 
     }
+
+    public String getText(){
+        return textArea.getText();
+    }
 }
