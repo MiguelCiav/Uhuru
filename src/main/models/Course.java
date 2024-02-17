@@ -18,6 +18,19 @@ public class Course {
 
     }
 
+    public static void loadTest(String courseID, Test test){
+        getInstanceCourse(courseID).addTest(test);
+    }
+
+    public static void loadQuestion(String courseID, String testID, Question question){
+        System.out.println("load en " + question.getQuestionID());
+        getInstanceCourse(courseID).getTest(testID).addQuestion(question);
+    }
+
+    public static void loadAnswer(String courseID, String testID, String questionID, Answer answer){
+        getInstanceCourse(courseID).getTest(testID).getQuestion(questionID).addAnswer(answer);
+    }
+
     public static Course getInstanceCourse(String ID){
 
         for(int i = 0; i < MAX_COURSE; i++){
@@ -44,6 +57,8 @@ public class Course {
 
     public void addTest(Test test){
         registerTest.add(test);
+
+        System.out.println("Examen " + test.getTestID() + " añadido a " + ID);
     }
 
     public Test getTest(String ID){

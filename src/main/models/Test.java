@@ -26,13 +26,15 @@ public class Test {
 
         questionList.add(question);
 
+        System.out.println("Pregunta " + question.getQuestionID() + " añadida en " + testID);
+
     };
 
     public Question getQuestion(String questionID){
         Question foundQuestion = null;
 
         for(int i = 0; i < questionList.size(); i++){
-            if (questionID == questionList.get(i).getQuestionID()) {
+            if (questionID.equals(questionList.get(i).getQuestionID())) {
                 foundQuestion = questionList.get(i);
                 return foundQuestion;
             }

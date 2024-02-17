@@ -8,7 +8,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import main.models.Answer;
 import main.models.Course;
+import main.models.Question;
 import main.models.Test;
 import main.models.User;
 
@@ -16,6 +18,9 @@ public class JSONReader {
 
     private static JSONReader instance;
     private JSONArray[] list = new JSONArray[4];
+    private String actualCourseID;
+    private String actualTestID;
+    private String actualQuestionID;
     
     private JSONReader(){}
 
@@ -31,69 +36,80 @@ public class JSONReader {
 
     public void readCourses(){
 
+        System.out.println("INICIANDO CARGA DE DATOS DE CURSOS: \n");
+
         readFile(PathManager.getInstance().getStringURL("/src/data/Courses.json"), 0);
         
         for(Object object : list[0]){
 
             JSONObject course = (JSONObject) object;
             String courseName = (String) course.get("courseName");
-            String courseID = (String) course.get("courseID");
+            actualCourseID = (String) course.get("courseID");
 
-            Course.setInstanceCourse(courseName, courseID);
+            Course.setInstanceCourse(courseName, actualCourseID);
 
-            readTest(courseID);
+            readTest();
 
         }
+
+        System.out.println("\nCARGA DE DATOS DE CURSOS FINALIZADA");
 
     }
 
     @SuppressWarnings("unused")
-    public void readTest(String courseID){
+    public void readTest(){
 
         readFile(PathManager.getInstance().getStringURL("/src/data/Tests.json"), 1);
 
         for(Object object : list[1]){
 
             JSONObject test = (JSONObject) object;
-            String testID = (String) test.get("testID");
+            actualTestID = (String) test.get("testID");
             String courseTestID = (String) test.get("courseID");
 
-            if(courseTestID.equals(courseID)){
+            if(courseTestID.equals(actualCourseID)){
 
                 String testName = (String) test.get("testName");
                 String type = (String) test.get("type");
                 int duration = Integer.valueOf(test.get("duration").toString());
+                Test loadedTest = new Test(testName,type,duration,actualTestID);
 
-                Test loadedTest = new Test(testName,type,duration,testID);
-                Course.getInstanceCourse(courseID).addTest(loadedTest);
-
-                readQuestions(testID);
+                Course.loadTest(actualCourseID, loadedTest);
+                readQuestions();
 
             }
         }
 
     }
 
-    private void readQuestions(String testID){
+    private void readQuestions(){
 
         readFile(PathManager.getInstance().getStringURL("/src/data/Questions.json"), 2);
 
         for(Object object : list[2]){
 
             JSONObject question = (JSONObject) object;
-            String questionID = (String) question.get("questionID");
+            actualQuestionID = (String) question.get("questionID");
             String questionTestID = (String) question.get("testID");
+            String questionDescription = (String) question.get("description");
+            String questionJustification = (String) question.get("justification");
+            String questionType = (String) question.get("questionType");
 
-            if(questionTestID.equals(testID)){
+            if(questionTestID.equals(actualTestID)){
 
-                readAnswers(questionID);
+                Question loadedQuestion = new Question(questionDescription, questionJustification,Integer.valueOf(questionType),actualQuestionID,questionTestID);
+
+                System.out.println("Pregunta " + loadedQuestion.getQuestionID() + " Creada");
+                
+                Course.loadQuestion(actualCourseID, questionTestID, loadedQuestion);
+                readAnswers();
 
             }
         }
 
     }
 
-    private void readAnswers(String questionID){
+    private void readAnswers(){
 
         readFile(PathManager.getInstance().getStringURL("/src/data/Answers.json"), 3);
 
@@ -102,8 +118,17 @@ public class JSONReader {
             JSONObject answer = (JSONObject) object;
             String answerID = (String) answer.get("answerID");
             String answerQuestionID = (String) answer.get("questionID");
+            boolean isCorrect = (boolean) answer.get("isCorrect");
+            String answerType = (String) answer.get("answerType");
+            String answerText = (String) answer.get("answerText");
 
-            if(answerQuestionID.equals(questionID)){
+            if(answerQuestionID.equals(actualQuestionID)){
+
+                Answer loadedAnswer = new Answer(answerText, Integer.valueOf(answerType), isCorrect, answerID, answerQuestionID);
+
+                System.out.println("Respuesta " + loadedAnswer.getAnswerID() + " Creada");
+
+                Course.loadAnswer(actualCourseID, actualTestID, actualQuestionID, loadedAnswer);
                 
             }
         }
