@@ -45,4 +45,19 @@ public class PrincipalPanel extends JPanel{
         this.add(contentPanel, constraints);
     }
 
+    public void setContentPanelWithoutExpansion(JPanel contentPanel){
+        GridBagConstraints constraints = new GridBagConstraints();
+
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        constraints.weighty = 1.0;
+        constraints.fill = GridBagConstraints.VERTICAL;
+        constraints.gridheight = 1;
+        constraints.gridwidth = 1;
+        constraints.insets = new Insets(20, 20, 20, 20);
+        constraints.anchor = GridBagConstraints.CENTER;
+
+        this.add(contentPanel, constraints);
+    }
+
 }

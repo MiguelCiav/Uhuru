@@ -39,6 +39,11 @@ public class BlueButton extends JButton implements ActionListener{
             primaryColor = Color.WHITE;
             secondaryColor = ViewsStyles.LIGHT_BLUE;
         }
+        else if(type == 4){
+            setForeground(ViewsStyles.DARK_BLUE);
+            primaryColor = Color.GREEN;
+            secondaryColor = Color.WHITE;
+        }
 
     }
 

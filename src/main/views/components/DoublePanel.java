@@ -52,5 +52,4 @@ public class DoublePanel extends PrincipalPanel{
         containerPanel.add(secondPanel, constraints);
 
     }
-
 }

@@ -9,9 +9,7 @@ import java.awt.*;
 public class CreateTestView extends JFrame{
 
     private PrincipalPanel mainPanel = new PrincipalPanel();
-    private DoublePanel createTestPanel;
     private TestDataPanel testDataPanel = new TestDataPanel();
-    private QuestionsAndAnswersPanel questionsAndAnswersPanel = new QuestionsAndAnswersPanel();
 
 
     public CreateTestView(){
@@ -21,8 +19,8 @@ public class CreateTestView extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         testDataPanel.setMaximumSize(new Dimension(500,500));
-        createTestPanel = new DoublePanel(testDataPanel, questionsAndAnswersPanel);
-        add(createTestPanel);
+        mainPanel.setContentPanelWithoutExpansion(testDataPanel);
+        add(mainPanel);
 
         setVisible(true);
     }
