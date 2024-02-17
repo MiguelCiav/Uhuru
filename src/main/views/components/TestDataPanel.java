@@ -1,11 +1,16 @@
 package main.views.components;
 
 import javax.swing.*;
+
+import main.views.frames.AddQuestionsFrame;
+import main.views.frames.CreateTestView;
+
 import java.awt.*;
+import java.awt.event.*;
 
 import utils.ViewsStyles;
 
-public class TestDataPanel extends JPanelRound{
+public class TestDataPanel extends JPanelRound implements ActionListener{
     
     private JLabel testDataText;
     private LargeTextPanels testName = new LargeTextPanels("Ingrese el nombre del examen.", ViewsStyles.PALID_BLUE);
@@ -70,7 +75,7 @@ public class TestDataPanel extends JPanelRound{
         constraints.weightx = 0.2;
         minutes.setBorder(null);
         minutes.setBackground(ViewsStyles.ULTRA_LIGHT_BLUE);         
-        minutesPanel.setLayout(new FlowLayout());
+        minutesPanel.setLayout(new GridBagLayout());
         minutesPanel.add(minutes);
 
         add(minutesPanel, constraints);
@@ -94,7 +99,13 @@ public class TestDataPanel extends JPanelRound{
 
     public void addContinueButton(){
         constraints.gridx = 2;
+        continueButton.addActionListener(this);
 
         add(continueButton, constraints);
+    }
+
+    @Override public void actionPerformed(ActionEvent e){
+        CreateTestView.getInstance().disposeFrame();
+        new AddQuestionsFrame();
     }
 }

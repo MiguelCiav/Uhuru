@@ -1,3 +1,4 @@
+import main.models.User;
 import main.views.frames.*;
 
 public class Main {
@@ -6,6 +7,6 @@ public class Main {
     public static void main (String args[]){
         
         //new MainFrame();
-        new AddQuestionsFrame();
+        UserListView.getInstance();
     }
 }

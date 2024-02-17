@@ -11,6 +11,8 @@ import main.views.components.ScrollableUsersPanel;
 
 public class UserListView extends JFrame{
 
+    private static UserListView instance;
+
     private ScrollContainer usersContainer;
     private ScrollContainer adminTestsContainer;
     private DoublePanel doublePanel;
@@ -28,6 +30,19 @@ public class UserListView extends JFrame{
         add(doublePanel);
 
         setVisible(true);
-        
+    }
+
+    public static UserListView getInstance(){
+
+        if(instance == null){
+            instance = new UserListView();
+        }
+
+        return instance;
+    }
+
+    public void disposeFrame(){
+
+        instance.dispose();   
     }
 }

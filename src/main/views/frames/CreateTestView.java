@@ -8,6 +8,8 @@ import java.awt.*;
 
 public class CreateTestView extends JFrame{
 
+    private static CreateTestView instance;
+
     private PrincipalPanel mainPanel = new PrincipalPanel();
     private TestDataPanel testDataPanel = new TestDataPanel();
 
@@ -23,5 +25,19 @@ public class CreateTestView extends JFrame{
         add(mainPanel);
 
         setVisible(true);
+    }
+
+    public static CreateTestView getInstance(){
+
+        if(instance == null){
+            instance = new CreateTestView();
+        }
+
+        return instance;
+    }
+
+    public void disposeFrame(){
+
+        instance.dispose();   
     }
 }
