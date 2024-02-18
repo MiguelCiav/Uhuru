@@ -136,10 +136,10 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
         JCheckBox box = (JCheckBox) e.getSource();
 
         if(box.isSelected()){
-            question.code.textArea.setEditable(true);
+            question.code.getTextArea().setEditable(true);
         }
         else{
-            question.code.textArea.setEditable(false);
+            question.code.getTextArea().setEditable(false);
         }
     }
 }

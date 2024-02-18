@@ -17,16 +17,42 @@ public class CreateTestController {
         return createTestController;
     }
 
-    public static void addTestToDataBase(String type, int duration, String courseID, String testID, String testName){
-        JSONWriter.addTest(type, duration, courseID, testID, testName);
+    public static boolean validateData(String testName, String testDescription, String minutes){
+
+        if(validateTestName(testName)){
+            return false;
+        }
+        
+        else if(validateTestDescription(testDescription)){
+            return false;
+        }
+        else if(validateMinutes(minutes)){
+            return false;
+        }
+
+        return true;
     }
 
-    public static void addQuestionToTest(String testID, String questionID, String description, String justification, String questionType){
-        JSONWriter.addQuestion(testID, questionID, description, justification, questionType);
+    public static boolean validateTestName(String testName){
+        if(testName.equals("Ingrese el nombre del examen.") || testName.equals("ERROR: Dato invalido") || testName.matches("\s*")){
+            return true;
+        }
+        return false;
     }
 
-    public static void addOption(String answerText, String answerType, Boolean isCorrect){
-        JSONWriter.addAnswer(answerText, answerType, isCorrect);
+    public static boolean validateTestDescription(String testDescription){
+        if(testDescription.equals("Ingrese la descripcion del examen.") || testDescription.equals("ERROR: Dato invalido") || testDescription.matches("\s*")){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean validateMinutes(String minutes){
+        if(!minutes.matches("\\d+")){
+            return true;
+        }
+
+        return false;
     }
 
 }

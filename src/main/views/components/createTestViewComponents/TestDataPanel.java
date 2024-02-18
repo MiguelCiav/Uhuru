@@ -2,6 +2,7 @@ package main.views.components.createTestViewComponents;
 
 import javax.swing.*;
 
+import main.controllers.CreateTestController;
 import main.views.components.genericComponents.BlueButton;
 import main.views.components.genericComponents.JPanelRound;
 import main.views.components.genericComponents.LargeTextPanels;
@@ -17,7 +18,7 @@ public class TestDataPanel extends JPanelRound implements ActionListener{
     
     private JLabel testDataText;
     private LargeTextPanels testName = new LargeTextPanels("Ingrese el nombre del examen.", ViewsStyles.PALID_BLUE);
-    private LargeTextPanels testDescription = new LargeTextPanels("Ingrese la descripcion del examen", ViewsStyles.PALID_BLUE);
+    private LargeTextPanels testDescription = new LargeTextPanels("Ingrese la descripcion del examen.", ViewsStyles.PALID_BLUE);
     private JTextField minutes = new JTextField("Min", 7);
     private JPanelRound minutesPanel = new JPanelRound();
     private JPanelRound minutesTextPanel = new JPanelRound();
@@ -35,6 +36,7 @@ public class TestDataPanel extends JPanelRound implements ActionListener{
         addTestDescription();
         addMinutesPanel();
         addMinutesTextPanel();
+        addContinueButton();
     }
 
     public void addTestDataText(){
@@ -117,7 +119,41 @@ public class TestDataPanel extends JPanelRound implements ActionListener{
     }
 
     @Override public void actionPerformed(ActionEvent e){
-        CreateTestView.getInstance().disposeFrame();
-        new AddQuestionsFrame();
+
+        String testNameValidation = testName.getTextArea().getText();
+        String testDescriptionValidation = testDescription.getTextArea().getText();
+        String minutesValidation = minutes.getText();
+
+        CreateTestController.getInstance();
+
+        if(CreateTestController.validateData(testNameValidation, testDescriptionValidation, minutesValidation)){
+            CreateTestView.getInstance().disposeFrame();
+            new AddQuestionsFrame();
+        }
+        else{
+            if(CreateTestController.validateTestName(testNameValidation)){
+                testName.getTextArea().setText("Dato invalido");
+                testName.getTextArea().setForeground(ViewsStyles.RED);
+            }
+            else{
+                testName.getTextArea().setForeground(Color.BLACK);
+            }
+
+            if(CreateTestController.validateTestDescription(testDescriptionValidation)){
+                testDescription.getTextArea().setText("Dato invalido");
+                testDescription.getTextArea().setForeground(ViewsStyles.RED);
+            }
+            else{
+                testDescription.getTextArea().setForeground(Color.BLACK);
+            }
+
+            if(CreateTestController.validateMinutes(minutesValidation)){
+                minutes.setText("Dato invalido");
+                minutes.setForeground(ViewsStyles.RED);
+            }
+            else{
+                minutes.setForeground(Color.BLACK);
+            }
+        }
     }
 }

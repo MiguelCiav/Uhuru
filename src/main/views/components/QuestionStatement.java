@@ -45,8 +45,8 @@ public class QuestionStatement extends JPanel{
         constraints.weightx = 1.0;
         constraints.weighty = 0.4;
         constraints.fill = GridBagConstraints.BOTH;
-        code.textArea.setForeground(Color.WHITE);
-        code.textArea.setEditable(false);
+        code.getTextArea().setForeground(Color.WHITE);
+        code.getTextArea().setEditable(false);
 
         add(code, constraints);
     }

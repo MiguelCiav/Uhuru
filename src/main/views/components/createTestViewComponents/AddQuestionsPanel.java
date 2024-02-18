@@ -94,7 +94,7 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
         constraints.gridy = 3;
         constraints.weighty = 1.0;
         constraints.fill = GridBagConstraints.BOTH;
-        questionJustification.textArea.setEditable(false);
+        questionJustification.getTextArea().setEditable(false);
 
         add(questionJustification, constraints);
     }
@@ -105,11 +105,11 @@ public class AddQuestionsPanel extends JPanelRound implements ActionListener{
 
         if(box.isSelected()){
             correctOption.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
-            questionJustification.textArea.setEditable(true);
+            questionJustification.getTextArea().setEditable(true);
         }
         else{
             correctOption.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
-            questionJustification.textArea.setEditable(false);
+            questionJustification.getTextArea().setEditable(false);
         }
     }
 }
