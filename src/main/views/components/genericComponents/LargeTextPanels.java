@@ -43,4 +43,8 @@ public class LargeTextPanels extends JPanelRound{
     public String getText(){
         return textArea.getText();
     }
+
+    public void setText(String input){
+        textArea.setText(input);
+    }
 }

@@ -17,6 +17,7 @@ public class RegisterUserPopUp extends UserPopUps implements ActionListener{
     private LargeTextPanels name;
     private LargeTextPanels email;
     private LargeTextPanels password;
+    private LargeTextPanels lastname;
 
     public RegisterUserPopUp(){
         
@@ -103,14 +104,16 @@ public class RegisterUserPopUp extends UserPopUps implements ActionListener{
         email = new LargeTextPanels("Correo",ViewsStyles.ULTRA_LIGHT_BLUE);
         password = new LargeTextPanels("Contraseña",ViewsStyles.ULTRA_LIGHT_BLUE);
         name = new LargeTextPanels("Nombre",ViewsStyles.ULTRA_LIGHT_BLUE);
+        lastname = new LargeTextPanels("Apellido",ViewsStyles.ULTRA_LIGHT_BLUE);
 
         email.setPreferredSize(new Dimension(500, 60));
         password.setPreferredSize(new Dimension(500, 60));
         name.setPreferredSize(new Dimension(500, 60));
+        lastname.setPreferredSize(new Dimension(500, 60));
 
         fieldsPanel.setLayout(new GridBagLayout());
 
-        constraints.insets = new Insets(10, 10, 10, 10);
+        constraints.insets = new Insets(5, 10, 0, 10);
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.weightx = 1.0;
@@ -129,12 +132,20 @@ public class RegisterUserPopUp extends UserPopUps implements ActionListener{
         constraints.gridy = 2;
         fieldsPanel.add(name, constraints);
 
+        constraints.gridy = 3;
+        fieldsPanel.add(lastname, constraints);
+
         constraints.anchor = GridBagConstraints.CENTER;
         
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        AddNewUserController.addUserToDatabase(name.getText(),email.getText(),password.getText());
+        AddNewUserController.addUserToDatabase(name.getText(),lastname.getText(),email.getText(),password.getText());
+        name.setText(null);
+        lastname.setText(null);
+        email.setText(null);
+        password.setText(null);
+        name.requestFocus();
     }
 }

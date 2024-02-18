@@ -17,7 +17,7 @@ public class AddNewUserController {
         return instance;
     }
 
-    public static void addUserToDatabase(String name, String email, String pass){
-        JSONWriter.addUser(name, name, email, pass);
+    public static void addUserToDatabase(String name, String lastname, String email, String pass){
+        JSONWriter.addUser(name,lastname,email,pass);
     }
 }
