@@ -28,7 +28,9 @@ public class JSONWriter {
         user.put("lastname", lastname);
         user.put("email", email);
         user.put("password", password);
+        user.put("approvedCourses", "");
 
+        
         JSONWriter.getInstance().list[0].add(user);
         JSONWriter.getInstance().writeNewInfo(PathManager.getInstance().getStringURL("/src/data/Users.json"), 0);
 

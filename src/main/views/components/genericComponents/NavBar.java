@@ -2,6 +2,7 @@ package main.views.components.genericComponents;
 import java.awt.*;
 import javax.swing.*;
 
+
 import utils.PathManager;
 
 //NAVBAR
@@ -57,7 +58,10 @@ public class NavBar extends JPanel{
         constraints.weightx = 0.0;
         constraints.anchor = GridBagConstraints.EAST;
 
-        add(new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/NavBar/FaQ.png"))), constraints);
+        JLabel FaQ = new JLabel();
+        FaQ.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/NavBar/FaQ.png")));
+        FaQ.addMouseListener(new OpenFaQPopUp());
+        add(FaQ, constraints);
 
     }
 
