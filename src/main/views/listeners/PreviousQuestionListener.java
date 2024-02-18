@@ -22,6 +22,7 @@ public class PreviousQuestionListener extends MouseAdapter{
         else{
             AddAndDeleteQuestionListener.setQuestionIndex(AddAndDeleteQuestionListener.getNumberOfQuestions() - 1);
         }
+        
         card.previous(cPane);
     }
 }

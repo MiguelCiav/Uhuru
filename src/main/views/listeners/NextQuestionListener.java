@@ -24,5 +24,6 @@ public class NextQuestionListener extends MouseAdapter{
             AddAndDeleteQuestionListener.setQuestionIndex(0);
         }
         card.next(cPane);
+        
     }
 }

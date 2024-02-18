@@ -150,5 +150,6 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
         else{
             questionList.get(AddAndDeleteQuestionListener.getQuestionIndex()).code.getTextArea().setEditable(false);
         }
+        
     }
 }
