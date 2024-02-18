@@ -4,17 +4,17 @@ import utils.JSONWriter;
 
 public class CreateTestController {
 
-    private static CreateTestController createTestController;
+    private static CreateTestController instance;
     
     private CreateTestController(){}
 
     public static CreateTestController getInstance(){
 
-        if(createTestController == null){
-            createTestController = new CreateTestController();
+        if(instance == null){
+            instance = new CreateTestController();
         }
 
-        return createTestController;
+        return instance;
     }
 
     public static boolean validateData(String testName, String testDescription, String minutes){

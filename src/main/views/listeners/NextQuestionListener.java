@@ -15,6 +15,14 @@ public class NextQuestionListener extends MouseAdapter{
         this.card = card;
     }
     @Override public void mouseClicked(MouseEvent e){
+
+        AddAndDeleteQuestionListener.getInstance(cPane, card);
+        if(AddAndDeleteQuestionListener.getQuestionIndex() < AddAndDeleteQuestionListener.getNumberOfQuestions() - 1){
+            AddAndDeleteQuestionListener.setQuestionIndex(AddAndDeleteQuestionListener.getQuestionIndex() + 1);
+        }
+        else{
+            AddAndDeleteQuestionListener.setQuestionIndex(0);
+        }
         card.next(cPane);
     }
 }

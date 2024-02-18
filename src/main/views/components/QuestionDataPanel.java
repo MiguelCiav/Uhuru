@@ -3,26 +3,26 @@ package main.views.components;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
 import main.views.components.genericComponents.BlueButton;
 import main.views.components.genericComponents.JPanelRound;
-import main.views.listeners.AddQuestionListener;
-import main.views.listeners.DeleteQuestionListener;
+import main.views.listeners.AddAndDeleteQuestionListener;
 import main.views.listeners.NextQuestionListener;
 import main.views.listeners.PreviousQuestionListener;
 import utils.PathManager;
 import utils.ViewsStyles;
 
-public class QuestionDataPanel extends JPanelRound{
+public class QuestionDataPanel extends JPanelRound implements ActionListener{
 
     private JCheckBox isCode = new JCheckBox("¿Contiene código?");
     private QuestionStatement question = new QuestionStatement();
     private GridBagConstraints constraints = new GridBagConstraints();
     private Container cPane = new Container();
     private CardLayout card = new CardLayout();
-    private int numberOfQuestions;
+    private ArrayList<QuestionStatement> questionList = new ArrayList<QuestionStatement>();
 
     
     public QuestionDataPanel(){
@@ -64,15 +64,17 @@ public class QuestionDataPanel extends JPanelRound{
         constraints.gridheight = 1;
         constraints.gridwidth = 1;
         constraints.fill = GridBagConstraints.HORIZONTAL;
+        isCode.addActionListener(this);
 
         add(isCode, constraints);
     }
 
     public void addQuestionStatement(){
         constraints.insets = new Insets(10, 20, 10, 20);
-        
+        QuestionStatement question = new QuestionStatement();
         cPane.setLayout(card);
-        cPane.add(new QuestionStatement());
+        questionList.add(question);
+        cPane.add(question);
         constraints.gridx = 0;
         constraints.gridy = 1;
         constraints.gridheight = 1;
@@ -110,21 +112,22 @@ public class QuestionDataPanel extends JPanelRound{
     }
 
     public void addDeleteQuestionButton(){
+
         JLabel deleteQuestionButton = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/DeleteQuestion.png")));
-        
+        deleteQuestionButton.setName("DeleteQuestion");
         constraints.gridx = 2;
         constraints.insets = new Insets(0, 20, 20,0);
-        deleteQuestionButton.addMouseListener(new DeleteQuestionListener(cPane, card));
+        deleteQuestionButton.addMouseListener(AddAndDeleteQuestionListener.getInstance(cPane, card));
 
         add(deleteQuestionButton, constraints);
     }
 
     public void addNewQuestionButton(){
         JLabel newQuestionButton = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/NewQuestion.png")));
-        
+        newQuestionButton.setName("AddQuestion");
         constraints.gridx = 3;
         constraints.insets = new Insets(0, 10, 20, 10);
-        newQuestionButton.addMouseListener(new AddQuestionListener(cPane, card));
+        newQuestionButton.addMouseListener(AddAndDeleteQuestionListener.getInstance(cPane, card));
 
         add(newQuestionButton, constraints);
     }
@@ -137,5 +140,15 @@ public class QuestionDataPanel extends JPanelRound{
         constraints.fill = GridBagConstraints.BOTH;
 
         add(insertImageButton, constraints);
+    }
+
+    @Override public void actionPerformed(ActionEvent e){
+        JCheckBox box = (JCheckBox) e.getSource();
+        if(box.isSelected()){
+            questionList.get(AddAndDeleteQuestionListener.getQuestionIndex()).code.getTextArea().setEditable(true);
+        }
+        else{
+            questionList.get(AddAndDeleteQuestionListener.getQuestionIndex()).code.getTextArea().setEditable(false);
+        }
     }
 }

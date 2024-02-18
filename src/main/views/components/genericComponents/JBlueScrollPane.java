@@ -18,19 +18,35 @@ public class JBlueScrollPane extends JScrollPane{
         component=panel;
         setViewportView(panel);
  
+        getVerticalScrollBar().setUI(new BasicScrollBarUI(){   
+            @Override
+            protected JButton createDecreaseButton(int orientation) {
+                return createZeroButton();
+            }
+    
+            @Override    
+            protected JButton createIncreaseButton(int orientation) {
+                return createZeroButton();
+            }
+            @Override
+            protected void configureScrollBarColors() {
+                this.thumbColor = ViewsStyles.DARK_BLUE;
+            }
+    
+            private JButton createZeroButton() {
+                JButton jbutton = new JButton();
+                jbutton.setPreferredSize(new Dimension(0, 0));
+                jbutton.setMinimumSize(new Dimension(0, 0));
+                jbutton.setMaximumSize(new Dimension(0, 0));
+                return jbutton;
+            }
+        });
 
         setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         setBorder(null);
         getVerticalScrollBar().setBackground(Color.WHITE);
         getVerticalScrollBar().setUnitIncrement(6);
-
-        getVerticalScrollBar().setUI(new BasicScrollBarUI() {
-            @Override
-            protected void configureScrollBarColors() {
-                this.thumbColor = ViewsStyles.DARK_BLUE;
-            }
-        });
 
         setResizable();
     }
