@@ -30,6 +30,9 @@ public class CreateTestController {
             return false;
         }
 
+        JSONWriter.getInstance();
+        JSONWriter.addTest(testDescription, Integer.parseInt(minutes), "1", "1", testName);
+
         return true;
     }
 
