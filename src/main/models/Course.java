@@ -18,6 +18,14 @@ public class Course {
 
     }
 
+    public Test[] getTestArray(){
+        return registerTest.toArray(new Test[0]);
+    }
+    
+    public int amountOfTest(){
+        return registerTest.size();
+    }
+
     public static void loadTest(String courseID, Test test){
         getInstanceCourse(courseID).addTest(test);
     }

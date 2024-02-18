@@ -16,7 +16,7 @@ public class TestListView extends JFrame{
 
     public TestListView (){
 
-        scrollableCoursesPanel = new ScrollContainer("Cursos Activos", new ScrollableCoursesPanel());
+        scrollableCoursesPanel = new ScrollContainer("Cursos Activos", ScrollableCoursesPanel.getInstance());
         doublePanel = new DoublePanel(scrollableCoursesPanel, testListPanel);
 
         setTitle("Uhuru: Available Tests");

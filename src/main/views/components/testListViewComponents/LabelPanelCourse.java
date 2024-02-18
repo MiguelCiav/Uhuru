@@ -34,12 +34,20 @@ public class LabelPanelCourse extends LabelPanel{
         
     }
 
+    public void activate(){
+
+    }
+
+    public String getCourseID(){
+        return courseID;
+    }
+
     @Override
     protected void setLabel() {
 
         courseNameText = new JTextArea();
 
-        courseNameText.setBackground(new Color(216,233,241));
+        courseNameText.setOpaque(false);
         courseNameText.setFont(new Font("Futura", Font.PLAIN, 12));
         courseNameText.setEditable(false);
         courseNameText.setFocusable(false);
@@ -74,6 +82,9 @@ public class LabelPanelCourse extends LabelPanel{
         
         auxiliarPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         auxiliarPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
+        auxiliarPane.getViewport().setOpaque(false);
+        auxiliarPane.setOpaque(false);
         
         add(auxiliarPane, constraints);
         

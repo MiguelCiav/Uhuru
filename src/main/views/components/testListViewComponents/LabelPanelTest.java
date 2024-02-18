@@ -13,12 +13,12 @@ import utils.ViewsStyles;
 
 public class LabelPanelTest extends LabelPanel{
 
-    private int testID;
+    private String testID;
     private JLabel textLabel;
     private JLabel arrowLabel;
     private String testName;
 
-    public LabelPanelTest(String testName, int testID){
+    public LabelPanelTest(String testName, String testID){
 
         constraints = new GridBagConstraints();
         this.testName = testName;

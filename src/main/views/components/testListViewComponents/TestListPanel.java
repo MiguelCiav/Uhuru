@@ -13,7 +13,6 @@ public class TestListPanel extends JPanelRound{
 
     GridBagConstraints constraints = new GridBagConstraints();
     JLabel answersTitle;
-    ScrollablePanel scrollableTestPanel;
     
     public TestListPanel(){
 
@@ -47,14 +46,15 @@ public class TestListPanel extends JPanelRound{
 
     private void addScrollableTestPanel(){
 
-        scrollableTestPanel = ScrollableTestPanel.getInstance();
+        ScrollableTestPanel.getInstance();
+        ScrollableTestPanel.loadExams();
 
         constraints.gridy = 1;
         constraints.weighty = 1.0;
         constraints.fill = GridBagConstraints.BOTH;
         constraints.insets = new Insets(0, 20, 20, 20);
 
-        add(scrollableTestPanel, constraints);
+        add(ScrollableTestPanel.getInstance(), constraints);
 
     }
 

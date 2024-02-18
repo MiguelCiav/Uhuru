@@ -1,11 +1,13 @@
 package main.controllers;
 
 import main.models.Course;
+import main.models.Test;
 
 public class AnswerTestController {
     
     private static AnswerTestController answerTestController;
     private Course[] coursesList;
+    private Test[] testList;
 
     private AnswerTestController(){
 
@@ -59,9 +61,40 @@ public class AnswerTestController {
 
     public String[] getTestNames(String courseID){
 
-        String[] testNames = new String[Course.MAX_COURSE];
+        Course loadedCourse = Course.getInstanceCourse(courseID);
+        Test[] testArray = loadedCourse.getTestArray();
+        String[] testNames = new String[loadedCourse.amountOfTest()];
+
+        for(int i = 0; i < loadedCourse.amountOfTest(); i++){
+
+            if(coursesList[i] != null){
+                testNames[i] = testArray[i].getName();
+            } else {
+                testNames[i] = "NULL COURSE";
+            }
+        
+        }
 
         return testNames;
+    }
+
+    public String[] getTestID(String courseID){
+
+        Course loadedCourse = Course.getInstanceCourse(courseID);
+        Test[] testArray = loadedCourse.getTestArray();
+        String[] testIDs = new String[loadedCourse.amountOfTest()];
+
+        for(int i = 0; i < loadedCourse.amountOfTest(); i++){
+
+            if(coursesList[i] != null){
+                testIDs[i] = testArray[i].getTestID();
+            } else {
+                testIDs[i] = "NULL COURSE";
+            }
+        
+        }
+
+        return testIDs;
     }
 
     public void answerQuestion(String questionID){
