@@ -2,14 +2,18 @@ package main.views.components.createTestViewComponents;
 
 import javax.swing.*;
 
+import main.views.components.genericComponents.BlueButton;
 import main.views.components.genericComponents.JPanelRound;
 import main.views.components.genericComponents.LargeTextPanels;
+import main.views.frames.AddQuestionsFrame;
+import main.views.frames.CreateTestView;
 
 import java.awt.*;
+import java.awt.event.*;
 
 import utils.ViewsStyles;
 
-public class TestDataPanel extends JPanelRound{
+public class TestDataPanel extends JPanelRound implements ActionListener{
     
     private JLabel testDataText;
     private LargeTextPanels testName = new LargeTextPanels("Ingrese el nombre del examen.", ViewsStyles.PALID_BLUE);
@@ -17,8 +21,9 @@ public class TestDataPanel extends JPanelRound{
     private JTextField minutes = new JTextField("Min", 7);
     private JPanelRound minutesPanel = new JPanelRound();
     private JPanelRound minutesTextPanel = new JPanelRound();
-    private JTextArea minutesText = new JTextArea("Minutes");
+    private JTextArea minutesText = new JTextArea("Minutos");
     private GridBagConstraints constraints = new GridBagConstraints();
+    private BlueButton continueButton = new BlueButton("Continuar", 150, 1);
 
     public TestDataPanel(){
 
@@ -30,7 +35,6 @@ public class TestDataPanel extends JPanelRound{
         addTestDescription();
         addMinutesPanel();
         addMinutesTextPanel();
-
     }
 
     public void addTestDataText(){
@@ -43,7 +47,7 @@ public class TestDataPanel extends JPanelRound{
         constraints.insets = new Insets(40, 100, 20, 100);
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.gridwidth = 2;
+        constraints.gridwidth = 3;
         constraints.gridheight = 1;
         constraints.weightx = 1.0;
         constraints.fill = GridBagConstraints.HORIZONTAL;
@@ -76,8 +80,8 @@ public class TestDataPanel extends JPanelRound{
 
         constraints.gridwidth = 1;
         constraints.gridy = 3;
-        constraints.weighty = 0.1;
-        constraints.weightx = 0.1;
+        constraints.weighty = 0.0;
+        constraints.weightx = 0.2;
         minutes.setBorder(null);
         minutes.setBackground(ViewsStyles.ULTRA_LIGHT_BLUE);         
         minutesPanel.setLayout(new GridBagLayout());
@@ -95,7 +99,7 @@ public class TestDataPanel extends JPanelRound{
         minutesText.setBackground(ViewsStyles.GRAPHITE);
 
         constraints.gridx = 1;
-        constraints.weightx = 1.0;
+        constraints.weightx = 0.4;
         
         minutesTextPanel.setLayout(new GridBagLayout());
         minutesText.setEditable(false);
@@ -103,5 +107,17 @@ public class TestDataPanel extends JPanelRound{
 
         add(minutesTextPanel, constraints);
 
+    }
+
+    public void addContinueButton(){
+        constraints.gridx = 2;
+        continueButton.addActionListener(this);
+
+        add(continueButton, constraints);
+    }
+
+    @Override public void actionPerformed(ActionEvent e){
+        CreateTestView.getInstance().disposeFrame();
+        new AddQuestionsFrame();
     }
 }

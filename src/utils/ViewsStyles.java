@@ -12,7 +12,10 @@ public class ViewsStyles {
     public static final Color LIGHT_SKY_BLUE = new Color (143, 179, 227);
     public static final Color PALID_BLUE = new Color(237, 246, 249);
     public static final Color LIGHT_GRAY = new Color(216,233,241);
-    public static final Color GRAPHITE = new Color(106, 106, 106);
+    public static final Color GRAPHITE = new Color(218, 218, 218);
+    public static final Color RED = new Color(168, 50, 81);
+    public static final Color GREEN = new Color(45, 128, 6);
+    public static final Color LIGHT_BLACK = new Color(70, 75, 82);
     public static final Font EXTRALARGE_TITLE_FONT = new Font("Futura", Font.BOLD, 72);
     public static final Font LARGE_TITLE_FONT = new Font("Futura", Font.BOLD, 48);
     public static final Font TITLE_FONT = new Font("Futura", Font.BOLD, 32);

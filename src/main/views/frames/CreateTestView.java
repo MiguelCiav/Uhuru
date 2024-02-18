@@ -6,14 +6,15 @@ import main.views.components.*;
 import main.views.components.createTestViewComponents.QuestionsAndAnswersPanel;
 import main.views.components.createTestViewComponents.TestDataPanel;
 import main.views.components.genericComponents.DoublePanel;
-
+import main.views.components.genericComponents.PrincipalPanel;
 import java.awt.*;
 
 public class CreateTestView extends JFrame{
 
-    private DoublePanel createTestPanel;
+    private static CreateTestView instance;
+
+    private PrincipalPanel mainPanel = new PrincipalPanel();
     private TestDataPanel testDataPanel = new TestDataPanel();
-    private QuestionsAndAnswersPanel questionsAndAnswersPanel = new QuestionsAndAnswersPanel();
 
 
     public CreateTestView(){
@@ -24,10 +25,23 @@ public class CreateTestView extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         testDataPanel.setMaximumSize(new Dimension(500,500));
-        createTestPanel = new DoublePanel(testDataPanel, questionsAndAnswersPanel);
-        add(createTestPanel);
+        mainPanel.setContentPanelWithoutExpansion(testDataPanel);
+        add(mainPanel);
 
         setVisible(true);
+    }
 
+    public static CreateTestView getInstance(){
+
+        if(instance == null){
+            instance = new CreateTestView();
+        }
+
+        return instance;
+    }
+
+    public void disposeFrame(){
+
+        instance.dispose();   
     }
 }

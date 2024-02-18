@@ -1,3 +1,4 @@
+import main.models.User;
 import main.views.frames.*;
 
 public class Main {
