@@ -17,12 +17,11 @@ import utils.ViewsStyles;
 
 public class QuestionDataPanel extends JPanelRound implements ActionListener{
 
-    private JCheckBox isCode = new JCheckBox("¿Contiene código?");
-    private QuestionStatement question = new QuestionStatement();
+    private static JCheckBox isCode = new JCheckBox("¿Que contiene código?");
     private GridBagConstraints constraints = new GridBagConstraints();
     private Container cPane = new Container();
     private CardLayout card = new CardLayout();
-    private ArrayList<QuestionStatement> questionList = new ArrayList<QuestionStatement>();
+    private static ArrayList<QuestionStatement> questionList = new ArrayList<QuestionStatement>();
 
     
     public QuestionDataPanel(){
@@ -142,14 +141,25 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
         add(insertImageButton, constraints);
     }
 
+    public static JCheckBox getBox(){
+        return isCode;
+    }
+
+    public static ArrayList<QuestionStatement> getQuestionList(){
+        return questionList;
+    }
+
     @Override public void actionPerformed(ActionEvent e){
         JCheckBox box = (JCheckBox) e.getSource();
         if(box.isSelected()){
-            questionList.get(AddAndDeleteQuestionListener.getQuestionIndex()).code.getTextArea().setEditable(true);
+            for(int i = 0; i < questionList.size(); i++){
+                questionList.get(i).code.getTextArea().setEditable(true);
+            }
         }
         else{
-            questionList.get(AddAndDeleteQuestionListener.getQuestionIndex()).code.getTextArea().setEditable(false);
+            for(int i = 0; i < questionList.size(); i++){
+                questionList.get(i).code.getTextArea().setEditable(false);
+            }
         }
-        
     }
 }

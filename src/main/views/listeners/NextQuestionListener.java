@@ -5,6 +5,9 @@ import java.awt.Container;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import main.views.components.QuestionDataPanel;
+import main.views.components.QuestionStatement;
+
 public class NextQuestionListener extends MouseAdapter{
 
     private Container cPane;
@@ -24,6 +27,12 @@ public class NextQuestionListener extends MouseAdapter{
             AddAndDeleteQuestionListener.setQuestionIndex(0);
         }
         card.next(cPane);
-        
+
+        if(QuestionDataPanel.getQuestionList().get(AddAndDeleteQuestionListener.getQuestionIndex()).code.getTextArea().isEditable()){
+            QuestionDataPanel.getBox().setSelected(true);
+        }
+        else{
+            QuestionDataPanel.getBox().setSelected(false);
+        }
     }
 }

@@ -9,6 +9,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import main.views.components.QuestionDataPanel;
 import main.views.components.QuestionStatement;
 import utils.PathManager;
 
@@ -52,7 +53,10 @@ public class AddAndDeleteQuestionListener extends MouseAdapter{
         button.setName(((JLabel) e.getSource()).getName());
 
         if(button.getName().equals("AddQuestion")){
-            cPane.add(new QuestionStatement());
+            QuestionStatement question = new QuestionStatement();
+            QuestionDataPanel.getQuestionList().add(question);
+            cPane.add(question);
+            QuestionDataPanel.getBox().setSelected(false);
             AddAndDeleteQuestionListener.questionIndex++;
             card.next(cPane);
             numberOfQuestions++;
@@ -60,6 +64,7 @@ public class AddAndDeleteQuestionListener extends MouseAdapter{
         else if(button.getName().equals("DeleteQuestion")){
             if(numberOfQuestions > 1){
                 card.previous(cPane);
+                QuestionDataPanel.getQuestionList().remove(AddAndDeleteQuestionListener.questionIndex);
                 cPane.remove(AddAndDeleteQuestionListener.questionIndex);
                 AddAndDeleteQuestionListener.numberOfQuestions--;
                 if(AddAndDeleteQuestionListener.questionIndex > 0){
@@ -68,8 +73,14 @@ public class AddAndDeleteQuestionListener extends MouseAdapter{
                 else{
                     AddAndDeleteQuestionListener.questionIndex = AddAndDeleteQuestionListener.numberOfQuestions - 1;
                 }
+
+                if(QuestionDataPanel.getQuestionList().get(AddAndDeleteQuestionListener.getQuestionIndex()).code.getTextArea().isEditable()){
+                    QuestionDataPanel.getBox().setSelected(true);
+                }
+                else{
+                    QuestionDataPanel.getBox().setSelected(false);
+                }
             }
         }
-        
     }
 }

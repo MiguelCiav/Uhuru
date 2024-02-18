@@ -12,7 +12,7 @@ import utils.ViewsStyles;
 public class QuestionStatement extends JPanel{
     GridBagConstraints constraints = new GridBagConstraints();
     LargeTextPanels statement = new LargeTextPanels("Ingrese el enunciado de la pregunta", ViewsStyles.ULTRA_LIGHT_BLUE);
-    LargeTextPanels code = new LargeTextPanels("Ingrese el codigo", ViewsStyles.LIGHT_BLACK);
+    public LargeTextPanels code = new LargeTextPanels("Ingrese el codigo", ViewsStyles.LIGHT_BLACK);
 
     public QuestionStatement(){
         setLayout(new GridBagLayout());
