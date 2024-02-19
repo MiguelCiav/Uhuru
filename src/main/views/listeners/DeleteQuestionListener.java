@@ -1,34 +1,34 @@
 package main.views.listeners;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import main.views.components.createTestViewComponents.QuestionDataPanel;
 
-public class PreviousQuestionListener extends MouseAdapter{
+public class DeleteQuestionListener extends MouseAdapter{
+ 
+    private static DeleteQuestionListener instance;
 
-    private static PreviousQuestionListener instance;
+    private DeleteQuestionListener(){
 
-    private PreviousQuestionListener(){
     }
 
-    public static PreviousQuestionListener getInstance(){
+    public static DeleteQuestionListener getInstance(){
         if(instance == null){
-            instance = new PreviousQuestionListener();
+            instance = new DeleteQuestionListener();
         }
 
         return instance;
     }
 
-    private void changeIndex(){
+    private static void changeIndex(){
         if(QuestionDataPanel.getQuestionIndex() > 0){
             QuestionDataPanel.setQuestionIndex(QuestionDataPanel.getQuestionIndex() - 1);
         }
         else{
             QuestionDataPanel.setQuestionIndex(QuestionDataPanel.getQuestionList().size() - 1);
         }
-        QuestionDataPanel.setStatementText(QuestionDataPanel.getQuestionIndex()+1);
     }
-    
+
     private void allowCode(){
         if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).code.getTextArea().isEditable()){
             QuestionDataPanel.getBox().setSelected(true);
@@ -40,8 +40,13 @@ public class PreviousQuestionListener extends MouseAdapter{
 
     @Override public void mouseClicked(MouseEvent e){
 
-        QuestionDataPanel.getCardLayout().previous(QuestionDataPanel.getContainer());
-        changeIndex();
+        if(QuestionDataPanel.getQuestionList().size() > 1){
+            QuestionDataPanel.getCardLayout().previous(QuestionDataPanel.getContainer());
+            QuestionDataPanel.deleteQuestionInContainer(QuestionDataPanel.getQuestionIndex());
+            changeIndex();
+            QuestionDataPanel.setStatementText(QuestionDataPanel.getQuestionIndex() + 1);
+        }
+
         allowCode();
     }
 }

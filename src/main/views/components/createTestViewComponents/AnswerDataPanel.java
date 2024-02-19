@@ -4,12 +4,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
 import javax.swing.*;
-
 import main.views.components.genericComponents.BlueButton;
 import main.views.components.genericComponents.JPanelRound;
-import main.views.listeners.AddAndDeleteOptionsListener;
+import main.views.listeners.AddOptionListener;
+import main.views.listeners.DeleteOptionListener;
 import main.views.listeners.NextOptionListener;
 import main.views.listeners.PreviousOptionListener;
 import utils.PathManager;
@@ -17,41 +16,56 @@ import utils.ViewsStyles;
 
 public class AnswerDataPanel extends JPanelRound implements ActionListener{
 
-    private static JCheckBox isCorrect = new JCheckBox("¿Es la opción correcta?", new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
+    private static AnswerDataPanel instance;
+    private static JCheckBox isCorrect = new JCheckBox("¿Es la opción correcta?",new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
     private static JLabel statement = new JLabel("Opcion #1");
     private GridBagConstraints constraints = new GridBagConstraints();
-    private static Container cPane = new Container();
-    private CardLayout card = new CardLayout();
 
+    private static Container containerPane = new Container();
+    private static CardLayout card = new CardLayout();
 
+    private static ArrayList<AnswerStatement> answerList = new ArrayList<AnswerStatement>();
+    private static int optionIndex = 0;
     
-    public AnswerDataPanel(){
+    private AnswerDataPanel(){
+        
         setLayout(new GridBagLayout());
         setRoundBackgroundColor(Color.WHITE);
+        containerPane.setLayout(card);
 
         addStatementText();
         addIsCorrectButton();
-        addOptionStatement();
+        addOptionToContainer(0);
+        addContainer();
         addArrowButtons();
         addDeleteOptionButton();
-        addNewOptionButton();
-        addInsertImageButton();
+        addNewQuestionButton();
+        addCreateTestButton();
+    }
 
+    public static AnswerDataPanel getInstance(){
+        if(instance == null){
+            instance = new AnswerDataPanel();
+        }
+
+        return instance;
     }
 
     public void addStatementText(){
+
         statement.setFont(ViewsStyles.TITLE_FONT);
         statement.setForeground(ViewsStyles.DARK_BLUE);
 
         constraints.insets = new Insets(10, 20, 10, 20);
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.weightx = 1.0;
         constraints.gridheight = 1;
         constraints.gridwidth = 4;
+        constraints.weightx = 1.0;
         constraints.fill = GridBagConstraints.HORIZONTAL;
 
         add(statement, constraints);
+        
     }
 
     public static void setStatementText(int questionNum){
@@ -59,6 +73,7 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
     }
     
     public void addIsCorrectButton(){
+        
         isCorrect.setBackground(Color.WHITE);
         isCorrect.setHorizontalTextPosition(SwingConstants.LEFT);
         isCorrect.setBorder(null);
@@ -71,16 +86,40 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
         isCorrect.addActionListener(this);
 
         add(isCorrect, constraints);
+        
     }
 
-    public void addOptionStatement(){
-        constraints.insets = new Insets(10, 20, 10, 20);
-        AnswerStatement option = new AnswerStatement();
-        cPane.setLayout(card);
-        QuestionStatement.optionsList.add(option);
-        cPane.add(option);
+    public static void addOptionToContainer(int index){
 
+        AnswerStatement option = new AnswerStatement();
+        addOptionToList(option, index);
+        containerPane.add(option, index);
         
+    }
+
+    public static void addOptionToList(AnswerStatement option, int index){
+        answerList.add(index, option);
+    }
+
+    public static void deleteOptionInContainer(int index){
+        containerPane.remove(index);
+        deleteOptionInList(index);
+    }
+
+    public static void deleteOptionInList(int index){
+        answerList.remove(index);
+    }
+
+    public static int getOptionIndex(){
+        return optionIndex;
+    }
+    public static void setOptionIndex(int num){
+        optionIndex = num;
+    }
+
+    public void addContainer(){
+        
+        constraints.insets = new Insets(10, 20, 10, 20);
         constraints.gridx = 0;
         constraints.gridy = 1;
         constraints.gridheight = 1;
@@ -89,10 +128,19 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
         constraints.anchor = GridBagConstraints.CENTER;
         constraints.fill = GridBagConstraints.BOTH;
 
-        add(cPane, constraints);
+        add(containerPane, constraints);
+    }
+
+    public static Container getContainer(){
+        return containerPane;
+    } 
+
+    public static CardLayout getCardLayout(){
+        return card;
     }
 
     public void addArrowButtons(){
+        
         JLabel leftArrow = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/LeftArrow.png")));
         JLabel rightArrow = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/RightArrow.png")));
 
@@ -105,40 +153,41 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
         constraints.weighty = 0.0;
         constraints.fill = GridBagConstraints.NONE;
         constraints.anchor = GridBagConstraints.EAST;
-        leftArrow.addMouseListener(new PreviousOptionListener(cPane, card));
+        leftArrow.addMouseListener(PreviousOptionListener.getInstance());
 
         add(leftArrow, constraints);
 
         constraints.gridx = 1;
         constraints.anchor = GridBagConstraints.WEST;
         constraints.insets = new Insets(0, 10, 20, 0);
-        rightArrow.addMouseListener(new NextOptionListener(cPane, card));
+        rightArrow.addMouseListener(NextOptionListener.getInstance());
 
         add(rightArrow, constraints);
     }
 
     public void addDeleteOptionButton(){
 
-        JLabel deleteQuestionButton = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/DeleteQuestion.png")));
-        deleteQuestionButton.setName("DeleteOption");
+        JLabel deleteOptionButton = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/DeleteQuestion.png")));
         constraints.gridx = 2;
         constraints.insets = new Insets(0, 20, 20,0);
-        deleteQuestionButton.addMouseListener(AddAndDeleteOptionsListener.getInstance(cPane, card));
+        deleteOptionButton.addMouseListener(DeleteOptionListener.getInstance());
 
-        add(deleteQuestionButton, constraints);
+        add(deleteOptionButton, constraints);
     }
 
-    public void addNewOptionButton(){
-        JLabel newQuestionButton = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/NewQuestion.png")));
-        newQuestionButton.setName("AddOption");
+    public void addNewQuestionButton(){
+
+        JLabel newOptionButton = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/NewQuestion.png")));
         constraints.gridx = 3;
         constraints.insets = new Insets(0, 10, 20, 10);
-        newQuestionButton.addMouseListener(AddAndDeleteOptionsListener.getInstance(cPane, card));
+        newOptionButton.addMouseListener(AddOptionListener.getInstance());
 
-        add(newQuestionButton, constraints);
+        add(newOptionButton, constraints);
+
     }
 
-    public void addInsertImageButton(){
+    public void addCreateTestButton(){
+
         BlueButton insertImageButton = new BlueButton("Crear Examen", 232, 1);
 
         constraints.gridx = 4;
@@ -146,23 +195,19 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
         constraints.fill = GridBagConstraints.BOTH;
 
         add(insertImageButton, constraints);
+
     }
 
     public static JCheckBox getBox(){
         return isCorrect;
     }
 
-    public static ArrayList<AnswerStatement> getOptionList(){
-        return QuestionStatement.optionsList;
-    }
-
-    public static Container getContainer(){
-        return cPane;
+    public static ArrayList<AnswerStatement> getAnswerList(){
+        return answerList;
     }
 
     @Override public void actionPerformed(ActionEvent e){
         JCheckBox box = (JCheckBox) e.getSource();
-
         if(box.isSelected()){
             isCorrect.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
         }

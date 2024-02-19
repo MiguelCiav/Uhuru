@@ -1,7 +1,4 @@
 package main.views.listeners;
-
-import java.awt.CardLayout;
-import java.awt.Container;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -9,24 +6,31 @@ import main.views.components.createTestViewComponents.AnswerDataPanel;
 
 public class NextOptionListener extends MouseAdapter{
 
-    private Container cPane;
-    private CardLayout card;
+    private static NextOptionListener instance;
 
-    public NextOptionListener(Container pane, CardLayout card){
-        this.cPane = pane;
-        this.card = card;
+    private NextOptionListener(){
     }
-    @Override public void mouseClicked(MouseEvent e){
 
-        AddAndDeleteOptionsListener.getInstance(cPane, card);
-        if(AddAndDeleteOptionsListener.getOptionIndex() < AddAndDeleteOptionsListener.getNumberOfOptions() - 1){
-            AddAndDeleteOptionsListener.setOptionIndex(AddAndDeleteOptionsListener.getOptionIndex() + 1);
-            AnswerDataPanel.setStatementText(AddAndDeleteOptionsListener.getOptionIndex()+1);
+    public static NextOptionListener getInstance(){
+        if(instance == null){
+            instance = new NextOptionListener();
+        }
+        return instance;
+    }
+
+    private void changeIndex(){
+        if(AnswerDataPanel.getOptionIndex() < AnswerDataPanel.getAnswerList().size() - 1){
+            AnswerDataPanel.setOptionIndex(AnswerDataPanel.getOptionIndex() + 1);
         }
         else{
-            AddAndDeleteOptionsListener.setOptionIndex(0);
-            AnswerDataPanel.setStatementText(AddAndDeleteOptionsListener.getOptionIndex()+1);
+            AnswerDataPanel.setOptionIndex(0);
         }
-        card.next(cPane);
+        AnswerDataPanel.setStatementText(AnswerDataPanel.getOptionIndex() +1);
+    }
+
+    @Override public void mouseClicked(MouseEvent e){
+
+        AnswerDataPanel.getCardLayout().next(AnswerDataPanel.getContainer());
+        changeIndex();
     }
 }

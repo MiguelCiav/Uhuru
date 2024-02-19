@@ -12,10 +12,11 @@ import main.views.components.genericComponents.LargeTextPanels;
 import utils.ViewsStyles;
 
 public class QuestionStatement extends JPanel{
+
     GridBagConstraints constraints = new GridBagConstraints();
     LargeTextPanels statement = new LargeTextPanels("Ingrese el enunciado de la pregunta", ViewsStyles.ULTRA_LIGHT_BLUE);
     public LargeTextPanels code = new LargeTextPanels("Ingrese el codigo", ViewsStyles.LIGHT_BLACK);
-    public static ArrayList<AnswerStatement> optionsList = new ArrayList<AnswerStatement>();
+    private static ArrayList<AnswerStatement> optionsList = new ArrayList<AnswerStatement>();
 
     public QuestionStatement(){
         setLayout(new GridBagLayout());
@@ -26,6 +27,7 @@ public class QuestionStatement extends JPanel{
     }
 
     public void addQuestionStatement(){
+
         constraints.insets = new Insets(20, 0, 20, 0);
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
@@ -36,6 +38,7 @@ public class QuestionStatement extends JPanel{
         constraints.fill = GridBagConstraints.BOTH;
 
         add(statement, constraints);
+
     }
 
     public void addCode(){
@@ -51,5 +54,9 @@ public class QuestionStatement extends JPanel{
         code.getTextArea().setEditable(false);
 
         add(code, constraints);
+    }
+
+    public ArrayList<AnswerStatement> getOptionList(){
+        return optionsList;
     }
 }

@@ -9,31 +9,41 @@ import main.views.components.createTestViewComponents.QuestionDataPanel;
 
 public class NextQuestionListener extends MouseAdapter{
 
-    private Container cPane;
-    private CardLayout card;
+    private static NextQuestionListener instance;
 
-    public NextQuestionListener(Container pane, CardLayout card){
-        this.cPane = pane;
-        this.card = card;
+    private NextQuestionListener(){
     }
-    @Override public void mouseClicked(MouseEvent e){
 
-        AddAndDeleteQuestionListener.getInstance(cPane, card);
-        if(AddAndDeleteQuestionListener.getQuestionIndex() < AddAndDeleteQuestionListener.getNumberOfQuestions() - 1){
-            AddAndDeleteQuestionListener.setQuestionIndex(AddAndDeleteQuestionListener.getQuestionIndex() + 1);
-            QuestionDataPanel.setStatementText(AddAndDeleteQuestionListener.getQuestionIndex()+1);
+    public static NextQuestionListener getInstance(){
+        if(instance == null){
+            instance = new NextQuestionListener();
+        }
+        return instance;
+    }
+
+    private void changeIndex(){
+        if(QuestionDataPanel.getQuestionIndex() < QuestionDataPanel.getQuestionList().size() - 1){
+            QuestionDataPanel.setQuestionIndex(QuestionDataPanel.getQuestionIndex() + 1);
         }
         else{
-            AddAndDeleteQuestionListener.setQuestionIndex(0);
-            QuestionDataPanel.setStatementText(AddAndDeleteQuestionListener.getQuestionIndex()+1);
+            QuestionDataPanel.setQuestionIndex(0);
         }
-        card.next(cPane);
+        QuestionDataPanel.setStatementText(QuestionDataPanel.getQuestionIndex()+1);
+    }
 
-        if(QuestionDataPanel.getQuestionList().get(AddAndDeleteQuestionListener.getQuestionIndex()).code.getTextArea().isEditable()){
+    private void allowCode(){
+        if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).code.getTextArea().isEditable()){
             QuestionDataPanel.getBox().setSelected(true);
         }
         else{
             QuestionDataPanel.getBox().setSelected(false);
         }
+    }
+
+    @Override public void mouseClicked(MouseEvent e){
+
+        QuestionDataPanel.getCardLayout().next(QuestionDataPanel.getContainer());
+        changeIndex();
+        allowCode();
     }
 }
