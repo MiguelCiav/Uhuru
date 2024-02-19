@@ -5,8 +5,7 @@ import java.awt.Container;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import main.views.components.QuestionDataPanel;
-import main.views.components.QuestionStatement;
+import main.views.components.createTestViewComponents.QuestionDataPanel;
 
 public class PreviousQuestionListener extends MouseAdapter{
 
@@ -21,9 +20,11 @@ public class PreviousQuestionListener extends MouseAdapter{
         AddAndDeleteQuestionListener.getInstance(cPane, card);
         if(AddAndDeleteQuestionListener.getQuestionIndex() > 0){
             AddAndDeleteQuestionListener.setQuestionIndex(AddAndDeleteQuestionListener.getQuestionIndex() - 1);
+            QuestionDataPanel.setStatementText(AddAndDeleteQuestionListener.getQuestionIndex()+1);
         }
         else{
             AddAndDeleteQuestionListener.setQuestionIndex(AddAndDeleteQuestionListener.getNumberOfQuestions() - 1);
+            QuestionDataPanel.setStatementText(AddAndDeleteQuestionListener.getQuestionIndex()+1);
         }
 
         if(QuestionDataPanel.getQuestionList().get(AddAndDeleteQuestionListener.getQuestionIndex()).code.getTextArea().isEditable()){

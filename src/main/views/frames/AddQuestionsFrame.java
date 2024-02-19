@@ -3,6 +3,8 @@ package main.views.frames;
 import javax.swing.*;
 
 import main.views.components.*;
+import main.views.components.createTestViewComponents.AnswerDataPanel;
+import main.views.components.createTestViewComponents.QuestionDataPanel;
 import main.views.components.genericComponents.DoublePanel;
 
 import java.awt.*;

@@ -1,4 +1,4 @@
-package main.views.components;
+package main.views.components.createTestViewComponents;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,9 +17,10 @@ import utils.ViewsStyles;
 
 public class QuestionDataPanel extends JPanelRound implements ActionListener{
 
-    private static JCheckBox isCode = new JCheckBox("¿Que contiene código?");
+    private static JCheckBox isCode = new JCheckBox("¿Contiene código?");
+    private static JLabel statement = new JLabel("Enunciado #1");
     private GridBagConstraints constraints = new GridBagConstraints();
-    private Container cPane = new Container();
+    private static Container cPane = new Container();
     private CardLayout card = new CardLayout();
     private static ArrayList<QuestionStatement> questionList = new ArrayList<QuestionStatement>();
 
@@ -39,7 +40,6 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
     }
 
     public void addStatementText(){
-        JLabel statement = new JLabel("Enunciado");
         statement.setFont(ViewsStyles.TITLE_FONT);
         statement.setForeground(ViewsStyles.DARK_BLUE);
 
@@ -51,6 +51,10 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
         constraints.fill = GridBagConstraints.HORIZONTAL;
 
         add(statement, constraints);
+    }
+
+    public static void setStatementText(int questionNum){
+        statement.setText("Enunciado #" + questionNum);
     }
     
     public void addIsCodeButton(){
@@ -74,6 +78,8 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
         cPane.setLayout(card);
         questionList.add(question);
         cPane.add(question);
+
+        
         constraints.gridx = 0;
         constraints.gridy = 1;
         constraints.gridheight = 1;
@@ -147,6 +153,10 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
 
     public static ArrayList<QuestionStatement> getQuestionList(){
         return questionList;
+    }
+
+    public static Container getContainer(){
+        return cPane;
     }
 
     @Override public void actionPerformed(ActionEvent e){

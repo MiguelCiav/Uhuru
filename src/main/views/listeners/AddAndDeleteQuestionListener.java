@@ -1,17 +1,12 @@
 package main.views.listeners;
 
-import java.awt.CardLayout;
-import java.awt.Container;
-import java.awt.Image;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
-import main.views.components.QuestionDataPanel;
-import main.views.components.QuestionStatement;
-import utils.PathManager;
+import main.views.components.createTestViewComponents.AnswerDataPanel;
+import main.views.components.createTestViewComponents.QuestionDataPanel;
+import main.views.components.createTestViewComponents.QuestionStatement;
 
 public class AddAndDeleteQuestionListener extends MouseAdapter{
 
@@ -54,12 +49,16 @@ public class AddAndDeleteQuestionListener extends MouseAdapter{
 
         if(button.getName().equals("AddQuestion")){
             QuestionStatement question = new QuestionStatement();
-            QuestionDataPanel.getQuestionList().add(question);
-            cPane.add(question);
+            QuestionDataPanel.getQuestionList().add(AddAndDeleteQuestionListener.getQuestionIndex() + 1, question);
+            cPane.add(question,AddAndDeleteQuestionListener.getQuestionIndex() + 1);
             QuestionDataPanel.getBox().setSelected(false);
             AddAndDeleteQuestionListener.questionIndex++;
             card.next(cPane);
             numberOfQuestions++;
+            QuestionDataPanel.setStatementText(AddAndDeleteQuestionListener.getQuestionIndex()+1);
+
+            
+
         }
         else if(button.getName().equals("DeleteQuestion")){
             if(numberOfQuestions > 1){
@@ -69,9 +68,11 @@ public class AddAndDeleteQuestionListener extends MouseAdapter{
                 AddAndDeleteQuestionListener.numberOfQuestions--;
                 if(AddAndDeleteQuestionListener.questionIndex > 0){
                     AddAndDeleteQuestionListener.questionIndex -= 1;
+                    QuestionDataPanel.setStatementText(AddAndDeleteQuestionListener.getQuestionIndex()+1);
                 }
                 else{
                     AddAndDeleteQuestionListener.questionIndex = AddAndDeleteQuestionListener.numberOfQuestions - 1;
+                    QuestionDataPanel.setStatementText(AddAndDeleteQuestionListener.getQuestionIndex()+1);
                 }
 
                 if(QuestionDataPanel.getQuestionList().get(AddAndDeleteQuestionListener.getQuestionIndex()).code.getTextArea().isEditable()){

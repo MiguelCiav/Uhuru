@@ -1,9 +1,11 @@
-package main.views.components;
+package main.views.components.createTestViewComponents;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.util.ArrayList;
+
 import javax.swing.JPanel;
 
 import main.views.components.genericComponents.LargeTextPanels;
@@ -13,6 +15,7 @@ public class QuestionStatement extends JPanel{
     GridBagConstraints constraints = new GridBagConstraints();
     LargeTextPanels statement = new LargeTextPanels("Ingrese el enunciado de la pregunta", ViewsStyles.ULTRA_LIGHT_BLUE);
     public LargeTextPanels code = new LargeTextPanels("Ingrese el codigo", ViewsStyles.LIGHT_BLACK);
+    public static ArrayList<AnswerStatement> optionsList = new ArrayList<AnswerStatement>();
 
     public QuestionStatement(){
         setLayout(new GridBagLayout());
