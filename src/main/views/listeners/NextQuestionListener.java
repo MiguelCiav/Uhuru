@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import main.views.components.createTestViewComponents.AnswerDataPanel;
 import main.views.components.createTestViewComponents.QuestionDataPanel;
 
 public class NextQuestionListener extends MouseAdapter{
@@ -39,11 +40,21 @@ public class NextQuestionListener extends MouseAdapter{
             QuestionDataPanel.getBox().setSelected(false);
         }
     }
+    private void addOptionsToContainer(){
+        AnswerDataPanel.getContainer().removeAll();
+        for(int i = 0; i < QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().size(); i++){
+            AnswerDataPanel.getContainer().add(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().get(i));
+        }
+
+        AnswerDataPanel.setOptionIndex(0);
+        AnswerDataPanel.setStatementText(AnswerDataPanel.getOptionIndex() + 1);
+    }
 
     @Override public void mouseClicked(MouseEvent e){
 
         QuestionDataPanel.getCardLayout().next(QuestionDataPanel.getContainer());
         changeIndex();
+        addOptionsToContainer();
         allowCode();
     }
 }
