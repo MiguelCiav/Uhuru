@@ -30,7 +30,7 @@ public class ScrollableTestPanel extends ScrollablePanel{
     public static void loadExams(){
 
         String defaultCourse = AnswerTestController.getInstance().getCourseIDs()[0];
-
+        
         testNames = AnswerTestController.getInstance().getTestNames(defaultCourse);
         testIDs = AnswerTestController.getInstance().getTestID(defaultCourse);
         instance.addScrollableElements();
