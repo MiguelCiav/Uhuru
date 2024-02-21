@@ -12,12 +12,13 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 # Enlaces
 1. [ Modelos de Dominio. ](#modelo_dominio)
 2. [ Modelos de Casos de Uso](#use_case)
-4. [ Protipos de interfaz ](#prototipos)
-5. [ Modelos de Análisis](#modelo_analisis)
-6. [ Modelos de Diseño](#modelo_diseño)
-7. [ Librerías](#lib)
-8. [ Como usar](#guia)
-9. [ Test](#modelo_test)
+3. [ Protipos de interfaz ](#prototipos)
+4. [ Modelos de Análisis](#modelo_analisis)
+5. [ Modelos de Diseño](#modelo_diseño)
+6. [ Librerías](#lib)
+7. [ Como usar](#guia)
+8. [ Test](#modelo_test)
+9. [ Cambio de Requisitos](#cambio_requisitos)
 
 <a name="modelo_dominio"></a>
 ## Modelo del dominio
@@ -161,3 +162,25 @@ El sujeto de la prueba es el constructor del modelo Question
 El sujeto de la prueba es el constructor del modelo Answer
 ### - Prueba de Validación de Usuario
 El sujeto de la prueba es ValidateUser de la clase LoginController
+
+<a name="cambio_requisitos"></a>
+## Cambio de Requisitos
+### Especificación de Casos de Uso 
+
+CU1 - Crear Examen
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\useCaseModel\CU1CrearExamenV2.png">
+</p>
+
+### Modelo de Diseño
+Diagrama de Clases
+<p align="center">
+  <img style="width:100%; heigth:300px" src="docs\logicalView\designView\usecaseDesign\designClasses-changeOfRequirements.png">
+</p>
+
+## Prototipo de Pantalla
+Create Tests
+<p align="center">
+  <img style="width:100%; heigth:300px" src="docs\prototype\screen\changeOfRequerimetsView\create-test-1.jpg">
+   <img style="width:100%; heigth:300px" src="docs\prototype\screen\changeOfRequerimetsView\create-test-2.jpg">
+</p>
