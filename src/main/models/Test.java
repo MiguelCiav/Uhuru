@@ -37,8 +37,6 @@ public class Test {
 
         questionList.add(question);
 
-        ;
-
     };
 
     public Question getQuestion(String questionID){
@@ -53,6 +51,10 @@ public class Test {
 
         return null;
     };
+
+    public int getQuestionsAmount(){
+        return questionList.size();
+    }
 
     public String getName() {
         return name;

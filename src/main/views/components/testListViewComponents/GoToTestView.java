@@ -20,7 +20,7 @@ public class GoToTestView extends MouseAdapter{
         JLabel source = (JLabel) e.getSource();
         LabelPanelTest sourcePanel = (LabelPanelTest) source.getParent();
 
-        AnswerTestController.setActualTest(sourcePanel.getCourseID(), sourcePanel.getTestID());
+        AnswerTestController.setCurrentTest(sourcePanel.getCourseID(), sourcePanel.getTestID());
         new TestView();
         topFrame.dispose();
             

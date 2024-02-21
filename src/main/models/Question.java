@@ -22,14 +22,28 @@ public class Question {
         this.questionID = questionID;
         this.testID = testID;
         this.description = description;
-        this.questionNumber = questionNumber;
-    };
+
+    }
+
+    public void markAnswerAsSelected(String answerID){
+
+        for(int i = 0; i < answerList.size(); i++){
+            if(answerList.get(i).getAnswerID().equals(answerID)){
+                answerList.get(i).setAsSelected(true);
+                System.out.println("Respuesta " + answerList.get(i).getAnswerID() + " Marcada como " + answerList.get(i).isSelected());
+            } else {
+                answerList.get(i).setAsSelected(false);
+                System.out.println("Respuesta " + answerList.get(i).getAnswerID() + " Marcada como " + answerList.get(i).isSelected());
+            }
+        }
+
+    }
 
     public void addAnswer(Answer answer){
 
         answerList.add(answer);
 
-    };
+    }
 
     public String[] getAnswerDescriptions(){
         String[] answers = new String[answerList.size()];
@@ -77,8 +91,6 @@ public class Question {
         Answer foundAnswer;
 
         for(int i = 0; i < answerList.size(); i++){
-
-            ;
             if (answerID.equals(answerList.get(i).getAnswerID())) {
                 foundAnswer = answerList.get(i);
                 return foundAnswer;

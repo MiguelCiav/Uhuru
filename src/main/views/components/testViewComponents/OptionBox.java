@@ -31,6 +31,14 @@ public class OptionBox extends JPanelRound{
         
     }
 
+    public String getQuestionID(){
+        return questionID;
+    }
+
+    public String getAnswerID(){
+        return answerID;
+    }
+
     private void addOptionButton(){
 
         constraints.gridx = 0;
@@ -48,7 +56,7 @@ public class OptionBox extends JPanelRound{
         optionButton.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/OptionBox/sin pulsar.png")));
         optionButton.setSelectedIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/OptionBox/pulsado.png")));
         optionButton.setSelected(false);
-        optionButton.addMouseListener(new UpdateAnswerAmount());
+        optionButton.addMouseListener(new AnswerQuestion());
 
         add(optionButton, constraints);
 
@@ -56,10 +64,9 @@ public class OptionBox extends JPanelRound{
 
     private void addOptionText(){
 
-        String actualCourseID = AnswerTestController.getActualCourseID();
-        String actualTestID = AnswerTestController.getActualTestID();
-        ;
-        String description = AnswerTestController.getInstance().getAnswerDescription(actualCourseID,actualTestID,questionID,answerID);
+        String currentCourseID = AnswerTestController.getCurrentCourseID();
+        String currentTestID = AnswerTestController.getCurrentTestID();
+        String description = AnswerTestController.getInstance().getAnswerDescription(currentCourseID,currentTestID,questionID,answerID);
 
         optionTextPanel.setLayout(new GridBagLayout());
         optionTextPanel.setRoundBackgroundColor(Color.WHITE);

@@ -33,12 +33,10 @@ public class Answer {
 
     public static void setAsSelected(String courseID, String testID, String questionID, String answerID, boolean selected){
         Course.getInstanceCourse(courseID).getTest(testID).getQuestion(questionID).getAnswer(answerID).setAsSelected(selected);
-        
-        ;
     }
 
-    private void setAsSelected(boolean selected){
-        this.isSelected = true;
+    public void setAsSelected(boolean selected){
+        this.isSelected = selected;
     }
 
     public boolean isSelected(){

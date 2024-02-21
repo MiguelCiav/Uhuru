@@ -99,10 +99,10 @@ public class QuestionPanel extends JPanelRound{
 
     private void loadAnswers(){
 
-        String actualTestID = AnswerTestController.getActualTestID();
-        String actualCourseID = AnswerTestController.getActualCourseID();
+        String currentTestID = AnswerTestController.getCurrentTestID();
+        String currentCourseID = AnswerTestController.getCurrentCourseID();
 
-        answerIDs = AnswerTestController.getInstance().getAnswersIDs(actualCourseID, actualTestID, questionID);
+        answerIDs = AnswerTestController.getInstance().getAnswersIDs(currentCourseID, currentTestID, questionID);
 
     }
     

@@ -1,12 +1,17 @@
 package main.views.components.testViewComponents;
 import javax.swing.*;
 
+import main.controllers.AnswerTestController;
 import main.views.components.genericComponents.BlueButton;
 import utils.PathManager;
 import utils.ViewsStyles;
 
 import java.awt.*;
 import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
 import java.util.Timer;
 
 public class TestInfoPanel extends JPanel{
@@ -17,7 +22,11 @@ public class TestInfoPanel extends JPanel{
     private JLabel testName = new JLabel();
     private BlueButton endButton = new BlueButton("Terminar Examen",233,1);
     private static TestInfoPanel testInfoPanel;
-    private int amountOfAnswers = 0;
+    private int totalAnswered = 0;
+    private ArrayList<String> answeredQuestionIDs = new ArrayList<String>();
+    private int questionsAmount = 0;
+    private int testDuration;
+    ScheduledExecutorService executor;
 
     private TestInfoPanel(){
 
@@ -43,8 +52,8 @@ public class TestInfoPanel extends JPanel{
 
     public void increaseAnswers(){
 
-        amountOfAnswers++;
-        answeredQuestions.setText(String.valueOf(amountOfAnswers) + "/" + 20);
+        totalAnswered++;
+        answeredQuestions.setText(String.valueOf(totalAnswered) + "/" + questionsAmount);
         repaint();
         
     }
@@ -89,12 +98,37 @@ public class TestInfoPanel extends JPanel{
         constraints.gridx=2;
 
         answeredQuestions.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/testView/bandera.png")));
-        answeredQuestions.setText("1/20");
+        answeredQuestions.setText("0" + "/" + questionsAmount);
         answeredQuestions.setFont(new Font("Futura", Font.BOLD, 30));
         answeredQuestions.setForeground(ViewsStyles.DARK_BLUE);
         answeredQuestions.setIconTextGap(16);
 
         add (answeredQuestions, constraints);
+
+    }
+
+    public void updateTestInfo(){
+        int testTime = AnswerTestController.getCurrentTestTime();
+        questionsAmount = AnswerTestController.getCurrentTestQuestionsAmount();
+        answeredQuestionIDs.clear();
+        totalAnswered = 0;
+
+        answeredQuestions.setText("0" + "/" + questionsAmount);
+        updateTimer(testTime);
+        this.testName.setText(AnswerTestController.getCurrentTestName());
+    }
+
+    public boolean updateAnsweredQuestions(String questionID){
+
+        for(String ID : answeredQuestionIDs){
+            if(ID.equals(questionID)){
+                return false;
+            }
+        }
+
+        answeredQuestionIDs.add(questionID);
+        increaseAnswers();
+        return true;
 
     }
 
@@ -112,7 +146,97 @@ public class TestInfoPanel extends JPanel{
         
     }
 
-    private void updateTimer (int minutesInput){
+    private void updateTimer(int minutesInput) {
+        final int TIME_UNIT = 1;
+
+        setDuration(minutesInput);
+        System.out.println("Duracion establecida en " + getDuration());
+
+        if(executor != null && !executor.isShutdown()){
+            executor.shutdown();
+        }
+
+        executor = Executors.newSingleThreadScheduledExecutor();
+        
+        executor.scheduleAtFixedRate(new Runnable() {
+
+            @Override
+            public void run() {
+                int totalSeconds = getDuration();
+                int hours = totalSeconds / 3600;
+                int minutes = (totalSeconds % 3600) / 60;
+                int seconds = totalSeconds % 60;
+
+                clock.setText(String.format("%02d:%02d:%02d", hours, minutes, seconds));
+
+                decreaseDuration();
+                System.out.println("Hola");
+
+                if (totalSeconds <= 0) {
+                    executor.shutdown();
+                    clock.setText("Tiempo Agotado");
+                }
+            }
+        }, 0, TIME_UNIT, TimeUnit.SECONDS);
+
+    }
+
+    private void setDuration(int minutesInput){
+        testDuration = 60 * minutesInput;
+    }
+    
+    private void decreaseDuration(){
+        testDuration--;
+    }
+
+    private int getDuration(){
+        return testDuration;
+    }
+
+
+    /*¨private void updateTimer(int minutesInput) {
+        final int TIME_UNIT = 1000;
+        final long DELAY = 0;
+
+        if(timer.)
+        
+        timer.scheduleAtFixedRate(new TestTimer(minutesInput, timer), DELAY, TIME_UNIT);
+    }
+    
+    private class TestTimer extends TimerTask {
+        private Timer timer;
+        private int totalSeconds;
+        private int minutes;
+        private int hours;
+        private int seconds;
+    
+        TestTimer(int minutesInput, Timer timer) {
+            totalSeconds = minutesInput * 60;
+            this.timer = timer;
+        }
+    
+        public void run() {
+            convertTime();
+    
+            clock.setText(String.format("%02d:%02d:%02d", hours, minutes, seconds));
+    
+            totalSeconds--;
+    
+            if (totalSeconds <= 0) {
+                timer.cancel();
+                clock.setText("Tiempo Agotado");
+            }
+        }
+    
+        private void convertTime() {
+            hours = totalSeconds / 3600;
+            minutes = (totalSeconds % 3600) / 60;
+            seconds = totalSeconds % 60;
+        }
+    }*/
+    
+    
+    /*private void updateTimer (int minutesInput){
         final int TIME_UNIT = 60000;
         final long DELAY = 0;
         Timer timer = new Timer();
@@ -124,25 +248,26 @@ public class TestInfoPanel extends JPanel{
         private int minutesTOTAL;
         private int minutes;
         private int hours;
+        private int seconds;
 
         TestTimer(int minutesInput, Timer timer) {
             minutesTOTAL= minutesInput;
             this.timer = timer;
-
         }
 
         public void run() {
             convertTime();
+
             if (minutes <= 9) {
                 clock.setText(hours + ":0" + minutes);
                 minutesTOTAL--;        
             }
             else{
-                clock.setText(hours+ ":" + minutes);
+                clock.setText(hours + ":" + minutes);
                 minutesTOTAL--; 
             }
             
-            if (minutesTOTAL < 0) {
+            if (minutesTOTAL <= 0) {
                 timer.cancel();
                 clock.setText("Tiempo Agotado");
             }
@@ -160,7 +285,7 @@ public class TestInfoPanel extends JPanel{
 
         }
 
-    }
+    }*/
 
     public void setAnsweredQuestions (String input){
         answeredQuestions.setText(input);

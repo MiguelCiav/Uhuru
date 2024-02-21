@@ -23,17 +23,17 @@ public class ScrollableQuestionsPanel extends JPanel {
 
     private void setQuestionIDs(){
 
-        String actualCourseID = AnswerTestController.getActualCourseID();
-        String actualTestID = AnswerTestController.getActualTestID();
+        String actualCourseID = AnswerTestController.getCurrentCourseID();
+        String actualTestID = AnswerTestController.getCurrentTestID();
 
-        questionIDs = AnswerTestController.getInstance().getQuestionIDs(actualCourseID, actualTestID);
+        questionIDs = AnswerTestController.getInstance().getQuestionIDsArray(actualCourseID, actualTestID);
 
     }
 
     private void addQuestions(){
 
-        String actualCourseID = AnswerTestController.getActualCourseID();
-        String actualTestID = AnswerTestController.getActualTestID();
+        String currentCourseID = AnswerTestController.getCurrentCourseID();
+        String currentTestID = AnswerTestController.getCurrentTestID();
  
         constraints.gridx = 0;
         constraints.gridy = 0;
@@ -47,7 +47,7 @@ public class ScrollableQuestionsPanel extends JPanel {
         for (int i = 0; i < questionIDs.length; i++) {
             constraints.gridy = i;
 
-            QuestionPanel auxiliarQuestionPanel = new QuestionPanel(String.valueOf(i+1),actualCourseID,actualTestID,questionIDs[i]);
+            QuestionPanel auxiliarQuestionPanel = new QuestionPanel(String.valueOf(i+1),currentCourseID,currentTestID,questionIDs[i]);
 
             if(i == 5){
                 constraints.weighty = 1.0;

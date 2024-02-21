@@ -21,8 +21,6 @@ public class JSONWriter {
 
         JSONWriter.getInstance().readActualInfo(PathManager.getInstance().getStringURL("/src/data/Users.json"), 0);
 
-        ;
-
         JSONObject user = new JSONObject();
         user.put("name", name);
         user.put("lastname", lastname);
