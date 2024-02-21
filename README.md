@@ -123,10 +123,16 @@ Librería  | Versión | Uso
 ------------- | ------------- | -------------
 ItextPdf  | 5.5.9  | Proporciona las clases necesarias para estructurar y generar el archivo PDF correspondiente al certificado del Curso Aprobado.
 JsonSimple  | 1.1.1  | Proporciona las herramietnas necesarias para cargar, manipular y preservar la información de los modelos a traves de archivos JSON.
+JUnit | 1.10.2  | Proporciona las herramietnas necesarias para ejecutar las pruebas unitarias del proyecto.
 
 <a name="guia"></a>
-## Como usar Uhuru
-1. Inicia sesion con tu correo y contraseña registrados por el administrador
+## Cómo usar Uhuru
+>[!WARNING]
+>Luego de copiar y vincular el repositorio bastará con compilar el proyecto y ejecutar el archivo MAIN.JAVA disponible en la ruta /src/main.java
+
+1. Inicia sesión con tu correo y contraseña registrados por el administrador
+>[!TIP]
+>Para realizar pruebas en el sistema puede acceder con las credenciales [correo:user clave:user] ó [correo:admin clave:admin]
 <p align="center">
   <img style="width:60%; heigth:300px" src="docs\screenshots\login.png">
 </p>
@@ -141,9 +147,7 @@ JsonSimple  | 1.1.1  | Proporciona las herramietnas necesarias para cargar, mani
   <img style="width:60%; heigth:300px" src="docs\screenshots\TestView.png">
 </p>
 
-4. Al terminar el examen podrás visualizar las respuestas correctas junto con su justificación para que obtengas una correcta retroalimentación.
-
-5. Una vez aprobado todos los examenes de un curso podrás acceder a su certificado guardandolo en formato PDF.
+4. Una vez aprobado todos los examenes de un curso podrás acceder a su certificado guardandolo en formato PDF.
 <p align="center">
   <img style="width:60%; heigth:300px" src="docs\screenshots\GetCertificate.png">
 </p>
@@ -165,6 +169,9 @@ El sujeto de la prueba es ValidateUser de la clase LoginController
 
 <a name="cambio_requisitos"></a>
 ## Cambio de Requisitos
+>[!NOTE]
+>Se solicitó añadir preguntas de selección múltiple e imágenes que acompañaran al enunciado
+
 ### Especificación de Casos de Uso 
 
 CU1 - Crear Examen
