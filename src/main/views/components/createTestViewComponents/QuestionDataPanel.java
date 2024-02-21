@@ -9,6 +9,7 @@ import javax.swing.*;
 
 import main.views.components.genericComponents.BlueButton;
 import main.views.components.genericComponents.JPanelRound;
+import main.views.listeners.AddImageListener;
 import main.views.listeners.AddQuestionListener;
 import main.views.listeners.DeleteQuestionListener;
 import main.views.listeners.NextQuestionListener;
@@ -191,7 +192,7 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
     public void addInsertImageButton(){
 
         BlueButton insertImageButton = new BlueButton("Insertar imagen", 232, 1);
-
+        insertImageButton.addActionListener(AddImageListener.getInstance());
         constraints.gridx = 4;
         constraints.insets = new Insets(0, 10, 20, 20);
         constraints.fill = GridBagConstraints.BOTH;
@@ -212,11 +213,12 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
         JCheckBox box = (JCheckBox) e.getSource();
         if(box.isSelected()){
             isCode.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
-            questionList.get(questionIndex).code.getTextArea().setEditable(true);
+            questionList.get(questionIndex).getCode().getTextArea().setEditable(true);
         }
         else{
             isCode.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
-            questionList.get(questionIndex).code.getTextArea().setEditable(false);
+            questionList.get(questionIndex).getCode().getTextArea().setText("Ingrese el codigo");
+            questionList.get(questionIndex).getCode().getTextArea().setEditable(false);
         }
     }
 }

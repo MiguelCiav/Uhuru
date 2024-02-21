@@ -212,12 +212,14 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
 
     @Override public void actionPerformed(ActionEvent e){
         JCheckBox box = (JCheckBox) e.getSource();
-
         if(box.isSelected()){
             isCorrect.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
+            QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().get(optionIndex).getJustification().getTextArea().setEditable(true);
         }
         else{
             isCorrect.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
+            QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().get(optionIndex).getJustification().getTextArea().setText("La opcion debe ser correcta para ingresar una justificacion");
+            QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().get(optionIndex).getJustification().getTextArea().setEditable(false);
         }
     }
 }

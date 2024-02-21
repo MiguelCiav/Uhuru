@@ -12,7 +12,7 @@ import utils.ViewsStyles;
 public class AnswerStatement extends JPanel{
     GridBagConstraints constraints = new GridBagConstraints();
     private LargeTextPanels statement = new LargeTextPanels("Ingrese la opcion", ViewsStyles.ULTRA_LIGHT_BLUE);
-    private LargeTextPanels justification = new LargeTextPanels("Ingrese la justificacion", ViewsStyles.ULTRA_LIGHT_BLUE);
+    private LargeTextPanels justification = new LargeTextPanels("La opcion debe ser correcta para ingresar una justificacion", ViewsStyles.ULTRA_LIGHT_BLUE);
 
     public AnswerStatement(){
         setLayout(new GridBagLayout());
@@ -44,6 +44,7 @@ public class AnswerStatement extends JPanel{
         constraints.weightx = 1.0;
         constraints.weighty = 0.4;
         constraints.fill = GridBagConstraints.BOTH;
+        justification.getTextArea().setEditable(false);
 
         add(justification, constraints);
     }

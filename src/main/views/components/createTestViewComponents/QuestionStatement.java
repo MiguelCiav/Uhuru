@@ -9,14 +9,16 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 import main.views.components.genericComponents.LargeTextPanels;
+import main.views.listeners.AddImageListener;
 import utils.ViewsStyles;
 
 public class QuestionStatement extends JPanel{
 
-    GridBagConstraints constraints = new GridBagConstraints();
-    LargeTextPanels statement = new LargeTextPanels("Ingrese el enunciado de la pregunta", ViewsStyles.ULTRA_LIGHT_BLUE);
-    public LargeTextPanels code = new LargeTextPanels("Ingrese el codigo", ViewsStyles.LIGHT_BLACK);
+    private GridBagConstraints constraints = new GridBagConstraints();
+    private LargeTextPanels statement = new LargeTextPanels("Ingrese el enunciado de la pregunta", ViewsStyles.ULTRA_LIGHT_BLUE);
+    private LargeTextPanels code = new LargeTextPanels("Ingrese el codigo", ViewsStyles.LIGHT_BLACK);
     private ArrayList<AnswerStatement> optionsList = new ArrayList<AnswerStatement>();
+    private String imagePath;
 
     public QuestionStatement(){
         setLayout(new GridBagLayout());
@@ -60,7 +62,19 @@ public class QuestionStatement extends JPanel{
         return optionsList;
     }
 
+    public LargeTextPanels getCode(){
+        return code;
+    }
+
     public void addOption(AnswerStatement option, int index){
         optionsList.add(index, option);
+    }
+
+    public void setImagePath(String path){
+        imagePath = path;
+    }
+
+    public String getImagePath(){
+        return imagePath;
     }
 }

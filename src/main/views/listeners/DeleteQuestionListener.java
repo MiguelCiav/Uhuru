@@ -3,8 +3,11 @@ package main.views.listeners;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
+
 import main.views.components.createTestViewComponents.AnswerDataPanel;
 import main.views.components.createTestViewComponents.QuestionDataPanel;
+import utils.PathManager;
 
 public class DeleteQuestionListener extends MouseAdapter{
  
@@ -32,11 +35,13 @@ public class DeleteQuestionListener extends MouseAdapter{
     }
 
     private void allowCode(){
-        if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).code.getTextArea().isEditable()){
+        if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getCode().getTextArea().isEditable()){
             QuestionDataPanel.getBox().setSelected(true);
+            QuestionDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
         }
         else{
             QuestionDataPanel.getBox().setSelected(false);
+            QuestionDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
         }
     }
 
@@ -58,8 +63,7 @@ public class DeleteQuestionListener extends MouseAdapter{
             changeIndex();
             QuestionDataPanel.setStatementText(QuestionDataPanel.getQuestionIndex() + 1);
             addOptionsToContainer();
+            allowCode();
         }
-
-        allowCode();
     }
 }

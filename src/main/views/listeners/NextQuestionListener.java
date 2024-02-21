@@ -5,8 +5,11 @@ import java.awt.Container;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
+
 import main.views.components.createTestViewComponents.AnswerDataPanel;
 import main.views.components.createTestViewComponents.QuestionDataPanel;
+import utils.PathManager;
 
 public class NextQuestionListener extends MouseAdapter{
 
@@ -33,11 +36,13 @@ public class NextQuestionListener extends MouseAdapter{
     }
 
     private void allowCode(){
-        if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).code.getTextArea().isEditable()){
+        if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getCode().getTextArea().isEditable()){
             QuestionDataPanel.getBox().setSelected(true);
+            QuestionDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
         }
         else{
             QuestionDataPanel.getBox().setSelected(false);
+            QuestionDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
         }
     }
     private void addOptionsToContainer(){
@@ -49,6 +54,7 @@ public class NextQuestionListener extends MouseAdapter{
         AnswerDataPanel.setStatementText(1);
         AnswerDataPanel.getContainer().repaint();
     }
+
 
     @Override public void mouseClicked(MouseEvent e){
 

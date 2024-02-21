@@ -127,6 +127,18 @@ public class TestDataPanel extends JPanelRound implements ActionListener{
         add(continueButton, constraints);
     }
 
+    public String getName(){
+        return testName.getTextArea().getText();
+    }
+
+    public String getDescription(){
+        return testDescription.getTextArea().getText();
+    }
+
+    public int getMinutes(){
+        return Integer.parseInt(minutes.getText());
+    }
+
     @Override public void actionPerformed(ActionEvent e){
 
         String testNameValidation = testName.getTextArea().getText();
@@ -138,10 +150,8 @@ public class TestDataPanel extends JPanelRound implements ActionListener{
         if(CreateTestController.validateData(testNameValidation, testDescriptionValidation, minutesValidation)){
             CreateTestView.getInstance().disposeFrame();
             AddQuestionsFrame.getInstance();
-
-            for(int i = 0; i < QuestionDataPanel.getInstance().getQuestionList().size(); i++){
-                QuestionDataPanel.getInstance().getQuestionList().remove(i);
-            }
+            
+            QuestionDataPanel.getInstance();
         }
         else{
             if(CreateTestController.validateTestName(testNameValidation)){
@@ -168,17 +178,5 @@ public class TestDataPanel extends JPanelRound implements ActionListener{
                 minutes.setForeground(Color.BLACK);
             }
         }
-    }
-
-    public String getName(){
-        return testName.getTextArea().getText();
-    }
-
-    public String getDescription(){
-        return testDescription.getTextArea().getText();
-    }
-
-    public int getMinutes(){
-        return Integer.parseInt(minutes.getText());
     }
 }
