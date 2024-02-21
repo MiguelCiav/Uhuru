@@ -43,18 +43,18 @@ public class NextQuestionListener extends MouseAdapter{
     private void addOptionsToContainer(){
         AnswerDataPanel.getContainer().removeAll();
         for(int i = 0; i < QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().size(); i++){
-            AnswerDataPanel.getContainer().add(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().get(i));
+            AnswerDataPanel.addOptionToContainerFromList(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().get(i));
         }
-
         AnswerDataPanel.setOptionIndex(0);
-        AnswerDataPanel.setStatementText(AnswerDataPanel.getOptionIndex() + 1);
+        AnswerDataPanel.setStatementText(1);
+        AnswerDataPanel.getContainer().repaint();
     }
 
     @Override public void mouseClicked(MouseEvent e){
 
         QuestionDataPanel.getCardLayout().next(QuestionDataPanel.getContainer());
         changeIndex();
-        addOptionsToContainer();
         allowCode();
+        addOptionsToContainer();
     }
 }

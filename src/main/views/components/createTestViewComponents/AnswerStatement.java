@@ -11,15 +11,15 @@ import utils.ViewsStyles;
 
 public class AnswerStatement extends JPanel{
     GridBagConstraints constraints = new GridBagConstraints();
-    LargeTextPanels statement = new LargeTextPanels("Ingrese la opcion", ViewsStyles.ULTRA_LIGHT_BLUE);
-    public LargeTextPanels justification = new LargeTextPanels("Ingrese la justificacion", ViewsStyles.ULTRA_LIGHT_BLUE);
+    private LargeTextPanels statement = new LargeTextPanels("Ingrese la opcion", ViewsStyles.ULTRA_LIGHT_BLUE);
+    private LargeTextPanels justification = new LargeTextPanels("Ingrese la justificacion", ViewsStyles.ULTRA_LIGHT_BLUE);
 
     public AnswerStatement(){
         setLayout(new GridBagLayout());
         setBackground(Color.white);
 
         addOptionStatement();
-        addCode();
+        addJustification();
     }
 
     public void addOptionStatement(){
@@ -35,7 +35,7 @@ public class AnswerStatement extends JPanel{
         add(statement, constraints);
     }
 
-    public void addCode(){
+    public void addJustification(){
 
         constraints.gridwidth = 1;
         constraints.gridheight = 1;
@@ -46,5 +46,13 @@ public class AnswerStatement extends JPanel{
         constraints.fill = GridBagConstraints.BOTH;
 
         add(justification, constraints);
+    }
+
+    public LargeTextPanels getStatement(){
+        return statement;
+    }
+
+    public LargeTextPanels getJustification(){
+        return justification;
     }
 }

@@ -3,6 +3,7 @@ package main.views.listeners;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import main.views.components.createTestViewComponents.AnswerDataPanel;
+import main.views.components.createTestViewComponents.QuestionDataPanel;
 
 public class PreviousOptionListener extends MouseAdapter{
 
@@ -24,7 +25,7 @@ public class PreviousOptionListener extends MouseAdapter{
             AnswerDataPanel.setOptionIndex(AnswerDataPanel.getOptionIndex() - 1);
         }
         else{
-            AnswerDataPanel.setOptionIndex(AnswerDataPanel.getAnswerList().size() - 1);
+            AnswerDataPanel.setOptionIndex(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().size() - 1);
         }
         AnswerDataPanel.setStatementText(AnswerDataPanel.getOptionIndex()+1);
     }

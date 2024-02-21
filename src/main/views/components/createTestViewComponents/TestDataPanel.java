@@ -128,7 +128,7 @@ public class TestDataPanel extends JPanelRound implements ActionListener{
 
         if(CreateTestController.validateData(testNameValidation, testDescriptionValidation, minutesValidation)){
             CreateTestView.getInstance().disposeFrame();
-            new AddQuestionsFrame();
+            AddQuestionsFrame.getInstance();
         }
         else{
             if(CreateTestController.validateTestName(testNameValidation)){

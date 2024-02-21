@@ -9,9 +9,11 @@ import java.awt.*;
 
 public class AddQuestionsFrame extends JFrame{
 
+    private static AddQuestionsFrame instance;
+
     DoublePanel mainPanel;
     
-    public AddQuestionsFrame(){
+    private AddQuestionsFrame(){
         super("Uhuru: Add Questions");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setMinimumSize(new Dimension(800,600));
@@ -21,5 +23,18 @@ public class AddQuestionsFrame extends JFrame{
         add(mainPanel);
 
         setVisible(true);
+    }
+
+    public static AddQuestionsFrame getInstance(){
+        if(instance == null){
+            instance = new AddQuestionsFrame();
+        }
+
+        return instance;
+    }
+
+    public void disposeFrame(){
+
+        instance.dispose();   
     }
 }

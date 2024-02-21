@@ -3,6 +3,7 @@ package main.views.listeners;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import main.views.components.createTestViewComponents.AnswerDataPanel;
+import main.views.components.createTestViewComponents.QuestionDataPanel;
 
 public class DeleteOptionListener extends MouseAdapter{
  
@@ -25,13 +26,13 @@ public class DeleteOptionListener extends MouseAdapter{
             AnswerDataPanel.setOptionIndex(AnswerDataPanel.getOptionIndex() - 1);
         }
         else{
-            AnswerDataPanel.setOptionIndex(AnswerDataPanel.getAnswerList().size() - 1);
+            AnswerDataPanel.setOptionIndex(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().size() - 1);
         }
     }
 
     @Override public void mouseClicked(MouseEvent e){
 
-        if(AnswerDataPanel.getAnswerList().size() > 1){
+        if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().size() > 1){
             AnswerDataPanel.getCardLayout().previous(AnswerDataPanel.getContainer());
             AnswerDataPanel.deleteOptionInContainer(AnswerDataPanel.getOptionIndex());
             changeIndex();

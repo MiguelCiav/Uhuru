@@ -5,9 +5,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.*;
+
+import main.controllers.CreateTestController;
 import main.views.components.genericComponents.BlueButton;
 import main.views.components.genericComponents.JPanelRound;
 import main.views.listeners.AddOptionListener;
+import main.views.listeners.CreateTestListener;
 import main.views.listeners.DeleteOptionListener;
 import main.views.listeners.NextOptionListener;
 import main.views.listeners.PreviousOptionListener;
@@ -23,8 +26,6 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
 
     private static Container containerPane = new Container();
     private static CardLayout card = new CardLayout();
-
-    private static ArrayList<AnswerStatement> answerList = new ArrayList<AnswerStatement>();
     private static int optionIndex = 0;
     
     private AnswerDataPanel(){
@@ -77,6 +78,7 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
         isCorrect.setBackground(Color.WHITE);
         isCorrect.setHorizontalTextPosition(SwingConstants.LEFT);
         isCorrect.setBorder(null);
+        isCorrect.setFocusPainted( false );
         constraints.insets = new Insets(10, 100, 10, 0);
         constraints.gridx = 4;
         constraints.gridy = 0;
@@ -98,7 +100,11 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
     }
 
     public static void addOptionToList(AnswerStatement option, int index){
-        answerList.add(index, option);
+        QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).addOption(option, index);
+    }
+
+    public static void addOptionToContainerFromList(AnswerStatement option){
+        containerPane.add(option);
     }
 
     public static void deleteOptionInContainer(int index){
@@ -107,7 +113,7 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
     }
 
     public static void deleteOptionInList(int index){
-        answerList.remove(index);
+        QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().remove(index);
     }
 
     public static int getOptionIndex(){
@@ -188,13 +194,15 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
 
     public void addCreateTestButton(){
 
-        BlueButton insertImageButton = new BlueButton("Crear Examen", 232, 1);
+        BlueButton createTestButton = new BlueButton("Crear Examen", 232, 1);
 
         constraints.gridx = 4;
         constraints.insets = new Insets(0, 10, 20, 20);
         constraints.fill = GridBagConstraints.BOTH;
 
-        add(insertImageButton, constraints);
+        createTestButton.addActionListener(CreateTestListener.getInstance());
+
+        add(createTestButton, constraints);
 
     }
 
@@ -202,12 +210,9 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
         return isCorrect;
     }
 
-    public static ArrayList<AnswerStatement> getAnswerList(){
-        return answerList;
-    }
-
     @Override public void actionPerformed(ActionEvent e){
         JCheckBox box = (JCheckBox) e.getSource();
+
         if(box.isSelected()){
             isCorrect.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
         }

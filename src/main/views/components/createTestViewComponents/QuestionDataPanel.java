@@ -19,7 +19,7 @@ import utils.ViewsStyles;
 public class QuestionDataPanel extends JPanelRound implements ActionListener{
 
     private static QuestionDataPanel instance;
-    private static JCheckBox isCode = new JCheckBox("¿Contiene código?");
+    private static JCheckBox isCode = new JCheckBox("¿Contiene código?", new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
     private static JLabel statement = new JLabel("Enunciado #1");
     private GridBagConstraints constraints = new GridBagConstraints();
 
@@ -78,6 +78,7 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
         isCode.setBackground(Color.WHITE);
         isCode.setHorizontalTextPosition(SwingConstants.LEFT);
         isCode.setBorder(null);
+        isCode.setFocusPainted( false );
         constraints.insets = new Insets(10, 100, 10, 0);
         constraints.gridx = 4;
         constraints.gridy = 0;
@@ -210,9 +211,11 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
     @Override public void actionPerformed(ActionEvent e){
         JCheckBox box = (JCheckBox) e.getSource();
         if(box.isSelected()){
+            isCode.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
             questionList.get(questionIndex).code.getTextArea().setEditable(true);
         }
         else{
+            isCode.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
             questionList.get(questionIndex).code.getTextArea().setEditable(false);
         }
     }

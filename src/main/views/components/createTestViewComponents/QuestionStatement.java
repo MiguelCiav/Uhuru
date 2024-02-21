@@ -16,7 +16,7 @@ public class QuestionStatement extends JPanel{
     GridBagConstraints constraints = new GridBagConstraints();
     LargeTextPanels statement = new LargeTextPanels("Ingrese el enunciado de la pregunta", ViewsStyles.ULTRA_LIGHT_BLUE);
     public LargeTextPanels code = new LargeTextPanels("Ingrese el codigo", ViewsStyles.LIGHT_BLACK);
-    private static ArrayList<AnswerStatement> optionsList = new ArrayList<AnswerStatement>();
+    private ArrayList<AnswerStatement> optionsList = new ArrayList<AnswerStatement>();
 
     public QuestionStatement(){
         setLayout(new GridBagLayout());
@@ -58,5 +58,9 @@ public class QuestionStatement extends JPanel{
 
     public ArrayList<AnswerStatement> getOptionList(){
         return optionsList;
+    }
+
+    public void addOption(AnswerStatement option, int index){
+        optionsList.add(index, option);
     }
 }
