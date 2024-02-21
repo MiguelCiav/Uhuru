@@ -29,9 +29,27 @@ public class Question {
 
         answerList.add(answer);
 
-        System.out.println("Respuesta " + answer.getAnswerID() + " añadida a " + questionID);
-
     };
+
+    public String[] getAnswerDescriptions(){
+        String[] answers = new String[answerList.size()];
+
+        for(int i = 0; i < answers.length; i++){
+            answers[i] = answerList.get(i).getAnswerText();
+        }
+
+        return answers;
+    }
+
+    public String[] getAnswerIDs(){
+        String[] answers = new String[answerList.size()];
+
+        for(int i = 0; i < answers.length; i++){
+            answers[i] = answerList.get(i).getAnswerID();
+        }
+
+        return answers;
+    }
 
     public void answerQuestion(Answer answer){};
 
@@ -56,9 +74,11 @@ public class Question {
     }
 
     public Answer getAnswer(String answerID){
-        Answer foundAnswer = null;
+        Answer foundAnswer;
 
         for(int i = 0; i < answerList.size(); i++){
+
+            ;
             if (answerID.equals(answerList.get(i).getAnswerID())) {
                 foundAnswer = answerList.get(i);
                 return foundAnswer;

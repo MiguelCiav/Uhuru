@@ -1,19 +1,13 @@
 package main.controllers;
 
 import main.models.Course;
+import main.models.Question;
 import main.models.Test;
 
 public class AnswerTestController {
     
     private static AnswerTestController answerTestController;
     private Course[] coursesList;
-    private Test[] testList;
-
-    private AnswerTestController(){
-
-        coursesList = Course.getCourseList();
-
-    }
 
     public static AnswerTestController getInstance(){
 
@@ -23,6 +17,38 @@ public class AnswerTestController {
 
         return answerTestController;
 
+    }
+
+    private AnswerTestController(){
+
+        coursesList = Course.getCourseList();
+
+    }
+
+    public String[] getQuestionIDs(String courseID, String testID){
+
+        Course loadedCourse = Course.getInstanceCourse(courseID);
+        Test loadedTest = loadedCourse.getTest(testID);
+
+        return loadedTest.getQuestionIDs();
+
+    }
+
+    public String getTestName(String courseID, String testID){
+        ;
+        return Course.getInstanceCourse(courseID).getTest(testID).getName();
+    }
+
+    public static void setActualTest(String courseID, String testID){
+        Course.setActualTest(courseID, testID);
+    }
+
+    public static String getActualCourseID(){
+        return Course.getActualCourseID();
+    }
+    
+    public static String getActualTestID(){
+        return Course.getActualTestID();
     }
 
     public String[] getCourseNames(){
@@ -78,6 +104,20 @@ public class AnswerTestController {
         return testNames;
     }
 
+    public String getQuestionDescription(String courseID, String testID, String questionID){
+
+        Course loadedCourse = Course.getInstanceCourse(courseID);
+        Test loadedTest = loadedCourse.getTest(testID);
+        Question loadedQuestion = loadedTest.getQuestion(questionID);
+
+        if(loadedQuestion != null){
+            return loadedQuestion.getDescription();
+        }
+
+        return "NULL QUESTION";
+
+    }
+
     public String[] getTestID(String courseID){
 
         Course loadedCourse = Course.getInstanceCourse(courseID);
@@ -95,6 +135,18 @@ public class AnswerTestController {
         }
 
         return testIDs;
+    }
+
+    public String[] getAnswersDescriptions(String courseID, String testID, String questionID){
+        return Course.getInstanceCourse(courseID).getTest(testID).getQuestion(questionID).getAnswerDescriptions();
+    }
+
+    public String[] getAnswersIDs(String courseID, String testID, String questionID){
+        return Course.getInstanceCourse(courseID).getTest(testID).getQuestion(questionID).getAnswerIDs();
+    }
+
+    public String getAnswerDescription(String courseID, String testID, String questionID, String answerID){
+        return Course.getInstanceCourse(courseID).getTest(testID).getQuestion(questionID).getAnswer(answerID).getAnswerText();
     }
 
     public void answerQuestion(String questionID){

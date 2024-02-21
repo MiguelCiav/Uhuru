@@ -36,7 +36,7 @@ public class JSONReader {
 
     public void readCourses(){
 
-        System.out.println("INICIANDO CARGA DE DATOS DE CURSOS: \n");
+        ;
 
         readFile(PathManager.getInstance().getStringURL("/src/data/Courses.json"), 0);
         
@@ -52,7 +52,7 @@ public class JSONReader {
 
         }
 
-        System.out.println("\nCARGA DE DATOS DE CURSOS FINALIZADA");
+        ;
 
     }
 
@@ -99,7 +99,7 @@ public class JSONReader {
 
                 Question loadedQuestion = new Question(questionDescription, questionJustification,Integer.valueOf(questionType),actualQuestionID,questionTestID);
 
-                System.out.println("Pregunta " + loadedQuestion.getQuestionID() + " Creada");
+                ;
                 
                 Course.loadQuestion(actualCourseID, questionTestID, loadedQuestion);
                 readAnswers();
@@ -125,8 +125,6 @@ public class JSONReader {
             if(answerQuestionID.equals(actualQuestionID)){
 
                 Answer loadedAnswer = new Answer(answerText, Integer.valueOf(answerType), isCorrect, answerID, answerQuestionID);
-
-                System.out.println("Respuesta " + loadedAnswer.getAnswerID() + " Creada");
 
                 Course.loadAnswer(actualCourseID, actualTestID, actualQuestionID, loadedAnswer);
                 

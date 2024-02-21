@@ -78,7 +78,7 @@ public class CertificateCourseBox extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Si escucha manín");
+        ;
         GenerateCertificateController.generatePDF(courseTitle.getText());
     }
 }

@@ -22,11 +22,22 @@ public class Test {
 
     }
 
+    public String[] getQuestionIDs(){
+
+        String[] questionIDs = new String[questionList.size()];
+
+        for(int i = 0; i < questionList.size(); i++){
+            questionIDs[i] = questionList.get(i).getQuestionID();
+        }
+
+        return questionIDs;
+    }
+
     public void addQuestion(Question question){
 
         questionList.add(question);
 
-        System.out.println("Pregunta " + question.getQuestionID() + " añadida en " + testID);
+        ;
 
     };
 

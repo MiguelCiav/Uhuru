@@ -1,6 +1,7 @@
 package main.views.components.testViewComponents;
 import javax.swing.*;
 
+import main.controllers.AnswerTestController;
 import main.views.components.genericComponents.JPanelRound;
 import utils.PathManager;
 import utils.ViewsStyles;
@@ -8,12 +9,19 @@ import utils.ViewsStyles;
 import java.awt.*;
 
 public class OptionBox extends JPanelRound{
+
+    String questionID;
+    String answerID;
     JTextArea optionText = new JTextArea ();
     JRadioButton optionButton = new JRadioButton();
     JPanelRound optionTextPanel = new JPanelRound();
     GridBagConstraints constraints = new GridBagConstraints();
 
-    public OptionBox (){
+    public OptionBox (String questionID, String answerID){
+
+        this.questionID = questionID;
+        this.answerID = answerID;
+
         setBackground(ViewsStyles.LIGHT_GRAY);
         setLayout(new GridBagLayout());
         setBorder(null);
@@ -24,6 +32,7 @@ public class OptionBox extends JPanelRound{
     }
 
     private void addOptionButton(){
+
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.weightx = 0;
@@ -42,9 +51,16 @@ public class OptionBox extends JPanelRound{
         optionButton.addMouseListener(new UpdateAnswerAmount());
 
         add(optionButton, constraints);
+
     }
 
     private void addOptionText(){
+
+        String actualCourseID = AnswerTestController.getActualCourseID();
+        String actualTestID = AnswerTestController.getActualTestID();
+        ;
+        String description = AnswerTestController.getInstance().getAnswerDescription(actualCourseID,actualTestID,questionID,answerID);
+
         optionTextPanel.setLayout(new GridBagLayout());
         optionTextPanel.setRoundBackgroundColor(Color.WHITE);
         constraints.insets= new Insets(20,10,20,10);
@@ -56,13 +72,14 @@ public class OptionBox extends JPanelRound{
         constraints.fill = GridBagConstraints.HORIZONTAL;
         optionText.setFont(new Font("Futura", Font.ITALIC, 16));
         optionText.setForeground(Color.BLACK);
-        optionText.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at elit eget dui gravida suscipit. Mauris et ipsum id felis venenatis consectetur. Etiam ac nibh sit amet quam aliquam sodales vel sed quam.");
+        optionText.setText(description);
         optionText.setEditable (false); 
         optionText.setLineWrap(true);
         optionText.setWrapStyleWord(true);
         constraints.insets= new Insets(10,10,10,10);
 
         add(optionTextPanel, constraints);
+
     }
 
     public void addToGroup (ButtonGroup group){

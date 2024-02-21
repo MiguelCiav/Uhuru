@@ -3,21 +3,21 @@
         "testID": "00",
         "questionID": "000",
         "justification": "Justificación de la pregunta 000",
-        "description" : "Ejemplo de descripcion",
+        "description" : "¿Cuáles son los tipos de datos primitivos en Java?",
         "questionType": "0"
     },
     {   
         "testID": "00",
         "questionID": "001",
         "justification": "Justificación de la pregunta 001",
-        "description" : "Ejemplo de descripcion",
+        "description" : "¿Cuál es la diferencia entre un dato de tipo objeto y primitivo?",
         "questionType": "1"
     },
     {
         "testID": "00",
         "questionID": "002",
         "justification": "Justificación de la pregunta 002",
-        "description" : "Ejemplo de descripcion",
+        "description" : "¿Qué significa Instanciar una clase?",
         "questionType": "0"
     },
     {

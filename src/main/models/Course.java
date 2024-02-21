@@ -10,12 +10,31 @@ public class Course {
     private ArrayList<Test> registerTest = new ArrayList<Test>();
     private static Course[] courseList = new Course[MAX_COURSE];
     private static int courseCount = 0;
+    private static String actualCourseID;
+    private static String actualTestID;
 
     private Course(String courseName, String ID){      
 
         this.courseName = courseName;
         this.ID=ID;
+        actualCourseID = "NULL";
+        actualTestID = "NULL";
 
+    }
+
+    public static void setActualTest(String courseID, String testID){
+
+        actualCourseID = courseID;
+        actualTestID = testID;
+
+    }
+
+    public static String getActualCourseID(){
+        return actualCourseID;
+    }
+
+    public static String getActualTestID(){
+        return actualTestID;
     }
 
     public Test[] getTestArray(){
@@ -31,7 +50,7 @@ public class Course {
     }
 
     public static void loadQuestion(String courseID, String testID, Question question){
-        System.out.println("load en " + question.getQuestionID());
+        ;
         getInstanceCourse(courseID).getTest(testID).addQuestion(question);
     }
 
@@ -66,7 +85,7 @@ public class Course {
     public void addTest(Test test){
         registerTest.add(test);
 
-        System.out.println("Examen " + test.getTestID() + " añadido a " + ID);
+        ;
     }
 
     public Test getTest(String ID){

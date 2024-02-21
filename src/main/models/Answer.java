@@ -34,7 +34,7 @@ public class Answer {
     public static void setAsSelected(String courseID, String testID, String questionID, String answerID, boolean selected){
         Course.getInstanceCourse(courseID).getTest(testID).getQuestion(questionID).getAnswer(answerID).setAsSelected(selected);
         
-        System.out.println("Respuesta " + answerID + " marcada como " + selected);
+        ;
     }
 
     private void setAsSelected(boolean selected){
