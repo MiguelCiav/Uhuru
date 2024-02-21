@@ -25,7 +25,8 @@ public class CreateTestListener implements ActionListener{
 
     @Override public void actionPerformed(ActionEvent e){
 
-        CreateTestController.getInstance();
+
+        CreateTestController.getInstance().createTest();
         AddQuestionsFrame.getInstance().disposeFrame();
         UserListView.getInstance();
     }

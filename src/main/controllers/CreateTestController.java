@@ -1,5 +1,6 @@
 package main.controllers;
 
+import main.views.components.createTestViewComponents.TestDataPanel;
 import utils.JSONWriter;
 
 public class CreateTestController {
@@ -58,4 +59,16 @@ public class CreateTestController {
         return false;
     }
 
+    public static void createTest(){
+        String testName = TestDataPanel.getInstance().getName();
+        String type = TestDataPanel.getInstance().getDescription();
+        int duration = TestDataPanel.getInstance().getMinutes();
+        String courseID = "1";
+        String testID = "1";
+        JSONWriter.addTest(type, duration, courseID, testID, testName);
+    }
+
+    private static void addQuestions(String testID, String questionID, String description, String questionType){
+        //JSONWriter.addQuestion(testID, questionID, description, description, questionType);;
+    }
 }

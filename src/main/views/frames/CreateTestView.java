@@ -13,7 +13,6 @@ public class CreateTestView extends JFrame{
     private static CreateTestView instance;
 
     private PrincipalPanel mainPanel = new PrincipalPanel();
-    private TestDataPanel testDataPanel = new TestDataPanel();
 
 
     public CreateTestView(){
@@ -23,8 +22,8 @@ public class CreateTestView extends JFrame{
         setMinimumSize(new Dimension(800,600));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        testDataPanel.setMaximumSize(new Dimension(500,500));
-        mainPanel.setContentPanelWithoutExpansion(testDataPanel);
+        TestDataPanel.getInstance().setMaximumSize(new Dimension(500,500));
+        mainPanel.setContentPanelWithoutExpansion(TestDataPanel.getInstance());
         add(mainPanel);
 
         setVisible(true);

@@ -16,6 +16,7 @@ import utils.ViewsStyles;
 
 public class TestDataPanel extends JPanelRound implements ActionListener{
     
+    private static TestDataPanel instance;
     private JLabel testDataText;
     private LargeTextPanels testName = new LargeTextPanels("Ingrese el nombre del examen.", ViewsStyles.PALID_BLUE);
     private LargeTextPanels testDescription = new LargeTextPanels("Ingrese la descripcion del examen.", ViewsStyles.PALID_BLUE);
@@ -26,7 +27,7 @@ public class TestDataPanel extends JPanelRound implements ActionListener{
     private GridBagConstraints constraints = new GridBagConstraints();
     private BlueButton continueButton = new BlueButton("Continuar", 150, 1);
 
-    public TestDataPanel(){
+    private TestDataPanel(){
 
         setLayout(new GridBagLayout());
         setRoundBackgroundColor(Color.WHITE);
@@ -37,6 +38,14 @@ public class TestDataPanel extends JPanelRound implements ActionListener{
         addMinutesPanel();
         addMinutesTextPanel();
         addContinueButton();
+    }
+
+    public static TestDataPanel getInstance(){
+        if(instance == null){
+            instance = new TestDataPanel();
+        }
+
+        return instance;
     }
 
     public void addTestDataText(){
@@ -129,6 +138,10 @@ public class TestDataPanel extends JPanelRound implements ActionListener{
         if(CreateTestController.validateData(testNameValidation, testDescriptionValidation, minutesValidation)){
             CreateTestView.getInstance().disposeFrame();
             AddQuestionsFrame.getInstance();
+
+            for(int i = 0; i < QuestionDataPanel.getInstance().getQuestionList().size(); i++){
+                QuestionDataPanel.getInstance().getQuestionList().remove(i);
+            }
         }
         else{
             if(CreateTestController.validateTestName(testNameValidation)){
@@ -155,5 +168,17 @@ public class TestDataPanel extends JPanelRound implements ActionListener{
                 minutes.setForeground(Color.BLACK);
             }
         }
+    }
+
+    public String getName(){
+        return testName.getTextArea().getText();
+    }
+
+    public String getDescription(){
+        return testDescription.getTextArea().getText();
+    }
+
+    public int getMinutes(){
+        return Integer.parseInt(minutes.getText());
     }
 }
