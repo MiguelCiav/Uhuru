@@ -1,5 +1,6 @@
 package main.controllers;
 
+import main.views.components.createTestViewComponents.QuestionDataPanel;
 import main.views.components.createTestViewComponents.TestDataPanel;
 import utils.JSONWriter;
 
@@ -57,6 +58,10 @@ public class CreateTestController {
         }
 
         return false;
+    }
+
+    public void addDomain(){
+        QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionList().size() - 1).setDomain(QuestionDataPanel.getDomain());
     }
 
     public static void createTest(){

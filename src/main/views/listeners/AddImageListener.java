@@ -33,16 +33,18 @@ public class AddImageListener implements ActionListener{
     }
 
     @Override public void actionPerformed(ActionEvent e){
-        JFileChooser jf = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("PNG & JPG & JPEG", "png" ,"jpg" , "jpeg");
-        jf.setFileFilter(filter);
-        
-        int response = jf.showOpenDialog(jf);
-
-        if(response == JFileChooser.APPROVE_OPTION){
-            filePath = jf.getSelectedFile().getPath();
-            QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).setImagePath(filePath);
-            System.out.println(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getImagePath());
+        if(!QuestionDataPanel.getBox().isSelected()){
+            JFileChooser jf = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("PNG & JPG & JPEG", "png" ,"jpg" , "jpeg");
+            jf.setFileFilter(filter);
+            
+            int response = jf.showOpenDialog(jf);
+    
+            if(response == JFileChooser.APPROVE_OPTION){
+                filePath = jf.getSelectedFile().getPath();
+                QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).setImagePath(filePath);
+                System.out.println(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getImagePath());
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ import javax.swing.*;
 
 import main.views.components.genericComponents.BlueButton;
 import main.views.components.genericComponents.JPanelRound;
+import main.views.components.genericComponents.LargeTextPanels;
 import main.views.listeners.AddImageListener;
 import main.views.listeners.AddQuestionListener;
 import main.views.listeners.DeleteQuestionListener;
@@ -22,6 +23,8 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
     private static QuestionDataPanel instance;
     private static JCheckBox isCode = new JCheckBox("¿Contiene código?", new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
     private static JLabel statement = new JLabel("Enunciado #1");
+    private static LargeTextPanels domain = new LargeTextPanels("Dominio", Color.WHITE);
+
     private GridBagConstraints constraints = new GridBagConstraints();
 
     private static Container containerPane = new Container();
@@ -37,6 +40,7 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
         containerPane.setLayout(card);
 
         addStatementText();
+        addDomainTextField();
         addIsCodeButton();
         addQuestionToContainer(0);
         addContainer();
@@ -63,7 +67,7 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.gridheight = 1;
-        constraints.gridwidth = 4;
+        constraints.gridwidth = 2;
         constraints.fill = GridBagConstraints.HORIZONTAL;
 
         add(statement, constraints);
@@ -73,13 +77,33 @@ public class QuestionDataPanel extends JPanelRound implements ActionListener{
     public static void setStatementText(int questionNum){
         statement.setText("Enunciado #" + questionNum);
     }
-    
+
+    public void addDomainTextField(){
+        constraints.insets = new Insets(10, 20, 10, 20);
+        constraints.gridx = 2;
+        constraints.gridy = 0;
+        constraints.gridheight = 1;
+        constraints.gridwidth = 2;
+        constraints.weightx = 0;
+        constraints.fill = GridBagConstraints.BOTH;
+
+        add(domain, constraints);
+    }
+    public static LargeTextPanels getDomain(){
+        return domain;
+    }
+
+    public static void setDomain(String domain){
+        QuestionDataPanel.domain.getTextArea().setText(domain);
+    }
+
     public void addIsCodeButton(){
         
         isCode.setBackground(Color.WHITE);
         isCode.setHorizontalTextPosition(SwingConstants.LEFT);
         isCode.setBorder(null);
         isCode.setFocusPainted( false );
+        isCode.setSelected(false);
         constraints.insets = new Insets(10, 100, 10, 0);
         constraints.gridx = 4;
         constraints.gridy = 0;

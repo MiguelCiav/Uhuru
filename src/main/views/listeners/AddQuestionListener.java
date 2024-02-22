@@ -49,8 +49,14 @@ public class AddQuestionListener extends MouseAdapter{
         AnswerDataPanel.getContainer().repaint();
     }
 
+    private void addDomain(){
+        QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).setDomain(QuestionDataPanel.getDomain());
+        QuestionDataPanel.setDomain("Dominio");
+    }
+
     @Override public void mouseClicked(MouseEvent e){
 
+        addDomain();
         changeIndex();
         QuestionDataPanel.addQuestionToContainer(QuestionDataPanel.getQuestionIndex());
         QuestionDataPanel.getCardLayout().next(QuestionDataPanel.getContainer());

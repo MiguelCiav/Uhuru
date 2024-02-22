@@ -55,11 +55,21 @@ public class NextQuestionListener extends MouseAdapter{
         AnswerDataPanel.getContainer().repaint();
     }
 
+    private void addDomain(){
+        QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).setDomain(QuestionDataPanel.getDomain());
+    }
+
+    private void setDomain(){
+        QuestionDataPanel.setDomain(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getDomain());
+    }
+
 
     @Override public void mouseClicked(MouseEvent e){
 
+        addDomain();
         QuestionDataPanel.getCardLayout().next(QuestionDataPanel.getContainer());
         changeIndex();
+        setDomain();
         allowCode();
         addOptionsToContainer();
     }

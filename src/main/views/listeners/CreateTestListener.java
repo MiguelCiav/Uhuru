@@ -26,6 +26,7 @@ public class CreateTestListener implements ActionListener{
 
     @Override public void actionPerformed(ActionEvent e){
 
+        CreateTestController.getInstance().addDomain();
         CreateTestController.getInstance().createTest();
         AddQuestionsFrame.getInstance().disposeFrame();
         for(int i = 0; i < QuestionDataPanel.getInstance().getQuestionList().size(); i++){

@@ -54,15 +54,24 @@ public class DeleteQuestionListener extends MouseAdapter{
         AnswerDataPanel.setStatementText(1);
         AnswerDataPanel.getContainer().repaint();
     }
+    private void addDomain(){
+        QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).setDomain(QuestionDataPanel.getDomain());
+    }
+
+    private void setDomain(){
+        QuestionDataPanel.setDomain(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getDomain());
+    }
 
     @Override public void mouseClicked(MouseEvent e){
 
         if(QuestionDataPanel.getQuestionList().size() > 1){
+            addDomain();
             QuestionDataPanel.getCardLayout().previous(QuestionDataPanel.getContainer());
             QuestionDataPanel.deleteQuestionInContainer(QuestionDataPanel.getQuestionIndex());
             changeIndex();
             QuestionDataPanel.setStatementText(QuestionDataPanel.getQuestionIndex() + 1);
             addOptionsToContainer();
+            setDomain();
             allowCode();
         }
     }

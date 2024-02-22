@@ -19,6 +19,7 @@ public class QuestionStatement extends JPanel{
     private LargeTextPanels code = new LargeTextPanels("Ingrese el codigo", ViewsStyles.LIGHT_BLACK);
     private ArrayList<AnswerStatement> optionsList = new ArrayList<AnswerStatement>();
     private String imagePath;
+    private String domain;
 
     public QuestionStatement(){
         setLayout(new GridBagLayout());
@@ -76,5 +77,13 @@ public class QuestionStatement extends JPanel{
 
     public String getImagePath(){
         return imagePath;
+    }
+
+    public void setDomain(LargeTextPanels domain){
+        this.domain = domain.getTextArea().getText();
+    }
+
+    public String getDomain(){
+        return domain;
     }
 }
