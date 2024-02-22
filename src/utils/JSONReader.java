@@ -121,7 +121,11 @@ public class JSONReader {
 
             if(answerQuestionID.equals(actualQuestionID)){
                 
+<<<<<<< HEAD
                 Answer loadedAnswer = new Answer(answerID, answerQuestionID, statement, justification, isCorrect);
+=======
+                Answer loadedAnswer = new Answer(answerText,isCorrect,answerID,answerQuestionID,justification);
+>>>>>>> f21691c063121b1f3a88d44fcd61ce57591e9cb0
 
                 Course.loadAnswer(actualCourseID, actualTestID, actualQuestionID, loadedAnswer);
                 

@@ -2,64 +2,422 @@
     {
         "questionID":"000",
         "answerID": "0000",
-        "answerText": "Este texto es de la respuesta 0000",
-        "justification": "Esta es la justificación de esta pregunta",
-        "isCorrect": true
+        "answerText": "Un editor de texto",
+        "justification": "Java es un lenguaje de programacion",
+        "isCorrect": false
     },
     {
         "questionID":"000",
         "answerID": "0001",
-        "answerText": "Este texto es de la respuesta 0000",
-        "justification": "Esta es la justificación de esta pregunta",
+        "answerText": "Un navegador web",
+        "justification": "Java es un lenguaje de programacion",
         "isCorrect": false
     },
     {
         "questionID":"000",
         "answerID": "0002",
-        "answerText": "Este texto es de la respuesta 0000",
-        "justification": "Esta es la justificación de esta pregunta",
+        "answerText": "Un sistema operativo",
+        "justification": "Java es un lenguaje de programacion",
+        "isCorrect": false
+    },
+    {
+        "questionID":"000",
+        "answerID": "0003",
+        "answerText": "Un lenguaje de programación",
+        "justification": "Es correcto, Java es un lenguaje de progamacion orientado a objetos",
         "isCorrect": true
     },
     {
         "questionID":"001",
         "answerID": "0010",
-        "answerText": "Este texto es de la respuesta 0000",
-        "justification": "Esta es la justificación de esta pregunta",
+        "answerText": "int",
+        "justification": "int es un dato primitivo",
         "isCorrect": false
     },
     {
         "questionID":"001",
         "answerID": "0011",
-        "answerText": "Este texto es de la respuesta 0000",
-        "justification": "Esta es la justificación de esta pregunta",
+        "answerText": "float",
+        "justification": "float es un dato primitivo",
         "isCorrect": false
     },
     {
         "questionID":"001",
         "answerID": "0012",
-        "answerText": "Este texto es de la respuesta 0000",
-        "justification": "Esta es la justificación de esta pregunta",
+        "answerText": "String",
+        "justification": "Un String es un arreglo de caracteres, por lo tanto no es un dato primitivo en Java",
         "isCorrect": true
+    },
+    {
+        "questionID":"001",
+        "answerID": "0013",
+        "answerText": "char",
+        "justification": "char es un dato primitivo",
+        "isCorrect": false
     },
     {
         "questionID":"002",
         "answerID": "0020",
-        "answerText": "Este texto es de la respuesta 0000",
-        "justification": "Esta es la justificación de esta pregunta",
+        "answerText": "Es otra forma de llamar a los metodos",
+        "justification": "Una variable es un espacio en memoria para almacenar datos",
         "isCorrect": false
     },
     {
         "questionID":"002",
         "answerID": "0021",
-        "answerText": "Este texto es de la respuesta 0000",
-        "justification": "Esta es la justificación de esta pregunta",
+        "answerText": "Es un tipo de dato no primitivo",
+        "justification": "Una variable es un espacio en memoria para almacenar datos",
         "isCorrect": false
     },
     {
         "questionID":"002",
         "answerID": "0022",
-        "answerText": "Este texto es de la respuesta 0000",
-        "justification": "Esta es la justificación de esta pregunta",
+        "answerText": "Es una forma de llamar a las clases",
+        "justification": "Una variable es un espacio en memoria para almacenar datos",
+        "isCorrect": false
+    },
+    {
+        "questionID":"002",
+        "answerID": "0023",
+        "answerText": "Es un espacio en memoria para almecenar datos",
+        "justification": "Una variable es un espacio en memoria para almacenar datos",
+        "isCorrect": true
+    },
+    {
+        "questionID":"003",
+        "answerID": "0030",
+        "answerText": "Es un bloque de codigo que realiza una tarea especifica",
+        "justification": "Es un bloque de codigo que realiza una tarea especifica",
+        "isCorrect": true
+    },
+    {
+        "questionID":"003",
+        "answerID": "0031",
+        "answerText": "Un tipo de dato en Java",
+        "justification": "Es un bloque de codigo que realiza una tarea especifica",
+        "isCorrect": false
+    },
+    {
+        "questionID":"003",
+        "answerID": "0032",
+        "answerText": "La instancia de una clase",
+        "justification": "Es un bloque de codigo que realiza una tarea especifica",
+        "isCorrect": false
+    },
+    {
+        "questionID":"003",
+        "answerID": "0033",
+        "answerText": "Es un puntero a un espacio de memoria",
+        "justification": "Es un bloque de codigo que realiza una tarea especifica",
+        "isCorrect": false
+    },
+    {
+        "questionID":"004",
+        "answerID": "0040",
+        "answerText": "No imprime nada",
+        "justification": "Imprime Hello world",
+        "isCorrect": false
+    },
+    {
+        "questionID":"004",
+        "answerID": "0041",
+        "answerText": "Imprime Hello world",
+        "justification": "La funcion System.out.println() muestra por consola el string que se le pasa, en este caso Hello world",
+        "isCorrect": true
+    },
+    {
+        "questionID":"004",
+        "answerID": "0042",
+        "answerText": "Asigna a un String, la cadena \"Hello world\"",
+        "justification": "Imprime por consola Hello world",
+        "isCorrect": false
+    },
+    {
+        "questionID":"004",
+        "answerID": "0043",
+        "answerText": "Imprime hello world",
+        "justification": "Imprime por consola la cadena Hello world y no la cadena hello world",
+        "isCorrect": false
+    },
+    {
+        "questionID":"100",
+        "answerID": "1000",
+        "answerText": "&",
+        "justification": "Para marcar el comienzo de un comentario en Python se utiliza #",
+        "isCorrect": false
+    },
+    {
+        "questionID":"100",
+        "answerID": "1001",
+        "answerText": "@",
+        "justification": "Para marcar el comienzo de un comentario en Python se utiliza #",
+        "isCorrect": false
+    },
+    {
+        "questionID":"100",
+        "answerID": "1002",
+        "answerText": "#",
+        "justification": "Para marcar el comienzo de un comentario en Python se utiliza #",
+        "isCorrect": true
+    },
+    {
+        "questionID":"100",
+        "answerID": "1003",
+        "answerText": "*",
+        "justification": "Para marcar el comienzo de un comentario en Python se utiliza #",
+        "isCorrect": true
+    },
+    {
+        "questionID":"101",
+        "answerID": "1010",
+        "answerText": "Asignandole un valor a un nombre con el operador =",
+        "justification": "Asignandole un valor a un nombre con el operador =",
+        "isCorrect": true
+    },
+    {
+        "questionID":"101",
+        "answerID": "1011",
+        "answerText": "Usando la funcion len()",
+        "justification": "Asignandole un valor a un nombre con el operador =",
+        "isCorrect": false
+    },
+    {
+        "questionID":"101",
+        "answerID": "1012",
+        "answerText": "Usando la funcion print()",
+        "justification": "Asignandole un valor a un nombre con el operador =",
+        "isCorrect": false
+    },
+    {
+        "questionID":"101",
+        "answerID": "1013",
+        "answerText": "Usando la funcion getType()",
+        "justification": "Asignandole un valor a un nombre con el operador =",
+        "isCorrect": false
+    },
+    {
+        "questionID":"102",
+        "answerID": "1020",
+        "answerText": "!",
+        "justification": "Se usa el operador mod %",
+        "isCorrect": false
+    },
+    {
+        "questionID":"102",
+        "answerID": "1021",
+        "answerText": "$",
+        "justification": "Se usa el operador mod %",
+        "isCorrect": false
+    },
+    {
+        "questionID":"102",
+        "answerID": "1022",
+        "answerText": "%",
+        "justification": "Se usa el operador mod %",
+        "isCorrect": true
+    },
+    {
+        "questionID":"102",
+        "answerID": "1023",
+        "answerText": ">>",
+        "justification": "Se usa el operador mod %",
+        "isCorrect": false
+    },
+    {
+        "questionID":"103",
+        "answerID": "1030",
+        "answerText": "Hacer software para renderizar graficos en 3d",
+        "justification": "Ciencia de datos, machine learning, automatizacion de tareas",
+        "isCorrect": false
+    },
+    {
+        "questionID":"103",
+        "answerID": "1031",
+        "answerText": "Ciencia de Datos",
+        "justification": "Ciencia de datos, machine learning, automatizacion de tareas",
+        "isCorrect": true
+    },
+    {
+        "questionID":"103",
+        "answerID": "1032",
+        "answerText": "Machine Learning",
+        "justification": "Ciencia de datos, machine learning, automatizacion de tareas",
+        "isCorrect": true
+    },
+    {
+        "questionID":"103",
+        "answerID": "1033",
+        "answerText": "Automatizar tareas",
+        "justification": "Ciencia de datos, machine learning, automatizacion de tareas",
+        "isCorrect": true
+    },
+    {
+        "questionID":"104",
+        "answerID": "1040",
+        "answerText": "Usando una funcion lambda ->",
+        "justification": "Usando la funcion print()",
+        "isCorrect": false
+    },
+    {
+        "questionID":"104",
+        "answerID": "1041",
+        "answerText": "Usando la funcion start_new_thread()",
+        "justification": "Usando la funcion print()",
+        "isCorrect": false
+    },
+    {
+        "questionID":"104",
+        "answerID": "1042",
+        "answerText": "Usando la funcion print()",
+        "justification": "Usando la funcion print()",
+        "isCorrect": true
+    },
+    {
+        "questionID":"104",
+        "answerID": "1043",
+        "answerText": "Usando la funcion max()",
+        "justification": "Usando la funcion print()",
+        "isCorrect": false
+    },
+    {
+        "questionID":"200",
+        "answerID": "2000",
+        "answerText": "Una variable que almacena una direccion de memoria",
+        "justification": "Un puntero es una variable que almacena la dirección de un bloque de memoria",
+        "isCorrect": true
+    },
+    {
+        "questionID":"200",
+        "answerID": "2001",
+        "answerText": "Una variable que almacena un valor",
+        "justification": "Un puntero es una variable que almacena la direccion de un bloque de memoria",
+        "isCorrect": false
+    },
+    {
+        "questionID":"200",
+        "answerID": "2002",
+        "answerText": "Una variable que almacena una cadena",
+        "justification": "Un puntero es una variable que almacena la direccion de un bloque de memoria",
+        "isCorrect": false
+    },
+    {
+        "questionID":"200",
+        "answerID": "2003",
+        "answerText": "Una variable que almacena una funcion",
+        "justification": "Un puntero es una variable que almacena la direccion de un bloque de memoria",
+        "isCorrect": false
+    },
+    {
+        "questionID":"201",
+        "answerID": "2010",
+        "answerText": "Tipo_Dato_A_Retornar Nombre_funcion",
+        "justification": "Se tiene que poner el tipo de dato seguido del nombre de la funcion",
+        "isCorrect": true
+    },
+    {
+        "questionID":"201",
+        "answerID": "2011",
+        "answerText": "def funcion",
+        "justification": "Se tiene que poner el tipo de dato seguido del nombre de la funcion",
+        "isCorrect": false
+    },
+    {
+        "questionID":"201",
+        "answerID": "2012",
+        "answerText": "func",
+        "justification": "Se tiene que poner el tipo de dato seguido del nombre de la funcion",
+        "isCorrect": false
+    },
+    {
+        "questionID":"201",
+        "answerID": "2013",
+        "answerText": "void Nombre_funcion",
+        "justification": "Se tiene que poner el tipo de dato seguido del nombre de la funcion o void si es una funcion que no retaronara nada",
+        "isCorrect": true
+    },
+    {
+        "questionID":"202",
+        "answerID": "2020",
+        "answerText": " final",
+        "justification": "La palabra reservada que se utiliza es const",
+        "isCorrect": false
+    },
+    {
+        "questionID":"202",
+        "answerID": "2021",
+        "answerText": "const",
+        "justification": "La palabra reservada que se utiliza es const",
+        "isCorrect": true
+    },
+    {
+        "questionID":"202",
+        "answerID": "2022",
+        "answerText": "static",
+        "justification": "La palabra reservada que se utiliza es const",
+        "isCorrect": false
+    },
+    {
+        "questionID":"202",
+        "answerID": "2023",
+        "answerText": "volatile",
+        "justification": "La palabra reservada que se utiliza es const",
+        "isCorrect": false
+    },
+    {
+        "questionID":"203",
+        "answerID": "2030",
+        "answerText": "Herencia",
+        "justification": "La herencia, polimorfismo y encapsulamiento",
+        "isCorrect": false
+    },
+    {
+        "questionID":"203",
+        "answerID": "2031",
+        "answerText": "Polimorfismo",
+        "justification": "La herencia, polimorfismo y encapsulamiento",
+        "isCorrect": false
+    },
+    {
+        "questionID":"203",
+        "answerID": "2032",
+        "answerText": "Encapsulamiento",
+        "justification": "La herencia, polimorfismo y encapsulamiento",
+        "isCorrect": false
+    },
+    {
+        "questionID":"203",
+        "answerID": "2033",
+        "answerText": "Todas las anteriores",
+        "justification": "La herencia, polimorfismo y encapsulamiento",
+        "isCorrect": true
+    },
+    {
+        "questionID":"204",
+        "answerID": "2040",
+        "answerText": "No imprime nada",
+        "justification": "La palabra reservada cout muestra por consola lo que aparece luego del <<, en este caso Hello world",
+        "isCorrect": false
+    },
+    {
+        "questionID":"204",
+        "answerID": "2041",
+        "answerText": "Imprime Hello world",
+        "justification": "La palabra reservada cout muestra por consola lo que aparece luego del <<, en este caso Hello world",
+        "isCorrect": true
+    },
+    {
+        "questionID":"204",
+        "answerID": "2042",
+        "answerText": "Asigna a un String, la cadena \"Hello world\"",
+        "justification": "Imprime por consola Hello world",
+        "isCorrect": false
+    },
+    {
+        "questionID":"204",
+        "answerID": "2043",
+        "answerText": "Imprime hello world",
+        "justification": "Imprime por consola la cadena Hello world y no la cadena hello world",
         "isCorrect": false
     }
+    
 ]
