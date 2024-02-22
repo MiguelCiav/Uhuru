@@ -31,7 +31,7 @@ public class ModifyUserPopUp extends UserPopUps {
 
 	@Override
 	public void addTitle() {
-
+        title = new JLabel();
 		title.setText("Modificación del usuario");
 
         constraints.insets = new Insets(0, 0, 0, 20);
@@ -77,16 +77,13 @@ public class ModifyUserPopUp extends UserPopUps {
 
         fieldsPanel.add(password, constraints);
 
-        constraints.gridy = 2;
-        fieldsPanel.add(name, constraints);
-
         constraints.anchor = GridBagConstraints.CENTER;
         
     }
 
 	@Override
 	public void addFieldsPanel() {  
-
+        editPanel();
         constraints.insets = new Insets(0, 0, 0, 20);
         constraints.gridx = 1;
         constraints.gridy = 1;
