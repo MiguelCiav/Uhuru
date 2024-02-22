@@ -2,42 +2,36 @@
     {   
         "testID": "00",
         "questionID": "000",
-        "justification": "Justificación de la pregunta 000",
-        "description" : "¿Cuáles son los tipos de datos primitivos en Java?",
-        "questionType": "0"
+        "description" : "Ejemplo de descripcion",
+        "questionType": "1"
     },
     {   
         "testID": "00",
         "questionID": "001",
-        "justification": "Justificación de la pregunta 001",
-        "description" : "¿Cuál es la diferencia entre un dato de tipo objeto y primitivo?",
+        "description" : "Ejemplo de descripcion",
         "questionType": "1"
     },
     {
         "testID": "00",
         "questionID": "002",
-        "justification": "Justificación de la pregunta 002",
-        "description" : "¿Qué significa Instanciar una clase?",
-        "questionType": "0"
+        "description" : "Ejemplo de descripcion",
+        "questionType": "2"
     },
     {
         "testID": "01",
         "questionID": "010",
-        "justification": "Justificación de la pregunta 010",
         "description" : "Ejemplo de descripcion",
         "questionType": "1"
     },
     {
         "testID": "01",
         "questionID": "011",
-        "justification": "Justificación de la pregunta 011",
         "description" : "Ejemplo de descripcion",
-        "questionType": "0"
+        "questionType": "2"
     },
     {
         "testID": "01",
         "questionID": "012",
-        "justification": "Justificación de la pregunta 012",
         "description" : "Ejemplo de descripcion",
         "questionType": "1"
     }

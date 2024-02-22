@@ -3,63 +3,63 @@
         "questionID":"000",
         "answerID": "0000",
         "answerText": "Este texto es de la respuesta 0000",
-        "answerType": "0",
+        "justification": "Esta es la justificación de esta pregunta",
         "isCorrect": true
     },
     {
         "questionID":"000",
         "answerID": "0001",
-        "answerText": "Este texto es de la respuesta 0001",
-        "answerType": "0",
+        "answerText": "Este texto es de la respuesta 0000",
+        "justification": "Esta es la justificación de esta pregunta",
         "isCorrect": false
     },
     {
         "questionID":"000",
         "answerID": "0002",
-        "answerText": "Este texto es de la respuesta 0002",
-        "answerType": "0",
-        "isCorrect": false
-    },
-    {
-        "questionID":"001",
-        "answerID": "0010",
-        "answerText": "Este texto es de la respuesta 0010",
-        "answerType": "1",
+        "answerText": "Este texto es de la respuesta 0000",
+        "justification": "Esta es la justificación de esta pregunta",
         "isCorrect": true
     },
     {
         "questionID":"001",
+        "answerID": "0010",
+        "answerText": "Este texto es de la respuesta 0000",
+        "justification": "Esta es la justificación de esta pregunta",
+        "isCorrect": false
+    },
+    {
+        "questionID":"001",
         "answerID": "0011",
-        "answerText": "Este texto es de la respuesta 0011",
-        "answerType": "1",
+        "answerText": "Este texto es de la respuesta 0000",
+        "justification": "Esta es la justificación de esta pregunta",
         "isCorrect": false
     },
     {
         "questionID":"001",
         "answerID": "0012",
-        "answerText": "Este texto es de la respuesta 0012",
-        "answerType": "1",
-        "isCorrect": false
-    },
-    {
-        "questionID":"002",
-        "answerID": "0020",
-        "answerText": "Este texto es de la respuesta 0020",
-        "answerType": "1",
+        "answerText": "Este texto es de la respuesta 0000",
+        "justification": "Esta es la justificación de esta pregunta",
         "isCorrect": true
     },
     {
         "questionID":"002",
+        "answerID": "0020",
+        "answerText": "Este texto es de la respuesta 0000",
+        "justification": "Esta es la justificación de esta pregunta",
+        "isCorrect": false
+    },
+    {
+        "questionID":"002",
         "answerID": "0021",
-        "answerText": "Este texto es de la respuesta 0021",
-        "answerType": "1",
+        "answerText": "Este texto es de la respuesta 0000",
+        "justification": "Esta es la justificación de esta pregunta",
         "isCorrect": false
     },
     {
         "questionID":"002",
         "answerID": "0022",
-        "answerText": "Este texto es de la respuesta 0022",
-        "answerType": "0",
+        "answerText": "Este texto es de la respuesta 0000",
+        "justification": "Esta es la justificación de esta pregunta",
         "isCorrect": false
     }
 ]

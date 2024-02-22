@@ -9,11 +9,10 @@ public class Answer {
     private int answerNumber;
     private String justification;
 
-    public Answer(String answerText, int answerType, boolean isCorrect, String answerID, String questionID, String justification){
+    public Answer(String answerText, boolean isCorrect, String answerID, String questionID, String justification){
         
         this.answerText = answerText;
         this.isCorrect = isCorrect;
-        this.answerNumber = answerNumber;
         this.answerID = answerID;
         isSelected = false;
         if(isCorrect){
