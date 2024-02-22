@@ -65,7 +65,6 @@ public class Course {
     }
 
     public static void loadQuestion(String courseID, String testID, Question question){
-        ;
         getInstanceCourse(courseID).getTest(testID).addQuestion(question);
     }
 

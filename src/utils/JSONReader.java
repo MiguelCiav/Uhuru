@@ -46,6 +46,8 @@ public class JSONReader {
 
             Course.setInstanceCourse(courseName, actualCourseID);
 
+            System.out.println("CARGANDO CURSO " + actualCourseID);
+
             readTest();
 
         }
@@ -71,6 +73,8 @@ public class JSONReader {
 
                 Test loadedTest = new Test(actualTestID,description,duration,testName);
                 Course.loadTest(actualCourseID, loadedTest);
+
+                System.out.println("CARGANDO TEST " + actualTestID + " en " + actualCourseID);
 
                 readQuestions();
 
@@ -99,6 +103,7 @@ public class JSONReader {
                 Question loadedQuestion = new Question(questionTestID, actualQuestionID, questionStatement, questionCode, imageURL, Integer.valueOf(questionType), domain);
                 
                 Course.loadQuestion(actualCourseID, questionTestID, loadedQuestion);
+                System.out.println("CARGANDO QUESTION " + actualQuestionID + " en " + questionTestID);
                 readAnswers();
 
             }
@@ -113,21 +118,19 @@ public class JSONReader {
         for(Object object : list[3]){
 
             JSONObject answer = (JSONObject) object;
-            String answerID = (String) answer.get("answerID");
             String answerQuestionID = (String) answer.get("questionID");
+            String answerID = (String) answer.get("answerID");
             String statement = (String) answer.get("statement");
             String justification = (String) answer.get("justification");
             boolean isCorrect = (Boolean) answer.get("isCorrect");
 
             if(answerQuestionID.equals(actualQuestionID)){
                 
-<<<<<<< HEAD
                 Answer loadedAnswer = new Answer(answerID, answerQuestionID, statement, justification, isCorrect);
-=======
-                Answer loadedAnswer = new Answer(answerText,isCorrect,answerID,answerQuestionID,justification);
->>>>>>> f21691c063121b1f3a88d44fcd61ce57591e9cb0
 
                 Course.loadAnswer(actualCourseID, actualTestID, actualQuestionID, loadedAnswer);
+
+                System.out.println("CARGANDO ANSWER " + answerID + " en " + answerQuestionID);
                 
             }
         }

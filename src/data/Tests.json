@@ -2,126 +2,126 @@
   {
     "duration": 60,
     "testID": "00",
-    "type": "facil",
+    "description": "facil",
     "courseID": "0",
     "testName": "Java Junior - Conceptos Basicos"
   },
   {
     "duration": 60,
     "testID": "01",
-    "type": "facil",
+    "description": "facil",
     "courseID": "0",
     "testName": "Java Junior - Condicionales"
   },
   {
     "duration": 70,
     "testID": "02",
-    "type": "medio",
+    "description": "medio",
     "courseID": "0",
     "testName": "Java Medio - Sentencia Switch"
   },
   {
     "duration": 80,
     "testID": "03",
-    "type": "medio",
+    "description": "medio",
     "courseID": "0",
     "testName": "Java Medio - Bucles"
   },
   {
     "duration": 90,
     "testID": "04",
-    "type": "dificil",
+    "description": "dificil",
     "courseID": "0",
     "testName": "Java Avanzado - POO"
   },
   {
     "duration": 100,
     "testID": "05",
-    "type": "dificil",
+    "description": "dificil",
     "courseID": "0",
     "testName": "Java Avanzado - Java Swing"
   },
   {
     "duration": 60,
     "testID": "10",
-    "type": "facil",
+    "description": "facil",
     "courseID": "1",
     "testName": "Python Junior - Conceptos Basicos"
   },
   {
     "duration": 60,
     "testID": "11",
-    "type": "facil",
+    "description": "facil",
     "courseID": "1",
     "testName": "Python Junior - Condicionales"
   },
   {
     "duration": 70,
     "testID": "12",
-    "type": "medio",
+    "description": "medio",
     "courseID": "1",
     "testName": "Python Medio - Sentencia Switch"
   },
   {
     "duration": 80,
     "testID": "13",
-    "type": "medio",
+    "description": "medio",
     "courseID": "1",
     "testName": "Python Medio - Bucles"
   },
   {
     "duration": 90,
     "testID": "14",
-    "type": "dificil",
+    "description": "dificil",
     "courseID": "1",
     "testName": "Python Avanzado - Data Science"
   },
   {
     "duration": 100,
     "testID": "15",
-    "type": "dificil",
+    "description": "dificil",
     "courseID": "1",
     "testName": "Python Avanzado - Machine Learning"
   },
   {
     "duration": 60,
     "testID": "20",
-    "type": "facil",
+    "description": "facil",
     "courseID": "2",
     "testName": "C++ Junior - Conceptos Basicos"
   },
   {
     "duration": 60,
     "testID": "21",
-    "type": "facil",
+    "description": "facil",
     "courseID": "2",
     "testName": "C++ Junior - Condicionales"
   },
   {
     "duration": 70,
     "testID": "22",
-    "type": "medio",
+    "description": "medio",
     "courseID": "2",
     "testName": "C++ Medio - Bucles"
   },
   {
     "duration": 80,
     "testID": "23",
-    "type": "medio",
+    "description": "medio",
     "courseID": "2",
     "testName": "C++ Medio - Funciones y Arreglos"
   },
   {
     "duration": 90,
     "testID": "24",
-    "type": "dificil",
+    "description": "dificil",
     "courseID": "2",
     "testName": "C++ Avanzado - POO"
   },
   {
     "duration": 100,
     "testID": "25",
-    "type": "dificil",
+    "description": "dificil",
     "courseID": "2",
     "testName": "C++ Avanzado - Estructuras Dinamicas"
   }

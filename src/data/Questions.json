@@ -2,91 +2,136 @@
     {
         "testID": "00",
         "questionID": "000",
-        "description" : "¿Que es Java?",
+        "statement" : "¿Que es Java?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {
         "testID": "00",
         "questionID": "001",
-        "description" : "¿Cual de los siguientes NO es un tipo de dato primitivo en Java?",
+        "statement" : "¿Cual de los siguientes NO es un tipo de dato primitivo en Java?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {
         "testID": "00",
         "questionID": "002",
-        "description" : "¿Que es una variable?",
+        "statement" : "¿Que es una variable?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {
         "testID": "00",
         "questionID": "003",
-        "description" : "¿Que es un metodo?",
+        "statement" : "¿Que es un metodo?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {
         "testID": "00",
         "questionID": "004",
-        "description" : "Que hace el siguiente codigo: \n System.out.println(\"hello world\")",
+        "statement" : "¿Qué hace el siguiente codigo?",
+        "code": "System.out.println(\"hello world\")",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "2"
     },
     {   
         "testID": "10",
         "questionID": "100",
-        "description" : "¿Cuál de las siguientes es una forma de escribir comentarios en Python?",
+        "statement" : "¿Cuál de las siguientes es una forma de escribir comentarios en Python?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {   
         "testID": "10",
         "questionID": "101",
-        "description" : "¿Cómo se crea una variable en Python?",
+        "statement" : "¿Cómo se crea una variable en Python?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {
         "testID": "10",
         "questionID": "102",
-        "description" : "¿Que operador se debe utilizar si se quiere saber el resto de una division?",
+        "statement" : "¿Que operador se debe utilizar si se quiere saber el resto de una division?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {
         "testID": "10",
         "questionID": "103",
-        "description" : "¿Para qué es usado Python mayormente?",
+        "statement" : "¿Para qué es usado Python mayormente?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {
         "testID": "10",
         "questionID": "104",
-        "description" : "Como se imprime un mensaje por la consola en Python?",
+        "statement" : "Como se imprime un mensaje por la consola en Python?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {   
         "testID": "20",
         "questionID": "200",
-        "description" : "¿Que es un puntero?",
+        "statement" : "¿Que es un puntero?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {   
         "testID": "20",
         "questionID": "201",
-        "description" : "¿Qué palabra clave se usa para definir una función en C++?",
+        "statement" : "¿Qué palabra clave se usa para definir una función en C++?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {
         "testID": "20",
         "questionID": "202",
-        "description" : "¿Qué palabra clave se usa para declarar una variable que no puede ser modificada?",
+        "statement" : "¿Qué palabra clave se usa para declarar una variable que no puede ser modificada?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {
         "testID": "20",
         "questionID": "203",
-        "description" : "¿Qué características de C++ permiten la programación orientada a objetos?",
+        "statement" : "¿Qué características de C++ permiten la programación orientada a objetos?",
+        "code": "",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "1"
     },
     {
         "testID": "20",
         "questionID": "204",
-        "description" : "Que hace el siguiente codigo: \n cout<<\"Hello world\"<<endl;",
+        "statement" : "¿Qué hace el siguiente codigo?",
+        "code": "cout<<\"Hello world\"<<endl;",
+        "imgURL" : "",
+        "domain" : "",
         "questionType": "2"
     }
     
