@@ -6,15 +6,15 @@ public class Answer {
     private String answerText;
     private boolean isSelected;
     private boolean isCorrect;
-    private int answerNumber;
     private String justification;
 
-    public Answer(String answerText, int answerType, boolean isCorrect, String answerID, String questionID, String justification){
+    public Answer(String answerText, boolean isCorrect, String answerID, String questionID, String justification){
         
         this.answerText = answerText;
         this.isCorrect = isCorrect;
-        this.answerNumber = answerNumber;
         this.answerID = answerID;
+        this.justification = justification;
+
         isSelected = false;
         if(isCorrect){
             this.justification=justification;    
@@ -23,7 +23,6 @@ public class Answer {
             this.justification=""; 
         }
         
-
     }
 
     public String getQuestionID(){
@@ -60,14 +59,6 @@ public class Answer {
 
     public void setCorrect(boolean isCorrect) {
         this.isCorrect = isCorrect;
-    }
-
-    public int getAnswerNumber() {
-        return answerNumber;
-    }
-
-    public void setAnswerNumber(int answerNumber) {
-        this.answerNumber = answerNumber;
     }
 
     

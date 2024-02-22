@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Test {
 
-    private String type;
+    private String description;
     private String name;
     private int duration;
     private int calification;
@@ -13,10 +13,10 @@ public class Test {
     private String testID;
     private String courseID;
 
-    public Test(String name, String type, int duration, String testID){
+    public Test(String name, String description, int duration, String testID){
 
         this.name = name;
-        this.type = type;
+        this.description = description;
         this.duration = duration;
         this.testID = testID;
 
@@ -132,10 +132,6 @@ public class Test {
 
     public String getTestID(){
         return testID;
-    }
-
-    public String getType(){
-        return type;
     }
    
 }
