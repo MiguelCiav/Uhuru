@@ -68,8 +68,8 @@ public class JSONReader {
                 String description = (String) test.get("description");
                 int duration = Integer.valueOf(test.get("duration").toString());
                 String testName = (String) test.get("testName");
-                Test loadedTest = new Test(testName,description,duration,actualTestID);
 
+                Test loadedTest = new Test(actualTestID,description,duration,testName);
                 Course.loadTest(actualCourseID, loadedTest);
 
                 readQuestions();
@@ -96,7 +96,7 @@ public class JSONReader {
 
             if(questionTestID.equals(actualTestID)){
 
-                Question loadedQuestion = new Question(questionStatement, questionCode, questionType, domain,Integer.valueOf(questionType),actualQuestionID,questionTestID);
+                Question loadedQuestion = new Question(questionTestID, actualQuestionID, questionStatement, questionCode, imageURL, Integer.valueOf(questionType), domain);
                 
                 Course.loadQuestion(actualCourseID, questionTestID, loadedQuestion);
                 readAnswers();
@@ -117,11 +117,11 @@ public class JSONReader {
             String answerQuestionID = (String) answer.get("questionID");
             String statement = (String) answer.get("statement");
             String justification = (String) answer.get("justification");
-            String isCorrect = (String) answer.get("isCorrect");
+            boolean isCorrect = (Boolean) answer.get("isCorrect");
 
             if(answerQuestionID.equals(actualQuestionID)){
                 
-                Answer loadedAnswer = new Answer(answerText,Integer.valueOf(answerType),isCorrect,answerID,answerQuestionID,justification);
+                Answer loadedAnswer = new Answer(answerID, answerQuestionID, statement, justification, isCorrect);
 
                 Course.loadAnswer(actualCourseID, actualTestID, actualQuestionID, loadedAnswer);
                 

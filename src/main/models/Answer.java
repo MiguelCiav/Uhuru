@@ -8,7 +8,7 @@ public class Answer {
     private boolean isCorrect;
     private String justification;
 
-    public Answer(String answerText, boolean isCorrect, String answerID, String questionID, String justification){
+    public Answer(String answerID, String questionID, String answerText, String justification, boolean isCorrect){
         
         this.answerText = answerText;
         this.isCorrect = isCorrect;

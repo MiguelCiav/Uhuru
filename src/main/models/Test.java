@@ -13,9 +13,9 @@ public class Test {
     private String testID;
     private String courseID;
 
-    public Test(String name, String description, int duration, String testID){
+    public Test(String testID, String description, int duration, String testName){
 
-        this.name = name;
+        this.name = testName;
         this.description = description;
         this.duration = duration;
         this.testID = testID;

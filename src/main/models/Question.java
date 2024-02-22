@@ -17,7 +17,7 @@ public class Question {
 
     private ArrayList<Answer> answerList = new ArrayList<Answer>();
 
-    public Question(String statement, int questionType, String questionID, String testID){
+    public Question(String testID, String questionID, String statement, String code, String imageURL,int questionType, String domain){
         
         this.statement = statement;
         this.questionType = questionType;
