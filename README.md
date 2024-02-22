@@ -12,12 +12,13 @@ Aplicación de Escritorio para gestión y práctica de exámenes de certificaci�
 # Enlaces
 1. [ Modelos de Dominio. ](#modelo_dominio)
 2. [ Modelos de Casos de Uso](#use_case)
-4. [ Protipos de interfaz ](#prototipos)
-5. [ Modelos de Análisis](#modelo_analisis)
-6. [ Modelos de Diseño](#modelo_diseño)
-7. [ Librerías](#lib)
-8. [ Como usar](#guia)
-9. [ Test](#modelo_test)
+3. [ Protipos de interfaz ](#prototipos)
+4. [ Modelos de Análisis](#modelo_analisis)
+5. [ Modelos de Diseño](#modelo_diseño)
+6. [ Librerías](#lib)
+7. [ Como usar](#guia)
+8. [ Test](#modelo_test)
+9. [ Cambio de Requisitos](#cambio_requisitos)
 
 <a name="modelo_dominio"></a>
 ## Modelo del dominio
@@ -122,10 +123,16 @@ Librería  | Versión | Uso
 ------------- | ------------- | -------------
 ItextPdf  | 5.5.9  | Proporciona las clases necesarias para estructurar y generar el archivo PDF correspondiente al certificado del Curso Aprobado.
 JsonSimple  | 1.1.1  | Proporciona las herramietnas necesarias para cargar, manipular y preservar la información de los modelos a traves de archivos JSON.
+JUnit | 1.10.2  | Proporciona las herramietnas necesarias para ejecutar las pruebas unitarias del proyecto.
 
 <a name="guia"></a>
-## Como usar Uhuru
-1. Inicia sesion con tu correo y contraseña registrados por el administrador
+## Cómo usar Uhuru
+>[!WARNING]
+>Luego de copiar y vincular el repositorio bastará con compilar el proyecto y ejecutar el archivo MAIN.JAVA disponible en la ruta /src/main.java
+
+1. Inicia sesión con tu correo y contraseña registrados por el administrador
+>[!TIP]
+>Para realizar pruebas en el sistema puede acceder con las credenciales [correo:user clave:user] ó [correo:admin clave:admin]
 <p align="center">
   <img style="width:60%; heigth:300px" src="docs\screenshots\login.png">
 </p>
@@ -140,9 +147,7 @@ JsonSimple  | 1.1.1  | Proporciona las herramietnas necesarias para cargar, mani
   <img style="width:60%; heigth:300px" src="docs\screenshots\TestView.png">
 </p>
 
-4. Al terminar el examen podrás visualizar las respuestas correctas junto con su justificación para que obtengas una correcta retroalimentación.
-
-5. Una vez aprobado todos los examenes de un curso podrás acceder a su certificado guardandolo en formato PDF.
+4. Una vez aprobado todos los examenes de un curso podrás acceder a su certificado guardandolo en formato PDF.
 <p align="center">
   <img style="width:60%; heigth:300px" src="docs\screenshots\GetCertificate.png">
 </p>
@@ -161,3 +166,28 @@ El sujeto de la prueba es el constructor del modelo Question
 El sujeto de la prueba es el constructor del modelo Answer
 ### - Prueba de Validación de Usuario
 El sujeto de la prueba es ValidateUser de la clase LoginController
+
+<a name="cambio_requisitos"></a>
+## Cambio de Requisitos
+>[!NOTE]
+>Se solicitó añadir preguntas de selección múltiple e imágenes que acompañaran al enunciado
+
+### Especificación de Casos de Uso 
+
+CU1 - Crear Examen
+<p align="center">
+  <img style="width:60%; heigth:300px" src="docs\scenariosView\useCaseModel\CU1CrearExamenV2.png">
+</p>
+
+### Modelo de Diseño
+Diagrama de Clases
+<p align="center">
+  <img style="width:100%; heigth:300px" src="docs\logicalView\designView\usecaseDesign\designClasses-changeOfRequirements.png">
+</p>
+
+## Prototipo de Pantalla
+Create Tests
+<p align="center">
+  <img style="width:100%; heigth:300px" src="docs\prototype\screen\changeOfRequerimetsView\create-test-1.jpg">
+   <img style="width:100%; heigth:300px" src="docs\prototype\screen\changeOfRequerimetsView\create-test-2.jpg">
+</p>

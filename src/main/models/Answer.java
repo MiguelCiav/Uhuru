@@ -1,25 +1,28 @@
 package main.models;
 
 public class Answer {
-    private final int TEXT=1;
-    private final int CODE=2;
-
     private String answerID;
     private String questionID;
     private String answerText;
     private boolean isSelected;
-    private int answerType;
     private boolean isCorrect;
     private int answerNumber;
+    private String justification;
 
-    public Answer(String answerText, int answerType, boolean isCorrect, String answerID, String questionID){
+    public Answer(String answerText, int answerType, boolean isCorrect, String answerID, String questionID, String justification){
         
         this.answerText = answerText;
-        this.answerType = answerType;
         this.isCorrect = isCorrect;
         this.answerNumber = answerNumber;
         this.answerID = answerID;
         isSelected = false;
+        if(isCorrect){
+            this.justification=justification;    
+        }
+        else{
+            this.justification=""; 
+        }
+        
 
     }
 
@@ -51,14 +54,6 @@ public class Answer {
 
     public void setAnswerText(String answerText) {
         this.answerText = answerText;
-    }
-
-    public int getAnswerType() {
-        return answerType;
-    }
-
-    public void setAnswerType(int answerType) {
-        this.answerType = answerType;
     }
 
     public boolean isCorrect() {
