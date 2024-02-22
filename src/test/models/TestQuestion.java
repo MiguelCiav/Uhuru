@@ -8,7 +8,7 @@ import main.models.Question;
 public class TestQuestion{
 
     @Test public void TestCreateQuestion(){
-        Question expectedQuestion = new Question("Esto es un filtro", "Mucho filtro", 1, 2);
+        Question expectedQuestion = new Question("Esto es un filtro", 1, "2", "3");
         
         Assertions.assertEquals("Esto es un filtro", expectedQuestion.getDescription());
         Assertions.assertEquals("Mucho filtro", expectedQuestion.getJustificacion());

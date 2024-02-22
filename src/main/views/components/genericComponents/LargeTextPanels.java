@@ -8,9 +8,9 @@ import java.awt.*;
 
 public class LargeTextPanels extends JPanelRound{
     
-    JScrollPane textScrollPane;
-    public JTextArea textArea;
-    GridBagConstraints constraints = new GridBagConstraints();
+    private JScrollPane textScrollPane;
+    private JTextArea textArea;
+    private GridBagConstraints constraints = new GridBagConstraints();
 
     public LargeTextPanels(String text, Color c){
         setRoundBackgroundColor(c);
@@ -38,5 +38,9 @@ public class LargeTextPanels extends JPanelRound{
 
         add(textScrollPane, constraints);
 
+    }
+
+    public JTextArea getTextArea(){
+        return textArea;
     }
 }

@@ -13,7 +13,7 @@ import utils.ViewsStyles;
 public class JPanelRound extends JPanel{
 
     private Color roundBackgroundColor = ViewsStyles.ULTRA_LIGHT_BLUE;
-    private int horizontalAngle=30;
+    protected int horizontalAngle=30;
     private int verticalAngle=30;
    
     public JPanelRound() {

@@ -74,7 +74,7 @@ public class Test {
         String[] questionDescriptions = new String[questionList.size()];
 
         for(int i = 0; i < questionList.size(); i++){
-            questionDescriptions[i] = questionList.get(i).getDescription();
+            questionDescriptions[i] = questionList.get(i).getStatement();
         }
 
         return questionDescriptions;

@@ -3,25 +3,26 @@ package main.models;
 import java.util.ArrayList;
 
 public class Question {
+    private final int TEXT=1;
+    private final int CODE=2;
 
     private String questionID;
     private String testID;
-    private String description;
-    private String justification;
+    private String statement;
     private Answer userAnswer;
     private int questionType;
     private int questionNumber;
+    private String codeText;
+    private String imageURL;
 
     private ArrayList<Answer> answerList = new ArrayList<Answer>();
 
-    public Question(String description, String justification, int questionType, String questionID, String testID){
+    public Question(String statement, int questionType, String questionID, String testID){
         
-        this.description = description;
-        this.justification = justification;
+        this.statement = statement;
         this.questionType = questionType;
         this.questionID = questionID;
         this.testID = testID;
-        this.description = description;
 
     }
 
@@ -71,12 +72,8 @@ public class Question {
 
     public void answerQuestion(Answer answer){};
 
-    public String getDescription(){
-        return description;
-    }
-
-    public String getJustificacion(){
-        return justification;
+    public String getStatement(){
+        return statement;
     }
 
     public Answer getUserAnswer(){
@@ -114,6 +111,20 @@ public class Question {
 
     public String getTestID(){
         return testID;
+    }
+    public String getCodeText() {
+        return codeText;
+    }
+
+    public void setCodeText(String codeText) {
+        this.codeText = codeText;
+    }
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
 }

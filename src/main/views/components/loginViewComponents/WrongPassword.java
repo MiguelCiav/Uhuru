@@ -43,8 +43,8 @@ public class WrongPassword extends JPanelRound{
     public void addErrorMessage(){
 
         errorMessage = new LargeTextPanels("Para recuperar su contraseña, comuníquese con\nel administrador del sistema", Color.WHITE);
-        errorMessage.textArea.setEditable(false);
-        errorMessage.textArea.setFont(ViewsStyles.SMALL_TITLE_FONT);
+        errorMessage.getTextArea().setEditable(false);
+        errorMessage.getTextArea().setFont(ViewsStyles.SMALL_TITLE_FONT);
         constraints.gridy = 1;
         constraints.fill = GridBagConstraints.BOTH;
 

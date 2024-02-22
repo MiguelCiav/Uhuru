@@ -21,5 +21,5 @@ public class ViewsStyles {
     public static final Font TITLE_FONT = new Font("Futura", Font.BOLD, 32);
     public static final Font SMALL_TITLE_FONT = new Font("Futura", Font.BOLD, 20);
     public static final Font TEXT_FONT = new Font("Futura", Font.PLAIN, 12); 
-    
+    public static final Font TEXT_FIELD_FONT = new Font("Futura", Font.PLAIN, 12);
 }

@@ -4,6 +4,7 @@ import javax.swing.*;
 import main.controllers.GenerateCertificateController;
 import main.models.Course;
 import main.models.User;
+import main.views.components.genericComponents.JPanelRound;
 
 import java.awt.*;
 

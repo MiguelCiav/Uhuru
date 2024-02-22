@@ -1,32 +1,79 @@
 package main.controllers;
 
+import main.views.components.createTestViewComponents.QuestionDataPanel;
+import main.views.components.createTestViewComponents.TestDataPanel;
 import utils.JSONWriter;
 
 public class CreateTestController {
 
-    private static CreateTestController createTestController;
+    private static CreateTestController instance;
     
     private CreateTestController(){}
 
     public static CreateTestController getInstance(){
 
-        if(createTestController == null){
-            createTestController = new CreateTestController();
+        if(instance == null){
+            instance = new CreateTestController();
         }
 
-        return createTestController;
+        return instance;
     }
 
-    public static void addTestToDataBase(String type, int duration, String courseID, String testID, String testName){
+    public static boolean validateData(String testName, String testDescription, String minutes){
+
+        if(validateTestName(testName)){
+            return false;
+        }
+        
+        else if(validateTestDescription(testDescription)){
+            return false;
+        }
+        else if(validateMinutes(minutes)){
+            return false;
+        }
+
+        JSONWriter.getInstance();
+        JSONWriter.addTest(testDescription, Integer.parseInt(minutes), "1", "1", testName);
+
+        return true;
+    }
+
+    public static boolean validateTestName(String testName){
+        if(testName.equals("Ingrese el nombre del examen.") || testName.equals("ERROR: Dato invalido") || testName.matches("\s*")){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean validateTestDescription(String testDescription){
+        if(testDescription.equals("Ingrese la descripcion del examen.") || testDescription.equals("ERROR: Dato invalido") || testDescription.matches("\s*")){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean validateMinutes(String minutes){
+        if(!minutes.matches("\\d+")){
+            return true;
+        }
+
+        return false;
+    }
+
+    public void addDomain(){
+        QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionList().size() - 1).setDomain(QuestionDataPanel.getDomain());
+    }
+
+    public static void createTest(){
+        String testName = TestDataPanel.getInstance().getName();
+        String type = TestDataPanel.getInstance().getDescription();
+        int duration = TestDataPanel.getInstance().getMinutes();
+        String courseID = "1";
+        String testID = "1";
         JSONWriter.addTest(type, duration, courseID, testID, testName);
     }
 
-    public static void addQuestionToTest(String testID, String questionID, String description, String justification, String questionType){
-        JSONWriter.addQuestion(testID, questionID, description, justification, questionType);
+    private static void addQuestions(String testID, String questionID, String description, String questionType){
+        JSONWriter.addQuestion(testID, questionID, description, description, questionType);
     }
-
-    public static void addOption(String answerText, String answerType, Boolean isCorrect){
-        JSONWriter.addAnswer(answerText, answerType, isCorrect);
-    }
-
 }

@@ -104,7 +104,7 @@ public class AnswerTestController {
         Question loadedQuestion = loadedTest.getQuestion(questionID);
 
         if(loadedQuestion != null){
-            return loadedQuestion.getDescription();
+            return loadedQuestion.getStatement();
         }
 
         return "NULL QUESTION";
