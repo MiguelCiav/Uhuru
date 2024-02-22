@@ -92,12 +92,11 @@ public class JSONReader {
             actualQuestionID = (String) question.get("questionID");
             String questionTestID = (String) question.get("testID");
             String questionDescription = (String) question.get("description");
-            String questionJustification = (String) question.get("justification");
             String questionType = (String) question.get("questionType");
 
             if(questionTestID.equals(actualTestID)){
 
-                Question loadedQuestion = new Question(questionDescription, questionJustification,Integer.valueOf(questionType),actualQuestionID,questionTestID);
+                Question loadedQuestion = new Question(questionDescription,Integer.valueOf(questionType),actualQuestionID,questionTestID);
 
                 System.out.println("Pregunta " + loadedQuestion.getQuestionID() + " Creada");
                 
@@ -121,10 +120,11 @@ public class JSONReader {
             boolean isCorrect = (boolean) answer.get("isCorrect");
             String answerType = (String) answer.get("answerType");
             String answerText = (String) answer.get("answerText");
+            String justification = (String) answer.get("justification");
 
             if(answerQuestionID.equals(actualQuestionID)){
-
-                Answer loadedAnswer = new Answer(answerText, Integer.valueOf(answerType), isCorrect, answerID, answerQuestionID);
+                
+                Answer loadedAnswer = new Answer(answerText,Integer.valueOf(answerType),isCorrect,answerID,answerQuestionID,justification);
 
                 System.out.println("Respuesta " + loadedAnswer.getAnswerID() + " Creada");
 
