@@ -9,12 +9,16 @@ import java.awt.*;
 
 public class TestView extends JFrame{
 
-    PrincipalPanel principalPanel = new PrincipalPanel();
-    QuestionsListPanel questionsListPanel = new QuestionsListPanel();
+    PrincipalPanel principalPanel;
+    QuestionsListPanel questionsListPanel;
 
     public TestView(){
 
         super("Uhuru");
+
+        principalPanel = new PrincipalPanel();
+        questionsListPanel = new QuestionsListPanel();
+
         setMinimumSize(new Dimension(800,600));
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         

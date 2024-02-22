@@ -7,22 +7,23 @@ import java.awt.Insets;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import main.controllers.AnswerTestController;
 import main.views.components.genericComponents.LabelPanel;
 import utils.PathManager;
 import utils.ViewsStyles;
 
 public class LabelPanelTest extends LabelPanel{
 
+    private String courseID;
     private String testID;
     private JLabel textLabel;
     private JLabel arrowLabel;
-    private String testName;
 
-    public LabelPanelTest(String testName, String testID){
+    public LabelPanelTest(String courseID, String testID){
 
         constraints = new GridBagConstraints();
-        this.testName = testName;
         this.testID = testID;
+        this.courseID = courseID;
 
         setLayout(new GridBagLayout());
         setBackground(ViewsStyles.LIGHT_GRAY);
@@ -31,10 +32,20 @@ public class LabelPanelTest extends LabelPanel{
 
     }
 
+    public String getCourseID(){
+        return courseID;
+    }
+
+    public String getTestID(){
+        return testID;
+    }
+
     @Override
     protected void setLabel() {
 
         textLabel = new JLabel();
+        ;
+        String testName = AnswerTestController.getInstance().getTestName(courseID, testID);
 
         textLabel.setBackground(ViewsStyles.LIGHT_GRAY);
         textLabel.setOpaque(true);

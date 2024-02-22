@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 
+import main.models.Answer;
 import main.views.components.createTestViewComponents.AnswerDataPanel;
 import main.views.components.createTestViewComponents.QuestionDataPanel;
 import utils.PathManager;
@@ -33,7 +34,7 @@ public class AddQuestionListener extends MouseAdapter{
     private void allowCode(){
         if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getCode().getTextArea().isEditable()){
             QuestionDataPanel.getBox().setSelected(true);
-            QuestionDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
+            QuestionDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/correctAnswer.png")));
         }
         else{
             QuestionDataPanel.getBox().setSelected(false);
@@ -61,6 +62,10 @@ public class AddQuestionListener extends MouseAdapter{
         QuestionDataPanel.addQuestionToContainer(QuestionDataPanel.getQuestionIndex());
         QuestionDataPanel.getCardLayout().next(QuestionDataPanel.getContainer());
         allowCode();
+        AnswerDataPanel.getBox().setSelected(false);
+        AnswerDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
         removeElementsFromAnswerList();
+        QuestionDataPanel.getInstance().repaint();
+        AnswerDataPanel.getInstance().repaint();
     }
 }

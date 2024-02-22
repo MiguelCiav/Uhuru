@@ -17,9 +17,9 @@ public class ScrollableCoursesPanel extends ScrollablePanel{
     
     private static ScrollableCoursesPanel instance;
     private ArrayList<LabelPanelCourse> coursePanels = new ArrayList<LabelPanelCourse>();
-    String[] courseNames = AnswerTestController.getInstance().getCourseNames();
-    String[] courseIDs = AnswerTestController.getInstance().getCourseIDs();
-
+    String[] courseNames = AnswerTestController.getInstance().getCourseNamesArray();
+    String[] courseIDs = AnswerTestController.getInstance().getCourseIDsArray();
+    
     private ScrollableCoursesPanel(){
         super();
         addScrollableElements();
@@ -48,7 +48,6 @@ public class ScrollableCoursesPanel extends ScrollablePanel{
         }
 
         repaint();
-        //resetScrollableElements();
         
     }
 

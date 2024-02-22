@@ -36,8 +36,6 @@ public class JSONReader {
 
     public void readCourses(){
 
-        System.out.println("INICIANDO CARGA DE DATOS DE CURSOS: \n");
-
         readFile(PathManager.getInstance().getStringURL("/src/data/Courses.json"), 0);
         
         for(Object object : list[0]){
@@ -52,8 +50,6 @@ public class JSONReader {
 
         }
 
-        System.out.println("\nCARGA DE DATOS DE CURSOS FINALIZADA");
-
     }
 
     @SuppressWarnings("unused")
@@ -64,17 +60,18 @@ public class JSONReader {
         for(Object object : list[1]){
 
             JSONObject test = (JSONObject) object;
-            actualTestID = (String) test.get("testID");
             String courseTestID = (String) test.get("courseID");
+            actualTestID = (String) test.get("testID");
 
             if(courseTestID.equals(actualCourseID)){
 
-                String testName = (String) test.get("testName");
-                String type = (String) test.get("type");
+                String description = (String) test.get("description");
                 int duration = Integer.valueOf(test.get("duration").toString());
-                Test loadedTest = new Test(testName,type,duration,actualTestID);
+                String testName = (String) test.get("testName");
+                Test loadedTest = new Test(testName,description,duration,actualTestID);
 
                 Course.loadTest(actualCourseID, loadedTest);
+
                 readQuestions();
 
             }
@@ -89,18 +86,19 @@ public class JSONReader {
         for(Object object : list[2]){
 
             JSONObject question = (JSONObject) object;
-            actualQuestionID = (String) question.get("questionID");
             String questionTestID = (String) question.get("testID");
-            String questionDescription = (String) question.get("description");
+            actualQuestionID = (String) question.get("questionID");
+            String questionStatement = (String) question.get("statement");
+            String questionCode = (String) question.get("code");
+            String imageURL = (String) question.get("imageURL");
             String questionType = (String) question.get("questionType");
+            String domain = (String) question.get("domain");
 
             if(questionTestID.equals(actualTestID)){
 
-                Question loadedQuestion = new Question(questionDescription,Integer.valueOf(questionType),actualQuestionID,questionTestID);
-
-                System.out.println("Pregunta " + loadedQuestion.getQuestionID() + " Creada");
+                //Question loadedQuestion = new Question(questionStatement, questionCode, questionType, domain,Integer.valueOf(questionType),actualQuestionID,questionTestID);
                 
-                Course.loadQuestion(actualCourseID, questionTestID, loadedQuestion);
+                //Course.loadQuestion(actualCourseID, questionTestID, loadedQuestion);
                 readAnswers();
 
             }
@@ -117,18 +115,15 @@ public class JSONReader {
             JSONObject answer = (JSONObject) object;
             String answerID = (String) answer.get("answerID");
             String answerQuestionID = (String) answer.get("questionID");
-            boolean isCorrect = (boolean) answer.get("isCorrect");
-            String answerType = (String) answer.get("answerType");
-            String answerText = (String) answer.get("answerText");
+            String statement = (String) answer.get("statement");
             String justification = (String) answer.get("justification");
+            String isCorrect = (String) answer.get("isCorrect");
 
             if(answerQuestionID.equals(actualQuestionID)){
                 
-                Answer loadedAnswer = new Answer(answerText,Integer.valueOf(answerType),isCorrect,answerID,answerQuestionID,justification);
+//                Answer loadedAnswer = new Answer(answerText,Integer.valueOf(answerType),isCorrect,answerID,answerQuestionID,justification);
 
-                System.out.println("Respuesta " + loadedAnswer.getAnswerID() + " Creada");
-
-                Course.loadAnswer(actualCourseID, actualTestID, actualQuestionID, loadedAnswer);
+                //Course.loadAnswer(actualCourseID, actualTestID, actualQuestionID, loadedAnswer);
                 
             }
         }

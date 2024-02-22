@@ -21,8 +21,6 @@ public class JSONWriter {
 
         JSONWriter.getInstance().readActualInfo(PathManager.getInstance().getStringURL("/src/data/Users.json"), 0);
 
-        System.out.println("Cargando datos");
-
         JSONObject user = new JSONObject();
         user.put("name", name);
         user.put("lastname", lastname);
@@ -37,15 +35,15 @@ public class JSONWriter {
     }
 
     @SuppressWarnings("unchecked")
-    public static void addTest(String type, int duration, String courseID, String testID, String testName){
+    public static void addTest(String description, int duration, String courseID, String testID, String testName){
 
         JSONWriter.getInstance().readActualInfo(PathManager.getInstance().getStringURL("/src/data/Tests.json"), 0);
 
         JSONObject test = new JSONObject();
-        test.put("type", type);
-        test.put("duration", duration);
         test.put("courseID", courseID);
         test.put("testID", testID);
+        test.put("description", description);
+        test.put("duration", duration);
         test.put("testName", testName);
 
         JSONWriter.getInstance().list[0].add(test);
@@ -54,16 +52,18 @@ public class JSONWriter {
     }
 
     @SuppressWarnings("unchecked")
-    public static void addQuestion(String testID, String questionID, String description, String justification, String questionType){
+    public static void addQuestion(String testID, String questionID, String statement, String code, String imageURL, String questionType, String domain){
 
         JSONWriter.getInstance().readActualInfo(PathManager.getInstance().getStringURL("/src/data/Questions.json"), 0);
 
         JSONObject test = new JSONObject();
         test.put("testID", testID);
         test.put("questionID", questionID);
-        test.put("description", description);
-        test.put("justification", justification);
+        test.put("statement", statement);
+        test.put("code", code);
+        test.put("imageURL", imageURL);
         test.put("questionType", questionType);
+        test.put("domain", domain);
 
         JSONWriter.getInstance().list[0].add(test);
         JSONWriter.getInstance().writeNewInfo(PathManager.getInstance().getStringURL("/src/data/Questions.json"), 0);
@@ -71,13 +71,13 @@ public class JSONWriter {
     }
 
     @SuppressWarnings("unchecked")
-    public static void addAnswer(String answerText, String answerType, Boolean isCorrect){
+    public static void addAnswer(String statement, String justification, Boolean isCorrect){
 
         JSONWriter.getInstance().readActualInfo(PathManager.getInstance().getStringURL("/src/data/Answers.json"), 0);
 
         JSONObject answer = new JSONObject();
-        answer.put("answerText", answerText);
-        answer.put("answerType", answerType);
+        answer.put("statement", statement);
+        answer.put("justification", justification);
         answer.put("isCorrect", isCorrect);
 
         JSONWriter.getInstance().list[0].add(answer);

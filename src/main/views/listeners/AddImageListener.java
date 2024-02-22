@@ -43,7 +43,6 @@ public class AddImageListener implements ActionListener{
             if(response == JFileChooser.APPROVE_OPTION){
                 filePath = jf.getSelectedFile().getPath();
                 QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).setImagePath(filePath);
-                System.out.println(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getImagePath());
             }
         }
     }

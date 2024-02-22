@@ -23,19 +23,56 @@ public class Question {
         this.questionType = questionType;
         this.questionID = questionID;
         this.testID = testID;
-    };
+
+    }
+
+    public void markAnswerAsSelected(String answerID){
+
+        for(int i = 0; i < answerList.size(); i++){
+            if(answerList.get(i).getAnswerID().equals(answerID)){
+                answerList.get(i).setAsSelected(true);
+                
+            } else {
+                answerList.get(i).setAsSelected(false);
+                
+            }
+        }
+
+    }
 
     public void addAnswer(Answer answer){
 
         answerList.add(answer);
 
-        System.out.println("Respuesta " + answer.getAnswerID() + " añadida a " + questionID);
+    }
 
-    };
+    public Answer[] getAnswersArray(){
+        return answerList.toArray(new Answer[0]);
+    }
+
+    public String[] getAnswerDescriptions(){
+        String[] answers = new String[answerList.size()];
+
+        for(int i = 0; i < answers.length; i++){
+            answers[i] = answerList.get(i).getAnswerText();
+        }
+
+        return answers;
+    }
+
+    public String[] getAnswerIDs(){
+        String[] answers = new String[answerList.size()];
+
+        for(int i = 0; i < answers.length; i++){
+            answers[i] = answerList.get(i).getAnswerID();
+        }
+
+        return answers;
+    }
 
     public void answerQuestion(Answer answer){};
 
-    public String getstatement(){
+    public String getStatement(){
         return statement;
     }
 
@@ -52,7 +89,7 @@ public class Question {
     }
 
     public Answer getAnswer(String answerID){
-        Answer foundAnswer = null;
+        Answer foundAnswer;
 
         for(int i = 0; i < answerList.size(); i++){
             if (answerID.equals(answerList.get(i).getAnswerID())) {

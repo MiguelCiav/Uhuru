@@ -58,9 +58,9 @@ public class GenerateCertificate {
                 image.setAbsolutePosition(50, 520);
                 document.add(image);
             } catch (BadElementException ex) {
-                System.out.println("Image BadElementException" +  ex);
+                ;
             } catch (IOException ex) {
-                System.out.println("Image IOException " +  ex);
+                ;
             }
             Paragraph titlecourse = new Paragraph("Curso: " + course, subTitlehFont);
             titlecourse.setAlignment(Element.ALIGN_CENTER);

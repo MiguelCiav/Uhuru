@@ -16,22 +16,29 @@ import utils.ViewsStyles;
 
 public class LabelPanelQuestionSummary extends LabelPanel{
 
-    private int questionID;
+    private String questionID;
+    private int questionNumber;
     private String questionDescription;
     private JTextArea questionDescriptionText;
 
-    public LabelPanelQuestionSummary(String questionDescription, int questionID){
+    public LabelPanelQuestionSummary(String questionID, int number){
 
         constraints = new GridBagConstraints();
         this.questionDescription = questionDescription;
         this.questionID = questionID;
+        this.questionNumber = number;
 
         setLayout(new GridBagLayout());
         setBackground(ViewsStyles.LIGHT_GRAY);
 
         setLabel();
         addLabel();
+        addMouseListener(new CheckAnswers());
         
+    }
+
+    public String getQuestionID(){
+        return questionID;
     }
 
     @Override
@@ -51,7 +58,7 @@ public class LabelPanelQuestionSummary extends LabelPanel{
     @Override
     protected void addLabel() {
 
-        JLabel questionTitle = new JLabel("Pregunta " + questionID);
+        JLabel questionTitle = new JLabel("Pregunta " + questionNumber);
         questionTitle.setFont(ViewsStyles.SMALL_TITLE_FONT);
 
         constraints.gridx = 0;
@@ -63,19 +70,6 @@ public class LabelPanelQuestionSummary extends LabelPanel{
         constraints.insets = new Insets(16, 16, 8, 16);
 
         add(questionTitle, constraints);
-
-        constraints.gridy = 1;
-        constraints.insets = new Insets(0, 16, 16, 16);
-
-        JScrollPane auxiliarPane = new JBlueScrollPane(questionDescriptionText);
-        auxiliarPane.setBorder(null);
-        auxiliarPane.setMinimumSize(new Dimension(250,40));
-        auxiliarPane.setPreferredSize(new Dimension(250, 40));
-        
-        auxiliarPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        auxiliarPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        
-        add(auxiliarPane, constraints);
         
     }
     

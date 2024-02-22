@@ -213,7 +213,7 @@ public class AnswerDataPanel extends JPanelRound implements ActionListener{
     @Override public void actionPerformed(ActionEvent e){
         JCheckBox box = (JCheckBox) e.getSource();
         if(box.isSelected()){
-            isCorrect.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
+            isCorrect.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/correctAnswer.png")));
             QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().get(optionIndex).getJustification().getTextArea().setEditable(true);
         }
         else{

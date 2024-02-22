@@ -34,11 +34,11 @@ public class DeleteOptionListener extends MouseAdapter{
         }
     }
 
-    private void allowJustification(){
+    public void allowJustification(){
 
         if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().get(AnswerDataPanel.getOptionIndex()).getJustification().getTextArea().isEditable()){
             AnswerDataPanel.getBox().setSelected(true);
-            AnswerDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
+            AnswerDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/correctAnswer.png")));
         }
         else{
             AnswerDataPanel.getBox().setSelected(false);
@@ -54,6 +54,8 @@ public class DeleteOptionListener extends MouseAdapter{
             changeIndex();
             AnswerDataPanel.setStatementText(AnswerDataPanel.getOptionIndex() + 1);
             allowJustification();
+            QuestionDataPanel.getInstance().repaint();
+            AnswerDataPanel.getInstance().repaint();
         }
     }
 }

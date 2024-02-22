@@ -7,7 +7,7 @@ public class Course {
     public static final int MAX_COURSE = 4;
     private String ID;
     private String courseName;
-    private ArrayList<Test> registerTest = new ArrayList<Test>();
+    private ArrayList<Test> testList = new ArrayList<Test>();
     private static Course[] courseList = new Course[MAX_COURSE];
     private static int courseCount = 0;
 
@@ -16,27 +16,6 @@ public class Course {
         this.courseName = courseName;
         this.ID=ID;
 
-    }
-
-    public Test[] getTestArray(){
-        return registerTest.toArray(new Test[0]);
-    }
-    
-    public int amountOfTest(){
-        return registerTest.size();
-    }
-
-    public static void loadTest(String courseID, Test test){
-        getInstanceCourse(courseID).addTest(test);
-    }
-
-    public static void loadQuestion(String courseID, String testID, Question question){
-        System.out.println("load en " + question.getQuestionID());
-        getInstanceCourse(courseID).getTest(testID).addQuestion(question);
-    }
-
-    public static void loadAnswer(String courseID, String testID, String questionID, Answer answer){
-        getInstanceCourse(courseID).getTest(testID).getQuestion(questionID).addAnswer(answer);
     }
 
     public static Course getInstanceCourse(String ID){
@@ -50,6 +29,50 @@ public class Course {
         return null;
     }
 
+    public Test[] getTestArray(){
+        return testList.toArray(new Test[0]);
+    }
+
+    public static Test[] getTestArray(String courseID){
+        return getInstanceCourse(courseID).getTestArray();
+    }
+
+    public Test getTest(String testID){
+        
+        for(int i = 0; i < testList.size(); i++){
+            if(testList.get(i).getTestID().equals(testID)){
+                return testList.get(i);
+            }
+        }
+
+        return null;
+    }
+
+    public static Test getTest(String courseID, String testID){
+        return getInstanceCourse(courseID).getTest(testID);
+    }
+    
+    public int amountOfTest(){
+        return testList.size();
+    }
+
+    public static int amountOfTest(String courseID){
+        return getInstanceCourse(courseID).amountOfTest();
+    }
+
+    public static void loadTest(String courseID, Test test){
+        getInstanceCourse(courseID).addTest(test);
+    }
+
+    public static void loadQuestion(String courseID, String testID, Question question){
+        ;
+        getInstanceCourse(courseID).getTest(testID).addQuestion(question);
+    }
+
+    public static void loadAnswer(String courseID, String testID, String questionID, Answer answer){
+        getInstanceCourse(courseID).getTest(testID).getQuestion(questionID).addAnswer(answer);
+    }
+
     public static void setInstanceCourse(String courseName, String ID){
 
         if(courseList[courseCount] == null && courseCount < MAX_COURSE){
@@ -59,25 +82,12 @@ public class Course {
 
     } 
 
-    public static Course[] getCourseList(){
+    public static Course[] getCourseArray(){
         return courseList;
     }
 
     public void addTest(Test test){
-        registerTest.add(test);
-
-        System.out.println("Examen " + test.getTestID() + " añadido a " + ID);
-    }
-
-    public Test getTest(String ID){
-        
-        for(int i = 0; i < registerTest.size(); i++){
-            if(registerTest.get(i).getTestID().equals(ID)){
-                return registerTest.get(i);
-            }
-        }
-
-        return null;
+        testList.add(test);
     }
 
     public String getCourseName() {

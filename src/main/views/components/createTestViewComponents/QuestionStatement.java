@@ -63,6 +63,10 @@ public class QuestionStatement extends JPanel{
         return optionsList;
     }
 
+    public LargeTextPanels getStatement(){
+        return statement;
+    }
+
     public LargeTextPanels getCode(){
         return code;
     }

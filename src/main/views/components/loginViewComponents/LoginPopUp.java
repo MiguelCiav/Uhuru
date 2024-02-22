@@ -120,7 +120,7 @@ public class LoginPopUp extends JPanelRound implements ActionListener{
     }
 
     @Override public void actionPerformed(ActionEvent e){
-        
+
         if(LogInController.validateUser(email.getTextArea().getText(), password.getTextArea().getText())){
             if(User.getUserInstance().getName().equals("Admin")){
                 new UserListView();

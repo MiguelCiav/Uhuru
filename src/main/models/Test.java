@@ -4,29 +4,86 @@ import java.util.*;
 
 public class Test {
 
-    private String type;
+    private String description;
     private String name;
     private int duration;
-    private float calification;
+    private int calification;
 
     private ArrayList<Question> questionList = new ArrayList<Question>();
     private String testID;
     private String courseID;
 
-    public Test(String name, String type, int duration, String testID){
+    public Test(String name, String description, int duration, String testID){
 
         this.name = name;
-        this.type = type;
+        this.description = description;
         this.duration = duration;
         this.testID = testID;
+
+    }
+
+    public void calculateCalification(){
+
+        int calculatedCalification = 0;
+
+        for(Question question : questionList){
+
+            
+
+            if(approveQuestion(question)){
+                calculatedCalification++;
+            }
+
+        }
+
+        calification = calculatedCalification;
+
+    }
+
+    private boolean approveQuestion(Question question){
+
+        Answer[] answerList = question.getAnswersArray();
+        boolean approved = false;
+
+        for(Answer answer : answerList){
+
+            
+
+            if(answer.isCorrect() && answer.isSelected()){
+                approved = true;
+            }
+        }
+
+        return approved;
+        
+    }
+
+    public String[] getQuestionIDs(){
+
+        String[] questionIDs = new String[questionList.size()];
+
+        for(int i = 0; i < questionList.size(); i++){
+            questionIDs[i] = questionList.get(i).getQuestionID();
+        }
+
+        return questionIDs;
+    }
+
+    public String[] getQuestionDescriptionsArray(){
+
+        String[] questionDescriptions = new String[questionList.size()];
+
+        for(int i = 0; i < questionList.size(); i++){
+            questionDescriptions[i] = questionList.get(i).getStatement();
+        }
+
+        return questionDescriptions;
 
     }
 
     public void addQuestion(Question question){
 
         questionList.add(question);
-
-        System.out.println("Pregunta " + question.getQuestionID() + " añadida en " + testID);
 
     };
 
@@ -42,6 +99,10 @@ public class Test {
 
         return null;
     };
+
+    public int getQuestionsAmount(){
+        return questionList.size();
+    }
 
     public String getName() {
         return name;
@@ -65,20 +126,17 @@ public class Test {
         this.duration = duration;
     }
 
-    public float getCalification() {
+    public int getCalification() {
         return calification;
-    }
-
-    public void setCalification(float calification) {
-        this.calification = calification;
     }
 
     public String getTestID(){
         return testID;
     }
 
-    public String getType(){
-        return type;
+    public Object getType() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getType'");
     }
    
 }

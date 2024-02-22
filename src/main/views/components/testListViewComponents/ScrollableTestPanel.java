@@ -1,6 +1,7 @@
 package main.views.components.testListViewComponents;
 
 import java.awt.Dimension;
+import java.awt.SystemTray;
 import java.util.ArrayList;
 
 import javax.swing.Box;
@@ -11,8 +12,8 @@ import main.views.components.genericComponents.ScrollablePanel;
 public class ScrollableTestPanel extends ScrollablePanel{
 
     private static ScrollableTestPanel instance;
-    private static String[] testNames;
     private static String[] testIDs;
+    private static String courseID;
 
     private ScrollableTestPanel(){
         super();
@@ -29,18 +30,17 @@ public class ScrollableTestPanel extends ScrollablePanel{
 
     public static void loadExams(){
 
-        String defaultCourse = AnswerTestController.getInstance().getCourseIDs()[0];
-
-        testNames = AnswerTestController.getInstance().getTestNames(defaultCourse);
-        testIDs = AnswerTestController.getInstance().getTestID(defaultCourse);
+        courseID = AnswerTestController.getInstance().getCourseIDsArray()[0];
+        testIDs = AnswerTestController.getInstance().getTestID(courseID);
         instance.addScrollableElements();
 
     }
 
-    public static void loadExams(String CourseID){
+    public static void loadExams(String newCourseID){
 
-        testNames = AnswerTestController.getInstance().getTestNames(CourseID);
-        testIDs = AnswerTestController.getInstance().getTestID(CourseID);
+        ;
+        testIDs = AnswerTestController.getInstance().getTestID(newCourseID);
+        courseID = newCourseID;
         instance.addScrollableElements();
 
     }
@@ -50,10 +50,13 @@ public class ScrollableTestPanel extends ScrollablePanel{
 
         removeAll();
 
-        for(int i = 0; i < testNames.length; i++){
-            add(new LabelPanelTest(testNames[i], testIDs[i]));
+        for(int i = 0; i < testIDs.length; i++){
+            ;
+            add(new LabelPanelTest(courseID, testIDs[i]));
             add(Box.createRigidArea(new Dimension(0,20)));
         }
+
+        ;
 
         validate();
         

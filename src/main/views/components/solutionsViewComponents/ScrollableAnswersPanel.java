@@ -1,57 +1,61 @@
 package main.views.components.solutionsViewComponents;
 
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Dimension;
 
-import utils.ViewsStyles;
+import javax.swing.Box;
 
-import java.awt.*;
+import main.controllers.AnswerTestController;
+import main.views.components.genericComponents.ScrollablePanel;
 
-public class ScrollableAnswersPanel extends JPanel{
+public class ScrollableAnswersPanel extends ScrollablePanel {
 
-    GridBagConstraints constraints;
-    CorrectAnswerPanel answersPanel;
-    JLabel questionDescription;
+    private static ScrollableAnswersPanel instance;
+    private String[] answerIDs;
+    private String questionID;
 
-    public ScrollableAnswersPanel(){
-
-        constraints = new GridBagConstraints();
-        answersPanel = new CorrectAnswerPanel();
-        questionDescription = new JLabel();
-
-        setLayout(new GridBagLayout());
+    private ScrollableAnswersPanel(){
+        super();
         setBackground(Color.WHITE);
-
-        addQuestionDescription();
-        addAnswerPanel();
-
     }
 
-    private void addQuestionDescription(){
+    public static ScrollableAnswersPanel getInstance(){
 
-        constraints.gridx = 0;
-        constraints.gridy = 0;
-        constraints.gridheight = 1;
-        constraints.gridwidth = 1;
-        constraints.weightx = 1.0;
-        constraints.fill = GridBagConstraints.BOTH;
-        constraints.insets = new Insets(0,20,16,20);
+        if(instance == null){
+            instance = new ScrollableAnswersPanel();
+        }
 
-        questionDescription.setBackground(ViewsStyles.LIGHT_GRAY);
-        questionDescription.setBorder(null);
-        questionDescription.setText("<html> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis odio vitae velit pretium ultrices. Nam ut velit ac dui elementum pharetra. Morbi id egestas ex. Proin ac iaculis orci, at viverra ex. Vestibulum eget feugiat ligula, et ultrices purus. Aliquam dignissim ligula nibh, sed gravida mi mollis eget. Morbi.</html>");
-
-        add(questionDescription, constraints);
-
+        return instance;
     }
 
-    private void addAnswerPanel(){
+    public void updateInfo(String questionID){
+        String currentTestID = AnswerTestController.getCurrentTestID();
+        String currentCourseID = AnswerTestController.getCurrentCourseID();
+        this.questionID = questionID;
 
-        constraints.gridy = 1;    
-        constraints.weighty = 1.0;
-        constraints.insets = new Insets(0,20,20,20);
-        constraints.fill = GridBagConstraints.BOTH;
+        answerIDs = AnswerTestController.getInstance().getAnswersIDs(currentCourseID, currentTestID, questionID);
+
+        addScrollableElements();
+    }
+
+    @Override
+    protected void addScrollableElements() {
+
+        removeAll();
         
-        add(answersPanel, constraints);
+        LabelPanelQuestionDescription firstPanel = new LabelPanelQuestionDescription(questionID);
+        add(firstPanel);
+        add(Box.createRigidArea(new Dimension(0,20)));
+
+
+        for(int i = 0; i < answerIDs.length; i++){
+            add(new LabelPanelAnswer(questionID, answerIDs[i], true));
+            add(Box.createRigidArea(new Dimension(0,20)));
+        }
+
+        revalidate();
+        repaint();
 
     }
+    
 }
