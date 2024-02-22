@@ -10,6 +10,7 @@ import main.views.components.genericComponents.OpenUserRegisterPopUp;
 import main.views.components.genericComponents.ScrollContainer;
 import main.views.components.userListViewComponents.ScrollableAdminTestPanel;
 import main.views.components.userListViewComponents.ScrollableUsersPanel;
+import main.views.listeners.GoToCreateTestView;
 
 public class UserListView extends JFrame{
 
@@ -26,6 +27,9 @@ public class UserListView extends JFrame{
         button.addMouseListener(new OpenUserRegisterPopUp());
 
         adminTestsContainer = new ScrollContainer("Examenes", new ScrollableAdminTestPanel(), "Añadir Examen");
+        button = adminTestsContainer.getButton();
+        button.addMouseListener(new GoToCreateTestView());
+
         doublePanel = new DoublePanel(usersContainer, adminTestsContainer);
 
         setTitle("Uhuru: Available Tests");
