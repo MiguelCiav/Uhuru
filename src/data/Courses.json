@@ -1,14 +1,14 @@
 [
     {
-        "courseName":"Java Junior",
+        "courseName":"Java",
         "courseID":"0"
     },
     {
-        "courseName":"Java Medio",
+        "courseName":"Python",
         "courseID":"1"
     },
     {
-        "courseName":"Java Avanzado",
+        "courseName":"C++",
         "courseID":"2"
     }
 ]

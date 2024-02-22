@@ -2,37 +2,92 @@
     {   
         "testID": "00",
         "questionID": "000",
-        "description" : "Ejemplo de descripcion",
+        "description" : "¿Que es Java?",
         "questionType": "1"
     },
     {   
         "testID": "00",
         "questionID": "001",
-        "description" : "Ejemplo de descripcion",
+        "description" : "¿Cual de los siguientes NO es un tipo de dato primitivo en Java?",
         "questionType": "1"
     },
     {
         "testID": "00",
         "questionID": "002",
-        "description" : "Ejemplo de descripcion",
-        "questionType": "2"
-    },
-    {
-        "testID": "01",
-        "questionID": "010",
-        "description" : "Ejemplo de descripcion",
+        "description" : "¿Que es una variable?",
         "questionType": "1"
     },
     {
-        "testID": "01",
-        "questionID": "011",
-        "description" : "Ejemplo de descripcion",
-        "questionType": "2"
+        "testID": "00",
+        "questionID": "003",
+        "description" : "¿Que es un metodo?",
+        "questionType": "1"
     },
     {
-        "testID": "01",
-        "questionID": "012",
-        "description" : "Ejemplo de descripcion",
+        "testID": "00",
+        "questionID": "004",
+        "description" : "Que hace el siguiente codigo: \n System.out.println(\"hello world\")",
+        "questionType": "2"
+    },
+    {   
+        "testID": "10",
+        "questionID": "100",
+        "description" : "¿Cuál de las siguientes es una forma de escribir comentarios en Python?",
         "questionType": "1"
+    },
+    {   
+        "testID": "10",
+        "questionID": "101",
+        "description" : "¿Cómo se crea una variable en Python?",
+        "questionType": "1"
+    },
+    {
+        "testID": "10",
+        "questionID": "102",
+        "description" : "¿Que operador se debe utilizar si se quiere saber el resto de una division?",
+        "questionType": "1"
+    },
+    {
+        "testID": "10",
+        "questionID": "103",
+        "description" : "¿Para qué es usado Python mayormente?",
+        "questionType": "1"
+    },
+    {
+        "testID": "10",
+        "questionID": "104",
+        "description" : "Como se imprime un mensaje por la consola en Python?",
+        "questionType": "1"
+    },
+    {   
+        "testID": "20",
+        "questionID": "200",
+        "description" : "¿Que es un puntero?",
+        "questionType": "1"
+    },
+    {   
+        "testID": "20",
+        "questionID": "201",
+        "description" : "¿Qué palabra clave se usa para definir una función en C++?",
+        "questionType": "1"
+    },
+    {
+        "testID": "20",
+        "questionID": "202",
+        "description" : "¿Qué palabra clave se usa para declarar una variable que no puede ser modificada?",
+        "questionType": "1"
+    },
+    {
+        "testID": "20",
+        "questionID": "203",
+        "description" : "¿Qué características de C++ permiten la programación orientada a objetos?",
+        "questionType": "1"
+    },
+    {
+        "testID": "20",
+        "questionID": "204",
+        "description" : "Que hace el siguiente codigo: \n cout<<\"Hello world\"<<endl;",
+        "questionType": "2"
     }
+    
 ]
