@@ -30,10 +30,10 @@ public class Question {
         for(int i = 0; i < answerList.size(); i++){
             if(answerList.get(i).getAnswerID().equals(answerID)){
                 answerList.get(i).setAsSelected(true);
-                System.out.println("Respuesta " + answerList.get(i).getAnswerID() + " Marcada como " + answerList.get(i).isSelected());
+                
             } else {
                 answerList.get(i).setAsSelected(false);
-                System.out.println("Respuesta " + answerList.get(i).getAnswerID() + " Marcada como " + answerList.get(i).isSelected());
+                
             }
         }
 
@@ -43,6 +43,10 @@ public class Question {
 
         answerList.add(answer);
 
+    }
+
+    public Answer[] getAnswersArray(){
+        return answerList.toArray(new Answer[0]);
     }
 
     public String[] getAnswerDescriptions(){

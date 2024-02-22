@@ -48,7 +48,6 @@ public class ScrollableCoursesPanel extends ScrollablePanel{
         }
 
         repaint();
-        //resetScrollableElements();
         
     }
 

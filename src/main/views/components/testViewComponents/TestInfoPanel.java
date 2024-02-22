@@ -140,7 +140,7 @@ public class TestInfoPanel extends JPanel{
         constraints.anchor = GridBagConstraints.EAST;
         constraints.insets= new Insets(5,5,5,5);
 
-        endButton.addActionListener(new GoToSolutionsView());
+        endButton.addActionListener(new endTest());
 
         add(endButton, constraints);
         
@@ -150,7 +150,7 @@ public class TestInfoPanel extends JPanel{
         final int TIME_UNIT = 1;
 
         setDuration(minutesInput);
-        System.out.println("Duracion establecida en " + getDuration());
+        
 
         if(executor != null && !executor.isShutdown()){
             executor.shutdown();
@@ -170,7 +170,6 @@ public class TestInfoPanel extends JPanel{
                 clock.setText(String.format("%02d:%02d:%02d", hours, minutes, seconds));
 
                 decreaseDuration();
-                System.out.println("Hola");
 
                 if (totalSeconds <= 0) {
                     executor.shutdown();

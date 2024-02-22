@@ -18,6 +18,14 @@ public class AnswerTestController {
 
     }
 
+    public void calculateCalification(){
+        Course.getInstanceCourse(currentCourseID).getTest(currentTestID).calculateCalification();
+    }
+
+    public int getCalification(){
+        return Course.getInstanceCourse(currentCourseID).getTest(currentTestID).getCalification();
+    }
+
     public static AnswerTestController getInstance(){
 
         if(answerTestController == null){
@@ -81,7 +89,12 @@ public class AnswerTestController {
     }
 
     public String[] getQuestionIDsArray(String courseID, String testID){
+        
         return Course.getInstanceCourse(courseID).getTest(testID).getQuestionIDs();
+    }
+
+    public String[] getQuestionDesciptionsArray(String courseID, String testID){
+        return Course.getInstanceCourse(courseID).getTest(testID).getQuestionDescriptionsArray();
     }
 
     public String getQuestionDescription(String courseID, String testID, String questionID){

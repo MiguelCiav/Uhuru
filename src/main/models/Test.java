@@ -7,7 +7,7 @@ public class Test {
     private String type;
     private String name;
     private int duration;
-    private float calification;
+    private int calification;
 
     private ArrayList<Question> questionList = new ArrayList<Question>();
     private String testID;
@@ -22,6 +22,42 @@ public class Test {
 
     }
 
+    public void calculateCalification(){
+
+        int calculatedCalification = 0;
+
+        for(Question question : questionList){
+
+            
+
+            if(approveQuestion(question)){
+                calculatedCalification++;
+            }
+
+        }
+
+        calification = calculatedCalification;
+
+    }
+
+    private boolean approveQuestion(Question question){
+
+        Answer[] answerList = question.getAnswersArray();
+        boolean approved = false;
+
+        for(Answer answer : answerList){
+
+            
+
+            if(answer.isCorrect() && answer.isSelected()){
+                approved = true;
+            }
+        }
+
+        return approved;
+        
+    }
+
     public String[] getQuestionIDs(){
 
         String[] questionIDs = new String[questionList.size()];
@@ -31,6 +67,18 @@ public class Test {
         }
 
         return questionIDs;
+    }
+
+    public String[] getQuestionDescriptionsArray(){
+
+        String[] questionDescriptions = new String[questionList.size()];
+
+        for(int i = 0; i < questionList.size(); i++){
+            questionDescriptions[i] = questionList.get(i).getDescription();
+        }
+
+        return questionDescriptions;
+
     }
 
     public void addQuestion(Question question){
@@ -78,12 +126,8 @@ public class Test {
         this.duration = duration;
     }
 
-    public float getCalification() {
+    public int getCalification() {
         return calification;
-    }
-
-    public void setCalification(float calification) {
-        this.calification = calification;
     }
 
     public String getTestID(){
