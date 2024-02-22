@@ -94,8 +94,7 @@ public class ScrollContainer extends JPanelRound{
         button.setText(buttonTitle);
         button.setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/UsersListView/addIcon.png")));
         button.setIconTextGap(16);
-        button.addMouseListener(new GoToCreateTestView());
-
+        
         constraints.gridy = 2;
         constraints.weighty = 0.0;
         constraints.fill = GridBagConstraints.VERTICAL;

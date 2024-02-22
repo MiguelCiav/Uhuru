@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 
 import main.views.components.genericComponents.LabelPanel;
 import utils.PathManager;
+import main.views.listeners.OpenEditPopUp;
 
 public class LabelPanelUser extends LabelPanel{
 
@@ -43,6 +44,7 @@ public class LabelPanelUser extends LabelPanel{
         textLabel.setText(username);
 
         imageLabel = new JLabel(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/UsersListView/smallUserIcon.png")));
+        imageLabel.addMouseListener(new OpenEditPopUp());
 
     }
 
