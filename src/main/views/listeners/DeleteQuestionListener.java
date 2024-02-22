@@ -37,11 +37,22 @@ public class DeleteQuestionListener extends MouseAdapter{
     private void allowCode(){
         if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getCode().getTextArea().isEditable()){
             QuestionDataPanel.getBox().setSelected(true);
-            QuestionDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
+            QuestionDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/correctAnswer.png")));
         }
         else{
             QuestionDataPanel.getBox().setSelected(false);
             QuestionDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
+        }
+    }
+
+    private void allowJustification(){
+        if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().get(AnswerDataPanel.getOptionIndex()).getJustification().getTextArea().isEditable()){
+            AnswerDataPanel.getBox().setSelected(true);
+            AnswerDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/correctAnswer.png")));
+        }
+        else{
+            AnswerDataPanel.getBox().setSelected(false);
+            AnswerDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/createTestView/incorrectAnswer.png")));
         }
     }
 
@@ -73,6 +84,9 @@ public class DeleteQuestionListener extends MouseAdapter{
             addOptionsToContainer();
             setDomain();
             allowCode();
+            NextQuestionListener.getInstance().allowJustification();
+            QuestionDataPanel.getInstance().repaint();
+            AnswerDataPanel.getInstance().repaint();
         }
     }
 }

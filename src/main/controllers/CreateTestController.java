@@ -7,8 +7,11 @@ import utils.JSONWriter;
 public class CreateTestController {
 
     private static CreateTestController instance;
+    private static int createdTestsCounter;
     
-    private CreateTestController(){}
+    private CreateTestController(){
+        createdTestsCounter = 3;
+    }
 
     public static CreateTestController getInstance(){
 
@@ -33,7 +36,8 @@ public class CreateTestController {
         }
 
         JSONWriter.getInstance();
-        JSONWriter.addTest(testDescription, Integer.parseInt(minutes), "1", "1", testName);
+        JSONWriter.addTest(testDescription, Integer.parseInt(minutes), "1", Integer.toString(createdTestsCounter), testName);
+        createdTestsCounter++;
 
         return true;
     }
@@ -64,17 +68,44 @@ public class CreateTestController {
         QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionList().size() - 1).setDomain(QuestionDataPanel.getDomain());
     }
 
-    public static void createTest(){
-        String testName = TestDataPanel.getInstance().getName();
-        String type = TestDataPanel.getInstance().getDescription();
-        int duration = TestDataPanel.getInstance().getMinutes();
-        String courseID = "1";
-        String testID = "1";
-        JSONWriter.addTest(type, duration, courseID, testID, testName);
+    public static void addQuestions(){
+
+        String questionID = "";
+        String statement = "";
+        String code = "";
+        String imageURL = "";
+        String questionType = "";
+        String domain = "";
+
+        for(int i = 0; i < QuestionDataPanel.getQuestionList().size(); i++){
+            questionID = Integer.toString(QuestionDataPanel.getQuestionIndex());
+            statement = QuestionDataPanel.getQuestionList().get(i).getStatement().getTextArea().getText();
+            code = QuestionDataPanel.getQuestionList().get(i).getCode().getTextArea().getText();
+            imageURL = QuestionDataPanel.getQuestionList().get(i).getImagePath();
+            if(QuestionDataPanel.getQuestionList().get(i).getCode().getTextArea().isEditable()){
+                questionType = Integer.toString(2);
+            }
+            else{
+                questionType = Integer.toString(1);
+            }
+            domain = QuestionDataPanel.getQuestionList().get(i).getDomain();
+            JSONWriter.addQuestion(Integer.toString(createdTestsCounter - 1), questionID, statement, code, imageURL, questionType, domain);
+
+            for(int j = 0; j < QuestionDataPanel.getQuestionList().get(i).getOptionList().size(); j++){
+                if(QuestionDataPanel.getQuestionList().get(i).getOptionList().get(j).getJustification().getTextArea().isEditable()){
+                    addAnswer(QuestionDataPanel.getQuestionList().get(i).getOptionList().get(j).getStatement().getTextArea().getText(),
+                    QuestionDataPanel.getQuestionList().get(i).getOptionList().get(j).getJustification().getTextArea().getText(), true);
+                }
+                else{
+                    addAnswer(QuestionDataPanel.getQuestionList().get(i).getOptionList().get(j).getStatement().getTextArea().getText(),
+                    QuestionDataPanel.getQuestionList().get(i).getOptionList().get(j).getJustification().getTextArea().getText(), false);
+                }
+            }
+        }
     }
 
-    private static void addQuestions(String testID, String questionID, String description, String questionType){
-        JSONWriter.addQuestion(testID, questionID, description, description, questionType);
+    public static void addAnswer(String statement, String justification, boolean isCorrect){
+        JSONWriter.addAnswer(statement, justification, isCorrect);
     }
     
 }

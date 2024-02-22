@@ -127,4 +127,14 @@ public class Question {
         this.imageURL = imageURL;
     }
 
+    public Object getJustificacion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getJustificacion'");
+    }
+
+    public Object getDescription() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDescription'");
+    }
+
 }

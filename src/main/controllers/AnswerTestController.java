@@ -141,9 +141,9 @@ public class AnswerTestController {
         Test[] testArray = loadedCourse.getTestArray();
         String[] testIDs = new String[loadedCourse.amountOfTest()];
 
-        System.out.println("Último elemento: " + testArray[5].getTestID());
-        System.out.println("Total " + loadedCourse.amountOfTest());
-        System.out.println("Tamaño " + testIDs.length);
+        
+        
+        
 
         for(int i = 0; i < loadedCourse.amountOfTest(); i++){
 

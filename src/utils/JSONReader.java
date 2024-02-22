@@ -46,7 +46,7 @@ public class JSONReader {
 
             Course.setInstanceCourse(courseName, actualCourseID);
 
-            System.out.println("CARGANDO CURSO " + actualCourseID);
+            
 
             readTest();
 
@@ -74,7 +74,7 @@ public class JSONReader {
                 Test loadedTest = new Test(actualTestID,description,duration,testName);
                 Course.loadTest(actualCourseID, loadedTest);
 
-                System.out.println("CARGANDO TEST " + actualTestID + " en " + actualCourseID);
+                
 
                 readQuestions();
 
@@ -103,7 +103,7 @@ public class JSONReader {
                 Question loadedQuestion = new Question(questionTestID, actualQuestionID, questionStatement, questionCode, imageURL, Integer.valueOf(questionType), domain);
                 
                 Course.loadQuestion(actualCourseID, questionTestID, loadedQuestion);
-                System.out.println("CARGANDO QUESTION " + actualQuestionID + " en " + questionTestID);
+                
                 readAnswers();
 
             }
@@ -130,7 +130,7 @@ public class JSONReader {
 
                 Course.loadAnswer(actualCourseID, actualTestID, actualQuestionID, loadedAnswer);
 
-                System.out.println("CARGANDO ANSWER " + answerID + " en " + answerQuestionID);
+                
                 
             }
         }

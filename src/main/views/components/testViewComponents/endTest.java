@@ -18,7 +18,7 @@ public class endTest implements ActionListener{
 
         calculateCalification();
 
-        System.out.println("La calificación es " + AnswerTestController.getInstance().getCalification());
+        
 
         new SolutionsView();
         topFrame.dispose();

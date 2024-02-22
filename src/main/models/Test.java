@@ -133,5 +133,10 @@ public class Test {
     public String getTestID(){
         return testID;
     }
+
+    public Object getType() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getType'");
+    }
    
 }

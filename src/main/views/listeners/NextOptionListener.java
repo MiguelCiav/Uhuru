@@ -32,10 +32,10 @@ public class NextOptionListener extends MouseAdapter{
         AnswerDataPanel.setStatementText(AnswerDataPanel.getOptionIndex() +1);
     }
 
-    private void allowJustification(){
+    public void allowJustification(){
         if(QuestionDataPanel.getQuestionList().get(QuestionDataPanel.getQuestionIndex()).getOptionList().get(AnswerDataPanel.getOptionIndex()).getJustification().getTextArea().isEditable()){
             AnswerDataPanel.getBox().setSelected(true);
-            AnswerDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/answerCheckBox.png")));
+            AnswerDataPanel.getBox().setIcon(new ImageIcon(PathManager.getInstance().getStringURL("/src/img/solutionsView/correctAnswer.png")));
         }
         else{
             AnswerDataPanel.getBox().setSelected(false);
@@ -48,5 +48,7 @@ public class NextOptionListener extends MouseAdapter{
         AnswerDataPanel.getCardLayout().next(AnswerDataPanel.getContainer());
         changeIndex();
         allowJustification();
+        QuestionDataPanel.getInstance().repaint();
+        AnswerDataPanel.getInstance().repaint();
     }
 }
