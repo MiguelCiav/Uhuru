@@ -8,7 +8,7 @@ import javax.swing.*;
 import main.controllers.AnswerTestController;
 import main.views.frames.SolutionsView;
 
-public class endTest implements ActionListener{
+public class EndTest implements ActionListener{
 
     private int calification;
 

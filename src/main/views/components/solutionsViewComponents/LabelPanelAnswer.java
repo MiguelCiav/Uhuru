@@ -83,7 +83,7 @@ public class LabelPanelAnswer extends LabelPanel{
     private void setJustification(){
 
         justificationLabel = new JTextArea();
-        justification = "Justificación";
+        justification = AnswerTestController.getInstance().getAnswerJustification(questionID, answerID);
         justificationLabel.setBackground(ViewsStyles.ULTRA_LIGHT_BLUE);
         justificationLabel.setFont(new Font("Futura", Font.PLAIN, 12));
         justificationLabel.setEditable(false);

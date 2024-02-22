@@ -12,6 +12,8 @@ public class ScrollableAnswersPanel extends ScrollablePanel {
 
     private static ScrollableAnswersPanel instance;
     private String[] answerIDs;
+    private boolean[] correctArray;
+    private boolean[] selectedArray;
     private String questionID;
 
     private ScrollableAnswersPanel(){
@@ -41,6 +43,9 @@ public class ScrollableAnswersPanel extends ScrollablePanel {
     @Override
     protected void addScrollableElements() {
 
+        correctArray = AnswerTestController.getInstance().getCorrectArray(questionID);
+        selectedArray = AnswerTestController.getInstance().getSelectedArray(questionID);
+
         removeAll();
         
         LabelPanelQuestionDescription firstPanel = new LabelPanelQuestionDescription(questionID);
@@ -49,7 +54,7 @@ public class ScrollableAnswersPanel extends ScrollablePanel {
 
 
         for(int i = 0; i < answerIDs.length; i++){
-            add(new LabelPanelAnswer(questionID, answerIDs[i], true));
+            add(new LabelPanelAnswer(questionID, answerIDs[i], correctArray[i]));
             add(Box.createRigidArea(new Dimension(0,20)));
         }
 

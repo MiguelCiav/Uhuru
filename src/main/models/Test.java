@@ -28,8 +28,6 @@ public class Test {
 
         for(Question question : questionList){
 
-            
-
             if(approveQuestion(question)){
                 calculatedCalification++;
             }
@@ -43,18 +41,18 @@ public class Test {
     private boolean approveQuestion(Question question){
 
         Answer[] answerList = question.getAnswersArray();
-        boolean approved = false;
+        int selectedAmount = 0;
+        int correctAnswersAmount = question.getCorrectAnswersAmount();
 
         for(Answer answer : answerList){
 
-            
-
             if(answer.isCorrect() && answer.isSelected()){
-                approved = true;
+                selectedAmount++;
             }
+
         }
 
-        return approved;
+        return correctAnswersAmount == selectedAmount;
         
     }
 

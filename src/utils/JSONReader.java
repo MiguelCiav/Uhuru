@@ -46,8 +46,6 @@ public class JSONReader {
 
             Course.setInstanceCourse(courseName, actualCourseID);
 
-            
-
             readTest();
 
         }
@@ -129,8 +127,6 @@ public class JSONReader {
                 Answer loadedAnswer = new Answer(answerID, answerQuestionID, statement, justification, isCorrect);
 
                 Course.loadAnswer(actualCourseID, actualTestID, actualQuestionID, loadedAnswer);
-
-                
                 
             }
         }

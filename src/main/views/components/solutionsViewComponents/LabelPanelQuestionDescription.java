@@ -6,6 +6,8 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import main.controllers.AnswerTestController;
@@ -15,6 +17,7 @@ public class LabelPanelQuestionDescription extends LabelPanel{
 
     String questionID;
     JTextArea questionDescriptionArea;
+    JLabel calificationLabel;
 
     public LabelPanelQuestionDescription(String questionID){
         setLayout(new GridBagLayout());
@@ -22,7 +25,6 @@ public class LabelPanelQuestionDescription extends LabelPanel{
 
         setLabel();
         addLabel();
-
     }
 
     @Override
@@ -40,6 +42,12 @@ public class LabelPanelQuestionDescription extends LabelPanel{
         questionDescriptionArea.setFocusable(false);
         questionDescriptionArea.setLineWrap(true);
         questionDescriptionArea.setText(description);
+
+        int correctAnswersAmount = AnswerTestController.getInstance().getQuestionsAmount(currentTestID);
+        int calification = AnswerTestController.getInstance().getCalification();
+
+        calificationLabel = new JLabel();
+        calificationLabel.setText(calification + "/" + correctAnswersAmount);
         
     }
 
@@ -58,6 +66,10 @@ public class LabelPanelQuestionDescription extends LabelPanel{
         constraints.insets = new Insets(16, 16, 16, 16);
 
         add(questionDescriptionArea,constraints);
+
+        constraints.gridx = 1;
+
+        add(calificationLabel);
         
     }
     

@@ -14,10 +14,11 @@ public class AnswerQuestion extends MouseAdapter{
 
         JRadioButton sourceButton = (JRadioButton) e.getSource();
         OptionBox sourcePanel = (OptionBox) sourceButton.getParent();
+        QuestionPanel sourceQuestion = (QuestionPanel) sourcePanel.getParent();
         String questionID = sourcePanel.getQuestionID();
         String answerID = sourcePanel.getAnswerID();
 
-        AnswerTestController.getInstance().answerQuestion(questionID, answerID);
+        sourceQuestion.selectAnswer(sourcePanel.getAnswerID());
 
         TestInfoPanel.getTestInfoPanel().updateAnsweredQuestions(questionID);
     }

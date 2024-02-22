@@ -9,11 +9,12 @@ public class Question {
     private String questionID;
     private String testID;
     private String statement;
-    private Answer userAnswer;
     private int questionType;
     private int questionNumber;
     private String codeText;
     private String imageURL;
+    private String domain;
+    private int correctAnswersAmount;
 
     private ArrayList<Answer> answerList = new ArrayList<Answer>();
 
@@ -23,18 +24,55 @@ public class Question {
         this.questionType = questionType;
         this.questionID = questionID;
         this.testID = testID;
+        this.codeText = code;
+        this.domain = domain;
 
     }
 
-    public void markAnswerAsSelected(String answerID){
+    public boolean[] getCorrectArray(){
+        boolean[] correctArray = new boolean[answerList.size()];
+
+        for(int i = 0; i < answerList.size(); i++){
+            correctArray[i] = answerList.get(i).isCorrect();
+        }
+
+        return correctArray;
+    }
+
+    public boolean[] getSelectedArray(){
+        boolean[] selectedArray = new boolean[answerList.size()];
+
+        for(int i = 0; i < answerList.size(); i++){
+            selectedArray[i] = answerList.get(i).isSelected();
+        }
+
+        return selectedArray;
+    }
+
+
+    public void checkCorrectAnswersAmount(){
+
+        correctAnswersAmount = 0;
+
+        for(Answer answer : answerList){
+
+            if(answer.isCorrect()){
+                correctAnswersAmount++;
+            }
+
+        }
+
+    }
+
+    public int getCorrectAnswersAmount(){
+        return correctAnswersAmount;
+    }
+
+    public void markAnswerAsSelected(String answerID, boolean selected){
 
         for(int i = 0; i < answerList.size(); i++){
             if(answerList.get(i).getAnswerID().equals(answerID)){
-                answerList.get(i).setAsSelected(true);
-                
-            } else {
                 answerList.get(i).setAsSelected(false);
-                
             }
         }
 
@@ -72,12 +110,12 @@ public class Question {
 
     public void answerQuestion(Answer answer){};
 
-    public String getStatement(){
-        return statement;
+    public String getDomain(){
+        return domain;
     }
 
-    public Answer getUserAnswer(){
-        return userAnswer;
+    public String getStatement(){
+        return statement;
     }
     
     public int getQuestionType(){
@@ -125,16 +163,6 @@ public class Question {
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
-    }
-
-    public Object getJustificacion() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getJustificacion'");
-    }
-
-    public Object getDescription() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getDescription'");
     }
 
 }

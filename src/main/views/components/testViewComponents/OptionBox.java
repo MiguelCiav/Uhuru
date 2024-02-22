@@ -31,6 +31,14 @@ public class OptionBox extends JPanelRound{
         
     }
 
+    public boolean isSelected(){
+        return optionButton.isSelected();
+    }
+
+    public void setSelected(boolean selected){
+        optionButton.setSelected(selected);
+    }
+
     public String getQuestionID(){
         return questionID;
     }
@@ -87,9 +95,5 @@ public class OptionBox extends JPanelRound{
 
         add(optionTextPanel, constraints);
 
-    }
-
-    public void addToGroup (ButtonGroup group){
-        group.add(optionButton);
     }
 }

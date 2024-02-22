@@ -61,5 +61,7 @@ public class Answer {
         this.isCorrect = isCorrect;
     }
 
-    
+    public String getJustification(){
+        return justification;
+    }
 }

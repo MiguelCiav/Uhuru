@@ -26,6 +26,10 @@ public class AnswerTestController {
         return Course.getInstanceCourse(currentCourseID).getTest(currentTestID).getCalification();
     }
 
+    public int getQuestionsAmount(String testID){
+        return Course.getInstanceCourse(currentCourseID).getTest(currentTestID).getQuestionsAmount();
+    }
+
     public static AnswerTestController getInstance(){
 
         if(answerTestController == null){
@@ -89,7 +93,6 @@ public class AnswerTestController {
     }
 
     public String[] getQuestionIDsArray(String courseID, String testID){
-        
         return Course.getInstanceCourse(courseID).getTest(testID).getQuestionIDs();
     }
 
@@ -123,6 +126,24 @@ public class AnswerTestController {
         return currentTestID;
     }
 
+    public int getCorrectAnswersAmount(String questionID){
+
+        Course.getInstanceCourse(currentCourseID).getTest(currentTestID).getQuestion(questionID).checkCorrectAnswersAmount();
+        return Course.getInstanceCourse(currentCourseID).getTest(currentTestID).getQuestion(questionID).getCorrectAnswersAmount();
+    }
+
+    public String getQuestionImage(String questionID){
+        return Course.getInstanceCourse(currentCourseID).getTest(currentTestID).getQuestion(questionID).getImageURL();
+    }
+
+    public String getQuestionDomain(String questionID){
+        return Course.getInstanceCourse(currentCourseID).getTest(currentTestID).getQuestion(questionID).getDomain();
+    }
+
+    public String getQuestionCode(String questionID){
+        return Course.getInstanceCourse(currentCourseID).getTest(currentTestID).getQuestion(questionID).getCodeText();
+    }
+
     public static String getCurrentTestName(){
         return Course.getInstanceCourse(currentCourseID).getTest(currentTestID).getName();
     }
@@ -140,10 +161,6 @@ public class AnswerTestController {
         Course loadedCourse = Course.getInstanceCourse(courseID);
         Test[] testArray = loadedCourse.getTestArray();
         String[] testIDs = new String[loadedCourse.amountOfTest()];
-
-        
-        
-        
 
         for(int i = 0; i < loadedCourse.amountOfTest(); i++){
 
@@ -170,6 +187,18 @@ public class AnswerTestController {
         return Course.getTest(courseID,testID).getQuestion(questionID).getAnswer(answerID).getAnswerText();
     }
 
+    public String getAnswerJustification(String questionID, String answerID){
+        return Course.getTest(currentCourseID,currentTestID).getQuestion(questionID).getAnswer(answerID).getJustification();
+    }
+
+    public boolean[] getCorrectArray(String questionID){
+        return Course.getTest(currentCourseID,currentTestID).getQuestion(questionID).getCorrectArray();
+    }
+
+    public boolean[] getSelectedArray(String questionID){
+        return Course.getTest(currentCourseID,currentTestID).getQuestion(questionID).getSelectedArray();
+    }
+
     public static void setCurrentTest(String courseID, String testID){
 
         currentCourseID = courseID;
@@ -177,7 +206,7 @@ public class AnswerTestController {
 
     }
 
-    public void answerQuestion(String questionID, String answerID){
-        Course.getInstanceCourse(currentCourseID).getTest(currentTestID).getQuestion(questionID).markAnswerAsSelected(answerID);
+    public void answerQuestion(String questionID, String answerID, boolean selected){
+        Course.getInstanceCourse(currentCourseID).getTest(currentTestID).getQuestion(questionID).markAnswerAsSelected(answerID, selected);
     }
 }
